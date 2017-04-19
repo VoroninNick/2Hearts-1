@@ -4,9 +4,10 @@ $document.ready ->
     margin: 10
     nav: true
     # autoWidth: true
-    items: 4
+    items: 1
     responsive:
       640:
+        items: 4
         margin: 40
   )
 

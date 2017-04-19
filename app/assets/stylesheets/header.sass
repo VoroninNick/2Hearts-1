@@ -38,7 +38,9 @@
       text-transform: uppercase
       letter-spacing: 2px
       padding: 0 20px
-      +transition(opacity 0.5)
+      +transition(opacity 0.5s)
+      @media #{$small-only}
+        display: none
 
   //     H a m b u r g e r
   
@@ -60,9 +62,11 @@
         background: $brown800
         height: 2px
         border-radius: 0
-
-    &.is-active
-      .hamburger-inner
-        background: white
-        &:before, &:after
+    
+    @media #{$large-up}
+      &.is-active
+        .hamburger-inner
           background: white
+          &:before, &:after
+            background: white
+

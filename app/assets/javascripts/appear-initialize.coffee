@@ -1,6 +1,6 @@
 $document.ready ->
 
-  appeared = $('.appeared')
+  appeared = $('.appeared, .slide-up')
 
   appeared.appear()
 

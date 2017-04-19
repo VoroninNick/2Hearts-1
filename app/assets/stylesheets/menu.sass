@@ -7,17 +7,22 @@
   width: 100%
   min-height: 100vh
   overflow: hidden
+  pointer-events: none
   
   .img-bg
     opacity: 0
     pointer-events: none
     +transition(opacity 0.25s ceaser($easeInOutQuart))
+    display: none
+    @media #{$large-up}
+      display: block
 
   .menu
     width: 100%
     padding-left: 50px
     padding-right: 50px
     background-color: white
+    +translate(-100%,0)
     +transition(transform 1s ceaser($easeInOutQuart))
     @media #{$small-only}
       padding-top: 80px
@@ -26,7 +31,6 @@
     @media #{$large-up}
       padding-top: 20vh
       width: 35%
-      +translate(-100%,0)
     @media screen and (min-width: 1920px)
       padding-top: 20vh
 

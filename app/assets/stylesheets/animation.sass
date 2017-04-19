@@ -47,6 +47,10 @@
 
 //     up and down animation
 
-// =UD-start
-
-// =UD-end
+=UD-start
+  +transition(all 1s ceaser($easeOutCubic))
+  +translate(0,75px)
+  opacity: 0
+=UD-end
+  +translate(0,0)
+  opacity: 1
