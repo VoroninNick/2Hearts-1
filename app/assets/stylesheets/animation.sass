@@ -1,0 +1,43 @@
+=anim-start($x-translate: 30px, $transition: 0.1s, $transition-delay: 0s)
+  @for $i from 1 through 100
+    &:nth-child(#{$i})
+      transform: translate3d(0, 0, 0)
+      transform: translate(0, #{$i*0.5*$x-translate})
+      opacity: 0
+      transition: #{$i*0.5*$transition} ceaser($easeInOutQuart)
+      transition-delay: $transition-delay
+      transition-property: opacity, transform
+=anim-end($transition: 0.25s, $transition-delay: 0s)
+  @for $i from 1 through 100
+    &:nth-child(#{$i})
+      transform: translate(0,0)
+      opacity: 1
+      transition: #{$i*$transition} ceaser($easeInOutQuart)
+      transition-delay: $transition-delay
+      transition-property: opacity, transform
+
+
+
+//     left to right animation
+
+=LR-start($max-w: 0, $transition: 1s, $transition-delay: 0.2s)
+  @for $i from 1 through 100
+    &:nth-of-type(#{$i})
+      max-width: 0
+      transition: $transition ceaser($easeInOutQuart)
+      transition-delay: #{$i*0.5*$transition-delay}
+      transition-property: max-width
+
+=LR-end($transition-delay: 0.2s)
+  @for $i from 1 through 100
+    &:nth-of-type(#{$i})
+      max-width: 100%
+      transition-delay: #{$i*0.5*$transition-delay}
+
+
+
+//     up and down animation
+
+// =UD-start
+
+// =UD-end

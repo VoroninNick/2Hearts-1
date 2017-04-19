@@ -1,0 +1,175 @@
+html
+  height: 100%
+body
+  min-height: 100%
+  display: -webkit-flex
+  display: -moz-flex
+  display: -ms-flex
+  display: -o-flex
+  display: flex
+  flex-direction: column
+  font-family: 'Cormorant Infant', serif
+  .main-wrapper
+    flex: 1
+  &.menu-opened
+    overflow: hidden
+
+    .menu-wrapper
+      display: flex
+    .left-part, .right-part
+      max-width: 100%
+
+    .header-container
+      .small
+        opacity: 0
+        pointer-events: none
+      .logo
+        svg
+          path.heart
+            fill: white
+          path.outline
+            fill: $blueGrey100
+        &:hover
+          svg
+            path.heart
+              fill: $pink600
+
+
+
+%istok
+  font-family: 'Istok Web', sans-serif
+%cormorant
+  font-family: 'Cormorant Infant', serif
+%goodvibes
+  font-family: 'Good Vibes Pro'
+
+@each $header, $font-size in (h1: 28px, h2: 24px, h3: 20px, h4: 18px, h5: 16px)
+  #{$header}, .#{$header}
+    font-size: $font-size
+
+p
+  font-size: 14px
+
+a
+  display: inline-block
+  cursor: pointer
+  +transition(0.25s)
+
+ul
+  position: relative
+  list-style: none
+
+ol
+  position: relative
+  counter-reset: list
+  li
+    counter-increment: list
+    &:before
+      content: counter(list) "."
+
+img
+  width: 100%
+
+.small
+  font-size: 0.75rem
+.smaller
+  font-size: 0.875rem
+.regular
+  font-size: 1rem
+.larger
+  font-size: 1.125rem
+.large
+  font-size: 1.25rem
+
+.section-name
+  position: relative
+  text-align: center
+  padding-top: 100px
+  padding-bottom: 100px
+  overflow: hidden
+  .bg-icon
+    position: absolute
+    width: 100%
+    height: 100%
+    top: 0
+    @media #{$small-only}
+      display: none
+    svg
+      max-height: 100%
+
+  .main-icon
+    position: relative
+    svg
+      width: 80px
+  p
+    position: relative
+    font-size: 72px
+    @extend %goodvibes
+    color: $brown700
+    line-height: 1
+    span
+      display: block
+      color: $pink600
+      padding-left: 200px
+      margin-top: -30px
+
+.button
+  @extend %cormorant
+  display: inline-block
+  border: 1px solid $brown300
+  color: $brown400
+  padding: 7px 20px
+  font-size: 18px
+  transition: 0.2s ease-in
+  cursor: pointer
+  margin-top: 50px
+  &:hover
+    background-color: $pink600
+    border: 1px solid $pink600
+    color: white
+
+.accordion-button
+  cursor: pointer
+  .arrow-dropdown
+    float: right
+    width: 24px
+    height: 24px
+    svg
+      width: 100%
+      height: 100%
+      fill: white
+      +transition(0.2s)
+  &.opened
+    .arrow-dropdown
+      svg 
+        +rotate(180deg)
+
+.accordion-inner
+  overflow: hidden
+  display: none
+  +translate(0,0)
+
+.socials
+  li
+    display: inline-block
+    margin-right: 10px
+    .social-icon
+      width: 42px
+      height: 42px
+      border-radius: 50%
+    svg
+      width: 100%
+      height: 100%
+
+
+.test-container
+  width: 500px
+  background-color: green
+  .anim-test-block
+    width: 100%
+    height: 200px
+    background-color: red
+    +LR-start
+  &:hover
+    .anim-test-block
+      +LR-end

@@ -1,0 +1,515 @@
+.main-banner
+  position: relative
+  width: 100%
+  height: 100vh
+  .hashtag
+    position: absolute
+    left: 20px
+    bottom: 20px
+    color: $pink600
+    letter-spacing: 2px
+    span
+      color: $brown800
+  .socials
+    position: absolute
+    bottom: 20px
+    right: 20px
+    li
+      @extend %cormorant
+      display: inline-block
+      font-size: 18px
+      color: $brown600
+      letter-spacing: 2px
+      // margin: 0 10px
+      a
+        padding: 10px
+      &:after
+        content: '\00B7'
+        font-size: 2em
+        color: $pink600
+        // margin-left: 20px
+        vertical-align: sub
+      &:last-child
+        &:after
+          display: none
+  .top-part, .bottom-part
+    height: 50vh
+  .top-part
+    position: relative
+    width: 100%
+    text-align: center
+    padding: 25vh 0 0
+  .bottom-part
+    position: absolute
+    width: 100%
+    top: 50%
+  .title
+    @extend %istok
+    text-transform: uppercase
+    color: $brown700
+    letter-spacing: 2px
+  .header
+    @extend %goodvibes
+    font-size: 140px
+    color: $pink600
+    line-height: 1
+  .subtitle
+    @extend %cormorant
+    font-size: 36px
+    font-style: italic
+    +medium
+    letter-spacing: 2px
+  
+  .line
+    width: 1px
+    background: $brown200
+    left: 50%
+    &.top
+      position: absolute
+      top: 80px
+      height: calc(25vh - 100px)
+    &.middle
+      position: relative
+      height: 100px
+    &.bottom
+      position: absolute
+      top: 190px
+      bottom: 62px
+      @media screen and (min-width: 1920px)
+        top: 230px
+  .play-bth
+    width: 70px
+    height: 70px
+    margin: 10px 0
+    +x-align
+    @media screen and (min-width: 1920px)
+      width: 90px
+      height: 90px
+      margin: 20px 0
+  .scroll-down
+    position: absolute
+    left: 50%
+    bottom: 20px
+    +translate(-50%,0)
+
+.services-wrapper
+  position: relative
+  .service
+    position: relative
+    padding-bottom: 20px
+    margin-bottom: 30px
+    &:after
+      content: ''
+      display: block
+      width: 100%
+      height: 1px
+      position: absolute
+      right: 0
+      bottom: 0
+      background: $blueGrey100
+      @media #{$medium-up}
+        width: calc(100% - 100px)
+    &:last-child
+      &:after
+        display: none
+    @media #{$medium-up}
+      padding-left: 100px
+    .icon
+      width: 70px
+      @media #{$medium-up}
+        position: absolute
+        top: 0
+        left: 0
+    .h2
+      @extend %cormorant
+      +bold
+      text-transform: uppercase
+      color: $pink600
+      line-height: 1
+      margin-bottom: 20px
+    .link
+      font-size: 12px
+      color: $brown700
+      margin-top: 20px
+      text-transform: uppercase
+      +bold
+      cursor: pointer
+      svg
+        margin-left: 10px
+        width: 22px
+        +transition(transform 0.25s)
+      &:hover
+        svg
+          +translate(20%,0)
+
+  .bg-img
+    width: 100%
+    background-size: contain
+    background-repeat: no-repeat
+    @media #{$small-only}
+      padding-top: 100%
+    @media #{$large-up}
+      position: absolute
+      width: 50%
+      height: 100%
+      right: 0
+      bottom: 0
+
+.main-slider-wrapper
+  position: relative
+  .slider
+    position: relative
+    .photo
+      padding-bottom: 50%
+      background-position: center
+      background-size: cover
+    .text
+      background: #F8F7F3
+      text-align: center
+      padding: 20px
+    .larger
+      @extend %cormorant
+      color: $brown700
+      +bold
+      font-style: italic
+      &:last-child
+        color: $brown300
+        margin-top: 20px
+        font-style: normal
+        span
+          text-transform: uppercase
+    @media #{$small-only}
+      .photo
+        padding-bottom: 100%
+
+    @media #{$large-up}
+      li
+        &:before
+          content: ''
+          padding-bottom: 40%
+          display: block
+      .photo
+        position: absolute
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+      .text
+        position: absolute
+        bottom: 50px
+        left: 10%
+        background: transparent
+        text-align: left
+      .larger
+        color: white
+        font-size: 48px
+        +bold
+        font-style: italic
+        line-height: 1
+        max-width: 50%
+        &:last-child
+          color: white
+          font-size: 18px
+          margin-top: 20px
+          span
+            font-size: 21px
+            +text-line(white)
+
+  .bx-pager
+    margin: 20px 0
+    text-align: center
+  .bx-pager-item
+    display: inline-block
+  .bx-pager-link
+    text-indent: -9999px
+    width: 10px
+    height: 10px
+    margin: 0 10px
+    border-radius: 5px
+    border: 1px solid $brown200
+    &.active
+      background: $brown200
+        
+.advantages-wrapper
+  position: relative
+  overflow: hidden
+  .img-bg
+    +translate(-20%,0)
+
+  .testemonial-block
+    position: relative
+    margin-bottom: 200px
+    &:before, &:after
+      position: absolute
+      @extend %cormorant
+      color: $brown200
+      +s-bold
+      font-style: italic
+    &:before
+      content: '\00AB'
+      font-size: 170px
+      left: 0
+      top: 50%
+      +translate(-120%,-50%)
+    &:after
+      content: '\00BB'
+      font-size: 60px
+      bottom: 0
+      right: 0
+
+    .author
+      @extend %cormorant
+      text-transform: uppercase
+      font-size: 16px
+      color: $brown400
+      +bold
+      +text-line($brown400)
+      margin-bottom: 20px
+    .slogan
+      @extend %cormorant
+      position: relative
+      font-size: 36px
+      line-height: 1.1
+      color: $pink600
+      +s-bold
+      &:before
+        content: ''
+        display: block
+        position: absolute
+        width: 100%
+        height: 100px
+        bottom: 0
+        right: 0
+        background-color: $grey50
+        z-index: -1
+        +translate(10%,10%)
+
+  .advantage-block
+    position: relative
+    margin-bottom: 50px
+    .circle
+      position: relative
+      border: 2px solid #D6CBC7
+      border-radius: 50%
+      &:before
+        +square
+      &:after
+        content: ''
+        display: block
+        position: absolute
+        top: 3px
+        left: 3px
+        right: 3px
+        bottom: 3px
+        border: 1px solid #D6CBC7
+        border-radius: 50%
+        pointer-events: none
+    .number
+      @extend %cormorant
+      +xy-align
+      position: absolute
+      width: 100%
+      text-align: center
+      font-size: 60px
+      color: $pink600
+      line-height: 1
+      +s-bold
+    .details
+      @extend %cormorant
+      position: absolute
+      top: 60%
+      left: 50%
+      +translate(-50%,0)
+      text-align: center
+      color: $brown800
+      width: 80%
+      +s-bold
+      font-size: 18px
+      line-height: 1.375
+      text-transform: uppercase
+    .description
+      @extend %cormorant
+      font-size: 21px
+      font-style: italic
+      color: $brown400
+      margin-top: 20px
+      text-align: center
+
+.team-wrapper
+
+  .main-img
+    width: 60%
+    background-size: cover
+    background-position: center
+    margin-bottom: 60px
+    @media #{$large-up}
+      width: 60%
+      float: left
+    &:after
+      +square
+
+  .h2
+    @extend %cormorant
+    color: $pink600
+    +bold
+    letter-spacing: 2px
+    text-transform: uppercase
+    line-height: 1
+
+  .slogan
+    @extend %cormorant
+    position: relative
+    font-size: 24px
+    color: $pink600
+    +bold
+    font-style: italic
+    margin: 30px 0
+    padding: 20px 0
+    line-height: 30px
+    &:before, &:after
+      content: ''
+      position: absolute
+      background-color: $brown100
+      width: 100%
+      height: 1px
+      left: 0
+    &:before
+      top: 0
+    &:after
+      bottom: 0
+
+.collage-wrapper
+
+  .clearfix
+
+  .floated
+    position: relative
+    width: 50%
+    overflow: hidden
+  .square
+    float: left
+    position: relative
+    width: calc(50% - 20px)
+    margin: 10px
+    overflow: hidden
+    &:after
+      +square
+    &.fullwidth
+      width: calc(100% - 20px)
+  .img-bg
+    background-color: $brown800
+  .inner-border
+    position: absolute
+    top: 10px
+    left: 10px
+    right: 10px
+    bottom: 10px
+    border: 1px solid white
+    pointer-events: none
+  .shadow
+    +fullsize
+    +translate(10px,-10px)
+    background-color: $brown50
+    z-index: -1
+  .text
+    +xy-align
+    position: absolute
+    width: 100%
+    padding: 0 20px
+    color: white
+    text-align: center
+    z-index: 2
+    .animate
+      +anim-start(100px,0.1s)
+  .smaller
+    font-style: italic
+    color: $brown100
+  .heart
+    margin: 10px auto
+    width: 16px
+    height: 16px
+    svg
+      fill: white
+    @media screen and (min-width: 1920px)
+      margin: 20px auto
+  .social-icon
+    position: absolute
+    bottom: 20px
+    right: 20px
+    width: 20px
+    height: 20px
+    z-index: 2
+    +anim-start(100%,0.05s)
+    svg
+      fill: white
+
+  .social-media
+    cursor: pointer
+    &:before
+      content: ''
+      display: block
+      +fullsize
+      background: rgba($pink600,0.95)
+      z-index: 1
+      +translate(0,100%)
+      +transition(transform 0.5s ceaser($easeOutExpo))
+    &:hover
+      &:before
+        +translate(0,0)
+      .text
+        .animate
+          +anim-end(0.15s, 0.2s)
+      .social-icon
+        +anim-end(0.1s, 0.4s)
+
+
+.subscribe-wrapper
+  margin: 100px 0
+  text-align: center
+  .title
+    font-size: 36px
+    color: $pink600
+    text-transform: uppercase
+    +bold
+  .larger
+    color: $brown600
+    font-style: italic
+  .leave-email
+    width: 300px
+    margin: 20px auto
+    input
+      padding: 10px
+      text-align: center
+      font-size: 16px
+      +bold
+    label.placeholder
+      width: 100%
+      top: 10px
+      left: 0
+      text-align: center
+
+.nav-container
+  padding: 100px 0
+  .nav-block
+    position: relative
+    background-color: $brown800
+    padding: 50px 50px 100px 50px
+    border-right: 1px solid rgba($brown300, 0.2)
+    display: block
+  .small
+    @extend %istok
+    color: $brown300
+    +bold
+    text-transform: uppercase
+    margin-bottom: 20px
+  .title
+    font-size: 36px
+    +bold
+    color: white
+    text-transform: uppercase
+    line-height: 1
+  .icon
+    position: absolute
+    right: 50px
+    bottom: 30px
+    width: 26px
