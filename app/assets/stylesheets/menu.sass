@@ -7,25 +7,18 @@
   width: 100%
   min-height: 100vh
   overflow: hidden
-  // display: none
   
-  .left-part, .right-part
-    position: relative
-    max-width: 0
-    +transition(max-width 1s ceaser($easeInOutQuart))
-  .left-part
-    width: 35%
-  .right-part
-    width: 65%
-    +transition-delay(1s)
-    display: none
-    @media #{$large-up}
-      display: block
+  .img-bg
+    opacity: 0
+    pointer-events: none
+    +transition(opacity 0.25s ceaser($easeInOutQuart))
 
-  .inner
+  .menu
     width: 100%
     padding-left: 50px
     padding-right: 50px
+    background-color: white
+    +transition(transform 1s ceaser($easeInOutQuart))
     @media #{$small-only}
       padding-top: 80px
     @media #{$medium-only}
@@ -33,6 +26,7 @@
     @media #{$large-up}
       padding-top: 20vh
       width: 35%
+      +translate(-100%,0)
     @media screen and (min-width: 1920px)
       padding-top: 20vh
 

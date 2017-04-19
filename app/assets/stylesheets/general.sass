@@ -16,8 +16,14 @@ body
 
     .menu-wrapper
       display: flex
-    .left-part, .right-part
-      max-width: 100%
+      .img-bg
+        animation: menu-bg 0.8s
+        animation-fill-mode: forwards
+
+      .menu
+        +translate(0,0)
+        +transition-delay(0.2s)
+
 
     .header-container
       .small

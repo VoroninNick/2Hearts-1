@@ -34,7 +34,16 @@
       max-width: 100%
       transition-delay: #{$i*0.5*$transition-delay}
 
-
+@keyframes menu-bg
+  0%
+    opacity: 0
+  50%
+    opacity: 1
+  75%
+    +translate(0,0)
+  100%
+    opacity: 1
+    +translate(100px,0)
 
 //     up and down animation
 
