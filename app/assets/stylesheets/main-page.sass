@@ -20,14 +20,12 @@
       font-size: 18px
       color: $brown600
       letter-spacing: 2px
-      // margin: 0 10px
       a
         padding: 10px
       &:after
         content: '\00B7'
         font-size: 2em
         color: $pink600
-        // margin-left: 20px
         vertical-align: sub
       &:last-child
         &:after
@@ -49,10 +47,19 @@
     color: $brown700
     letter-spacing: 2px
   .header
-    @extend %goodvibes
-    font-size: 140px
-    color: $pink600
-    line-height: 1
+    @media #{$small-only}
+      height: 70px
+    @media #{$medium-only}
+      height: 80px
+    @media #{$large-only}
+      height: 900px
+    @media #{$xlarge-only}
+      height: 100px
+    @media #{$xxlarge-up}
+      height: 120px
+    svg
+      height: 100%
+      max-width: 100%
   .subtitle
     @extend %cormorant
     font-size: 36px
@@ -94,6 +101,8 @@
 
 .services-wrapper
   position: relative
+  @media #{$medium-up}
+    padding-bottom: 100px
   .service
     position: relative
     padding-bottom: 20px
@@ -146,14 +155,15 @@
     width: 100%
     background-size: contain
     background-repeat: no-repeat
-    @media #{$small-only}
-      padding-top: 100%
+    background-position: right
+    padding-top: 100%
     @media #{$large-up}
       position: absolute
       width: 50%
       height: 100%
       right: 0
       bottom: 0
+      padding-top: 0
 
 .main-slider-wrapper
   position: relative
@@ -230,6 +240,9 @@
     &.active
       background: $brown200
         
+.advantages-section-name, .advantages-wrapper
+  @media #{$small-only}
+    display: none
 .advantages-wrapper
   position: relative
   overflow: hidden
@@ -338,12 +351,12 @@
 .team-wrapper
 
   .main-img
-    width: 60%
+    width: 100%
     background-size: cover
     background-position: center
     margin-bottom: 60px
     @media #{$large-up}
-      width: 60%
+      width: 50%
       float: left
     &:after
       +square
@@ -380,18 +393,25 @@
 
 .collage-wrapper
 
-  .clearfix
+  .hide
+    display: none
+    @media #{$xlarge-up}
+      display: block
 
   .floated
     position: relative
-    width: 50%
+    width: 100%
     overflow: hidden
+    @media #{$xlarge-up}
+      width: 50%
   .square
     float: left
     position: relative
     width: calc(50% - 20px)
     margin: 10px
     overflow: hidden
+    @media #{$small-only}
+      width: calc(100% - 20px)
     &:after
       +square
     &.fullwidth
@@ -471,6 +491,8 @@
     color: $pink600
     text-transform: uppercase
     +bold
+    line-height: 1.25
+    margin-bottom: 20px
   .larger
     color: $brown600
     font-style: italic

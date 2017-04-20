@@ -1,11 +1,9 @@
 = render "main_banner"
 
 .section-name.slide-up
-  .bg-icon = inline_svg "svg/2h-bg-text-works-01.svg"
-  .main-icon = inline_svg "svg/2h-icons-rings-01.svg"
-  p
-    | наші 
-    span роботи
+  .background = inline_svg "svg/2h-bg-text-works-01.svg"
+  .icon = inline_svg "svg/2h-icons-rings-01.svg"
+  .title = inline_svg "svg/2h-lable-works.svg"
 
 .portfolio-wrapper
   .owl-carousel.owl-carousel-portfolio.appeared
@@ -20,26 +18,26 @@
       .img
         .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v2.jpg')})"
       .text
+        p.subtitle блакитне весілля
+        p.title Юля & Андрій
+        .icon.blue = inline_svg "svg/2h-little-heart-01.svg"
+    .slide
+      .img
+        .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v3.jpg')})"
+      .text
+        p.subtitle лазурне весілля
+        p.title Христина & Єва
+        .icon = inline_svg "svg/2h-little-heart-01.svg"
+    .slide
+      .img
+        .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v4.jpg')})"
+      .text
         p.subtitle лазурне весілля
         p.title Юля & Андрій
-        .icon.azure = inline_svg "svg/2h-little-heart-01.svg"
+        .icon.emerald = inline_svg "svg/2h-little-heart-01.svg"
     .slide
       .img
-        .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v3.jpg')})"
-      .text
-        p.subtitle лазурне весілля
-        p.title Христина & Єва
-        .icon.azure = inline_svg "svg/2h-little-heart-01.svg"
-    .slide
-      .img
-        .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v2.jpg')})"
-      .text
-        p.subtitle лазурне весілля
-        p.title Юля & Андрій
-        .icon.azure = inline_svg "svg/2h-little-heart-01.svg"
-    .slide
-      .img
-        .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v3.jpg')})"
+        .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v1.jpg')})"
       .text
         p.subtitle лазурне весілля
         p.title Христина & Єва
@@ -50,14 +48,12 @@
       .text
         p.subtitle лазурне весілля
         p.title Христина & Єва
-        .icon.azure = inline_svg "svg/2h-little-heart-01.svg"
+        .icon.blue = inline_svg "svg/2h-little-heart-01.svg"
 
 .section-name.slide-up
-  .bg-icon = inline_svg "svg/2h-bg-text-services-01.svg"
-  .main-icon = inline_svg "svg/2h-icons-letter-01.svg"
-  p
-    | наші 
-    span послуги
+  .background = inline_svg "svg/2h-bg-text-services-01.svg"
+  .icon = inline_svg "svg/2h-icons-letter-01.svg"
+  .title = inline_svg "svg/2h-lable-services.svg"
 
 .services-wrapper.slide-up
   .row
@@ -98,33 +94,31 @@
 .main-slider-wrapper
   ul.slider
     li
-      .photo style="background-image: url(#{asset_path('photo/sample-3.jpg')})"
+      .photo style="background-image: url(#{asset_path('photo/hearts-slide-1.jpg')})"
       .text
         p.larger «Ідеальний чоловік не п’є, не курить, не грає в азартні ігри, не сперечається та не існує!»
         p.larger
           span петро,&nbsp;
           | перший дружба
     li
-      .photo style="background-image: url(#{asset_path('photo/sample-4.jpg')})"
+      .photo style="background-image: url(#{asset_path('photo/hearts-slide-2.jpg')})"
       .text
         p.larger Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, neque.»
         p.larger
           span петро,&nbsp;
           | перший дружба
     li
-      .photo style="background-image: url(#{asset_path('photo/sample-5.jpg')})"
+      .photo style="background-image: url(#{asset_path('photo/hearts-slide-3.jpg')})"
       .text
         p.larger «Reprehenderit illum cum voluptate inventore, veniam sunt corrupti necessitatibus quam quia.»
         p.larger
           span петро,&nbsp;
           | перший дружба
 
-.section-name.slide-up
-  .bg-icon = inline_svg "svg/2h-bg-text-advantages-01.svg"
-  .main-icon = inline_svg "svg/2h-icons-cake-01.svg"
-  p
-    | чому 
-    span ми
+.section-name.slide-up.advantages-section-name
+  .background = inline_svg "svg/2h-bg-text-advantages-01.svg"
+  .icon = inline_svg "svg/2h-icons-cake-01.svg"
+  .title = inline_svg "svg/2h-lable-why-us.svg"
 
 .advantages-wrapper
 
@@ -163,18 +157,15 @@
         p.description Не забудуть цей день
 
 .section-name.slide-up
-  .bg-icon = inline_svg "svg/2h-bg-text-team-01.svg"
-  .main-icon = inline_svg "svg/2h-icons-bird-01.svg"
-  p
-    | наша 
-    span команда
-
+  .background = inline_svg "svg/2h-bg-text-team-01.svg"
+  .icon = inline_svg "svg/2h-icons-bird-01.svg"
+  .title = inline_svg "svg/2h-lable-team.svg"
 .team-wrapper.clearfix
 
-  .main-img style="background-image: url(#{asset_path('photo/sample-7.jpg')})"
+  .main-img style="background-image: url(#{asset_path('photo/team3.jpg')})"
 
   .row
-    .columns.large-4.float-right
+    .columns.large-4.large-pull-1.xxlarge-4.xxlarge-pull-0.float-right
       h2.h2 професіонали та ентузіасти
       p Ми – закохані у свою роботу професіонали. Організовуючи ваше свято, ми переймаємося кожною дрібничкою і хвилюємося за настрій гостей. Кожен з нас відповідає за конкретний спільний результат – дивовижне свято для вас.
       p.slogan «Ми не продаємо повітря, всі послуги власні. Працюємо командою на конкретний результат!»
@@ -184,35 +175,39 @@
   .owl-carousel.owl-carousel-team.appeared
     .slide
       .img
-        .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v2.jpg')})"
+        .img-bg style="background-image: url(#{asset_path('photo/team1.jpg')})"
       .text
         p.name максим діденко
         p.position Креативний директор
     .slide
       .img
-        .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v2.jpg')})"
+        .img-bg style="background-image: url(#{asset_path('photo/team2.jpg')})"
       .text
         p.name максим діденко
         p.position Креативний директор
     .slide
       .img
-        .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v2.jpg')})"
+        .img-bg style="background-image: url(#{asset_path('photo/team3.jpg')})"
       .text
         p.name максим діденко
         p.position Креативний директор
     .slide
       .img
-        .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v2.jpg')})"
+        .img-bg style="background-image: url(#{asset_path('photo/team1.jpg')})"
+      .text
+        p.name максим діденко
+        p.position Креативний директор
+    .slide
+      .img
+        .img-bg style="background-image: url(#{asset_path('photo/team2.jpg')})"
       .text
         p.name максим діденко
         p.position Креативний директор
 
 .section-name.slide-up
-  .bg-icon = inline_svg "svg/2h-bg-text-testimonials-01.svg"
-  .main-icon = inline_svg "svg/2h-icons-bubble-01.svg"
-  p
-    | про нас 
-    span говорять
+  .background = inline_svg "svg/2h-bg-text-testimonials-01.svg"
+  .icon = inline_svg "svg/2h-icons-bubble-01.svg"
+  .title = inline_svg "svg/2h-lable-talk.svg"
 
 .collage-wrapper.slide-up
   .row
@@ -260,7 +255,7 @@
               p.regular.animate Кільця на даху весільного автомобіля символізують початковий рахунок в новій грі &mdash; 0:0 #footballwedding
             .social-icon.animate = inline_svg "svg/2h-little-insta-01.svg"
 
-        .floated
+        .floated.hide
           .square.fullwidth.social-media
             .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v1.jpg')})"
             .text
@@ -269,7 +264,7 @@
               p.regular.animate Кільця на даху весільного автомобіля символізують початковий рахунок в новій грі &mdash; 0:0 #footballwedding
             .social-icon.animate = inline_svg "svg/2h-little-insta-01.svg"
 
-        .floated.clearfix
+        .floated.clearfix.hide
           .square.social-media
             .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v1.jpg')})"
             .inner-border

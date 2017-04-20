@@ -16,8 +16,8 @@ $document.ready ->
   )
 
   $('.owl-carousel-team').owlCarousel(
-    loop: true
     nav: true
+    loop: true
     center: true
     items: 1
     margin: 20

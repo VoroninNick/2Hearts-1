@@ -80,7 +80,9 @@
         width: 100px
         background: #EEEAE8
         position: absolute
-        top: 30%  
+        top: 30%
+      svg
+        fill: white
       &:before
         left: 0
         +translate(-120%,0)
@@ -93,6 +95,9 @@
       &.blue
         svg
           fill: $blue
+      &.emerald
+        svg
+          fill: $emerald
 
   &.animate
     .owl-item
@@ -107,6 +112,9 @@
 
 .owl-carousel-team
   position: relative
+  margin-top: 100px
+  @media #{$small-only}
+    display: none !important
   .owl-item
     @for $i from 1 through 100
       &:nth-of-type(#{$i})
@@ -126,9 +134,9 @@
       @media #{$small-only}
         height: calc( (100vw - 20px) * 1.25 )
       @media #{$medium-up}
-        height: calc( (100vw/3 - 40px) * 1.25 )
+        height: calc( (100vw/3 - 20px) * 1.25 )
       @media #{$xlarge-up}
-        height: calc( (100vw/4 - 80px) * 1.25 )
+        height: calc( (100vw/4 - 20px) * 1.25 )
     .text
       position: absolute
       bottom: 20px
