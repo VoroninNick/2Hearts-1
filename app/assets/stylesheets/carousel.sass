@@ -124,11 +124,18 @@
           transition: 1s ceaser($easeInOutQuart)
           transition-delay: #{$i*0.3s}
           transition-property: max-width
+          .text
+            opacity: 0
+            +transition(opacity 0.5s)
+            transition-delay: #{1.2s+$i*0.3s}
 
   .slide
     position: relative
     @media #{$small-only}
       width: calc(100vw - 20px)
+    &:before
+      +gradient
+      z-index: 1
     .img
       position: relative
       @media #{$small-only}
@@ -143,6 +150,7 @@
       left: 20px
       right: 20px
       padding-bottom: 20px
+      z-index: 2
       &:after
         content: ''
         display: block
@@ -185,3 +193,5 @@
         &:nth-of-type(#{$i})
           .slide
             max-width: 100%
+            .text
+              opacity: 1

@@ -195,6 +195,9 @@
     @media #{$large-up}
       li
         &:before
+          +gradient
+          z-index: 1
+        &:after
           content: ''
           padding-bottom: 40%
           display: block
@@ -210,6 +213,7 @@
         left: 10%
         background: transparent
         text-align: left
+        z-index: 2
       .larger
         color: white
         font-size: 48px
