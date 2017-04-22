@@ -1,0 +1,161 @@
+.main-slider-wrapper, .steps-wrapper
+
+  .bx-pager
+    margin: 20px 0
+    text-align: center
+  .bx-pager-item
+    display: inline-block
+  .bx-pager-link
+    text-indent: -9999px
+    width: 10px
+    height: 10px
+    margin: 0 10px
+    border-radius: 5px
+    border: 1px solid $brown200
+    &.active
+      background: $brown200
+
+//     main   page   slider
+
+.main-slider-wrapper
+  position: relative
+  .slider
+    position: relative
+    .photo
+      padding-bottom: 50%
+      background-position: center
+      background-size: cover
+    .text
+      background: #F8F7F3
+      text-align: center
+      padding: 20px
+    .larger
+      @extend %cormorant
+      color: $brown700
+      +bold
+      font-style: italic
+      &:last-child
+        color: $brown300
+        margin-top: 20px
+        font-style: normal
+        span
+          text-transform: uppercase
+    @media #{$small-only}
+      .photo
+        padding-bottom: 100%
+
+    @media #{$large-up}
+      li
+        &:before
+          +gradient
+          z-index: 1
+        &:after
+          content: ''
+          padding-bottom: 40%
+          display: block
+      .photo
+        position: absolute
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+      .text
+        position: absolute
+        bottom: 50px
+        left: 10%
+        background: transparent
+        text-align: left
+        z-index: 2
+      .larger
+        color: white
+        font-size: 48px
+        +bold
+        font-style: italic
+        line-height: 1
+        max-width: 50%
+        &:last-child
+          color: white
+          font-size: 18px
+          margin-top: 20px
+          span
+            font-size: 21px
+            +text-line(white)
+
+//     steps   in   about-us   page
+
+.steps-wrapper
+  padding-bottom: 10vh
+  ul
+    counter-reset: steps
+  li
+    counter-increment: steps
+  .slide-frame
+    position: relative
+    width: 500px
+    max-width: 100%
+    margin: 100px auto 30px
+    padding: 300px 40px 40px
+    border: 1px solid $grey400
+    text-align: center
+    border-radius: 3px
+  .second-border
+    position: absolute
+    top: 10px
+    left: -10px
+    right: -10px
+    bottom: -10px
+    border: 1px solid $grey400
+    border-radius: 3px
+  .icon
+    position: absolute
+    top: 0
+    left: 50%
+    +translate(-50%,-50%)
+    background: white
+    width: 150px
+    height: 150px
+    padding: 20px
+    @media #{$small-only}
+      width: 120px
+      height: 120px
+      padding: 15px
+  .step-number
+    position: absolute
+    top: 100px
+    left: 50%
+    +translate(-50%,0)
+    &:before
+      content: 'Крок №' counter(steps)
+      font-size: 14px
+      text-transform: uppercase
+      +bold
+      color: $brown900
+      letter-spacing: 2px
+  .description
+    font-size: 16px
+  .plus
+    position: relative
+    width: 60px
+    height: 60px
+    border-radius: 50%
+    margin: 30px auto 0
+    border: 1px solid $grey400
+
+  .step-name-block
+    position: absolute
+    width: 200%
+    left: -50%
+    top: 150px
+    background: white
+    padding: 10px 0
+    .title
+      color: $brown700
+      font-size: 48px
+      +s-bold
+      span
+        text-transform: uppercase
+        color: $pink600
+        +bold
+    .subtitle
+      color: $pink600
+      font-size: 16px

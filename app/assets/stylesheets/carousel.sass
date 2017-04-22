@@ -109,16 +109,16 @@
               opacity: 1
 
 
-
 .owl-carousel-team
-  position: relative
   margin-top: 100px
+.owl-carousel-team, .team-wrapper
+  position: relative
   @media #{$small-only}
     display: none !important
   .owl-item
     @for $i from 1 through 100
       &:nth-of-type(#{$i})
-        .slide
+        .team-member-block
           max-width: 0
           +translate3d(0,0,0)
           transition: 1s ceaser($easeInOutQuart)
@@ -129,8 +129,9 @@
             +transition(opacity 0.5s)
             transition-delay: #{1.2s+$i*0.3s}
 
-  .slide
+  .team-member-block
     position: relative
+    margin-bottom: 30px
     @media #{$small-only}
       width: calc(100vw - 20px)
     &:before
@@ -191,7 +192,7 @@
     .owl-item
       @for $i from 1 through 100
         &:nth-of-type(#{$i})
-          .slide
+          .team-member-block
             max-width: 100%
             .text
               opacity: 1
