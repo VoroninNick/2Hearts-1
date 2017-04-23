@@ -35,3 +35,4 @@
 #= require tabs
 #= require navigation
 #= require links
+#= require filters

@@ -404,3 +404,90 @@
     background-size: contain
   .section-name
     padding-top: 0
+
+.service-wrapper
+  counter-reset: service
+  .service-number
+    counter-increment: service
+    &:before
+      content: '0 ' counter(service)
+  .service-photo
+    position: relative
+    padding-bottom: 50%
+    margin-top: 20vh
+    &:before
+      content: ''
+      position: absolute
+      width: 1px
+      height: 20vh
+      left: 50%
+      top: 7vh
+      background: $brown200
+      +translate(0,-100%)
+      z-index: 1
+    .background
+      position: absolute
+      top: 10px
+      left: 10px
+      right: 10px
+      bottom: 10px
+      background-size: cover
+      background-position: center
+
+  .collage-wrapper
+    margin-bottom: 10vh
+
+.blog-wrapper
+  +clearfix
+  margin: -10px
+  .blog-block
+    position: relative
+    float: left
+    width: calc(50% - 20px)
+    margin: 10px
+    &:before
+      +square
+    .img
+      position: absolute
+      width: 100%
+      height: 60%
+      top: 0
+      left: 0
+      background-position: center
+      background-size: cover
+    .text
+      position: absolute
+      width: 100%
+      height: 40%
+      bottom: 0
+      left: 0
+      background: $grey200
+      padding: 20px
+    .title
+      font-size: 36px
+      text-transform: uppercase
+      line-height: 1
+    .description
+      display: none
+    .date
+      position: absolute
+      left: 20px
+      bottom: 20px
+      +bold
+    .read-about
+      position: absolute
+      right: 20px
+      bottom: 20px
+      &:before
+        content: ''
+        display: block
+        width: 100%
+        height: 1px
+        background: $brown200
+        position: absolute
+        left: -100%
+        top: 10px
+    &.big
+      .description
+        display: block
+

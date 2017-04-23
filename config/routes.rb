@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   controller :pages do
     get "about", action: "about"
+    get "services", action: "services"
+    get "blog", action: "blog"
     # get "contact-us", action: "contact_us"
   end
 

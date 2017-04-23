@@ -1,0 +1,55 @@
+.filters-container
+
+  //     structure
+  ul
+    li
+      position: relative
+      display: none
+      @media #{$small-only}
+        &:first-child
+          display: block
+          &:after
+            content: ''
+            width: 0
+            height: 0
+            border: 6px solid transparent
+            border-color: black transparent transparent transparent
+            position: absolute
+            top: 20px
+            right: 10px
+    &.opened
+      li
+        display: block
+        &:after
+          top: 16px
+          border-color: transparent transparent black transparent
+
+    @media #{$medium-up}
+      li
+        display: inline-block
+
+  //     style
+  ul
+    margin: 20px 0
+    border-top: 1px solid $brown200
+    border-bottom: 1px solid $brown200
+    li
+      position: relative
+      color: $brown200
+      text-transform: uppercase
+      font-size: 20px
+      padding: 10px 0
+      cursor: pointer
+      sub
+        +bold
+      @media #{$medium-up}
+        margin-right: 20px
+      &:hover, &.active
+        color: $pink600
+        &:before
+          content: ''
+          position: absolute
+          bottom: 0
+          width: 100%
+          height: 2px
+          background: $pink600

@@ -1,0 +1,44 @@
+.pager-wrapper
+  margin: 20vh 0
+  text-align: center
+  .prev, .next
+    position: relative
+    display: inline-block
+    &:after
+      content: ''
+      display: block
+      width: 40px
+      height: 1px
+      background: $brown200
+      position: absolute
+      top: 12px
+    @media #{$small-only}
+      display: none
+  .prev
+    padding-right: 50px
+    &:after
+      right: 0
+  .next
+    padding-left: 50px
+    &:after
+      left: 0
+  .pages-list
+    display: inline-block
+    vertical-align: middle
+    counter-reset: pager
+    margin: 0 30px
+    li
+      display: inline-block
+      position: relative
+      width: 40px
+      height: 40px
+      border-radius: 50%
+      counter-increment: pager
+      &.current-page
+        border: 1px solid $brown200
+      &:before
+        content: counter(pager)
+        +centered-inside
+        width: 20px
+        height: 20px
+        text-align: center
