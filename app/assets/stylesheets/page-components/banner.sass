@@ -116,6 +116,8 @@
   position: relative
   width: 100%
   height: 70vh
+  &.grey-bg
+    background: $grey50
   .banner-text
     +xy-align
     text-align: center
@@ -130,3 +132,40 @@
       top: 0
     &:after
       bottom: 0
+
+  .blog-one-text
+    +xy-align
+    text-align: center
+    width: 600px
+    max-width: 100%
+    padding: 15vh 0 10vh
+    &:before
+      content: ''
+      position: absolute
+      width: 1px
+      height: 13vh
+      background: $brown200
+      top: 0
+    .one-title
+      text-transform: uppercase
+      line-height: 1
+      font-size: 36px
+    .button
+      margin-top: 10vh
+      &:before
+        content: ''
+        position: absolute
+        width: 1px
+        height: 6vh
+        background: $brown200
+        top: -8vh
+        left: 50%
+    .likes
+      position: absolute
+      left: 50%
+      +translate(-50%,0)
+      bottom: 0
+      svg
+        width: 24px
+      span
+        vertical-align: top

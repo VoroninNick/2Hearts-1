@@ -15,7 +15,7 @@ $document.ready ->
        margin: 40
   )
 
-  $('.owl-carousel-team').owlCarousel(
+  $('.owl-carousel-team, .blog-carousel').owlCarousel(
     nav: true
     loop: true
     center: true

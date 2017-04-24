@@ -1,0 +1,71 @@
+.one-wrapper
+  img
+    margin-bottom: 50px
+  .date, .tag
+    display: inline-block
+    margin-bottom: 30px
+    letter-spacing: 2px
+  .date
+    &:after
+      content: '\002F'
+      margin: 0 10px
+  .tag
+    text-transform: uppercase
+  .thesis
+    font-style: italic
+    margin-bottom: 50px
+
+  .main-text
+    padding-top: 50px
+    padding-bottom: 50px
+    margin-bottom: 30px
+    border-top: 4px solid $brown100
+    border-bottom: 4px solid $brown100
+    h1, h2, h3, h4
+      margin-bottom: 20px
+      text-transform: uppercase
+    p
+      margin-bottom: 10px
+    img
+      margin-top: 50px
+    blockquote
+      font-size: 20px
+      font-style: italic
+      +s-bold
+      text-align: center
+      margin: 50px 0
+      padding: 30px 10vw
+      color: $pink600
+      border-top: 1px solid $brown100
+      border-bottom: 1px solid $brown100
+    ul, ol
+      margin: 40px 0
+      li
+        font-style: italic
+        line-height: 1.5
+        margin: 20px 0
+    ul
+      li
+        &:before
+          content: '\2014'
+          margin-right: 10px
+    ol
+      counter-reset: count-list
+      li
+        counter-increment: count-list
+        &:before
+          content: counter(count-list) '.'
+          margin-right: 10px
+  .one-share-block
+    text-align: right
+    .likes
+      position: relative
+      display: inline-block
+      vertical-align: middle
+      margin-right: 40px
+      svg
+        width: 24px
+      span
+        vertical-align: top
+    .button
+      margin-top: 0

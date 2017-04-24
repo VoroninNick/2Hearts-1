@@ -111,14 +111,14 @@
 
 .owl-carousel-team
   margin-top: 100px
-.owl-carousel-team, .team-wrapper
+.owl-carousel-team, .team-wrapper, .blog-carousel
   position: relative
   @media #{$small-only}
     display: none !important
   .owl-item
     @for $i from 1 through 100
       &:nth-of-type(#{$i})
-        .team-member-block
+        .team-member-block, .blog-block
           max-width: 0
           +translate3d(0,0,0)
           transition: 1s ceaser($easeInOutQuart)
@@ -192,7 +192,12 @@
     .owl-item
       @for $i from 1 through 100
         &:nth-of-type(#{$i})
-          .team-member-block
+          .team-member-block, .blog-block
             max-width: 100%
             .text
               opacity: 1
+
+.blog-carousel
+  .blog-block
+    float: none
+    width: 100%
