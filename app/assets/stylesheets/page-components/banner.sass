@@ -77,26 +77,44 @@
     top: 50%
   
   .line
+    position: relative
     width: 1px
-    background: $brown200
+    background: transparent
     left: 50%
+    overflow: hidden
+    &:before
+      content: ''
+      position: absolute
+      display: block
+      width: 100%
+      height: 100%
+      background: $brown200
+      +transition(transform 0.5s ceaser($easeInOutQuart))
     &.top
       position: absolute
       top: 80px
       height: calc(25vh - 100px)
+      &:before
+        +translate(0,100%)
     &.middle
       position: relative
       height: 100px
+      &:before
+        +translate(0,-100%)
     &.bottom
       position: absolute
       top: 190px
       bottom: 62px
+      &:before
+        +translate(0,-100%)
       @media screen and (min-width: 1920px)
         top: 230px
   .play-bth
     width: 70px
     height: 70px
     margin: 10px 0
+    opacity: 0
+    +transition(opacity 1s)
     +x-align
     @media screen and (min-width: 1920px)
       width: 90px
@@ -107,8 +125,29 @@
     left: 50%
     bottom: 20px
     +translate(-50%,0)
+    opacity: 0
+    +transition(opacity 1s)
 
+  .animate
+    +anim-start(40px,0.2s)
 
+  &.test
+    .animate
+      +anim-end
+    .line.top, .line.middle
+      &:before
+        +transition-delay(1s)
+        +translate(0,0)
+    .play-bth
+      +transition-delay(1.5s)
+      opacity: 1
+    .line.bottom
+      &:before
+        +transition-delay(2s)
+        +translate(0,0)
+    .scroll-down
+      +transition-delay(2.5s)
+      opacity: 1
 
 //     banner   rest   pages
 

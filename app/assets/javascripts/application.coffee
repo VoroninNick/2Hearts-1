@@ -36,3 +36,4 @@
 #= require navigation
 #= require links
 #= require filters
+#= require test-anim-banner
