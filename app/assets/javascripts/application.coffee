@@ -14,10 +14,11 @@
 #= require plugins/jquery.bxslider
 #= require plugins/jquery.scrolldelta
 #= require plugins/lightgallery.min
-# require plugins/scroll-banner
+#= require plugins/scroll-banner
 #= require plugins/selectize.min
 #= require plugins/parallax.min
 #= require plugins/owl.carousel.min
+#= require plugins/jquery.drawsvg
 
 #     I N I T I A L I Z E
 
