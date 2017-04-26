@@ -174,10 +174,19 @@
 
 .team-wrapper
 
+  .img-bg
+    overflow: hidden
+    svg
+      width: 120%
+      height: 120%
+      fill: rgba(white,0.1)
+      +translate(-10%,-10%)
   .main-img
+    position: relative
     width: 100%
     background-size: cover
     background-position: center
+    background-repeat: no-repeat
     margin-bottom: 60px
     @media #{$large-up}
       width: 50%
@@ -194,7 +203,10 @@
     line-height: 1
 
   p
+    @extend %istok
     margin-bottom: 20px
+    font-size: 14px
+    color: $brown400
 
   .slogan
     position: relative
@@ -217,24 +229,38 @@
     &:after
       bottom: 0
   &.on-inner-page
-    padding: 30vh 0
     background: $brown700
+    margin-bottom: 0
+    @media #{$small-only}
+      padding: 50px 0 0
+    @media #{$medium-up}
+      padding: 100px 0 0
+    @media #{$xlarge-up}
+      padding: 200px 0
+    .main-img
+
+      @media #{$large-up}
+        position: absolute
+        width: 60%
+        bottom: 0
+        margin-bottom: 0
+        background-size: contain
     p
-      color: white
+      color: $brown200
     .h2
       color: white
     .slogan
-      color: white
+      color: $brown200
       &:before, &:after
-        background-color: white
+        background-color: $brown200
 
 .team-img
   position: relative
   padding-bottom: 40%
   background-position: center
   background-size: cover
-
-
+  @media #{$small-only}
+    padding-bottom: 60%
 
 .collage-wrapper
 
@@ -434,6 +460,18 @@
       background-size: cover
       background-position: center
 
+  .service-description
+    h1, h2, h3, h4, h5, h6
+      color: $pink600
+      font-style: italic
+      line-height: 1.2
+      margin-bottom: 30px
+    p
+      @extend %istok
+      font-size: 14px
+      color: $grey600
+      margin-bottom: 20px
+
   .collage-wrapper
     margin-bottom: 10vh
 
@@ -462,19 +500,43 @@
     bottom: 0
     left: 0
     background: $grey200
-    padding: 20px
+    padding: 40px 20px 30px
+  .category
+    @extend %istok
+    font-size: 12px
+    background: $brown300
+    text-transform: uppercase
+    color: white
+    position: absolute
+    top: 0
+    left: 20px
+    +translate(0,-50%)
+    padding: 4px 10px
+    +bold
+    letter-spacing: 2px
+
   .title
     font-size: 36px
+    +medium
     text-transform: uppercase
     line-height: 1
+    color: $brown800
   .description
+    font-size: 18px
     display: none
+    color: $blueGrey600
+    line-height: 1.2
   .date
+    @extend %istok
+    font-size: 12px
+    color: $brown300
     position: absolute
     left: 20px
     bottom: 20px
     +bold
   .read-about
+    font-size: 18px
+    color: $brown300
     position: absolute
     right: 20px
     bottom: 20px
@@ -486,7 +548,7 @@
       background: $brown200
       position: absolute
       left: -100%
-      top: 10px
+      top: 13px
   &.big
     .description
       display: block

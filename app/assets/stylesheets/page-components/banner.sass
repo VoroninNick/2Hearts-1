@@ -23,8 +23,8 @@
   .subtitle
     font-size: 30px
     font-style: italic
-    +medium
     letter-spacing: 2px
+    color: $brown800
     @media #{$small-only}
       font-size: 24px
     @media (min-width: 1920px)
@@ -131,7 +131,7 @@
   .animate
     +anim-start(40px,0.2s)
 
-  &.test
+  &.animated
     .animate
       +anim-end
     .line.top, .line.middle
@@ -155,6 +155,9 @@
   position: relative
   width: 100%
   height: 70vh
+  overflow: hidden
+  .img-bg
+    background-attachment: fixed
   &.grey-bg
     background: $grey50
   .banner-text
@@ -189,6 +192,8 @@
       text-transform: uppercase
       line-height: 1
       font-size: 36px
+      color: $brown800
+      +medium
     .button
       margin-top: 10vh
       &:before

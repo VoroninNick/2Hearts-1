@@ -92,12 +92,14 @@
   .slide-frame
     position: relative
     width: 500px
-    max-width: 100%
+    max-width: 90%
     margin: 100px auto 30px
     padding: 300px 40px 40px
     border: 1px solid $grey400
     text-align: center
     border-radius: 3px
+    @media #{$small-only}
+      padding: 250px 20px 30px
   .second-border
     position: absolute
     top: 10px
@@ -126,21 +128,26 @@
     +translate(-50%,0)
     &:before
       content: 'Крок №' counter(steps)
-      font-size: 14px
+      font-size: 12px
+      @extend %istok
       text-transform: uppercase
       +bold
-      color: $brown900
+      color: $brown700
       letter-spacing: 2px
+    @media #{$small-only}
+      top: 60px
   .description
-    font-size: 16px
+    @extend %istok
+    font-size: 14px
+    color: $brown400
   .plus
     position: relative
     width: 60px
     height: 60px
-    border-radius: 50%
     margin: 30px auto 0
-    border: 1px solid $grey400
-
+    svg
+      width: 100%
+      height: 100%
   .step-name-block
     position: absolute
     width: 200%
@@ -150,12 +157,18 @@
     padding: 10px 0
     .title
       color: $brown700
-      font-size: 48px
-      +s-bold
+      font-size: 60px
       span
         text-transform: uppercase
         color: $pink600
         +bold
     .subtitle
       color: $pink600
-      font-size: 16px
+      font-size: 18px
+    @media #{$small-only}
+      width: 100%
+      left: 0
+      top: 100px
+      .title
+        font-size: 32px
+        line-height: 1.2

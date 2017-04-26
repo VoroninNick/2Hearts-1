@@ -111,10 +111,11 @@
 
 .owl-carousel-team
   margin-top: 100px
-.owl-carousel-team, .team-wrapper, .blog-carousel
-  position: relative
+.owl-carousel-team
   @media #{$small-only}
     display: none !important
+.owl-carousel-team, .team-wrapper, .blog-carousel
+  position: relative
   .owl-item
     @for $i from 1 through 100
       &:nth-of-type(#{$i})
@@ -174,10 +175,34 @@
       +bold
       +translate(0,20px)
       +transition(transform 0.5s ceaser($easeInOutQuad))
+      line-height: 1.2
     .position
       font-size: 16px
       transform: scaleY(0)
       +transition(transform 0.5s ceaser($easeInOutQuad))
+    &.join-us
+      padding: 100px 0 0
+      text-align: center
+      background-color: $grey100
+      @media #{$small-only}
+        height: calc( (100vw - 20px) * 1.25 )
+      @media #{$medium-up}
+        height: calc( (100vw/3 - 20px) * 1.25 )
+      @media #{$xlarge-up}
+        height: calc( (100vw/4 - 20px) * 1.25 )
+      &:before
+        display: none
+      &:after
+        content: ''
+        display: block
+        position: absolute
+        top: 10px
+        left: 10px
+        right: 10px
+        bottom: 10px
+        border: 1px solid $brown200
+      .name
+        color: $brown400
 
   .owl-item.center
     .text
@@ -201,3 +226,15 @@
   .blog-block
     float: none
     width: 100%
+    @media #{$small-only}
+      height: calc(100vw - 20px)
+    @media #{$medium-up}
+      height: calc(100vw/3 - 20px)
+    @media #{$xlarge-up}
+      height: calc(100vw/4 - 20px)
+    .text
+      padding: 30px 20px 20px
+    .title
+      font-size: 18px
+    .date, .read-about
+      bottom: 10px
