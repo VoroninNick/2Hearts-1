@@ -25,85 +25,40 @@
 .portfolio-wrapper
   width: 100%
   overflow: hidden
-  padding-left: 30px
-  @media #{$small-only}
-    padding-left: 10px
 
 .owl-carousel-portfolio
   position: relative
+  padding-left: 30px
+  @media #{$small-only}
+    padding-left: 10px
   .owl-item
     @for $i from 1 through 100
       &:nth-of-type(#{$i})
-        .slide
+        .project-block
           max-width: 0
           +translate3d(0,0,0)
           transition: 1s ceaser($easeInOutQuart)
           transition-delay: #{$i*0.3s}
           transition-property: max-width
+          margin-bottom: 0
+          .img
+            position: relative
+            @media #{$small-only}
+              height: calc( (100vw - 20px) * 1.5 )
+            @media #{$medium-up}
+              height: calc( (100vw/3 - 40px) * 1.5 )
+            @media #{$xlarge-up}
+              height: calc( (100vw/4 - 80px) * 1.5 )
           .text
             opacity: 0
             +transition(opacity 0.5s)
             transition-delay: #{1.2s+$i*0.3s}
-  .slide
-    text-align: center
-    @media #{$small-only}
-      width: calc(100vw - 20px)
-    .img
-      position: relative
-      @media #{$small-only}
-        height: calc( (100vw - 20px) * 1.5 )
-      @media #{$medium-up}
-        height: calc( (100vw/3 - 40px) * 1.5 )
-      @media #{$xlarge-up}
-        height: calc( (100vw/4 - 80px) * 1.5 )
-    .text
-      height: 120px
-      padding-top: 20px
-    .subtitle
-      font-size: 10px
-      @extend %istok
-      color: $brown600
-      text-transform: uppercase
-    .title
-      font-size: 24px
-      @extend %cormorant
-      color: $pink600
-      +bold
-    .icon
-      position: relative
-      width: 20px
-      margin: 20px auto 0
-      &:before, &:after
-        content: ''
-        display: block
-        height: 1px
-        width: 100px
-        background: #EEEAE8
-        position: absolute
-        top: 30%
-      svg
-        fill: white
-      &:before
-        left: 0
-        +translate(-120%,0)
-      &:after
-        right: 0
-        +translate(120%,0)
-      &.azure
-        svg
-          fill: $azure
-      &.blue
-        svg
-          fill: $blue
-      &.emerald
-        svg
-          fill: $emerald
 
   &.animate
     .owl-item
       @for $i from 1 through 100
         &:nth-of-type(#{$i})
-          .slide
+          .project-block
             max-width: 100%
             .text
               opacity: 1

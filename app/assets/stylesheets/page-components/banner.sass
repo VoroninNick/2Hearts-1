@@ -160,6 +160,7 @@
     background-attachment: fixed
   &.grey-bg
     background: $grey50
+
   .banner-text
     +xy-align
     text-align: center
@@ -174,6 +175,10 @@
       top: 0
     &:after
       bottom: 0
+    &.projects
+      padding: 15vh 0 0
+      &:after
+        display: none
 
   .blog-one-text
     +xy-align
@@ -194,16 +199,6 @@
       font-size: 36px
       color: $brown800
       +medium
-    .button
-      margin-top: 10vh
-      &:before
-        content: ''
-        position: absolute
-        width: 1px
-        height: 6vh
-        background: $brown200
-        top: -8vh
-        left: 50%
     .likes
       position: absolute
       left: 50%
@@ -213,3 +208,14 @@
         width: 24px
       span
         vertical-align: top
+
+  .button
+    margin-top: 10vh
+    &:before
+      content: ''
+      position: absolute
+      width: 1px
+      height: 6vh
+      background: $brown200
+      top: -8vh
+      left: 50%

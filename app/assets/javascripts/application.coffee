@@ -34,7 +34,5 @@
 #= require selectize-initialize
 #= require popups
 #= require tabs
-#= require navigation
-#= require links
 #= require filters
-#= require main-banner-anim
+#= require banner-anim
