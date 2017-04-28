@@ -264,6 +264,16 @@
 
 .collage-wrapper
 
+  .optional-full-width-photo
+    position: relative
+    padding-bottom: 50%
+    background-position: center
+    background-size: cover
+    margin-bottom: 20px
+
+  .collage-container
+    margin: -10px
+
   .hide
     display: none
     @media #{$xlarge-up}
@@ -275,6 +285,7 @@
     overflow: hidden
     @media #{$xlarge-up}
       width: 50%
+
   .square
     float: left
     position: relative
@@ -287,8 +298,26 @@
       +square
     &.fullwidth
       width: calc(100% - 20px)
+    &.height-2x
+      &:after
+        @media #{$medium-up}
+          padding-bottom: calc(200% + 20px)
+    &.height-1-5x
+      &:after
+        @media #{$medium-up}
+          padding-bottom: calc(150% + 20px)
+  &.inside-project-one
+    .columns
+      padding-left: 0.625em
+      padding-right: 0.625em
+    .square
+      float: none
+      width: 100%
+      margin: 0
+      margin-bottom: 20px
   .img-bg
     background-color: $brown800
+
   .inner-border
     position: absolute
     top: 10px
@@ -437,10 +466,10 @@
     counter-increment: service
     &:before
       content: '0 ' counter(service)
-  .service-photo
+
+  .optional-full-width-photo
     position: relative
-    padding-bottom: 50%
-    margin-top: 20vh
+    margin-top: 200px
     &:before
       content: ''
       position: absolute
@@ -451,14 +480,6 @@
       background: $brown200
       +translate(0,-100%)
       z-index: 1
-    .background
-      position: absolute
-      top: 10px
-      left: 10px
-      right: 10px
-      bottom: 10px
-      background-size: cover
-      background-position: center
 
   .service-description
     h1, h2, h3, h4, h5, h6
