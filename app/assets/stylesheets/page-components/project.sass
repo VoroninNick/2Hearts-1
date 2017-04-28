@@ -143,6 +143,7 @@
   .wedding-creators-container
     position: relative
     background: $brown900
+    margin-top: -80px
     padding: 20px 50px
 
     .narrator-block
@@ -153,6 +154,9 @@
       right: 0
       background: $grey50
       text-align: center
+      display: flex
+      flex-direction: column
+      justify-content: center
       .img
         width: 100px
         height: 100px
@@ -161,6 +165,7 @@
         overflow: hidden
         background-size: contain
         background-position: center
+        margin-bottom: 20px
       .name
         font-size: 24px
         color: $brown900
@@ -168,6 +173,7 @@
         +medium
       .smaller
         color: $brown400
+        margin-top: 0
 
     .small
       @extend %istok
@@ -182,3 +188,19 @@
       margin-bottom: 10px
     .regular
       color: white
+
+  h1,h2,h3,h4,h5,h6
+    color: $brown800
+    text-transform: uppercase
+
+  p
+    @extend %istok
+    font-size: 14px
+    color: $grey600
+
+  .larger
+    font-family: 'Cormorant Infant', serif
+    font-size: 18px
+    font-style: italic
+    color: $brown400
+    margin-bottom: 10px
