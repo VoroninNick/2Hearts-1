@@ -1,0 +1,38 @@
+.accordion-button
+  position: relative
+  padding: 20px 0
+  border-top: 1px solid $grey200
+  border-bottom: 1px solid $grey200
+  &:nth-child(n+2)
+    margin-top: -1px
+  p
+    font-size: 20px
+    text-transform: uppercase
+    color: $brown400
+    +bold
+  &:before, &:after
+    content: ''
+    position: absolute
+    top: 35px
+    right: 10px
+    width: 20px
+    height: 2px
+    background: $brown400
+    +transition(0.25s)
+  &:before
+    +rotate(-90deg)
+  &.opened
+    border-bottom: 0
+    &:before
+      +rotate(0)
+    &:after
+      background: $pink600
+    p
+      color: $pink600
+    
+.accordion-inner
+  border-bottom: 2px solid $pink600
+  padding: 20px 30px 40px
+  p
+    width: 700px
+    max-width: 90%

@@ -31,6 +31,10 @@ class PagesController < ApplicationController
 
   end
 
+  def faq
+
+  end
+  
   private
 
   def set_page_instance
