@@ -76,6 +76,33 @@ ol
 img
   width: 100%
 
+blockquote
+  position: relative
+  font-size: 24px
+  font-style: italic
+  +s-bold
+  text-align: center
+  width: 800px
+  max-width: 90%
+  margin: 50px auto 80px
+  padding: 30px 10vw
+  color: $pink600
+  border-top: 1px solid $brown100
+  border-bottom: 1px solid $brown100
+  span
+    position: absolute
+    bottom: -40px
+    right: 0
+    @extend %istok
+    font-size: 12px
+    +bold
+    color: $brown300
+    text-transform: uppercase
+    font-style: normal
+    letter-spacing: 2px
+  @media #{$small-only}
+    padding: 30px 0
+
 .small
   font-size: 0.75rem
 .smaller

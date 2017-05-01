@@ -60,7 +60,7 @@
       p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dignissimos voluptatem non minima numquam, quam quod, aliquam. Aut, asperiores sed! A optio sint error repudiandae. Repellendus rerum voluptatum ducimus, aliquam.
 
   .collage-wrapper.slide-up.inside-project-one
-    .row
+    .row.collapse
       .columns
         .optional-full-width-photo style="background-image: url(#{asset_path('photo/2hearts11.jpg')})"
       .columns.large-4
@@ -69,10 +69,10 @@
           .inner-border
         .square
           .img-bg style="background-image: url(#{asset_path('photo/2hearts77.jpg')})"
-      .columns.large-4
+      .columns.large-4.hide
         .square.height-2x
           .img-bg style="background-image: url(#{asset_path('photo/2hearts88.jpg')})"
-      .columns.large-4
+      .columns.large-4.hide
         .square
           .img-bg style="background-image: url(#{asset_path('photo/team4.jpg')})"
         .square
@@ -88,7 +88,7 @@
       p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dignissimos voluptatem non minima numquam, quam quod, aliquam. Aut, asperiores sed! A optio sint error repudiandae. Repellendus rerum voluptatum ducimus, aliquam.
 
   .collage-wrapper.slide-up.inside-project-one
-    .row
+    .row.collapse
       .columns.large-6
         .square
           .img-bg style="background-image: url(#{asset_path('photo/2hearts66.jpg')})"
@@ -98,9 +98,15 @@
       .columns.large-6
         .square.height-1-5x
           .img-bg style="background-image: url(#{asset_path('photo/2hearts88.jpg')})"
-        .square
+        .square.hide
           .img-bg style="background-image: url(#{asset_path('photo/hearts-slide-3.jpg')})"
           .inner-border
+
+  blockquote
+    | «Ретро стиль надав можливість провести весілля з надзвичайно оригінальною і веселою подачею»
+    span Максим Діденко
+
+  .project-case-fullwidth-img style="background-image: url(#{asset_path('photo/2hearts77.jpg')})"
 
   .row.step-block  
     .columns.large-6
@@ -109,3 +115,134 @@
       h2 хочемо весілля в стилі арт
       p.larger Юля та Андрій
       p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dignissimos voluptatem non minima numquam, quam quod, aliquam. Aut, asperiores sed! A optio sint error repudiandae. Repellendus rerum voluptatum ducimus, aliquam.
+      p Aliquam vitae dolorem possimus rerum perspiciatis, totam, praesentium laborum voluptatibus corporis quis repellat ipsam sed rem explicabo porro nostrum quo excepturi vero. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam vitae dolorem possimus rerum perspiciatis, totam, praesentium laborum voluptatibus corporis quis repellat ipsam sed rem explicabo porro nostrum quo excepturi vero.
+
+  .collage-wrapper.slide-up.inside-project-one
+    .row.collapse
+      .columns
+        .optional-full-width-photo style="background-image: url(#{asset_path('photo/2hearts66.jpg')})"
+      .columns.large-6
+        .square.fullwidth.height-half
+          .img-bg style="background-image: url(#{asset_path('photo/2hearts99.jpg')})"
+          .inner-border
+        .square.half.hide
+          .img-bg style="background-image: url(#{asset_path('photo/2hearts88.jpg')})"
+        .square.half.hide
+          .img-bg style="background-image: url(#{asset_path('photo/2hearts77.jpg')})"
+      .columns.large-6
+        .square.fullwidth.added-height
+          .img-bg style="background-image: url(#{asset_path('photo/hearts-slide-3.jpg')})"
+          .inner-border
+
+  .project-case-fullwidth-img style="background-image: url(#{asset_path('photo/2H-one-case-element-v1.jpg')})"
+
+  .section-name.slide-up
+    .background = inline_svg "svg/bg-text/2h-bg-lable-team.svg"
+    .title = inline_svg "svg/headers/2h-lable-team.svg"
+
+  .collage-wrapper.slide-up.blue-background
+    .row
+      .columns
+        .clearfix
+          .floated.clearfix
+            .square.social-media
+              .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v1.jpg')})"
+              .inner-border
+              .text
+                h2.h2.animate якась соцмережа
+                .heart.animate = inline_svg "svg/2h-little-heart-01.svg"
+                p.regular.animate «Якщо в шлюбі абсолютна гармонія - це найбільше щастя на світі»
+              .social-icon.animate = inline_svg "svg/2h-little-insta-01.svg"
+            .square.social-media
+              .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v2.jpg')})"
+              .text
+                h2.h2.animate якась соцмережа
+                .heart.animate = inline_svg "svg/2h-little-heart-01.svg"
+                p.regular.animate «Якщо в шлюбі абсолютна гармонія - це найбільше щастя на світі»
+              .social-icon.animate = inline_svg "svg/2h-little-insta-01.svg"
+            .square.social-media
+              .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v3.jpg')})"
+              .text
+                h2.h2.animate якась соцмережа
+                .heart.animate = inline_svg "svg/2h-little-heart-01.svg"
+                p.regular.animate «Якщо в шлюбі абсолютна гармонія - це найбільше щастя на світі»
+              .social-icon.animate = inline_svg "svg/2h-little-insta-01.svg"
+            .square
+              .img-bg
+              .text
+                h2.h2 Василій
+                p.smaller перший дружба
+                .heart = inline_svg "svg/2h-little-heart-01.svg"
+                p.regular «Якщо в шлюбі абсолютна гармонія - це найбільше щастя на світі»
+              .social-icon = inline_svg "svg/2h-little-chat-01.svg"
+
+          .floated
+            .square.fullwidth.social-media
+              .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v1.jpg')})"
+              .text
+                h2.h2.animate @2hearts
+                .heart.animate = inline_svg "svg/2h-little-heart-01.svg"
+                p.regular.animate Кільця на даху весільного автомобіля символізують початковий рахунок в новій грі &mdash; 0:0 #footballwedding
+              .social-icon.animate = inline_svg "svg/2h-little-insta-01.svg"
+
+          .floated.hide
+            .square.fullwidth.social-media
+              .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v1.jpg')})"
+              .text
+                h2.h2.animate @2hearts
+                .heart.animate = inline_svg "svg/2h-little-heart-01.svg"
+                p.regular.animate Кільця на даху весільного автомобіля символізують початковий рахунок в новій грі &mdash; 0:0 #footballwedding
+              .social-icon.animate = inline_svg "svg/2h-little-insta-01.svg"
+
+          .floated.clearfix.hide
+            .square.social-media
+              .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v1.jpg')})"
+              .inner-border
+              .text
+                h2.h2.animate якась соцмережа
+                .heart.animate = inline_svg "svg/2h-little-heart-01.svg"
+                p.regular.animate «Якщо в шлюбі абсолютна гармонія - це найбільше щастя на світі»
+              .social-icon.animate = inline_svg "svg/2h-little-insta-01.svg"
+            .square.social-media
+              .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v2.jpg')})"
+              .text
+                h2.h2.animate якась соцмережа
+                .heart.animate = inline_svg "svg/2h-little-heart-01.svg"
+                p.regular.animate «Якщо в шлюбі абсолютна гармонія - це найбільше щастя на світі»
+              .social-icon.animate = inline_svg "svg/2h-little-insta-01.svg"
+            .square.social-media
+              .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v3.jpg')})"
+              .text
+                h2.h2.animate якась соцмережа
+                .heart.animate = inline_svg "svg/2h-little-heart-01.svg"
+                p.regular.animate «Якщо в шлюбі абсолютна гармонія - це найбільше щастя на світі»
+              .social-icon.animate = inline_svg "svg/2h-little-insta-01.svg"
+            .square
+              .img-bg
+              .text
+                h2.h2 Василій
+                p.smaller перший дружба
+                .heart = inline_svg "svg/2h-little-heart-01.svg"
+                p.regular «Якщо в шлюбі абсолютна гармонія - це найбільше щастя на світі»
+              .social-icon = inline_svg "svg/2h-little-chat-01.svg"
+
+.project-conclusion
+
+  .row
+    .columns.medium-6
+      .main-text.with-line
+        .icon = inline_svg "svg/2h-icons-bird-01.svg"
+        .title = inline_svg "svg/headers/2h-lable-services.svg"
+        .button Поділились з друзями
+        .likes
+          = inline_svg "svg/2h-little-heart-01.svg"
+          span 25
+      
+    .columns.medium-6
+      .main-text
+        .icon = inline_svg "svg/2h-icons-bubble-01.svg"
+        .title = inline_svg "svg/headers/2h-lable-works.svg"
+        .button Замовити весілля
+        .likes
+          = inline_svg "svg/2h-little-heart-01.svg"
+          span 25
