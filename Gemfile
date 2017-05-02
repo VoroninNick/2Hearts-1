@@ -92,3 +92,5 @@ gem 'kaminari'
 # gem 'require_reloader'
 
 gem 'puma'
+
+gem 'jquery_mask_rails'

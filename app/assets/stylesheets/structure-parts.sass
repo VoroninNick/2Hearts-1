@@ -114,16 +114,29 @@
       max-width: 100%
 
 .socials
+  position: relative
   li
+    @extend %cormorant
     display: inline-block
-    margin-right: 10px
-    .social-icon
-      width: 42px
-      height: 42px
-      border-radius: 50%
-    svg
-      width: 100%
-      height: 100%
+    font-size: 18px
+    color: $brown600
+    letter-spacing: 2px
+    a
+      padding: 10px
+    &:after
+      content: '\00B7'
+      font-size: 2em
+      color: $pink600
+      vertical-align: sub
+    &:last-child
+      &:after
+        display: none
+
+.hashtag
+  color: $pink600
+  letter-spacing: 2px
+  span
+    color: $brown800
 
 .indent
   padding: 100px 0

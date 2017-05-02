@@ -9,14 +9,10 @@
 #= require plugins/jquery-easing
 #= require plugins/jquery.appear
 #= require plugins/clickout
-#= require plugins/datepick
 #= require plugins/form
 #= require plugins/jquery.bxslider
 #= require plugins/jquery.scrolldelta
-#= require plugins/lightgallery.min
 #= require plugins/scroll-banner
-#= require plugins/selectize.min
-#= require plugins/parallax.min
 #= require plugins/owl.carousel.min
 #= require plugins/jquery.drawsvg
 
@@ -28,11 +24,9 @@
 #= require owl-carousel
 #= require fullpage_banner_height
 #= require header
-#= require characters_limit
 #= require menu
 #= require accordion
-#= require selectize-initialize
 #= require popups
-#= require tabs
 #= require filters
 #= require banner-anim
+#= require mask
