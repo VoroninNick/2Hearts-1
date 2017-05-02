@@ -3,6 +3,7 @@
   padding: 20px 0
   border-top: 1px solid $grey200
   border-bottom: 1px solid $grey200
+  cursor: pointer
   &:nth-child(n+2)
     margin-top: -1px
   p
@@ -10,14 +11,20 @@
     text-transform: uppercase
     color: $brown400
     +bold
+    line-height: 1
+  span
+    font-size: 14px
+    color: $grey400
+    +bold
   &:before, &:after
     content: ''
     position: absolute
-    top: 35px
+    top: 50%
     right: 10px
     width: 20px
     height: 2px
     background: $brown400
+    +translate(0,-50%)
     +transition(0.25s)
   &:before
     +rotate(-90deg)
@@ -31,8 +38,43 @@
       color: $pink600
     
 .accordion-inner
+  overflow: hidden
+  display: none
+  +translate(0,0)
   border-bottom: 2px solid $pink600
   padding: 20px 30px 40px
   p
     width: 700px
     max-width: 90%
+  ul, ol
+    margin: 20px 0
+    li
+      @extend %istok
+      font-size: 14px
+      color: $grey600
+      line-height: 1.5
+      margin: 10px 0
+  ul
+    li
+      &:before
+        content: '\2014'
+        margin-right: 10px
+  ol
+    counter-reset: count-list
+    li
+      counter-increment: count-list
+      &:before
+        content: counter(count-list) '.'
+        margin-right: 10px
+
+  .send-resume
+    font-size: 18px
+    color: $brown300
+    &:before
+      content: ''
+      display: inline-block
+      vertical-align: middle
+      width: 40px
+      height: 1px
+      margin-right: 10px
+      background: $brown300

@@ -34,6 +34,14 @@ class PagesController < ApplicationController
   def faq
 
   end
+
+  def contact_us
+
+  end
+
+  def vacancies
+
+  end
   
   private
 

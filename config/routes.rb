@@ -9,7 +9,8 @@ Rails.application.routes.draw do
     get "projects", action: "projects"
     get "project_one", action: "project_one"
     get "faq", action: "faq"
-    # get "contact-us", action: "contact_us"
+    get "vacancies", action: "vacancies"
+    get "contact_us", action: "contact_us"
   end
 
   # mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
