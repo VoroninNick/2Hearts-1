@@ -54,12 +54,14 @@ body
     font-size: $font-size
 
 p
-  font-size: 16px
+  font-size: 14px
 
 a
   display: inline-block
   cursor: pointer
   +transition(0.25s)
+  &:hover
+    color: $pink600
 
 ul
   position: relative
@@ -113,94 +115,3 @@ blockquote
   font-size: 1.125rem
 .large
   font-size: 1.25rem
-
-.section-name
-  position: relative
-  text-align: center
-  padding-top: 50px
-  padding-bottom: 50px
-  overflow: hidden
-  @media #{$medium-up}
-    padding-top: 80px
-    padding-bottom: 80px
-  @media #{$large-up}
-  @media #{$xxlarge-up}
-    padding-top: 100px
-    padding-bottom: 100px
-  .background
-    position: absolute
-    width: 100%
-    height: 100%
-    top: 0
-    @media #{$small-only}
-      display: none
-    svg
-      max-height: 100%
-
-  .icon
-    position: relative
-    svg
-      width: 80px
-      @media #{$small-only}
-        width: 60px
-  .title
-    position: relative
-    height: 120px
-    @media #{$small-only}
-      height: 100px
-    svg
-      height: 100%
-      max-width: 100%
-
-.button
-  position: relative
-  display: inline-block
-  border: 1px solid $brown300
-  color: $brown400
-  padding: 7px 20px
-  font-size: 18px
-  transition: 0.2s ease-in
-  cursor: pointer
-  margin-top: 50px
-  &:hover
-    background-color: $pink600
-    border: 1px solid $pink600
-    color: white
-
-.accordion-button
-  cursor: pointer
-  .arrow-dropdown
-    float: right
-    width: 24px
-    height: 24px
-    svg
-      width: 100%
-      height: 100%
-      fill: white
-      +transition(0.2s)
-  &.opened
-    .arrow-dropdown
-      svg 
-        +rotate(180deg)
-
-.accordion-inner
-  overflow: hidden
-  display: none
-  +translate(0,0)
-
-.socials
-  li
-    display: inline-block
-    margin-right: 10px
-    .social-icon
-      width: 42px
-      height: 42px
-      border-radius: 50%
-    svg
-      width: 100%
-      height: 100%
-
-.slide-up
-  +UD-start
-  &.animate
-    +UD-end

@@ -59,3 +59,71 @@
   &.visible
     opacity: 1
     pointer-events: initial
+
+.button
+  position: relative
+  display: inline-block
+  border: 1px solid $brown300
+  color: $brown400
+  padding: 7px 20px
+  font-size: 18px
+  transition: 0.2s ease-in
+  cursor: pointer
+  margin-top: 50px
+  &:hover
+    background-color: $pink600
+    border: 1px solid $pink600
+    color: white
+
+.section-name
+  position: relative
+  text-align: center
+  padding-top: 50px
+  padding-bottom: 50px
+  overflow: hidden
+  @media #{$medium-up}
+    padding-top: 80px
+    padding-bottom: 80px
+  @media #{$large-up}
+  @media #{$xxlarge-up}
+    padding-top: 100px
+    padding-bottom: 100px
+  .background
+    position: absolute
+    width: 100%
+    height: 100%
+    top: 0
+    @media #{$small-only}
+      display: none
+    svg
+      max-height: 100%
+
+  .icon
+    position: relative
+    svg
+      width: 80px
+      @media #{$small-only}
+        width: 60px
+  .title
+    position: relative
+    height: 120px
+    @media #{$small-only}
+      height: 100px
+    svg
+      height: 100%
+      max-width: 100%
+
+.socials
+  li
+    display: inline-block
+    margin-right: 10px
+    .social-icon
+      width: 42px
+      height: 42px
+      border-radius: 50%
+    svg
+      width: 100%
+      height: 100%
+
+.indent
+  padding: 100px 0
