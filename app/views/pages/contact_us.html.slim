@@ -7,3 +7,52 @@
     .header = inline_svg "svg/headers/2h-inner-pages-contacts.svg"
     p.subtitle Ми будемо раді зустрічі з Вами
     .button Замовити весілля
+
+.row
+  .columns.medium-6
+    .contact-block
+      span номер телефону
+      p +38 (067) 672-68-30
+    .contact-block
+      span електронна скринька
+      p info@wed.in.ua
+    .contact-block
+      span наша адреса
+      p вул. Січових Стрільців, 8, м. Львів
+    .contact-block
+      span ми в соціальних мережах
+      ul.socials
+        li
+          a facebook
+        li
+          a twitter
+        li
+          a instagram
+        li
+          a vkontakte
+      .hashtag
+        span #
+        | twohearts
+    .subscribe Підписатись на розсилку
+  .columns.medium-6
+    form
+      h2 напишіть нам
+      .input-field
+        label for="name" Як вас звати
+        input#name placeholder="Оксана"
+      .input-field.mask-initialized
+        label for="phone" Ваш номер телефону
+        input#phone placeholder="+38 (___) __ ____"
+      .input-field
+        label for="email" Електронна скринька
+        input#email placeholder="mail@gmail.com"
+      .input-field
+        label for="textarea" Додаткові побажання
+        textarea#textarea placeholder="Напишіть, якщо у Вас виникли додаткові питання або побажання" rows="5"
+      button.button Надіслати
+
+.inner-page-bottom
+  .img-bg style="background-image: url(#{asset_path('photo/2H-bg-elements-v1.jpg')})"
+  .section-name.slide-up
+    .title = inline_svg "svg/headers/2h-inner-pages-about-more.svg"
+    .button Наші роботи
