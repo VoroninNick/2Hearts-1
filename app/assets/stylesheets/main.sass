@@ -473,39 +473,3 @@
     height: 2px
     background: $brown300
     margin-right: 10px
-
-.vacancie-link
-  position: relative
-  display: block
-  padding: 20px 0
-  border-top: 1px solid $grey200
-  border-bottom: 1px solid $grey200
-  cursor: pointer
-  &:after
-    content: ''
-    background-image: asset_url('svg/2h-arrow-01.svg')
-    background-repeat: no-repeat
-    width: 30px
-    height: 30px
-    position: absolute
-    top: 50%
-    right: 0
-    opacity: 0
-    +translate(-100%,0)
-    +transition(0.25s)
-  &:nth-child(n+2)
-    margin-top: -1px
-  p
-    font-size: 20px
-    text-transform: uppercase
-    color: $brown400
-    +bold
-    line-height: 1
-  span
-    font-size: 14px
-    color: $grey400
-    +bold
-  &:hover
-    &:after
-      opacity: 1
-      +translate(0,0)

@@ -8,48 +8,49 @@
     p.subtitle Ми будемо раді зустрічі з Вами
     .button Замовити весілля
 
-.row
-  .columns.medium-6
-    .contact-block
-      span номер телефону
-      p +38 (067) 672-68-30
-    .contact-block
-      span електронна скринька
-      p info@wed.in.ua
-    .contact-block
-      span наша адреса
-      p вул. Січових Стрільців, 8, м. Львів
-    .contact-block
-      span ми в соціальних мережах
-      ul.socials
-        li
-          a facebook
-        li
-          a twitter
-        li
-          a instagram
-        li
-          a vkontakte
-      .hashtag
-        span #
-        | twohearts
-    .subscribe Підписатись на розсилку
-  .columns.medium-6
-    form
-      h2 напишіть нам
-      .input-field
-        label for="name" Як вас звати
-        input#name placeholder="Оксана"
-      .input-field.mask-initialized
-        label for="phone" Ваш номер телефону
-        input#phone placeholder="+38 (___) __ ____"
-      .input-field
-        label for="email" Електронна скринька
-        input#email placeholder="mail@gmail.com"
-      .input-field
-        label for="textarea" Додаткові побажання
-        textarea#textarea placeholder="Напишіть, якщо у Вас виникли додаткові питання або побажання" rows="5"
-      button.button Надіслати
+.indent
+  .row
+    .columns.medium-6
+      .contact-block
+        span номер телефону
+        p +38 (067) 672-68-30
+      .contact-block
+        span електронна скринька
+        p info@wed.in.ua
+      .contact-block
+        span наша адреса
+        p вул. Січових Стрільців, 8, м. Львів
+      .contact-block
+        span ми в соціальних мережах
+        ul.socials
+          li
+            a facebook
+          li
+            a twitter
+          li
+            a instagram
+          li
+            a vkontakte
+        .hashtag
+          span #
+          | twohearts
+      .subscribe Підписатись на розсилку
+    .columns.medium-6
+      form
+        h2 напишіть нам
+        .input-field
+          label for="name" Як вас звати
+          input#name placeholder="Оксана"
+        .input-field.mask-initialized
+          label for="phone" Ваш номер телефону
+          input#phone placeholder="+38 (___) __ ____"
+        .input-field
+          label for="email" Електронна скринька
+          input#email placeholder="mail@gmail.com"
+        .input-field
+          label for="textarea" Додаткові побажання
+          textarea#textarea placeholder="Напишіть, якщо у Вас виникли додаткові питання або побажання" rows="5"
+        button.button Надіслати
 
 .collage-wrapper.slide-up
   .row
@@ -85,18 +86,22 @@
         h2 Вакансії
         p Колектив весільної агенсії “Два Серця”  запрошує до співпраці копірайтерів, рерайтерів, нюзмейкерів та контент-менеджерів, які зацікавлені роботою у сфері організації весілля.
         p Завжди раді вітати талановитих та креативних людей у колективі! Якщо Ви розкрили у собі приховані таланти, або прагнете поділитися своїми думками, спогадами чи ідеями стосовно весільних клопотів, тоді з нетерпінням чекаємо ваших заявок.
-        a.vacancie-link
-          p менеджер
-          span повна зайнятість
-        a.vacancie-link
-          p продавець
-          span фріланс
-        a.vacancie-link
-          p секретар
-          span повна зайнятість
-        a.vacancie-link
-          p тамада
-          span часткова зайнятість
+        .vacancie-link-container
+          a.vacancie-link
+            p менеджер
+            span повна зайнятість
+          a.vacancie-link
+            p продавець
+            span фріланс
+          a.vacancie-link
+            p секретар
+            span повна зайнятість
+          a.vacancie-link
+            p тамада
+            span часткова зайнятість
+          a.all-links
+            span +7
+            | &nbsp;Вакансій
 
 .inner-page-bottom.slide-up
   .img-bg style="background-image: url(#{asset_path('photo/2H-bg-elements-v1.jpg')})"

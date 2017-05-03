@@ -69,6 +69,59 @@
         &:before
           content: counter(count-list) '.'
           margin-right: 10px
+    .vacancie-link-container
+      padding-top: 50px
+      .all-links
+        display: block
+        @extend %istok
+        font-size: 12px
+        text-transform: uppercase
+        +bold
+        color: $brown700
+        letter-spacing: 2px
+        width: 100px
+        margin-top: 20px
+        margin-left: auto
+    .vacancie-link
+      position: relative
+      display: block
+      padding: 20px 0
+      border-top: 1px solid $grey200
+      border-bottom: 1px solid $grey200
+      cursor: pointer
+      &:after
+        content: ''
+        background-image: asset_url('svg/2h-arrow-01.svg')
+        background-repeat: no-repeat
+        width: 30px
+        height: 30px
+        position: absolute
+        top: 50%
+        right: 0
+        opacity: 0
+        +translate(-100%,0)
+        +transition(0.25s)
+      &:nth-child(n+2)
+        margin-top: -1px
+      p
+        font-size: 20px
+        text-transform: uppercase
+        color: $brown400
+        +bold
+        line-height: 1
+        margin-bottom: 0
+      span
+        font-size: 14px
+        color: $grey400
+        +bold
+      &:hover
+        border-bottom: 1px solid $pink600
+        z-index: 1
+        p
+          color: $pink600
+        &:after
+          opacity: 1
+          +translate(0,0)
 
   .one-share-block
     text-align: right
