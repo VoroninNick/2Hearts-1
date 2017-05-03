@@ -16,19 +16,19 @@
           | Всі
           sup 35
         li.filter
-          = inline_svg "svg/2h-little-heart-01.svg"
-          | Поради
+          .heart-icon.azure = inline_svg "svg/2h-little-heart-01.svg"
+          | Лазурні
           sup 12
         li.filter
-          = inline_svg "svg/2h-little-heart-01.svg"
-          | Навчання
+          .heart-icon.blue = inline_svg "svg/2h-little-heart-01.svg"
+          | Блакитні
           sup 10
         li.filter
-          = inline_svg "svg/2h-little-heart-01.svg"
-          | Думки
+          .heart-icon.emerald = inline_svg "svg/2h-little-heart-01.svg"
+          | Смарагдові
           sup 5
         li.filter
-          = inline_svg "svg/2h-little-heart-01.svg"
+          .heart-icon = inline_svg "svg/2h-little-heart-01.svg"
           | Різне
           sup 8
 
@@ -41,25 +41,23 @@
         .text
           p.subtitle лазурне весілля
           p.title Олена & Олег
-          .icon.azure = inline_svg "svg/2h-little-heart-01.svg"
+          .heart-icon.azure = inline_svg "svg/2h-little-heart-01.svg"
     .columns.medium-4.xlarge-3
       a.project-block href=project_one_path
-        .project-block
-          .img
-            .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v2.jpg')})"
-          .text
-            p.subtitle блакитне весілля
-            p.title Юля & Андрій
-            .icon.blue = inline_svg "svg/2h-little-heart-01.svg"
+        .img
+          .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v2.jpg')})"
+        .text
+          p.subtitle блакитне весілля
+          p.title Юля & Андрій
+          .heart-icon.blue = inline_svg "svg/2h-little-heart-01.svg"
     .columns.medium-4.xlarge-3
       a.project-block href=project_one_path
-        .project-block
-          .img
-            .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v3.jpg')})"
-          .text
-            p.subtitle лазурне весілля
-            p.title Христина & Єва
-            .icon = inline_svg "svg/2h-little-heart-01.svg"
+        .img
+          .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v3.jpg')})"
+        .text
+          p.subtitle лазурне весілля
+          p.title Христина & Єва
+          .heart-icon = inline_svg "svg/2h-little-heart-01.svg"
     .columns.medium-4.xlarge-3
       a.project-block href=project_one_path
         .img
@@ -67,24 +65,22 @@
         .text
           p.subtitle лазурне весілля
           p.title Олена & Олег
-          .icon.azure = inline_svg "svg/2h-little-heart-01.svg"
+          .heart-icon.azure = inline_svg "svg/2h-little-heart-01.svg"
     .columns.medium-4.xlarge-3
       a.project-block href=project_one_path
-        .project-block
-          .img
-            .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v2.jpg')})"
-          .text
-            p.subtitle блакитне весілля
-            p.title Юля & Андрій
-            .icon.blue = inline_svg "svg/2h-little-heart-01.svg"
+        .img
+          .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v2.jpg')})"
+        .text
+          p.subtitle блакитне весілля
+          p.title Юля & Андрій
+          .heart-icon.blue = inline_svg "svg/2h-little-heart-01.svg"
     .columns.medium-4.xlarge-3
       a.project-block href=project_one_path
-        .project-block
-          .img
-            .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v3.jpg')})"
-          .text
-            p.subtitle лазурне весілля
-            p.title Христина & Єва
-            .icon = inline_svg "svg/2h-little-heart-01.svg"
+        .img
+          .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v3.jpg')})"
+        .text
+          p.subtitle лазурне весілля
+          p.title Христина & Єва
+          .heart-icon = inline_svg "svg/2h-little-heart-01.svg"
 
 = render "pager"

@@ -70,6 +70,8 @@
         top: 10px
         right: 0
         +transition(color 0.25s)
+        @media #{$small-only}
+          font-size: 20px
     a
       display: block
       border-bottom: 1px dotted $blueGrey600
@@ -90,6 +92,8 @@
           position: absolute
           top: 0
           left: -30px
+        @media #{$small-only}
+          font-size: 20px
     li
       &:hover
         &:after

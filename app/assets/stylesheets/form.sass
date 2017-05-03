@@ -1,3 +1,7 @@
+.subscribe-wrapper
+  form
+    background: transparent
+    border: 0
 form
   background: $grey100
   border: 1px solid $grey200
@@ -26,16 +30,17 @@ form
       +bold
       text-transform: uppercase
       letter-spacing: 2px
-    &.placeholder
-      font-size: 16px
-      position: absolute
-      pointer-events: none
-      top: 20px
-      left: 20px
-      transition: all 0.2s ease
-      text-transform: none
-      span
-        color: $pink600
+      &.placeholder
+        font-size: 16px
+        position: absolute
+        pointer-events: none
+        top: 20px
+        left: 20px
+        font-weight: normal
+        transition: all 0.2s ease
+        text-transform: none
+        span
+          color: $pink600
     input:focus ~ label.placeholder, input.used ~ label.placeholder, textarea:focus ~ label.placeholder, textarea.used ~ label.placeholder
       opacity: 0
       pointer-events: none

@@ -17,6 +17,7 @@
     margin-bottom: 10px
     letter-spacing: 2px
   .larger
+    display: block
     color: white
     font-style: italic
     padding-left: 30px
@@ -32,10 +33,16 @@
     margin-right: 10px
     padding: 0
     border-radius: 50%
+    +transition(0.25s)
     svg
       fill: white
       width: 100%
       height: 100%
+      +transition(0.25s)
+    &:hover
+      background: white
+      svg
+        fill: $pink600
 
 .footer
   background: $brown700

@@ -45,9 +45,7 @@
     @extend %cormorant
     color: $pink600
     +bold
-  .icon
-    position: relative
-    width: 20px
+  .heart-icon
     margin: 20px auto 0
     &:before, &:after
       content: ''
@@ -58,23 +56,12 @@
       position: absolute
       top: 30%
       +transition(0.5s)
-    svg
-      fill: white
     &:before
       left: 0
       +translate(-120%,0)
     &:after
       right: 0
       +translate(120%,0)
-    &.azure
-      svg
-        fill: $azure
-    &.blue
-      svg
-        fill: $blue
-    &.emerald
-      svg
-        fill: $emerald
 
   &:hover
     &:before
