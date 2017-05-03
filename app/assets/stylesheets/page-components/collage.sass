@@ -1,4 +1,7 @@
 .collage-wrapper
+  margin: 150px 0
+  @media #{$small-only}
+    margin: 100px 0
 
   .optional-full-width-photo
     position: relative
@@ -10,9 +13,21 @@
     @media #{$large-up}
       padding-bottom: 50%
       width: calc(100% - 20px)
+    &:before
+      content: ''
+      position: absolute
+      width: 1px
+      height: 150px
+      left: 50%
+      top: -100px
+      background: $brown200
+      z-index: 1
+      @media #{$small-only}
+        height: 100px
+        top: -70px
 
   .collage-container
-    margin: -10px
+    margin: 10px 0
 
   .hide
     display: none
