@@ -12,13 +12,17 @@
   .row
     .columns
       ul.filter-list
-        li.filter
+        li.filter.active
           | Всі
           sup 35
         li.filter
           .heart-icon.azure = inline_svg "svg/2h-little-heart-01.svg"
           | Лазурні
           sup 12
+        li.filter
+          .heart-icon = inline_svg "svg/2h-little-heart-01.svg"
+          | Білі
+          sup 6
         li.filter
           .heart-icon.blue = inline_svg "svg/2h-little-heart-01.svg"
           | Блакитні
@@ -28,8 +32,8 @@
           | Смарагдові
           sup 5
         li.filter
-          .heart-icon = inline_svg "svg/2h-little-heart-01.svg"
-          | Різне
+          .heart-icon.another = inline_svg "svg/2h-little-heart-02.svg"
+          | Інші
           sup 8
 
 .portfolio-wrapper

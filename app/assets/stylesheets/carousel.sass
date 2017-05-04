@@ -137,8 +137,8 @@
       line-height: 1
     .position
       font-size: 16px
-      transform: scaleY(0)
-      +transition(transform 0.5s ceaser($easeInOutQuad))
+      opacity: 0
+      +transition(opacity 0.5s ceaser($easeInOutQuad))
     &.join-us
       padding: 100px 0 0
       text-align: center
@@ -171,7 +171,7 @@
     .name
       +translate(0,0)
     .position
-      transform: scaleY(1)
+      opacity: 1
   &.animate
     .owl-item
       @for $i from 1 through 100

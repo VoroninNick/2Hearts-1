@@ -41,8 +41,6 @@ body
             path.heart
               fill: $pink600
 
-
-
 %istok
   font-family: 'Istok Web', sans-serif
 %cormorant
@@ -116,3 +114,10 @@ blockquote
   font-size: 1.125rem
 .large
   font-size: 1.25rem
+
+.mobile
+  @media #{$medium-up}
+    display: none
+.desktop
+  @media #{$small-only}
+    display: none

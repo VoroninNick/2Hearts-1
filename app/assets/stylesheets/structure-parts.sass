@@ -139,6 +139,18 @@
     &:last-child
       &:after
         display: none
+  .social-icon
+    border: 1px solid $brown700
+    width: 40px
+    height: 40px
+    margin-right: 10px
+    padding: 0
+    border-radius: 50%
+    +transition(0.25s)
+    svg
+      width: 100%
+      height: 100%
+      +transition(0.25s)
 
 .hashtag
   color: $pink600
@@ -167,3 +179,15 @@
     svg
       fill: $emerald
       stroke: transparent
+  &.another
+    svg
+      stroke: transparent
+
+.likes
+  position: relative
+  svg
+    fill: $pink600
+    width: 24px
+    margin-right: 10px
+  span
+    vertical-align: top

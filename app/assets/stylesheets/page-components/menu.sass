@@ -62,7 +62,7 @@
       overflow: hidden
       &:after
         content: '0' counter(menu-list)
-        font-size: 30px
+        font-size: 26px
         color: $blueGrey200
         background-color: white
         padding-left: 6px
@@ -72,6 +72,8 @@
         +transition(color 0.25s)
         @media #{$small-only}
           font-size: 20px
+        @media (min-width: 1920px)
+          font-size: 30px
     a
       display: block
       border-bottom: 1px dotted $blueGrey600
@@ -80,7 +82,7 @@
         position: relative
         top: 8px
         padding-right: 10px
-        font-size: 30px
+        font-size: 26px
         +bold
         text-transform: uppercase
         color: $blueGrey800
@@ -94,6 +96,8 @@
           left: -30px
         @media #{$small-only}
           font-size: 20px
+        @media (min-width: 1920px)
+          font-size: 30px
     li
       &:hover
         &:after
@@ -129,10 +133,18 @@
     display: none
     @media #{$xxlarge-up}
       display: block
+    li
+      &:after
+        display: none
   .social-icon
-    border: 1px solid $blueGrey100
+    border: 1px solid $brown200
     svg
-      fill: $blueGrey100
+      fill: $brown200
+    &:hover
+      background: $pink600
+      border: 1px solid $pink600
+      svg
+        fill: white
 
   .xxxlarge-bottom-part
     @media screen and (min-width: 1920px)

@@ -25,9 +25,14 @@
       path
         +transition(0.5s)
       path.heart
+        transform-origin: center
         fill: $pink600
       path.outline
         fill: white
+    &:hover
+      svg
+        path.heart
+          animation: heartbeat 1s infinite
     @media #{$small-only}
       width: 50px
   .logo, .right-part

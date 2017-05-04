@@ -68,7 +68,9 @@
       opacity: 1
     .img-bg
       +scale(1.05)
-    .icon
+    .heart-icon
+      svg
+        animation: heartbeat 1s infinite
       &:before, &:after
         width: 100px
         background: $brown200
@@ -210,9 +212,11 @@
     position: relative
     width: 100%
     padding-bottom: 70%
-    margin: 100px 0
+    margin: 100px 0 0
     background-position: center
     background-size: cover
+    &.mobile
+      padding-bottom: 160%
 
 .project-conclusion
   background: $grey100
@@ -241,3 +245,4 @@
     span
       color: $pink600
       vertical-align: top
+      +s-bold

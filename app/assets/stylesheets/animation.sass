@@ -57,3 +57,14 @@
   +UD-start
   &.animate
     +UD-end
+
+@keyframes heartbeat
+  20%
+    +scale(1.1)
+  35%
+    +scale(1)
+  55%
+    +scale(1.15)
+    +transition(ceaser($easeOutQuart))
+  80%
+    +scale(1)
