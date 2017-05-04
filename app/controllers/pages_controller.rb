@@ -42,8 +42,10 @@ class PagesController < ApplicationController
   def vacancies
 
   end
+
+  def private_policy
   
-  private
+  end
 
   def set_page_instance
   #   set_page_metadata(action_name)

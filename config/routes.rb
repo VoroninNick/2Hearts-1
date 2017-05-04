@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     get "project_one", action: "project_one"
     get "faq", action: "faq"
     get "vacancies", action: "vacancies"
+    get "private_policy", action: "private_policy"
     get "contact_us", action: "contact_us"
   end
 
