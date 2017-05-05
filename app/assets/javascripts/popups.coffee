@@ -1,44 +1,16 @@
-# $document.ready ->
+$document.ready ->
 
-#   login_button = $('.login-button')
-#   login_popup = $('.login-popup-wrapper')
-#   close_button = $('.login-popup-wrapper .close')
+  popup_wrap = $('.popup-wrapper')
+  close_popup = $('.popup-wrapper .close-popup')
+  share_button = $('.share-button')
+  subscribe_button = $('.subscribe-button')
+  share_text = $('.share-block')
+  subscribe_text = $('.subscribe-block')
 
-#   login_button.on 'click', ->
+  share_button.on 'click', ->
+    popup_wrap.addClass('share')
+  subscribe_text.on 'click', ->
+    popup_wrap.addClass('subscribe')
 
-#     $('.mask-full ').addClass('visible ')
-#     login_popup.addClass('visible')
-
-#   $.clickOut('.login-popup-wrapper',
-#     ()->
-#       $('.login-popup-wrapper').removeClass('visible')
-#       $('.mask-full ').removeClass('visible')
-#     {except: '.login-popup-wrapper, .login-button'}
-#   )
-
-#   close_button.on 'click', ->
-#     login_popup.removeClass('visible')
-#     $('.mask-full ').removeClass('visible')
-
-
-
-#   #     C A L L     U S     P O P U P
-
-#   $('.top-nav-contact-button').on "click", ->
-#     $('.call-us-popup').toggleClass("visible")
-
-#   $('.call-us-popup .button').on "click", ->
-#     $(this).css("color","#00A029")
-#     $('.success').addClass("visible")
-#     setTimeout (->
-#       $('.success').removeClass("visible")
-#     ), 3000
-#     setTimeout (->
-#       $('.call-us-popup .button').css("color","white")
-#     ), 3800
-
-#   $.clickOut(".call-us-popup",
-#     ()->
-#       $(".call-us-popup").removeClass('visible')
-#     {except: ".top-nav-contact-button, .call-us-popup"}
-#   )
+  close_popup.on 'click', ->
+    popup_wrap.removeClass('share subscribe')
