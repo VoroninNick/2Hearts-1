@@ -204,9 +204,6 @@
     @media #{$large-up}
       width: 50%
       float: left
-    @media (min-width: 1920px)
-      &:after
-        padding-bottom: 70%
 
   .h2
     color: $pink600
@@ -245,6 +242,8 @@
       +translate(-130%,0px)
     &:after
       content: '\00BB'
+    @media #{$small-only}
+      margin: 30px 0.625em
   &.on-inner-page
     background: $brown700
     margin-bottom: 0
@@ -287,7 +286,7 @@
     text-transform: uppercase
     +bold
     line-height: 1.25
-    margin-bottom: 20px
+    margin-bottom: 10px
   .larger
     color: $brown600
     font-style: italic
@@ -310,9 +309,24 @@
   .nav-block
     position: relative
     background-color: $brown800
-    padding: 50px 50px 100px 50px
+    padding: 30px 30px 80px 30px
     border-right: 1px solid rgba($brown300, 0.2)
     display: block
+    +transition(.5s ceaser($easeOutCubic))
+    &:hover
+      background: $pink600
+      .small
+        color: white
+      .icon
+        +translate(20px,0)
+        svg
+          line
+            stroke: white
+          polygon
+            fill: white
+    @media #{$xlarge-up}
+      padding: 50px 50px 100px 50px
+
   .small
     @extend %istok
     color: $brown300
@@ -320,6 +334,7 @@
     text-transform: uppercase
     margin-bottom: 20px
     letter-spacing: 2px
+    +transition(.5s)
   .title
     font-size: 36px
     +bold
@@ -331,6 +346,7 @@
     right: 50px
     bottom: 30px
     width: 26px
+    +transition(transform .5s)
 
 .partners-wrapper
   .partner

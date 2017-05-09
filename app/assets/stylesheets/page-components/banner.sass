@@ -26,7 +26,7 @@
     letter-spacing: 2px
     color: $brown800
     @media #{$small-only}
-      font-size: 24px
+      font-size: 20px
     @media (min-width: 1920px)
       font-size: 36px
 
@@ -45,6 +45,8 @@
     bottom: 20px
     right: 20px
     z-index: 1
+    @media #{$small-only}
+      display: none
   .top-part, .bottom-part
     height: 50vh
   .top-part
@@ -82,12 +84,16 @@
       height: 100px
       &:before
         +translate(0,-100%)
+      @media #{$small-only}
+        height: 50px
     &.bottom
       position: absolute
       top: 190px
       bottom: 62px
       &:before
         +translate(0,-100%)
+      @media #{$small-only}
+        top: 140px
       @media screen and (min-width: 1920px)
         top: 230px
   .play-bth

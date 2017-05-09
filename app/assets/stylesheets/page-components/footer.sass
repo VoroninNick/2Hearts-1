@@ -4,11 +4,20 @@
   padding: 50px 0
   z-index: 1
   .company-icon-full
+    display: block
     width: 240px
-    margin-bottom: 20px
+    margin: 0 auto 20px
+    @media #{$small-only}
+      display: none
+    @media #{$medium-only}
+      width: 200px
+    @media #{$large-up}
+      margin: 0 0 20px
   .contact-info
-    .small
-      padding-left: 30px
+    margin-bottom: 30px
+    @media #{$medium-up}
+      .small
+        padding-left: 30px
   .small
     @extend %istok
     text-transform: uppercase
@@ -20,8 +29,9 @@
     display: block
     color: white
     font-style: italic
-    padding-left: 30px
-    border-left: 1px solid $brown600
+    @media #{$medium-up}
+      padding-left: 30px
+      border-left: 1px solid $brown600
   .socials
     li
       &:after
@@ -37,9 +47,14 @@
 .footer
   background: $brown700
   padding: 10px 0
+  @media #{$small-only}
+    padding: 20px 0 10px
   p
     color: $brown300
     +medium
+    @media #{$small-only}
+      text-align: center
+      margin-bottom: 10px
   .studio
     svg
       vertical-align: sub

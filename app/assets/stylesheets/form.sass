@@ -41,8 +41,21 @@ form
           color: $pink600
     
     &.leave-email
+      overflow: hidden
       input
+        position: relative
         border-bottom: 1px solid $blueGrey100
+      .line
+        content: ''
+        display: block
+        position: absolute
+        bottom: 0
+        left: 0
+        width: 100%
+        height: 1px
+        background: $pink600
+        +translate(-100%,0)
+        +transition(transform .25s)
       label
         color: $brown200
         text-transform: uppercase
@@ -60,13 +73,16 @@ form
           svg
             path
               fill: $pink600 !important
+      
+      input:focus ~ span.line, input.used ~ span.line
+        +translate(0,0)
 
-    input:focus ~ label.placeholder, input.used ~ label.placeholder
-      opacity: 0
-      pointer-events: none
-    input:focus ~ span.send-email-button, input.used ~ span.send-email-button
-      opacity: 1
-      pointer-events: initial
+      input:focus ~ label.placeholder, input.used ~ label.placeholder
+        opacity: 0
+        pointer-events: none
+      input:focus ~ span.send-email-button, input.used ~ span.send-email-button
+        opacity: 1
+        pointer-events: initial
 
   label.error
     display: block
