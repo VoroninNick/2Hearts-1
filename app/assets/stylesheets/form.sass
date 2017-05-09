@@ -39,9 +39,6 @@ form
         text-transform: none
         span
           color: $pink600
-    input:focus ~ label.placeholder, input.used ~ label.placeholder, textarea:focus ~ label.placeholder, textarea.used ~ label.placeholder
-      opacity: 0
-      pointer-events: none
     
     &.leave-email
       input
@@ -49,6 +46,27 @@ form
       label
         color: $brown200
         text-transform: uppercase
+      .send-email-button
+        position: absolute
+        top: 5px
+        right: 0
+        width: 30px
+        height: 30px
+        +transition(opacity .25s)
+        opacity: 0
+        cursor: pointer
+        pointer-events: none
+        &:hover
+          svg
+            path
+              fill: $pink600 !important
+
+    input:focus ~ label.placeholder, input.used ~ label.placeholder
+      opacity: 0
+      pointer-events: none
+    input:focus ~ span.send-email-button, input.used ~ span.send-email-button
+      opacity: 1
+      pointer-events: initial
 
   label.error
     display: block

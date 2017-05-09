@@ -53,21 +53,21 @@
     li
       .photo style="background-image: url(#{asset_path('photo/hearts-slide-1.jpg')})"
       .text
-        p.larger «Ідеальний чоловік не п’є, не курить, не грає в азартні ігри, не сперечається та не існує!»
+        p.comment Ідеальний чоловік не п’є, не курить, не грає в азартні ігри, не сперечається та не існує!
         p.larger
           span петро,&nbsp;
           | перший дружба
     li
       .photo style="background-image: url(#{asset_path('photo/hearts-slide-2.jpg')})"
       .text
-        p.larger Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, neque.»
+        p.comment Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, neque.
         p.larger
           span петро,&nbsp;
           | перший дружба
     li
       .photo style="background-image: url(#{asset_path('photo/hearts-slide-3.jpg')})"
       .text
-        p.larger «Reprehenderit illum cum voluptate inventore, veniam sunt corrupti necessitatibus quam quia.»
+        p.comment Reprehenderit illum cum voluptate inventore, veniam sunt corrupti necessitatibus quam quia.
         p.larger
           span петро,&nbsp;
           | перший дружба
@@ -125,7 +125,7 @@
     .columns.large-4.large-pull-1.xxlarge-4.xxlarge-pull-0.float-right
       h2.h2 професіонали та ентузіасти
       p Ми – закохані у свою роботу професіонали. Організовуючи ваше свято, ми переймаємося кожною дрібничкою і хвилюємося за настрій гостей. Кожен з нас відповідає за конкретний спільний результат – дивовижне свято для вас.
-      p.slogan «Ми не продаємо повітря, всі послуги власні. Працюємо командою на конкретний результат!»
+      p.slogan Ми не продаємо повітря, всі послуги власні. Працюємо командою на конкретний результат!
       p Івент-агенція «Два серця» об’єднує досвідчених професіоналів, котрі вміють створювати видовищні дійства. Після того, як ми досконало зробили свою роботу, гості завжди захоплено говорять: «Свято вдалося!»
       a.button href=about_path title="На сторінку про нас" Дізнатись більше
 
@@ -261,7 +261,7 @@
     .input-field.leave-email
       input
       label.placeholder електронна скринька
-    button.button Підписатись
+      span.send-email-button = inline_svg "svg/2h-send-01.svg"
 
 .row.collapse.nav-container.slide-up
   .columns.medium-6

@@ -9,7 +9,7 @@ $document.ready ->
 
   share_button.on 'click', ->
     popup_wrap.addClass('share')
-  subscribe_text.on 'click', ->
+  subscribe_button.on 'click', ->
     popup_wrap.addClass('subscribe')
 
   close_popup.on 'click', ->

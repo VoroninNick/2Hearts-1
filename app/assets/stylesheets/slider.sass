@@ -29,17 +29,17 @@
       background: #F8F7F3
       text-align: center
       padding: 20px
-    .larger
+    .comment
       @extend %cormorant
       color: $brown700
       +bold
       font-style: italic
-      &:last-child
-        color: $brown300
-        margin-top: 20px
-        font-style: normal
-        span
-          text-transform: uppercase
+    .larger
+      color: $brown300
+      margin-top: 20px
+      font-style: normal
+      span
+        text-transform: uppercase
     @media #{$small-only}
       .photo
         padding-bottom: 100%
@@ -66,20 +66,29 @@
         background: transparent
         text-align: left
         z-index: 2
-      .larger
+      .comment
+        position: relative
         color: white
         font-size: 48px
         +bold
         font-style: italic
         line-height: 1
         max-width: 50%
-        &:last-child
-          color: white
-          font-size: 18px
-          margin-top: 20px
-          span
-            font-size: 21px
-            +text-line(white)
+        &:before
+          content: '\00AB'
+          position: absolute
+          top: 0
+          left: 0
+          +translate(-110%,0)
+        &:after
+          content: '\00BB'
+      .larger
+        color: white
+        font-size: 18px
+        margin-top: 20px
+        span
+          font-size: 21px
+          +text-line(white)
 
 //     steps   in   about-us   page
 

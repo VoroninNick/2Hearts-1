@@ -4,7 +4,7 @@
     padding-bottom: 100px
   .service
     position: relative
-    padding-bottom: 20px
+    padding-bottom: 10px
     margin-bottom: 30px
     &:after
       content: ''
@@ -35,11 +35,16 @@
       color: $pink600
       line-height: 1
       margin-bottom: 20px
+      letter-spacing: 2px
+    p
+      @extend %istok
+      color: $brown400 
     .link
       font-size: 12px
       color: $brown700
-      margin-top: 20px
+      margin-top: 40px
       text-transform: uppercase
+      letter-spacing: 2px
       +bold
       cursor: pointer
       svg
@@ -82,16 +87,17 @@
       color: $brown200
       +s-bold
       font-style: italic
+      line-height: 1
     &:before
       content: '\00AB'
       font-size: 170px
       left: 0
-      top: 50%
-      +translate(-120%,-50%)
+      top: 0
+      +translate(-120%,-20px)
     &:after
       content: '\00BB'
       font-size: 60px
-      bottom: 0
+      bottom: -40px
       right: 0
 
     .author
@@ -108,14 +114,15 @@
       font-size: 36px
       line-height: 1.1
       color: $pink600
+      font-style: italic
       +s-bold
       &:before
         content: ''
         display: block
         position: absolute
         width: 100%
-        height: 100px
-        bottom: 0
+        height: 150px
+        bottom: -70px
         right: 0
         background-color: $grey50
         z-index: -1
@@ -143,8 +150,10 @@
         pointer-events: none
     .number
       @extend %cormorant
-      +xy-align
       position: absolute
+      top: 45%
+      left: 50%
+      +translate(-50%,-50%)
       width: 100%
       text-align: center
       font-size: 60px
@@ -154,7 +163,7 @@
     .details
       @extend %cormorant
       position: absolute
-      top: 60%
+      top: 58%
       left: 50%
       +translate(-50%,0)
       text-align: center
@@ -164,6 +173,7 @@
       font-size: 18px
       line-height: 1.375
       text-transform: uppercase
+      list-style-type: square
     .description
       @extend %cormorant
       font-size: 21px
@@ -171,6 +181,7 @@
       color: $brown400
       margin-top: 20px
       text-align: center
+      letter-spacing: 1px
 
 .team-wrapper
 
@@ -188,11 +199,14 @@
     background-position: center
     background-repeat: no-repeat
     margin-bottom: 60px
+    &:after
+      +square
     @media #{$large-up}
       width: 50%
       float: left
-    &:after
-      +square
+    @media (min-width: 1920px)
+      &:after
+        padding-bottom: 70%
 
   .h2
     color: $pink600
@@ -209,6 +223,7 @@
     color: $brown400
 
   .slogan
+    @extend %cormorant
     position: relative
     font-size: 24px
     color: $pink600
@@ -217,17 +232,19 @@
     margin: 30px 0
     padding: 20px 0
     line-height: 30px
+    border-top: 1px solid $brown100
+    border-bottom: 1px solid $brown100
     &:before, &:after
-      content: ''
-      position: absolute
-      background-color: $brown100
-      width: 100%
-      height: 1px
-      left: 0
+      +s-bold
+      font-style: italic
+      line-height: 1
     &:before
-      top: 0
+      position: absolute
+      content: '\00AB'
+      left: 0
+      +translate(-130%,0px)
     &:after
-      bottom: 0
+      content: '\00BB'
   &.on-inner-page
     background: $brown700
     margin-bottom: 0
@@ -302,12 +319,13 @@
     +bold
     text-transform: uppercase
     margin-bottom: 20px
+    letter-spacing: 2px
   .title
     font-size: 36px
     +bold
     color: white
     text-transform: uppercase
-    line-height: 1
+    line-height: 0.9
   .icon
     position: absolute
     right: 50px
@@ -463,7 +481,7 @@
   color: $brown300
   border-bottom: 1px solid $brown50
   padding: 10px 0
-  margin-top: -30px
+  // margin-top: -30px
   &:before
     content: ''
     display: inline-block

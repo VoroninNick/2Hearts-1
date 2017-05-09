@@ -49,6 +49,8 @@
             @media #{$small-only}
               height: calc( (100vw - 20px) * 1.5 )
             @media #{$medium-up}
+              height: calc( (100vw/2 - 40px) * 1.5 )
+            @media #{$large-up}
               height: calc( (100vw/3 - 40px) * 1.5 )
             @media #{$xlarge-up}
               height: calc( (100vw/4 - 80px) * 1.5 )
@@ -102,15 +104,16 @@
       @media #{$small-only}
         height: calc( (100vw - 20px) * 1.25 )
       @media #{$medium-up}
+        height: calc( (100vw/2 - 20px) * 1.25 )
+      @media #{$xlarge-up}
         height: calc( (100vw/3 - 20px) * 1.25 )
       @media #{$xxlarge-up}
         height: calc( (100vw/4 - 20px) * 1.25 )
     .text
       position: absolute
-      bottom: 20px
-      left: 20px
-      right: 20px
-      padding-bottom: 20px
+      bottom: 30px
+      left: 30px
+      right: 30px
       z-index: 2
       &:after
         content: ''
@@ -135,6 +138,7 @@
       +translate(0,20px)
       +transition(transform 0.5s ceaser($easeInOutQuad))
       line-height: 1
+      margin-bottom: 5px
     .position
       font-size: 16px
       opacity: 0
@@ -183,7 +187,7 @@
     .name
       +translate(0,0)
     .position
-      opacity: 1
+      opacity: 0.7
   &.animate
     .owl-item
       @for $i from 1 through 100

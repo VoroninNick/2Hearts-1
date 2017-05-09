@@ -40,11 +40,16 @@
     @extend %istok
     color: $brown600
     text-transform: uppercase
+    letter-spacing: 2px
   .title
-    font-size: 24px
+    font-size: 18px
     @extend %cormorant
     color: $pink600
     +bold
+    text-transform: uppercase
+    letter-spacing: 2px
+    @media (min-width: 1920px)
+      font-size: 24px
   .heart-icon
     margin: 20px auto 0
     &:before, &:after
