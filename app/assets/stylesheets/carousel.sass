@@ -25,7 +25,7 @@
 .portfolio-wrapper
   width: 100%
   overflow: hidden
-  margin-bottom: 100px
+  margin-bottom: 80px
   @media #{$small-only}
     margin-bottom: 50px
 
@@ -167,19 +167,23 @@
         bottom: 10px
         border: 1px solid $brown200
       .name
+        font-size: 24px
         color: $brown400
+        +translate(0,0)
+        margin-top: 20px
+        @media #{$xxlarge-up}
+          font-size: 30px
       .text
         position: absolute
         text-align: center
-        width: 90%
-        top: 50%
-        left: 50%
-        +translate(-50%,-50%)
+        width: 80%
+        top: 20%
+        left: 10%
         bottom: initial
         &:after
           display: none
 
-  .owl-item.center
+  .team-member-block:hover
     .text
       +translate(0,0)
       &:after

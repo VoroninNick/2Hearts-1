@@ -18,7 +18,6 @@ $document.ready ->
   $('.owl-carousel-team, .blog-carousel').owlCarousel(
     nav: true
     loop: true
-    center: true
     items: 1
     margin: 20
     responsive:

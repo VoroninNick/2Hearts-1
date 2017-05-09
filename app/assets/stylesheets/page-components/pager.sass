@@ -1,12 +1,12 @@
 .pager-wrapper
-  margin: 30px 0
+  margin: 30px 0 60px
   text-align: center
   @media #{$medium-up}
-    margin: 50px 0
+    margin: 50px 0 80px
   @media #{$xlarge-up}
-    margin: 80px 0
+    margin: 60px 0 100px
   @media #{$xxlarge-up}
-    margin: 100px 0
+    margin: 80px 0 150px
   .prev, .next
     position: relative
     display: inline-block
@@ -19,7 +19,7 @@
       height: 1px
       background: $brown200
       position: absolute
-      top: 12px
+      top: 11px
     &:hover
       color: $pink600
     @media #{$small-only}
@@ -38,6 +38,7 @@
     counter-reset: pager
     margin: 0 30px
     li
+      @extend %istok
       display: inline-block
       position: relative
       width: 40px
@@ -48,6 +49,8 @@
       cursor: pointer
       &.current-page
         border: 1px solid $brown300
+        &:hover
+          border: 1px solid $pink600
       &:before
         content: counter(pager)
         +centered-inside

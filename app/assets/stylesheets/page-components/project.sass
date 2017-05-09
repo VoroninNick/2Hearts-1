@@ -114,8 +114,12 @@
     letter-spacing: 2px
     &:before, &:after
       content: ''
+      display: inline-block
+      vertical-align: middle
+      margin: 0 10px
       height: 1px
       width: 80px
+      background: white
   .title
     font-style: italic
     font-size: 50px
@@ -138,18 +142,25 @@
     position: relative
     background: $brown900
     margin-top: -80px
-    padding: 20px 50px 50px
+    padding: 5px 50px 60px
     
     .button
       margin-top: 30px
       color: $brown200
       border: 1px solid $brown200
     .likes
-      margin-top: 30px
+      margin-top: 20px
+      cursor: pointer
       svg
         fill: $brown200
       span
         color: $brown200
+      &:hover
+        svg
+          fill: $grey50
+          animation: heartbeat 1s infinite
+        span
+          color: $grey50
 
     .narrator-block
       position: absolute
@@ -157,7 +168,7 @@
       height: 100%
       top: 0
       right: 0
-      background: $grey50
+      background: #F8F7F3
       text-align: center
       display: flex
       flex-direction: column
@@ -170,30 +181,43 @@
         overflow: hidden
         background-size: contain
         background-position: center
+        margin-top: -100px
         margin-bottom: 20px
       .name
+        @extend %cormorant
         font-size: 24px
         color: $brown900
         text-transform: uppercase
         +medium
+        letter-spacing: 2px
+        margin-bottom: 0
       .smaller
+        @extend %cormorant
+        font-size: 14px
         color: $brown400
         margin-top: 0
 
     .small
       @extend %istok
+      font-size: 12px
       text-transform: uppercase
       color: $brown300
       margin-top: 50px
       margin-bottom: 10px
+      letter-spacing: 2px
       +bold
     .smaller
       color: $brown300
       margin-top: 20px
-      margin-bottom: 10px
+      margin-bottom: 0
     .regular
-      color: white
-      margin-bottom: 10px
+      @extend %cormorant
+      font-size: 16px
+      color: $grey50
+      margin-bottom: 0
+      letter-spacing: 1px
+      span
+        color: $brown200
 
   .step-block
     padding: 100px 0 0
@@ -210,7 +234,6 @@
     color: $brown800
     text-transform: uppercase
     line-height: 1
-    margin-bottom: 10px
 
   p
     @extend %istok
@@ -224,6 +247,8 @@
     font-style: italic
     color: $brown400
     margin-bottom: 10px
+    letter-spacing: 1px
+    +light
 
   .project-case-fullwidth-img
     position: relative
@@ -236,7 +261,7 @@
       padding-bottom: 160%
 
 .project-conclusion
-  background: $grey100
+  background: #F8F7F3
   margin: 80px 0
   .main-text
     text-align: center
@@ -258,8 +283,7 @@
   .likes
     margin-top: 20px
     svg
-      width: 24px
+      width: 20px
     span
       color: $pink600
-      vertical-align: top
       +s-bold

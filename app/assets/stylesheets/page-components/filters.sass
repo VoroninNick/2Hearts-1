@@ -46,8 +46,12 @@
         margin-right: 10px
         width: 16px
       sup
+        @extend %istok
+        font-size: 10px
         padding-left: 10px
         +bold
+        top: -10px
+        color: $brown200
       @media #{$medium-up}
         margin-right: 30px
       &:hover, &.active
@@ -62,3 +66,5 @@
         .heart-icon
           svg
             animation: heartbeat 1s infinite
+        sup
+          color: $pink600

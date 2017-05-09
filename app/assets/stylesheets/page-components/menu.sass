@@ -51,7 +51,9 @@
       left: -100%
       +translate(80px,0)
       background-color: $blueGrey50
-
+    @media #{$small-only}
+      display: none
+      
   .menu-link-list
     counter-reset: menu-list
     margin-bottom: 30px

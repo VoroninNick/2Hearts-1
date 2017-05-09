@@ -11,9 +11,9 @@
     height: 10px
     margin: 0 10px
     border-radius: 5px
-    border: 1px solid $brown200
+    border: 1px solid $brown400
     &.active
-      background: $brown200
+      background: $brown400
 
 //     main   page   slider
 
@@ -103,7 +103,7 @@
     width: 500px
     max-width: 90%
     margin: 100px auto 30px
-    padding: 300px 40px 40px
+    padding: 300px 40px 100px
     border: 1px solid $grey400
     text-align: center
     border-radius: 3px
@@ -111,10 +111,10 @@
       padding: 250px 20px 30px
   .second-border
     position: absolute
-    top: 10px
+    top: 9px
     left: -10px
     right: -10px
-    bottom: -10px
+    bottom: 9px
     border: 1px solid $grey400
     border-radius: 3px
   .icon
@@ -125,14 +125,14 @@
     background: white
     width: 150px
     height: 150px
-    padding: 20px
+    padding: 40px
     @media #{$small-only}
       width: 120px
       height: 120px
-      padding: 15px
+      padding: 30px
   .step-number
     position: absolute
-    top: 100px
+    top: 80px
     left: 50%
     +translate(-50%,0)
     &:before
@@ -161,9 +161,9 @@
     position: absolute
     width: 200%
     left: -50%
-    top: 150px
+    top: 100px
     background: white
-    padding: 10px 0
+    padding: 30px 0 10px
     .title
       color: $brown700
       font-size: 60px
@@ -174,10 +174,11 @@
     .subtitle
       color: $pink600
       font-size: 18px
+      letter-spacing: 1px
     @media #{$small-only}
       width: 100%
       left: 0
-      top: 100px
+      top: 80px
       .title
         font-size: 32px
         line-height: 1.2
