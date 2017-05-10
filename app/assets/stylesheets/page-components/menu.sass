@@ -57,7 +57,9 @@
       
   .menu-link-list
     counter-reset: menu-list
-    margin-bottom: 30px
+    margin-bottom: 20px
+    @media #{$xxlarge-up}
+      margin-bottom: 30px
     li
       position: relative
       padding: 10px 0
@@ -152,10 +154,14 @@
         fill: white
 
   .xxxlarge-bottom-part
+    .button
+      margin-top: 30px
     @media screen and (min-width: 1920px)
       position: absolute
       bottom: 80px
       left: 50px
-
+      .button
+        margin-top: 50px
+  
 
 
