@@ -15,7 +15,8 @@
     +transition(opacity 0.25s ceaser($easeInOutQuart))
     display: none
     @media #{$large-up}
-      display: block
+      &.visible
+        display: block
 
   .menu
     width: 100%

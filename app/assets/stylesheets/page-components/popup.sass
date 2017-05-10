@@ -25,7 +25,7 @@
       svg
         fill: #F8F7F3
 
-  .share-block, .subscribe-block
+  .share-block, .subscribe-block, .order-form
     position: absolute
     max-width: 90%
     top: 50%
@@ -33,12 +33,15 @@
     +translate(-50%,-50%)
     text-align: center
     opacity: 0
-  .share-block
+  .share-block, .order-form
     width: 600px
   .subscribe-block
     width: 400px
+  .order-form
+    h2
+      color: $brown900
 
-  &.share, &.subscribe
+  &.share, &.subscribe, &.order
     pointer-events: initial
     opacity: 1
   &.share
@@ -49,7 +52,10 @@
     .subscribe-block
       opacity: 1
       z-index: 1
-
+  &.order
+    .order-form
+      opacity: 1
+      z-index: 1
 
   h2
     text-transform: uppercase
@@ -108,7 +114,7 @@
     position: absolute
     width: 37px
     height: 36px
-    top: 27px
+    top: 24px
     right: 0
     padding: 5px
     background-color: $brown100

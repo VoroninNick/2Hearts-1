@@ -10,27 +10,27 @@
 .filters-container
   .row
     .columns
-      ul.filter-list
+      ul.filter-container
         li.filter.active
           | Всі
           sup 35
-        li.filter
+        li.filter data-tag-id="1"
           | Поради
           sup 12
-        li.filter
+        li.filter data-tag-id="2"
           | Навчання
           sup 10
-        li.filter
+        li.filter data-tag-id="3"
           | Думки
           sup 5
-        li.filter
+        li.filter data-tag-id="4"
           | Різне
           sup 8
 
 .row
   .columns
     .blog-wrapper
-      .blog-block
+      .blog-block data-tag-ids="1"
         .img style="background-image: url(#{asset_path('photo/hearts-slide-3.jpg')})"
         .text
           .category поради
@@ -38,13 +38,13 @@
           p.description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam asperiores repudiandae cupiditate, nulla rem perspiciatis, nam ratione dolorem similique accusamus, fugiat eveniet id laudantium dicta. Earum distinctio velit laboriosam voluptate.
           p.date 12.04.2016
           p.read-about Читати
-      .blog-block
+      .blog-block data-tag-ids="2"
         .img style="background-image: url(#{asset_path('photo/2hearts11.jpg')})"
         .text
-      .blog-block
+      .blog-block data-tag-ids="3"
         .img style="background-image: url(#{asset_path('photo/2hearts77.jpg')})"
         .text
-      .blog-block
+      .blog-block data-tag-ids="4"
         .img style="background-image: url(#{asset_path('photo/2hearts22.jpg')})"
         .text
 
