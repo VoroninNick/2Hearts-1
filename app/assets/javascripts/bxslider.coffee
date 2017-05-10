@@ -4,7 +4,7 @@ $(document).ready ->
 
   home_slider = $('.main-slider-wrapper .slider').bxSlider
     controls: false
-    adaptiveHeight: true
+    # adaptiveHeight: true
     speed: 750
     pause: 10000
     auto: true

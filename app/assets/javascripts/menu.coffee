@@ -3,7 +3,6 @@ menu_bg = $('.menu-wrapper .img-bg')
 $document.on 'click', '.hamburger', ->
 
   number = Math.floor(Math.random() * 3)
-  console.log(number)
   menu_bg.eq(number).addClass('visible')
 
   hamburger = $('.hamburger')

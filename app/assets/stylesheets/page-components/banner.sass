@@ -21,7 +21,7 @@
       height: 100%
       max-width: 100%
   .subtitle
-    font-size: 30px
+    font-size: 24px
     font-style: italic
     letter-spacing: 2px
     color: $brown800
@@ -45,8 +45,9 @@
     bottom: 20px
     right: 20px
     z-index: 1
-    @media #{$small-only}
-      display: none
+    display: none
+    @media #{$xlarge-up}
+      display: block
   .top-part, .bottom-part
     height: 50vh
   .top-part
@@ -54,6 +55,8 @@
     width: 100%
     text-align: center
     padding: 25vh 0 0
+    @media #{$medium-only}
+      padding: 35vh 0 0
   .bottom-part
     position: absolute
     width: 100%
@@ -79,6 +82,9 @@
       height: calc(25vh - 100px)
       &:before
         +translate(0,100%)
+      @media #{$medium-only}
+        top: 100px
+        height: calc(35vh - 100px)
     &.middle
       position: relative
       height: 100px
