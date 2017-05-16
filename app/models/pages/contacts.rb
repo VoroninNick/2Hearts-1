@@ -1,3 +1,3 @@
-class Pages::AboutUs < Cms::Page
+class Pages::Contacts < Cms::Page
   include Cms::LocalizedRoutes::UrlHelper::ActiveRecordExtension
 end

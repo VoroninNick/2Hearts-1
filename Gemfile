@@ -45,22 +45,26 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'slim-rails'
+gem 'slim-rails', '3.1.1'
+gem "html2slim"
 
 gem 'bower-rails'
 
 gem "protected_attributes"
 
-# gem 'rails_admin'
-# gem 'rails_admin_nestable'
+gem 'rails_admin'
+gem 'rails_admin_nestable'
 
-# gem 'devise'
+gem 'figaro'
+
+gem 'devise'
 
 gem 'enumerize'
 
-# gem 'ckeditor'
+gem 'ckeditor'
 
-# gem 'paperclip'
+gem 'paperclip'
+gem 'paperclip-tinify'
 
 gem 'acts-as-taggable-on'
 #gem 'rails_admin_tag_list'
@@ -71,6 +75,9 @@ gem 'inline_svg'
 
 gem 'placeholdit'
 
+gem 'db-backuper', github: "pkorenev/db-backuper"
+gem 'yaml_db'
+
 gem 'ffaker'
 gem 'faker'
 
@@ -78,19 +85,35 @@ gem 'quiet_assets'
 
 gem 'kaminari'
 
-# gem "htmlcompressor"
-# gem 'rack-page_caching'
+gem "htmlcompressor"
+gem 'rack-page_caching'
 
-#gem 'paperclip-optimizer'
+gem 'attachable', github: "VoroninNick/attachable"
+gem 'cms', github: "pkorenev/cms"
 
-#gem 'attachable', github: "VoroninNick/attachable"
-#gem 'attachable', path:"/media/data/pasha/gems/attachable"
-#gem 'cms', path: "/media/data/pasha/gems/cms"
-
-# gem 'cms', github: "pkorenev/cms"
-
-# gem 'require_reloader'
+gem 'require_reloader'
 
 gem 'puma'
 
 gem 'jquery_mask_rails'
+
+gem 'ace-rails-ap'
+
+gem 'concise_logging'
+
+gem 'route_translator'
+
+gem 'i18n-active_record',
+    github: 'svenfuchs/i18n-active_record',
+    require: 'i18n/active_record'
+
+gem 'rails-i18n'#, github: 'svenfuchs/rails-i18n', branch: 'rails-4-x'
+
+
+gem 'pg'
+
+gem 'globalize'
+gem 'rails_admin_globalize_field'
+gem 'russian'
+
+gem "devise-i18n"

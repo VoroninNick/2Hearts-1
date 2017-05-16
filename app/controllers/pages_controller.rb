@@ -1,8 +1,6 @@
 class PagesController < ApplicationController
   before_action :set_page_instance, except: [:index]
 
-  self.layout "home"
-
   def index
   #   set_page_metadata(:home)
   end
@@ -15,22 +13,6 @@ class PagesController < ApplicationController
 
   end
 
-  def blog
-
-  end
-
-  def blog_one
-
-  end
-
-  def projects
-
-  end
-
-  def project_one
-
-  end
-
   def faq
 
   end
@@ -40,7 +22,7 @@ class PagesController < ApplicationController
   end
 
   def vacancies
-
+    @vacancies = Vacancy
   end
 
   def private_policy
