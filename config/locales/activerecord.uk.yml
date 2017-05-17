@@ -1,0 +1,4 @@
+uk:
+  activerecord:
+    attributes:
+      quote_text: "Текст цитати"

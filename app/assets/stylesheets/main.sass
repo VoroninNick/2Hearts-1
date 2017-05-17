@@ -379,7 +379,7 @@
   .service-number
     counter-increment: service
     &:before
-      content: '0 ' counter(service)
+      content: attr(data-number)
 
   .service-description
     h1, h2, h3, h4, h5, h6

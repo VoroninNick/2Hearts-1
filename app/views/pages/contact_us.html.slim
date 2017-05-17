@@ -87,20 +87,16 @@
         p Колектив весільної агенсії “Два Серця”  запрошує до співпраці копірайтерів, рерайтерів, нюзмейкерів та контент-менеджерів, які зацікавлені роботою у сфері організації весілля.
         p Завжди раді вітати талановитих та креативних людей у колективі! Якщо Ви розкрили у собі приховані таланти, або прагнете поділитися своїми думками, спогадами чи ідеями стосовно весільних клопотів, тоді з нетерпінням чекаємо ваших заявок.
         .vacancie-link-container
-          a.vacancie-link href=vacancies_path
-            p менеджер
-            span повна зайнятість
-          a.vacancie-link href=vacancies_path
-            p продавець
-            span фріланс
-          a.vacancie-link href=vacancies_path
-            p секретар
-            span повна зайнятість
-          a.vacancie-link href=vacancies_path
-            p тамада
-            span часткова зайнятість
-          a.all-links href=vacancies_path
-            span +7
-            | &nbsp;Вакансій
+          - @featured_vacancies.each do |vacancy|
+            a.vacancie-link href=vacancy.url
+              p
+                = vacancy.name
+              span
+                = vacancy.short_description
+
+          - if @extra_vacancies_count_text
+
+            a.all-links href=vacancies_path
+              span #{@extra_vacancies_count_text}
 
 = render "go_to_all_projects"

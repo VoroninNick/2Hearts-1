@@ -15,36 +15,20 @@
 .services-wrapper.slide-up
   .row
     .columns.large-6
-      .service
-        .icon = inline_svg "svg/2h-icons2-cake-01.svg"
-        p.h2
-          | організація
-          br
-          | весіль
-        p Головна перевага цієї послуги &mdash; оригінальність та новизна святкових вражень і зауважте, без втрати ресторанного комфорту. Проте саме координатор на святі працює найбільше, бо ж мусить за усім слідкувати, і через свою зайнятість пропускає найцікавіше. Адже працювати і святкувати одночасно не можливо.
-        a.link title="На сторінку всіх послуг" href=services_path
-          | детальніше
-          = inline_svg "svg/2h-arrow-01.svg"
-      .service
-        .icon = inline_svg "svg/2h-icons2-videoheart-01.svg"
-        p.h2
-          | координація
-          br
-          | весіль
-        p У компанії «Два серця» працюють професійні ведучі і тамади, талановиті актори й певною мірою психологи, які відчувають настрій гостей, підтримують святкову атмосферу, знаходять спільну мову з кожним.
-        a.link title="На сторінку всіх послуг" href=services_path
-          | детальніше
-          = inline_svg "svg/2h-arrow-01.svg"
-      .service
-        .icon = inline_svg "svg/2h-icons2-heartballon-01.svg"
-        p.h2
-          | технічне
-          br
-          | забезпечення
-        p Ведучі і тамади компанії «Два серця» вчаться мистецтву ведення свята роками і на сотнях подіях шліфують свою майстерність, тому можуть гарантувати феєричний успіх вашого свята: дня народження, весілля, корпоративу.
-        a.link title="На сторінку всіх послуг" href=services_path
-          | детальніше
-          = inline_svg "svg/2h-arrow-01.svg"
+      - @services.each do |service|
+        .service
+          - if service.icon.exists?
+            .icon
+              = embedded_svg_from_absolute_path service.icon.path
+          p.h2
+            = service.name
+          p
+            = service.short_description
+          a.link title="На сторінку всіх послуг" href=service.url
+            | детальніше
+            = inline_svg "svg/2h-arrow-01.svg"
+
+
 
   .bg-img style="background-image: url(#{asset_path('photo/2h-bride-v1.jpg')})"
 

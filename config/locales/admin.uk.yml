@@ -15,6 +15,10 @@ uk:
       assets: "Файли"
       users: "Користувачі"
       pages: "Сторінки"
+      vacancies: "Вакансії"
+
+    form:
+      new_model: "Новий"
 
   activerecord:
     models:

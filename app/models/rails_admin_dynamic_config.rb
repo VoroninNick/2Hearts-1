@@ -1,3 +1,19 @@
+def svg_icon_pretty_value
+  pretty_value do
+    if value.presence
+      v = bindings[:view]
+      url = resource_url
+      if image
+        thumb_url = resource_url(thumb_method)
+        image_html = v.image_tag(thumb_url, class: 'img-thumbnail', style: "max-width: 100px")
+        url != thumb_url ? v.link_to(image_html, url, target: '_blank') : image_html
+      else
+        v.link_to(nil, url, target: '_blank')
+      end
+    end
+  end
+end
+
 
 module RailsAdminDynamicConfig
   class << self
@@ -39,11 +55,11 @@ module RailsAdminDynamicConfig
             delete
             show_in_app
             props do
-              #only()
+              only []
             end
             #edit_model
             nestable do
-              only [Cms::Page]
+              only [Cms::Page, Vacancy, FaqQuestion, Service]
             end
 
             ## With an audit adapter, you can add:
@@ -195,7 +211,7 @@ module RailsAdminDynamicConfig
         # ===================================================
         # Application specific models
         # ===================================================
-        config.include_models Vacancy, FaqQuestion
+        config.include_models Vacancy, FaqQuestion, Service
         config.model Vacancy do
           nestable_list({position_field: :sorting_position})
           navigation_label_key :vacancies, 1
@@ -214,7 +230,7 @@ module RailsAdminDynamicConfig
 
         config.model FaqQuestion do
           nestable_list({position_field: :sorting_position})
-          navigation_label_key :vacancies, 1
+          navigation_label_key :faq, 1
 
           field :published
           field :translations, :globalize_tabs
@@ -226,6 +242,34 @@ module RailsAdminDynamicConfig
           field :url_fragment
           field :content, :ck_editor
         end
+
+        config.model Service do
+          nestable_list({position_field: :sorting_position})
+          navigation_label_key :services, 1
+
+          field :published
+          field :icon do
+            svg_icon_pretty_value
+          end
+          #field :small_title_image do
+          #  svg_icon_pretty_value
+          #end
+          #field :large_title_image do
+          #  svg_icon_pretty_value
+          #end
+          field :translations, :globalize_tabs
+          field :images
+        end
+
+        config.model_translation Service do
+          field :locale, :hidden
+          field :name
+          field :url_fragment
+          field :short_description
+          field :quote_text
+          field :content, :ck_editor
+        end
+
 
       end
     end

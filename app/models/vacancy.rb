@@ -5,6 +5,7 @@ class Vacancy < ActiveRecord::Base
 
   boolean_scope :published
   scope :order_by_sorting_position, -> { order("sorting_position asc") }
+  scope :featured, -> { unscoped.published.order("sorting_position desc").limit(4) }
 
   default_scope do
     order_by_sorting_position
