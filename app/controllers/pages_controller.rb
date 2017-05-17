@@ -4,6 +4,7 @@ class PagesController < ApplicationController
   def index
     set_page_metadata(:home)
     @services = Service.published
+    @projects = Project.published
 
   end
 

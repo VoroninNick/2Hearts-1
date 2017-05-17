@@ -10,5 +10,6 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.first
+    @related_projects = Project.published.where.not(id: @project.id)
   end
 end
