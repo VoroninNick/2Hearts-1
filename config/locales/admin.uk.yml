@@ -58,6 +58,9 @@ uk:
       project:
         one: "Проект"
         other: "Проекти"
+      project_category:
+        one: "Категорія проектів"
+        other: "Категорії проектів"
       project_slider_image:
         one: "Слайд проекту"
         other: "Слайди проектів"

@@ -59,7 +59,7 @@ module RailsAdminDynamicConfig
             end
             #edit_model
             nestable do
-              only [Cms::Page, Vacancy, FaqQuestion, Service]
+              only [Cms::Page, Vacancy, FaqQuestion, Service, ProjectCategory]
             end
 
             ## With an audit adapter, you can add:
@@ -211,7 +211,7 @@ module RailsAdminDynamicConfig
         # ===================================================
         # Application specific models
         # ===================================================
-        config.include_models Vacancy, FaqQuestion, Service
+        config.include_models Vacancy, FaqQuestion, Service, Project, ProjectCategory, ProjectFeedback
         config.model Vacancy do
           nestable_list({position_field: :sorting_position})
           navigation_label_key :vacancies, 1
@@ -270,7 +270,126 @@ module RailsAdminDynamicConfig
           field :content, :ck_editor
         end
 
+        config.model Project do
+          navigation_label_key :projects, 1
 
+          group :basic do
+            field :published
+            field :project_category
+            field :instagram_hash_tag
+            field :release_date do
+              date_format do
+                :default
+              end
+            end
+            field :avatar do
+              svg_icon_pretty_value
+            end
+            field :translations, :globalize_tabs
+          end
+
+          group :summary do
+            field :guests_count
+          end
+
+          group :featured_member do
+            field :featured_member_avatar do
+              svg_icon_pretty_value
+            end
+          end
+
+          group :task do
+            field :task_images
+          end
+
+          group :idea_and_solution do
+            field :idea_and_solution_images
+            field :idea_and_solution_banner do
+              svg_icon_pretty_value
+            end
+          end
+
+          group :result do
+            field :result_images
+            field :result_banner do
+              svg_icon_pretty_value
+            end
+            field :result_banner_mobile do
+              svg_icon_pretty_value
+            end
+          end
+
+        end
+
+        config.model_translation Project do
+          field :locale, :hidden
+          group :basic do
+            field :name
+            field :url_fragment
+          end
+
+          group :summary do
+            field :idea_and_organization
+            field :coordination
+            field :decor
+            field :music
+            field :address
+          end
+
+          group :featured_member do
+            field :featured_member_name
+            field :featured_member_short_description
+          end
+
+          group :task do
+            field :task_text, :ck_editor
+          end
+
+          group :idea_and_solution do
+            field :idea_and_solution_text, :ck_editor
+            field :idea_and_solution_quote_text
+            field :idea_and_solution_quote_author
+          end
+
+          group :result do
+            field :result_text, :ck_editor
+          end
+        end
+
+        config.model ProjectCategory do
+          nestable_list({position_field: :sorting_position})
+          navigation_label_key :projects, 2
+
+          field :translations, :globalize_tabs
+          field :color
+          field :stroke_color
+        end
+
+        config.model_translation ProjectCategory do
+          field :locale, :hidden
+          field :name
+          field :url_fragment
+          field :item_category_name
+
+        end
+
+        config.model ProjectFeedback do
+          nestable_list({position_field: :sorting_position})
+          navigation_label_key :projects, 3
+
+          field :published
+          field :project
+          field :translations, :globalize_tabs
+          field :url
+          field :image
+        end
+
+        config.model_translation ProjectFeedback do
+          field :locale, :hidden
+          field :name
+          field :short_description
+          field :message
+        end
       end
     end
   end
