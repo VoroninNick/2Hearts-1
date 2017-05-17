@@ -2,13 +2,13 @@
   .portfolio-wrapper
     .owl-carousel.owl-carousel-portfolio.appeared
       - projects.each do |project|
-      a.project-block href=project.url
-        .img
-          .img-bg style="background-image: url(#{project.avatar.url})"
-        .text
-          p.subtitle
-            = project.category_name
-          p.title
-            = project.name
-          .heart-icon.azure
-            = project.category_svg_icon_string
+        a.project-block href=project.url
+          .img
+            .img-bg style="background-image: url(#{project.avatar.url})"
+          .text
+            p.subtitle
+              = project.category_name
+            p.title
+              = project.name
+            .heart-icon.azure
+              = project.category_svg_icon_string
