@@ -1,4 +1,4 @@
-open_tab = (e, set_hash = true)->
+open_tab = (e, set_hash = false)->
 
     if e
       e.preventDefault()
