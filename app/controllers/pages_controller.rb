@@ -47,6 +47,12 @@ class PagesController < ApplicationController
   
   end
 
+  def not_found
+    @render_header = false
+    @render_footer = false
+
+  end
+
   def set_page_instance
   #   set_page_metadata(action_name)
   end

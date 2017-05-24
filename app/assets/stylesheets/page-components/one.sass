@@ -9,6 +9,8 @@
     display: inline-block
     margin-bottom: 30px
     letter-spacing: 2px
+    text-transform: uppercase
+    +bold
   .date
     @extend %istok
     font-size: 12px
@@ -20,7 +22,6 @@
     @extend %istok
     font-size: 12px
     color: $brown300
-    text-transform: uppercase
   .thesis
     font-size: 21px
     color: $brown800
@@ -47,8 +48,23 @@
       font-size: 14px
       color: $grey600
       margin-bottom: 10px
+      a
+        margin: 0 6px
+    a
+      color: $pink600
+      &:hover
+        text-decoration: underline
+
     img
       margin-top: 50px
+    .img-description
+      @extend %cormorant
+      font-size: 15px
+      color: $brown800
+      float: right
+      margin-top: -30px
+      span
+        color: $pink600
     ul
       margin: 40px 0
       li
@@ -84,6 +100,9 @@
         width: 100px
         margin-top: 20px
         margin-left: auto
+        &:hover
+          text-decoration: none
+          color: $pink600
     .vacancie-link
       position: relative
       display: block
@@ -117,6 +136,7 @@
         color: $grey400
         +bold
       &:hover
+        text-decoration: none
         border-bottom: 1px solid $pink600
         z-index: 1
         p
@@ -135,9 +155,9 @@
       margin-right: 40px
       svg
         fill: $pink600
-        width: 24px
+        width: 20px
         margin-right: 10px
       span
-        vertical-align: top
+        // vertical-align: top
     .button
       margin-top: 0

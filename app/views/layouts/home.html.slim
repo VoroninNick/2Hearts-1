@@ -10,10 +10,12 @@ html
     = stylesheet_link_tag    "application", media: 'all', 'data-turbolinks-track' => true
     = csrf_meta_tags
   body
-    = render "header"
+    - if @render_header != false
+      = render "header"
     = render "menu"
     = render "popup"
     .main-wrapper
       = yield
-    = render "footer"
+    - if @render_footer != false
+      = render "footer"
     = javascript_include_tag "application", 'data-turbolinks-track' => true

@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     get "vacancies", action: "vacancies"
     get "private_policy", action: "private_policy"
     get "contact_us", action: "contact_us"
+    get "not_found", action: "not_found"
   end
 
   # mount RailsAdmin::Engine => '/admin', as: 'rails_admin'

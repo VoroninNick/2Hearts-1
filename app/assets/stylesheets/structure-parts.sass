@@ -83,12 +83,14 @@
   padding-bottom: 50px
   overflow: hidden
   &.in-contacts
-    position: absolute
     width: calc(100% - 2*1em)
     text-align: left
     max-width: 1400px
+    padding-bottom: 0
     @media #{$small-only}
       top: -100px
+    @media #{$large-up}
+      position: absolute
 
   @media #{$medium-up}
     padding-top: 80px
