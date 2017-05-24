@@ -1,0 +1,51 @@
+.banner
+
+  .img-bg.lightened style="background-image: url(#{asset_path('photo/hearts-slide-1.jpg')})"
+
+  .banner-text.with-button
+
+    .header = inline_svg "svg/headers/2h-lable-works.svg"
+    p.subtitle Весілля, що ми організовували
+    .button.order-button Замовити весілля
+
+.filters-container
+  .row
+    .columns
+      ul.filter-container
+        - if @show_all
+          li.filter.active
+            | Всі
+            sup
+              = @all_count
+        - @categories.each do |category|
+          li.filter data-tag-id=category.id
+            .heart-icon.azure
+              /= inline_svg "svg/2h-little-heart-01.svg"
+              = category.svg_icon_string
+            = category.name
+            sup
+              = category.projects_count
+        - if @show_other_category
+          li.filter data-tag-id="other"
+            .heart-icon.another = inline_svg "svg/2h-little-heart-02.svg"
+            | Інші
+            sup
+              = @other_projects_count
+
+.portfolio-wrapper
+  .row.columns-left
+    - @projects.each do |project|
+      .columns.medium-4.xlarge-3
+        a.project-block data-tag-ids=(project.project_category_id || :other) href=project.url
+          .img
+            .img-bg style="background-image: url(#{project.avatar.url})"
+          .text
+            p.subtitle
+              = project.category_name
+            p.title
+              = project.name
+            .heart-icon.azure
+              = project.category_svg_icon_string
+
+
+= render "pager"

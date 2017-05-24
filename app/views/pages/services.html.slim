@@ -4,68 +4,64 @@
 
   .banner-text
 
-    .header = inline_svg "svg/headers/2h-lable-services.svg"
+    .header
+      = inline_svg "svg/headers/2h-lable-services.svg"
     p.subtitle Ми в цьому спеціалісти
 
-.service-wrapper
+.services-container
+  - @services.each_with_index do |service, service_index|
+    .service-wrapper
 
-  .section-name.slide-up
-    .background = inline_svg "svg/bg-text/2h-bg-lable-team.svg"
-    .service-number
-    .title = inline_svg "svg/headers/2h-lable-team.svg"
-  .row.service-description.slide-up
-    .columns.large-4
-      h2 «Краще аби приємні святкові клопоти замість мене взяв на себе хтось інший»
-    .columns.large-8
-      p Repellendus aliquam quia, quis voluptatem est, magni. Cum enim fuga commodi.
-      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id numquam, porro praesentium tempore deserunt. Nobis, at, facilis nulla in illo, neque enim dolores ipsam, vitae unde debitis hic. Adipisci, consequuntur.
-      p Adipisci odit aut temporibus eveniet assumenda autem, obcaecati maxime consectetur ipsum quisquam, libero nihil, ipsam tempora molestiae repellat vero non id ut!
+      .section-name.slide-up
+        .background
+          /= embedded_svg_from_absolute_path(service.large_title_image.path)
+          = embedded_svg_from_assets(service.large_title_image_path)
+        .service-number data-number="0#{service_index + 1}"
+        .title
+          /= embedded_svg_from_absolute_path(service.small_title_image.path)
+          = embedded_svg_from_assets(service.small_title_image_path)
+      .row.service-description.slide-up
+        .columns.large-4
+          h2
+            |«#{service.quote_text}»
+        .columns.large-8
+          = raw service.content
 
-  .collage-wrapper.slide-up
-    .row
-      .columns
-        .optional-full-width-photo.slide-up style="background-image: url(#{asset_path('photo/2hearts123.jpg')})"
+      .collage-wrapper.slide-up
+        .row
+          .columns
+            - assets = service.images.select{|img| img.exists? }
+            - assets.in_groups_of(6, false) do |group|
+              - inner_groups = [[group[0]]]
+              - inner_groups << group[1..5] if group.count > 1
+              - inner_groups.each_with_index do |inner_group, inner_group_index|
 
-        .clearfix.collage-container
-          .floated.clearfix
-            .square.social-media
-              .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v1.jpg')})"
-              .inner-border
-              .text
-                h2.h2.animate якась соцмережа
-                .heart.animate = inline_svg "svg/2h-little-heart-01.svg"
-                p.regular.animate «Якщо в шлюбі абсолютна гармонія - це найбільше щастя на світі»
-              .social-icon.animate = inline_svg "svg/2h-little-insta-01.svg"
-            .square.social-media
-              .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v2.jpg')})"
-              .text
-                h2.h2.animate якась соцмережа
-                .heart.animate = inline_svg "svg/2h-little-heart-01.svg"
-                p.regular.animate «Якщо в шлюбі абсолютна гармонія - це найбільше щастя на світі»
-              .social-icon.animate = inline_svg "svg/2h-little-insta-01.svg"
-            .square.social-media
-              .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v3.jpg')})"
-              .text
-                h2.h2.animate якась соцмережа
-                .heart.animate = inline_svg "svg/2h-little-heart-01.svg"
-                p.regular.animate «Якщо в шлюбі абсолютна гармонія - це найбільше щастя на світі»
-              .social-icon.animate = inline_svg "svg/2h-little-insta-01.svg"
-            .square
-              .img-bg
-              .text
-                h2.h2 Василій
-                p.smaller перший дружба
-                .heart = inline_svg "svg/2h-little-heart-01.svg"
-                p.regular «Якщо в шлюбі абсолютна гармонія - це найбільше щастя на світі»
-              .social-icon = inline_svg "svg/2h-little-chat-01.svg"
+                - if inner_group_index == 0
+                  .optional-full-width-photo.slide-up style="background-image: url(#{inner_group[0].url})"
 
-          .floated
-            .square.fullwidth.social-media
-              .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v1.jpg')})"
-              .text
-                h2.h2.animate @2hearts
-                .heart.animate = inline_svg "svg/2h-little-heart-01.svg"
-                p.regular.animate Кільця на даху весільного автомобіля символізують початковий рахунок в новій грі &mdash; 0:0 #footballwedding
-              .social-icon.animate = inline_svg "svg/2h-little-insta-01.svg"
+                - if inner_group_index == 1
+                  - group1 = inner_group[0..3]
+                  - group2 = [inner_group[4]]
+
+
+                  .clearfix.collage-container
+                    - [group1, group2].each_with_index do |g, i|
+                      - if i == 0
+                        .floated.clearfix
+                          /- if image_index >= 1 && image_index <= 4
+                          - g.each_with_index do |asset, image_index|
+                            = render "image", asset: asset
+
+
+                      - if i == 1
+                        .floated
+                          = render "image", asset: g[0], wrap_class: "fullwidth"
+                          /.square.fullwidth.social-media
+                            .img-bg style="background-image: url(#{g[0].url})"
+                            .text
+                              h2.h2.animate @2hearts
+                              .heart.animate = inline_svg "svg/2h-little-heart-01.svg"
+                              p.regular.animate Кільця на даху весільного автомобіля символізують початковий рахунок в новій грі &mdash; 0:0 #footballwedding
+                            .social-icon.animate = inline_svg "svg/2h-little-insta-01.svg"
 
 = render "go_to_all_projects"

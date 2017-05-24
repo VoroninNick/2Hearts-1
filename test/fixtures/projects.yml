@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  published: false
+  release_date: 2017-05-16
+  avatar: 
+  name: MyString
+  url_fragment: MyString
+  address: MyString
+  guests_count: 1
+  idea_and_organization: MyString
+  coordination: MyString
+  decor: MyString
+  music: MyString
+
+two:
+  published: false
+  release_date: 2017-05-16
+  avatar: 
+  name: MyString
+  url_fragment: MyString
+  address: MyString
+  guests_count: 1
+  idea_and_organization: MyString
+  coordination: MyString
+  decor: MyString
+  music: MyString

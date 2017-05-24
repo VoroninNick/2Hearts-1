@@ -11,26 +11,14 @@
 .indent
   .row
     .columns.medium-10.medium-centered
+      - @faq_questions.each do |faq_question|
+        .accordion-button
+          p
+            = faq_question.name
+        .accordion-inner
+          = raw faq_question.content
 
-      .accordion-button
-        p які є формати святкування весілля?
-      .accordion-inner
-        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, rem minus eveniet rerum hic consectetur fugiat dolorem temporibus autem impedit explicabo eius dolore libero, nihil. Inventore soluta ipsa repellendus, itaque.
 
-      .accordion-button
-        p що таке етновесілля?
-      .accordion-inner
-        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, rem minus eveniet rerum hic consectetur fugiat dolorem temporibus autem impedit explicabo eius dolore libero, nihil. Inventore soluta ipsa repellendus, itaque.
-
-      .accordion-button
-        p оптимальна кількість гостей?
-      .accordion-inner
-        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, rem minus eveniet rerum hic consectetur fugiat dolorem temporibus autem impedit explicabo eius dolore libero, nihil. Inventore soluta ipsa repellendus, itaque.
-
-      .accordion-button
-        p весільна бійка: тренд 2018 року?
-      .accordion-inner
-        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, rem minus eveniet rerum hic consectetur fugiat dolorem temporibus autem impedit explicabo eius dolore libero, nihil. Inventore soluta ipsa repellendus, itaque.
       .button Задати питання
 
 = render "go_to_all_projects"

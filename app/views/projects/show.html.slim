@@ -1,0 +1,276 @@
+.project-one-banner
+
+  .img-bg style="background-image: url(#{asset_path('photo/hearts-slide-2.jpg')})"
+
+  .play-bth = inline_svg "svg/2h-play-button-012.svg"
+
+  .banner-text
+    p.subtitle.animate аметистове весілля
+    p.title.animate Юля та Андрій
+
+.project-one-wrapper
+  .row.collapse
+    .columns
+    
+      .wedding-creators-container
+
+        .narrator-block
+          .img style="background-image: url(#{@project.featured_member_avatar.url(:thumb)})"
+          p.name
+            = @project.featured_member_name
+          p.smaller
+            = @project.featured_member_short_description
+
+        .row.columns-left
+          .columns.medium-4
+
+            p.small над весіллям працювали
+            p.smaller Ідея та організація:
+            p.regular
+              = @project.idea_and_organization
+
+            p.smaller Координація:
+            p.regular
+              = @project.coordination
+
+            p.smaller Декор та флористика:
+            p.regular
+              = @project.decor
+
+            p.smaller Музика:
+            p.regular
+              = @project.music
+
+            p.smaller Технічна підтримка:
+            p.regular
+              | Іван Петро&nbsp;
+              span &#40;звук&#41;
+            p.regular
+              | Тарас Дмитро&nbsp;
+              span &#40;світло&#41;
+            p.regular
+              | Павло Іван&nbsp;
+              span &#40;піротехніка&#41;
+
+          .columns.medium-4
+
+            p.small дата весілля
+            p.regular
+              = @project.release_date.strftime("%d.%m.%Y")
+
+            p.small місце проведення
+            p.regular
+              = @project.address
+
+            p.small кількість гостей
+            p.regular
+              = @project.guests_count_string
+            .button.share-button Поділитись з друзями
+            .likes
+              = inline_svg "svg/2h-little-heart-01.svg"
+              span 25
+  
+  .row.step-block
+    .columns.large-6
+      .step-title = inline_svg "svg/headers/2h-one_case-bg-text-01-01.svg"
+    .columns.large-6
+      = raw @project.task_text
+
+  - if @project.task_images.any?
+    .collage-wrapper.slide-up.inside-project-one
+      .row.collapse
+        .columns
+          .optional-full-width-photo style="background-image: url(#{asset_path('photo/2hearts11.jpg')})"
+        .columns.large-4
+          .square
+            .img-bg style="background-image: url(#{asset_path('photo/2hearts66.jpg')})"
+            .inner-border
+          .square
+            .img-bg style="background-image: url(#{asset_path('photo/2hearts77.jpg')})"
+        .columns.large-4.hide
+          .square.height-2x
+            .img-bg style="background-image: url(#{asset_path('photo/2hearts88.jpg')})"
+        .columns.large-4.hide
+          .square
+            .img-bg style="background-image: url(#{asset_path('photo/team4.jpg')})"
+          .square
+            .img-bg style="background-image: url(#{asset_path('photo/hearts-slide-3.jpg')})"
+            .inner-border
+
+  .row.step-block
+    .columns.large-6.float-right
+      .step-title = inline_svg "svg/headers/2h-one_case-bg-text-02-01.svg"
+    .columns.large-6.float-left
+      = raw @project.idea_and_solution_text
+
+  - if @project.idea_and_solution_images.any?
+    .collage-wrapper.slide-up.inside-project-one
+      .row.collapse
+        .columns.large-6
+          .square
+            .img-bg style="background-image: url(#{asset_path('photo/2hearts66.jpg')})"
+            .inner-border
+          .square.height-1-5x
+            .img-bg style="background-image: url(#{asset_path('photo/2hearts77.jpg')})"
+        .columns.large-6
+          .square.height-1-5x
+            .img-bg style="background-image: url(#{asset_path('photo/2hearts88.jpg')})"
+          .square.hide
+            .img-bg style="background-image: url(#{asset_path('photo/hearts-slide-3.jpg')})"
+            .inner-border
+
+  - if @project.idea_and_solution_quote_text
+    blockquote
+      | «#{@project.idea_and_solution_quote_text}»
+      - if @project.idea_and_solution_quote_author.present?
+        span
+          = @project.idea_and_solution_quote_author
+
+  - if @project.idea_and_solution_banner.exists?(:xxl)
+    .project-case-fullwidth-img style="background-image: url(#{@project.idea_and_solution_banner.url(:xxl)})"
+
+  .row.step-block  
+    .columns.large-6
+      .step-title = inline_svg "svg/headers/2h-one_case-bg-text-03-01.svg"
+    .columns.large-6
+      = raw @project.result_text
+
+  - if @project.result_images.any?
+    .collage-wrapper.slide-up.inside-project-one
+      .row.collapse
+        .columns
+          .optional-full-width-photo style="background-image: url(#{asset_path('photo/2hearts66.jpg')})"
+        .columns.large-6
+          .square.fullwidth.height-half
+            .img-bg style="background-image: url(#{asset_path('photo/2hearts99.jpg')})"
+            .inner-border
+          .square.half.hide
+            .img-bg style="background-image: url(#{asset_path('photo/2hearts88.jpg')})"
+          .square.half.hide
+            .img-bg style="background-image: url(#{asset_path('photo/2hearts77.jpg')})"
+        .columns.large-6
+          .square.fullwidth.added-height
+            .img-bg style="background-image: url(#{asset_path('photo/hearts-slide-3.jpg')})"
+            .inner-border
+
+  - small_banner_url = @project.result_banner_mobile.exists?(:small) ? @project.result_banner_mobile.url(:small) : (@project.result_banner.exists?(:small) ? @project.result_banner.url(:small) : nil)
+  - if small_banner_url
+    .project-case-fullwidth-img.mobile style="background-image: url(#{small_banner_url})"
+  - if @project.result_banner.exists?(:xxl)
+    .project-case-fullwidth-img.desktop style="background-image: url(#{@project.result_banner.url(:xxl)})"
+
+  .section-name.slide-up
+    .background = inline_svg "svg/bg-text/2h-bg-lable-talk.svg"
+    .title = inline_svg "svg/headers/2h-inner-pages-case-testimonials-01.svg"
+
+  - if @project.project_feedbacks.any?
+    .collage-wrapper.slide-up.blue-background
+      .row
+        .columns
+          .clearfix
+            .floated.clearfix
+              .square.social-media
+                .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v1.jpg')})"
+                .inner-border
+                .text
+                  h2.h2.animate якась соцмережа
+                  .heart.animate = inline_svg "svg/2h-little-heart-01.svg"
+                  p.regular.animate «Якщо в шлюбі абсолютна гармонія - це найбільше щастя на світі»
+                .social-icon.animate = inline_svg "svg/2h-little-insta-01.svg"
+              .square.social-media
+                .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v2.jpg')})"
+                .text
+                  h2.h2.animate якась соцмережа
+                  .heart.animate = inline_svg "svg/2h-little-heart-01.svg"
+                  p.regular.animate «Якщо в шлюбі абсолютна гармонія - це найбільше щастя на світі»
+                .social-icon.animate = inline_svg "svg/2h-little-insta-01.svg"
+              .square.social-media
+                .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v3.jpg')})"
+                .text
+                  h2.h2.animate якась соцмережа
+                  .heart.animate = inline_svg "svg/2h-little-heart-01.svg"
+                  p.regular.animate «Якщо в шлюбі абсолютна гармонія - це найбільше щастя на світі»
+                .social-icon.animate = inline_svg "svg/2h-little-insta-01.svg"
+              .square
+                .img-bg
+                .text
+                  h2.h2 Василій
+                  p.smaller перший дружба
+                  .heart = inline_svg "svg/2h-little-heart-01.svg"
+                  p.regular «Якщо в шлюбі абсолютна гармонія - це найбільше щастя на світі»
+                .social-icon = inline_svg "svg/2h-little-chat-01.svg"
+
+            .floated
+              .square.fullwidth.social-media
+                .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v1.jpg')})"
+                .text
+                  h2.h2.animate @2hearts
+                  .heart.animate = inline_svg "svg/2h-little-heart-01.svg"
+                  p.regular.animate Кільця на даху весільного автомобіля символізують початковий рахунок в новій грі &mdash; 0:0 #footballwedding
+                .social-icon.animate = inline_svg "svg/2h-little-insta-01.svg"
+
+            .floated.hide
+              .square.fullwidth.social-media
+                .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v1.jpg')})"
+                .text
+                  h2.h2.animate @2hearts
+                  .heart.animate = inline_svg "svg/2h-little-heart-01.svg"
+                  p.regular.animate Кільця на даху весільного автомобіля символізують початковий рахунок в новій грі &mdash; 0:0 #footballwedding
+                .social-icon.animate = inline_svg "svg/2h-little-insta-01.svg"
+
+            .floated.clearfix.hide
+              .square.social-media
+                .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v1.jpg')})"
+                .inner-border
+                .text
+                  h2.h2.animate якась соцмережа
+                  .heart.animate = inline_svg "svg/2h-little-heart-01.svg"
+                  p.regular.animate «Якщо в шлюбі абсолютна гармонія - це найбільше щастя на світі»
+                .social-icon.animate = inline_svg "svg/2h-little-insta-01.svg"
+              .square.social-media
+                .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v2.jpg')})"
+                .text
+                  h2.h2.animate якась соцмережа
+                  .heart.animate = inline_svg "svg/2h-little-heart-01.svg"
+                  p.regular.animate «Якщо в шлюбі абсолютна гармонія - це найбільше щастя на світі»
+                .social-icon.animate = inline_svg "svg/2h-little-insta-01.svg"
+              .square.social-media
+                .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v3.jpg')})"
+                .text
+                  h2.h2.animate якась соцмережа
+                  .heart.animate = inline_svg "svg/2h-little-heart-01.svg"
+                  p.regular.animate «Якщо в шлюбі абсолютна гармонія - це найбільше щастя на світі»
+                .social-icon.animate = inline_svg "svg/2h-little-insta-01.svg"
+              .square
+                .img-bg
+                .text
+                  h2.h2 Василій
+                  p.smaller перший дружба
+                  .heart = inline_svg "svg/2h-little-heart-01.svg"
+                  p.regular «Якщо в шлюбі абсолютна гармонія - це найбільше щастя на світі»
+                .social-icon = inline_svg "svg/2h-little-chat-01.svg"
+
+.project-conclusion
+
+  .row
+    .columns.medium-6
+      .main-text.with-line
+        .icon = inline_svg "svg/2h-icons-love-cloud.svg"
+        .title = inline_svg "svg/headers/2h-one_case-do_you_like-v1-01.svg"
+        .button.share-button Поділились з друзями
+        .likes
+          = inline_svg "svg/2h-little-heart-01.svg"
+          span 25
+      
+    .columns.medium-6
+      .main-text
+        .icon = inline_svg "svg/2h-icons-love-letter.svg"
+        .title = inline_svg "svg/headers/2h-one_case-want_the_same-v1-01.svg"
+        .button.order-button Замовити весілля
+
+- if @related_projects.any?
+  .section-name.slide-up
+    .background = inline_svg "svg/bg-text/2h-bg-lable-one_case-01.svg"
+    .title = inline_svg "svg/headers/2h-inner-pages-one_case-see_also.svg"
+
+  = render "portfolio_carousel", projects: @related_projects

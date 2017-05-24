@@ -1,0 +1,19 @@
+uk:
+  routes:
+    #  blog
+
+    blog:
+    news:
+    video:
+
+    # projects
+    projects_index: "projects"
+
+    # services
+    services:
+
+    # about_us
+    about_us: "pro-nas"
+
+    # contacts
+    contacts:
