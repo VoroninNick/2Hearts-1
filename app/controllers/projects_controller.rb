@@ -9,7 +9,10 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @project = Project.first
+    @project = Project.get(params[:id])
+    if @project.nil?
+      return render_not_found
+    end
     @related_projects = Project.published.where.not(id: @project.id)
   end
 end

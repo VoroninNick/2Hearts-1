@@ -1,7 +1,10 @@
+- if !defined?(style) || style.blank?
+  - style = :original
+
 .square.social-media class=(wrap_class if defined?(wrap_class) && wrap_class.present?)
-  .img-bg style="background-image: url(#{asset.url})"
+  .img-bg style="background-image: url(#{asset.data.url(style)})"
   /.inner-border
-  .text
+  /.text
     /h2.h2.animate якась соцмережа
     .heart.animate = inline_svg "svg/2h-little-heart-01.svg"
     - if asset.data_alt.present?
