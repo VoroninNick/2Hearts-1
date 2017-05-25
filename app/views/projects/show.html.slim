@@ -18,7 +18,7 @@
     .columns.large-6
       = raw @project.task_text
 
-  = render_images(@project.task_images, 1)
+  /= render_images(@project.task_images, 1)
 
   .row.step-block
     .columns.large-6.float-right
@@ -26,7 +26,7 @@
     .columns.large-6.float-left
       = raw @project.idea_and_solution_text
 
-  = render_images(@project.idea_and_solution_images, 2)
+  /= render_images(@project.idea_and_solution_images, 2)
 
   - if @project.idea_and_solution_quote_text
     blockquote
@@ -44,7 +44,7 @@
     .columns.large-6
       = raw @project.result_text
 
-  = render_images(@project.result_images, 3)
+  /= render_images(@project.result_images, 3)
 
   - small_banner_url = @project.result_banner_mobile.exists?(:small) ? @project.result_banner_mobile.url(:small) : (@project.result_banner.exists?(:small) ? @project.result_banner.url(:small) : nil)
   - if small_banner_url
