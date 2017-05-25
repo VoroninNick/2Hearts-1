@@ -101,4 +101,24 @@ class Project < ActiveRecord::Base
 
     true
   end
+
+  def task_images_scheme
+    s = self['task_images_scheme']
+    s.present? ? s : 1
+  end
+
+  def idea_and_solution_images_scheme
+    s = self['idea_and_solution_images_scheme']
+    s.present? ? s : 2
+  end
+
+  def result_images_scheme
+    s = self['result_images_scheme']
+    s.present? ? s : 3
+  end
+
+  def project_feedbacks_scheme
+    s = self['project_feedbacks_scheme']
+    s.present? ? s : 4
+  end
 end
