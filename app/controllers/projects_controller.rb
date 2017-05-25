@@ -6,6 +6,7 @@ class ProjectsController < ApplicationController
     @show_other_category = @other_projects_count > 0
     @all_count = @projects.count
     @show_all = (@show_other_category && @categories.count > 0) || (@categories.count > 1)
+    @og_image = @project.avatar.url
   end
 
   def show
