@@ -5,8 +5,10 @@
   .play-bth = inline_svg "svg/2h-play-button-012.svg"
 
   .banner-text
-    p.subtitle.animate аметистове весілля
-    p.title.animate Юля та Андрій
+    p.subtitle.animate
+      = @project.category_name
+    p.title.animate
+      = @project.name
 
 .project-one-wrapper
   = render "project_details"

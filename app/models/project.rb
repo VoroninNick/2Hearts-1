@@ -24,7 +24,7 @@ class Project < ActiveRecord::Base
   image :result_banner_mobile, styles: { small: "640x1024#" }
 
 
-  has_images :task_images, styles: { large: "1380x700#", square: "450x450#", wide: "900x450#" }
+  has_images :task_images, styles: { large: "1380x700#", square: "450x450#", wide: "900x450#", medium_square: "680x680#", medium_tall: "680x1040#", small_wide: "680x360", small_square: "330x330#" }
   has_images :idea_and_solution_images
   has_images :result_images
 
