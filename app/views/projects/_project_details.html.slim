@@ -11,49 +11,19 @@
           = @project.featured_member_short_description
 
       .row.columns-left
+
         .columns.medium-4
+
+
 
           p.small над весіллям працювали
-          p.smaller Ідея та організація:
-          p.regular
-            = @project.idea_and_organization
+          = render_summary_attributes(@project, [:idea_and_organization, :coordination, :decor, :music, :formatted_technical_support, :special_effects])
 
-          p.smaller Координація:
-          p.regular
-            = @project.coordination
-
-          p.smaller Декор та флористика:
-          p.regular
-            = @project.decor
-
-          p.smaller Музика:
-          p.regular
-            = @project.music
-
-          p.smaller Технічна підтримка:
-          p.regular
-            | Іван Петро&nbsp;
-            span &#40;звук&#41;
-          p.regular
-            | Тарас Дмитро&nbsp;
-            span &#40;світло&#41;
-          p.regular
-            | Павло Іван&nbsp;
-            span &#40;піротехніка&#41;
 
         .columns.medium-4
+          = render_summary_attributes(@project, [:formatted_release_date, :address, :guests_count_string, :show_program, :photo_and_video, :candy_bar])
 
-          p.small дата весілля
-          p.regular
-            = @project.release_date.strftime("%d.%m.%Y")
 
-          p.small місце проведення
-          p.regular
-            = @project.address
-
-          p.small кількість гостей
-          p.regular
-            = @project.guests_count_string
           .button.share-button Поділитись з друзями
           .likes
             = inline_svg "svg/2h-little-heart-01.svg"

@@ -1,0 +1,20 @@
+uk:
+  projects:
+    summary:
+      attributes:
+        idea_and_organization: "Ідея та організація"
+        coordination: "Координація"
+        decor: "Декор та флористика"
+        music: "Музика"
+        technical_support: "Технічна підтримка"
+        formatted_technical_support: "Технічна підтримка"
+
+        release_date: "Дата весілля"
+        formatted_release_date: "Дата весілля"
+        address: "Місце проведення"
+        guests_count_string: "Кількість гостей"
+
+        candy_bar: "Кенді-бар"
+        special_effects: "Спецефекти"
+        photo_and_video: "Фото- та відеозйомка"
+        show_program: "Шоу-програма"

@@ -70,4 +70,21 @@ module ApplicationHelper
   def complete_render_image(image, style, options = {})
     render "image", asset: image, style: style, **options
   end
+
+  def render_summary_attributes(instance, attrs)
+    attrs.map do|attr|
+      value = instance.send(attr)
+      next if value.blank?
+      formatted_value = ""
+
+      value = [value] if !value.is_a?(Array)
+
+      formatted_value = value.map{|line| "<p class='regular'>#{line}</p>"  }.join("")
+
+      label = I18n.t("projects.summary.attributes.#{attr}", raise: true) rescue attr.to_s.humanize
+      label += ":"
+      "<p class='smaller'>#{label}</p>#{formatted_value}"
+    end.select{|s| !s.nil? }.join("").html_safe
+
+  end
 end

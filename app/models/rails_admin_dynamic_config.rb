@@ -334,6 +334,11 @@ module RailsAdminDynamicConfig
             field :decor
             field :music
             field :address
+            field :technical_support
+            field :special_effects
+            field :photo_and_video
+            field :show_program
+            field :candy_bar
           end
 
           group :featured_member do

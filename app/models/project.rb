@@ -1,7 +1,7 @@
 class Project < ActiveRecord::Base
   attr_accessible *attribute_names
 
-  globalize :name, :url_fragment, :address, :idea_and_organization, :coordination, :decor, :music, :task_text, :idea_and_solution_text, :idea_and_solution_quote_text, :idea_and_solution_quote_author, :result_text, :featured_member_name, :featured_member_short_description
+  globalize :name, :url_fragment, :address, :idea_and_organization, :coordination, :decor, :music, :task_text, :idea_and_solution_text, :idea_and_solution_quote_text, :idea_and_solution_quote_author, :result_text, :featured_member_name, :featured_member_short_description, :technical_support, :special_effects, :photo_and_video, :show_program, :candy_bar
 
   boolean_scope :published
 
@@ -63,5 +63,27 @@ class Project < ActiveRecord::Base
 
   def self.get(url_fragment)
     self.published.joins(:translations).where(project_translations: { url_fragment: url_fragment, locale: I18n.locale }).first
+  end
+
+  def formatted_release_date
+    d = release_date
+    return nil if d.nil?
+    d.strftime("%d.%m.%Y")
+  end
+
+  def formatted_technical_support
+    s = technical_support
+    return nil if s.blank?
+    lines = s.split("\r\n").select(&:present?)
+    lines.map{|line|
+      opening_bracket_index = line.index("(")
+      if opening_bracket_index && opening_bracket_index >= 0
+        label = line[opening_bracket_index..line.length]
+        value = line[0..(opening_bracket_index-1)]
+        next "#{value}&nbsp;<span>#{label}</span>"
+      else
+        next line
+      end
+    }
   end
 end
