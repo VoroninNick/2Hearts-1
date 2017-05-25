@@ -26,6 +26,7 @@ module ApplicationHelper
   end
 
   def render_array(entry, images)
+
     arr_str = ""
     if entry.is_a?(String) || entry.is_a?(Symbol)
       first_image = images.is_a?(Array) ? images.first : images
@@ -38,7 +39,7 @@ module ApplicationHelper
       entry.each do |child_entry|
         group_images_count = child_entry.is_a?(Array) ? child_entry.flatten.count : 1
         group_images = images[processed_entries_count..(processed_entries_count + group_images_count - 1)]
-        arr_str = render_array(entry, group_images)
+        arr_str = render_array(child_entry, group_images)
       end
 
     end
