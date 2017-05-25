@@ -12,6 +12,7 @@
     color: $brown400
     +bold
     line-height: 1
+    +transition(0.25s)
   span
     font-size: 14px
     color: $grey400
@@ -28,14 +29,18 @@
     +transition(0.25s)
   &:before
     +rotate(-90deg)
+    top: calc(50% - 1px)
   &.opened
     border-bottom: 0
     &:before
       +rotate(0)
-    &:after
-      background: $pink600
     p
       color: $pink600
+  &:hover
+    p
+      color: $pink600
+    &:before, &:after
+      background: $pink600
     
 .accordion-inner
   overflow: hidden
@@ -44,8 +49,10 @@
   border-bottom: 2px solid $pink600
   padding: 20px 30px 40px
   p
+    @extend %istok
     width: 700px
     max-width: 90%
+    color: $grey600
   ul, ol
     margin: 20px 0
     li
@@ -68,8 +75,11 @@
         margin-right: 10px
 
   .send-resume
+    display: inline-block
     font-size: 18px
     color: $brown300
+    +transition(0.5s)
+    cursor: pointer
     &:before
       content: ''
       display: inline-block
@@ -78,3 +88,9 @@
       height: 1px
       margin-right: 10px
       background: $brown300
+      +transition(0.5s)
+    &:hover
+      color: $pink600
+      &:before
+        background: $pink600
+

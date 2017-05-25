@@ -77,6 +77,8 @@
   overflow: hidden
   .img-bg
     +translate(-20%,0)
+    background-size: contain
+    background-repeat: no-repeat
 
   .testemonial-block
     position: relative
@@ -108,6 +110,7 @@
       +bold
       +text-line($brown400)
       margin-bottom: 20px
+
     .slogan
       @extend %cormorant
       position: relative
@@ -412,15 +415,18 @@
     height: 60%
     top: 0
     left: 0
-    background-position: center
-    background-size: cover
+    overflow: hidden
+    .img-bg
+      +transition(all 1s ceaser($easeOutCubic))
+    // background-position: center
+    // background-size: cover
   .text
     position: absolute
     width: 100%
     height: 40%
     bottom: 0
     left: 0
-    padding: 40px 20px 30px
+    padding: 30px 20px 30px
   .category
     @extend %istok
     font-size: 12px
@@ -434,15 +440,18 @@
     padding: 4px 10px
     +bold
     letter-spacing: 2px
-
   .title
-    font-size: 36px
+    font-size: 21px
     +medium
     text-transform: uppercase
     line-height: 1
+    max-height: calc(21px * 3)
+    overflow: hidden
     color: $brown800
+    +transition(0.5s)
   .description
     font-size: 18px
+    margin-top: 20px
     display: none
     color: $blueGrey600
     line-height: 1.2
@@ -460,6 +469,10 @@
     position: absolute
     right: 20px
     bottom: 20px
+    display: none
+    +transition(0.5s)
+    @media #{$xlarge-up}
+      display: block
     &:before
       content: ''
       display: block
@@ -467,11 +480,34 @@
       height: 1px
       background: $brown200
       position: absolute
+      +transition(0.5s)
       left: -100%
       top: 13px
+  @media #{$small-only}
+    width: calc(100% - 20px)
+  @media #{$xxlarge-up}
+    width: calc(33% - 20px)
+    .title
+      @media #{$xxlarge-up}
+        font-size: 24px
   &.big
-    .description
-      display: block
+    @media #{$xxlarge-up}
+      width: calc(66% - 20px)
+      .title
+        font-size: 36px
+        max-height: calc(36px * 3)
+      .description
+        display: block
+
+  &:hover
+    .img-bg
+      +scale(1.05)
+    .title
+      color: $pink600
+    .read-about
+      color: $pink600
+      &:before
+        background: $pink600
 
 .contact-block
   position: relative
@@ -503,12 +539,13 @@
   padding: 10px 0
   cursor: pointer
   +transition(.25s)
+  padding-bottom: 40px
   &:before
     content: ''
     display: inline-block
     vertical-align: middle
     width: 40px
-    height: 2px
+    height: 1px
     background: $brown300
     margin-right: 10px
     +transition(.25s)
@@ -516,3 +553,54 @@
     color: $pink600
     &:before
       background: $pink600
+
+.floated-right-block
+  @media #{$large-up}
+    float: right !important
+
+.not-found-wrapper
+  position: relative
+  height: 100vh
+  background: $brown900
+  .img-bg
+    width: 60%
+    background-size: contain
+    background-repeat: no-repeat
+    @media #{$small-only}
+      display: none
+  .text
+    position: absolute
+    width: 50%
+    top: 30%
+    right: 0
+    svg
+      width: 300px
+    @media #{$small-only}
+      padding: 20px
+      width: 100%
+      svg
+        width: 90%
+    @media #{$medium-only}
+      top: 40%
+      svg
+        width: 200px
+    a
+      display: block
+      position: relative
+      margin-top: 30px
+      color: $brown300
+      padding-left: 80px
+      font-size: 18px
+      &:before
+        content: ''
+        width: 60px
+        height: 1px
+        background: $brown300
+        margin-right: 10px
+        position: absolute
+        top: 15px
+        left: 0
+      &:hover
+        color: white
+        &:before
+          background: white

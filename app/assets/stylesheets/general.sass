@@ -82,11 +82,10 @@ blockquote
   font-style: italic
   +s-bold
   text-align: center
-  width: 800px
-  max-width: 90%
-  margin: 150px auto 200px
+  margin: 100px auto 150px
   padding: 30px 10vw
   color: $pink600
+  line-height: 1.25
   border-top: 1px solid $brown100
   border-bottom: 1px solid $brown100
   span
@@ -102,6 +101,13 @@ blockquote
     letter-spacing: 2px
   @media #{$small-only}
     padding: 30px 0
+  span.blockquote-author
+    float: right
+    @extend %istok
+    font-size: 12px
+    +bold
+    color: $brown300
+    text-transform: uppercase
 
 .small
   font-size: 0.75rem

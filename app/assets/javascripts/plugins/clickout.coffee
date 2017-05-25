@@ -30,8 +30,6 @@ except_elements = (target, subscriber)->
           $elem.closest(excepted_elements).length == 0
       )
 
-      #return $filtered_elems
-
       selectors_count = excepted_elements.split(",")
       i = 0
 
@@ -51,28 +49,15 @@ except_elements = (target, subscriber)->
     return []
 
 
-
-
-
-
-
-
-
 satisfy_conditions = (subscriber)->
 
-
-
 $document.on "click", (e)->
-  #console.log "CLICK"
-  #console.log "target:", e.target
+
   $target = $(e.target)
   for s in click_out_subscribers
-    #console.log "subscriber: ", s
 
-    #if satisfy_conditions(s)
     $elems = resolve_elems(s)
     $untargeted_excepted_elements = except_elements(e.target, s)
-    #console.log "s: ", s, "e: ", e, "$elems:", $elems
 
     $untargeted_elems = $elems.filter(
       (index, item)->
@@ -81,17 +66,9 @@ $document.on "click", (e)->
 
     )
 
-    #console.log "$untargeted_elems", $untargeted_elems
-    #console.log "$untargeted_excepted_elements", $untargeted_excepted_elements
-
-    #console.log "$elems: ", $elems
-
     if $untargeted_elems.length > 0 && $untargeted_excepted_elements.length == 0
       $untargeted_elems.each (elem)->
         s.options.handler.call(this, s)
-        #s.options.handler.call(s)
-      #$elems.each ()->
-      #  s.options.handler.call(this)
     else
       continue
 
@@ -113,4 +90,3 @@ $.clickOut = (elem_or_selector_or_function, options_or_handler = {}, options = {
 
 
   click_out_subscribers.push(subscriber)
-#$.clickOut()
