@@ -1,13 +1,19 @@
 module ApplicationHelper
   def render_images(images, scheme = nil)
     return "" if images.count == 0
-    #scheme1 = [{style: :large, columns: 12}, {type: :column, large: 4, content: {style: :square, count: 2}}, { type: :column, large: 4, content: {style: :wide} }, {type: :column, large: 4, content: { style: :square, count: 2 }} ]
-    scheme1 = {scheme: [:large, [[:square, :square], :wide, [:square, :square]]], images_count: 6}
-    scheme2 = {scheme: [[:medium_square, :medium_tall], [:medium_tall, :medium_square]], images_count: 4}
-    scheme3 = {scheme: [:large, [[:small_wide, [:small_square, :small_square]], :medium_square]], images_count: 5}
-    scheme4 = {scheme: [[[:small_square, :small_square, :small_square, :small_square], :medium_square], [:medium_square, [:small_square, :small_square, :small_square, :small_square]]], images_count: 10}
+    schemes = []
+    schemes << {scheme: [:large, [[:square, :square], :wide, [:square, :square]]], images_count: 6}
+    schemes << {scheme: [[:medium_square, :medium_tall], [:medium_tall, :medium_square]], images_count: 4}
+    schemes << {scheme: [:large, [[:small_wide, [:small_square, :small_square]], :medium_square]], images_count: 5}
+    schemes << {scheme: [[[:small_square, :small_square, :small_square, :small_square], :medium_square], [:medium_square, [:small_square, :small_square, :small_square, :small_square]]], images_count: 10}
 
-    scheme ||= scheme1
+    if scheme
+      scheme_index = scheme - 1
+    else
+      scheme_index = 0
+    end
+
+    scheme = schemes[scheme_index]
     content_str = ""
 
 

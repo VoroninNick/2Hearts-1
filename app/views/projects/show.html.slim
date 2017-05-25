@@ -18,28 +18,7 @@
     .columns.large-6
       = raw @project.task_text
 
-  = render_images(@project.task_images)
-  /- if @project.task_images.any?
-
-    .collage-wrapper.slide-up.inside-project-one
-      .row.collapse
-        .columns
-          .optional-full-width-photo style="background-image: url(#{asset_path('photo/2hearts11.jpg')})"
-        .columns.large-4
-          .square
-            .img-bg style="background-image: url(#{asset_path('photo/2hearts66.jpg')})"
-            .inner-border
-          .square
-            .img-bg style="background-image: url(#{asset_path('photo/2hearts77.jpg')})"
-        .columns.large-4.hide
-          .square.height-2x
-            .img-bg style="background-image: url(#{asset_path('photo/2hearts88.jpg')})"
-        .columns.large-4.hide
-          .square
-            .img-bg style="background-image: url(#{asset_path('photo/team4.jpg')})"
-          .square
-            .img-bg style="background-image: url(#{asset_path('photo/hearts-slide-3.jpg')})"
-            .inner-border
+  = render_images(@project.task_images, 1)
 
   .row.step-block
     .columns.large-6.float-right
@@ -47,21 +26,7 @@
     .columns.large-6.float-left
       = raw @project.idea_and_solution_text
 
-  - if @project.idea_and_solution_images.any?
-    .collage-wrapper.slide-up.inside-project-one
-      .row.collapse
-        .columns.large-6
-          .square
-            .img-bg style="background-image: url(#{asset_path('photo/2hearts66.jpg')})"
-            .inner-border
-          .square.height-1-5x
-            .img-bg style="background-image: url(#{asset_path('photo/2hearts77.jpg')})"
-        .columns.large-6
-          .square.height-1-5x
-            .img-bg style="background-image: url(#{asset_path('photo/2hearts88.jpg')})"
-          .square.hide
-            .img-bg style="background-image: url(#{asset_path('photo/hearts-slide-3.jpg')})"
-            .inner-border
+  = render_images(@project.idea_and_solution_images, 2)
 
   - if @project.idea_and_solution_quote_text
     blockquote
@@ -79,23 +44,7 @@
     .columns.large-6
       = raw @project.result_text
 
-  - if @project.result_images.any?
-    .collage-wrapper.slide-up.inside-project-one
-      .row.collapse
-        .columns
-          .optional-full-width-photo style="background-image: url(#{asset_path('photo/2hearts66.jpg')})"
-        .columns.large-6
-          .square.fullwidth.height-half
-            .img-bg style="background-image: url(#{asset_path('photo/2hearts99.jpg')})"
-            .inner-border
-          .square.half.hide
-            .img-bg style="background-image: url(#{asset_path('photo/2hearts88.jpg')})"
-          .square.half.hide
-            .img-bg style="background-image: url(#{asset_path('photo/2hearts77.jpg')})"
-        .columns.large-6
-          .square.fullwidth.added-height
-            .img-bg style="background-image: url(#{asset_path('photo/hearts-slide-3.jpg')})"
-            .inner-border
+  = render_images(@project.result_images, 3)
 
   - small_banner_url = @project.result_banner_mobile.exists?(:small) ? @project.result_banner_mobile.url(:small) : (@project.result_banner.exists?(:small) ? @project.result_banner.url(:small) : nil)
   - if small_banner_url
