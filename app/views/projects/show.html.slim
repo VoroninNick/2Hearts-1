@@ -5,97 +5,20 @@
   .play-bth = inline_svg "svg/2h-play-button-012.svg"
 
   .banner-text
-    p.subtitle.animate аметистове весілля
-    p.title.animate Юля та Андрій
+    p.subtitle.animate
+      = @project.category_name
+    p.title.animate
+      = @project.name
 
 .project-one-wrapper
-  .row.collapse
-    .columns
-    
-      .wedding-creators-container
-
-        .narrator-block
-          .img style="background-image: url(#{@project.featured_member_avatar.url(:thumb)})"
-          p.name
-            = @project.featured_member_name
-          p.smaller
-            = @project.featured_member_short_description
-
-        .row.columns-left
-          .columns.medium-4
-
-            p.small над весіллям працювали
-            p.smaller Ідея та організація:
-            p.regular
-              = @project.idea_and_organization
-
-            p.smaller Координація:
-            p.regular
-              = @project.coordination
-
-            p.smaller Декор та флористика:
-            p.regular
-              = @project.decor
-
-            p.smaller Музика:
-            p.regular
-              = @project.music
-
-            p.smaller Технічна підтримка:
-            p.regular
-              | Іван Петро&nbsp;
-              span &#40;звук&#41;
-            p.regular
-              | Тарас Дмитро&nbsp;
-              span &#40;світло&#41;
-            p.regular
-              | Павло Іван&nbsp;
-              span &#40;піротехніка&#41;
-
-          .columns.medium-4
-
-            p.small дата весілля
-            p.regular
-              = @project.release_date.strftime("%d.%m.%Y")
-
-            p.small місце проведення
-            p.regular
-              = @project.address
-
-            p.small кількість гостей
-            p.regular
-              = @project.guests_count_string
-            .button.share-button Поділитись з друзями
-            .likes
-              = inline_svg "svg/2h-little-heart-01.svg"
-              span 25
-  
+  = render "project_details"
   .row.step-block
     .columns.large-6
       .step-title = inline_svg "svg/headers/2h-one_case-bg-text-01-01.svg"
     .columns.large-6
       = raw @project.task_text
 
-  - if @project.task_images.any?
-    .collage-wrapper.slide-up.inside-project-one
-      .row.collapse
-        .columns
-          .optional-full-width-photo style="background-image: url(#{asset_path('photo/2hearts11.jpg')})"
-        .columns.large-4
-          .square
-            .img-bg style="background-image: url(#{asset_path('photo/2hearts66.jpg')})"
-            .inner-border
-          .square
-            .img-bg style="background-image: url(#{asset_path('photo/2hearts77.jpg')})"
-        .columns.large-4.hide
-          .square.height-2x
-            .img-bg style="background-image: url(#{asset_path('photo/2hearts88.jpg')})"
-        .columns.large-4.hide
-          .square
-            .img-bg style="background-image: url(#{asset_path('photo/team4.jpg')})"
-          .square
-            .img-bg style="background-image: url(#{asset_path('photo/hearts-slide-3.jpg')})"
-            .inner-border
+  = render_images(@project.task_images, 1)
 
   .row.step-block
     .columns.large-6.float-right
@@ -103,21 +26,7 @@
     .columns.large-6.float-left
       = raw @project.idea_and_solution_text
 
-  - if @project.idea_and_solution_images.any?
-    .collage-wrapper.slide-up.inside-project-one
-      .row.collapse
-        .columns.large-6
-          .square
-            .img-bg style="background-image: url(#{asset_path('photo/2hearts66.jpg')})"
-            .inner-border
-          .square.height-1-5x
-            .img-bg style="background-image: url(#{asset_path('photo/2hearts77.jpg')})"
-        .columns.large-6
-          .square.height-1-5x
-            .img-bg style="background-image: url(#{asset_path('photo/2hearts88.jpg')})"
-          .square.hide
-            .img-bg style="background-image: url(#{asset_path('photo/hearts-slide-3.jpg')})"
-            .inner-border
+  = render_images(@project.idea_and_solution_images, 2)
 
   - if @project.idea_and_solution_quote_text
     blockquote
@@ -135,23 +44,7 @@
     .columns.large-6
       = raw @project.result_text
 
-  - if @project.result_images.any?
-    .collage-wrapper.slide-up.inside-project-one
-      .row.collapse
-        .columns
-          .optional-full-width-photo style="background-image: url(#{asset_path('photo/2hearts66.jpg')})"
-        .columns.large-6
-          .square.fullwidth.height-half
-            .img-bg style="background-image: url(#{asset_path('photo/2hearts99.jpg')})"
-            .inner-border
-          .square.half.hide
-            .img-bg style="background-image: url(#{asset_path('photo/2hearts88.jpg')})"
-          .square.half.hide
-            .img-bg style="background-image: url(#{asset_path('photo/2hearts77.jpg')})"
-        .columns.large-6
-          .square.fullwidth.added-height
-            .img-bg style="background-image: url(#{asset_path('photo/hearts-slide-3.jpg')})"
-            .inner-border
+  = render_images(@project.result_images, 3)
 
   - small_banner_url = @project.result_banner_mobile.exists?(:small) ? @project.result_banner_mobile.url(:small) : (@project.result_banner.exists?(:small) ? @project.result_banner.url(:small) : nil)
   - if small_banner_url
