@@ -1,19 +1,10 @@
+- sharing_resource = @project || @article
 .popup-wrapper
 
   .close-popup = inline_svg "svg/cross.svg"
 
-  .share-block
-    p.small поділитись весіллям
-    .wedding-name Оксана та Валентин
-    ul.socials
-      li
-        a facebook
-      li
-        a twitter
-      li
-        a instagram
-      li
-        a vkontakte
+  - if sharing_resource
+    = render "share_block", resource: sharing_resource
 
 
   .subscribe-block

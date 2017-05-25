@@ -30,3 +30,5 @@
 #= require filters
 #= require banner-anim
 #= require mask
+
+#= require sharing

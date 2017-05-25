@@ -1,0 +1,7 @@
+- resource = @project || @article
+- if resource
+  .popup-wrapper.share-popup
+
+    .close-popup = inline_svg "svg/cross.svg"
+
+    = render "share_block"

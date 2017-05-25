@@ -1,0 +1,13 @@
+uk:
+  components:
+    sharing-popup:
+      title: "Поділіться цим"
+      social-networks:
+        html_title:
+          vk: "Поділитися ВКонтакті"
+          facebook: "Поділитися на Фейсбуці"
+          twitter: "Поділитися в Твіттері"
+        title:
+          vk: "vkotankte"
+          facebook: "facebook"
+          twitter: "twitter"

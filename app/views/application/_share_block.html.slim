@@ -1,0 +1,9 @@
+.share-block
+  p.small поділитись весіллям
+  .wedding-name
+    = resource.name
+  ul.socials
+    - Cms::Helpers::SocialHelper.get_share_links(nil, resource.url, resource.name, [:facebook, :twitter]).each_pair do |key, value|
+      li
+        a.share-link href=value target="_blank" window-width="700" window-height="700" window-title="Поділитися в #{key}" title=t("components.sharing-popup.social-networks.html_title.#{key}")
+          = t("components.sharing-popup.social-networks.title.#{key}")

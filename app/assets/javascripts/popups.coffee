@@ -16,6 +16,7 @@ $document.ready ->
 
   share_button.on 'click', ->
     popup_wrap.addClass('share')
+
   subscribe_button.on 'click', ->
     popup_wrap.addClass('subscribe')
   order_button.on 'click', ->
