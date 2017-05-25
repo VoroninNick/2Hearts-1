@@ -1,0 +1,21 @@
+- if defined?(asset) && asset.present?
+  - if !defined?(square_class)
+    - square_class = ""
+
+  - if !defined?(full_square_class)
+    - full_square_class = false
+
+  - if full_square_class.blank?
+    - full_square_class = "square social-media " + square_class
+
+  div class=full_square_class
+    .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v1.jpg')})"
+    .inner-border
+    .text
+      h2.h2.animate
+        = asset.name
+      .heart.animate = inline_svg "svg/2h-little-heart-01.svg"
+      p.regular.animate
+        |«#{asset.message}»
+    .social-icon.animate = inline_svg "svg/2h-little-insta-01.svg"
+

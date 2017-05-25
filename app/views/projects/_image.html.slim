@@ -1,0 +1,18 @@
+- if defined?(asset) && asset.present?
+  - if !defined?(square_class)
+    - square_class = ""
+
+  - if !defined?(full_square_class)
+    - full_square_class = false
+
+  - if !full_square_class
+    - full_square_class = "square " + square_class
+
+  - if !defined?(style)
+    - style = :square
+
+  - attachment = asset.try(:data) || asset.try(:image)
+
+  div class=full_square_class
+    .img-bg style="background-image: url(#{attachment.url(style)})"
+    .inner-border

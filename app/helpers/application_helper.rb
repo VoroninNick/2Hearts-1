@@ -2,7 +2,7 @@ module ApplicationHelper
   def render_images(images, scheme = nil)
     return "" if images.count == 0
     schemes = []
-    schemes << {scheme: [:large, [[:square, :square], :wide, [:square, :square]]], images_count: 6}
+    schemes << {scheme: [{style: :large}, [[{style: :square, columns: 12}, {style: :square, columns: 12}], {style: :wide, columns: 4}, [{style: :square, columns: 12}, {style: :square, columns: 12}]]], images_count: 6}
     schemes << {scheme: [[:medium_square, :medium_tall], [:medium_tall, :medium_square]], images_count: 4}
     schemes << {scheme: [:large, [[:small_wide, [:small_square, :small_square]], :medium_square]], images_count: 5}
     schemes << {scheme: [[[:small_square, :small_square, :small_square, :small_square], :medium_square], [:medium_square, [:small_square, :small_square, :small_square, :small_square]]], images_count: 10}
@@ -13,6 +13,8 @@ module ApplicationHelper
       scheme_index = 0
     end
 
+    scheme_index = 0
+
     scheme = schemes[scheme_index]
     content_str = ""
 
@@ -22,26 +24,61 @@ module ApplicationHelper
     images.in_groups_of(scheme[:images_count], false) do |group|
       content_str = render_array(scheme[:scheme], group)
     end
-    "<div class='collage-wrapper slide-up inside-project-one'><div class='row collapse'>#{content_str}</div></div>".html_safe
+    "<div class='collage-wrapper slide-up inside-project-one'>#{content_str}</div>".html_safe
   end
 
-  def render_array(entry, images)
+  def render_array(entry, images, level = 0, columns = 12)
+    puts "entry: #{entry.inspect}"
+    puts "images.ids: #{images.map(&:id).join(", ")}"
+    puts "level: #{level}"
+    puts "columns: #{columns}"
 
     arr_str = ""
+
     if entry.is_a?(String) || entry.is_a?(Symbol)
+      entry = {style: entry.to_sym}
+    end
+
+    if entry.is_a?(Hash)
+      if entry[:columns]
+        columns = entry[:columns]
+      end
+
       first_image = images.is_a?(Array) ? images.first : images
-      entry_str = complete_render_image(first_image, entry.to_sym, wrap_class: "optional-full-width-photo")
-      entry_str = "<div class='columns'>#{entry_str}</div>"
+      entry_str = complete_render_image(first_image, entry[:style], wrap_class: "optional-full-width-photo")
+      entry_str = "<div class='columns large-#{columns}'>#{entry_str}</div>"
       arr_str = entry_str
     elsif entry.is_a?(Array)
       arr_entries_count = entry.flatten.count
       processed_entries_count = 0
+
       entry.each do |child_entry|
         group_images_count = child_entry.is_a?(Array) ? child_entry.flatten.count : 1
         group_images = images[processed_entries_count..(processed_entries_count + group_images_count - 1)]
-        arr_str = render_array(child_entry, group_images)
+        if group_images.count == 0
+          next
+        end
+
+        child_columns = 12 / entry.count
+        if level >= 0 && level <= 0
+          child_columns = 12
+        end
+
+        arr_str += render_array(child_entry, group_images, level + 1, child_columns)
+        processed_entries_count += group_images_count
       end
 
+      wrap_columns = 12 / entry.count
+      if level == 0 && level <= 2
+        wrap_columns = 12
+      end
+
+      if level == 0
+        arr_str = "<div class='s-wrap row collapse'>#{arr_str}</div>"
+      elsif level > 1
+        arr_str = "<div class='s-wrap columns large-#{wrap_columns}'><div class='row collapse'>#{arr_str}</div></div>"
+      end
+      #arr_str = "<div class='row collapse'>#{arr_str}</div>"
     end
 
     arr_str

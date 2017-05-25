@@ -1,0 +1,25 @@
+- square_partial_name = "image"
+- square_partial_name = "feedback" if assets.model == ProjectFeedback
+.collage-wrapper.slide-up.blue-background
+  - assets.in_groups_of(10, false) do |group|
+    .row
+      .columns
+        .clearfix
+          .floated.clearfix
+            = render square_partial_name, asset: group[0]
+            = render square_partial_name, asset: group[1]
+            = render square_partial_name, asset: group[2]
+            = render square_partial_name, asset: group[3]
+
+          - if group.count >= 4
+            .floated
+              = render square_partial_name, asset: group[4], square_class: "fullwidth"
+          - if group.count >= 5
+            .floated.hide
+              = render square_partial_name, asset: group[5], square_class: "fullwidth"
+          - if group.count >= 6
+            .floated.clearfix.hide
+              = render square_partial_name, asset: group[6]
+              = render square_partial_name, asset: group[7]
+              = render square_partial_name, asset: group[8]
+              = render square_partial_name, asset: group[9]

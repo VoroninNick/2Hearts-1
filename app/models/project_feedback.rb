@@ -13,5 +13,5 @@ class ProjectFeedback < ActiveRecord::Base
   belongs_to :project
   attr_accessible :project
 
-  image :image
+  image :image, styles: { square: "450x450#" }
 end

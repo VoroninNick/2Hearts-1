@@ -18,7 +18,8 @@
     .columns.large-6
       = raw @project.task_text
 
-  = render_images(@project.task_images, 1)
+  /= render_images(@project.task_images, 1)
+  = render "scheme#{@project.task_images_scheme}", assets: @project.task_images
 
   .row.step-block
     .columns.large-6.float-right
@@ -26,7 +27,8 @@
     .columns.large-6.float-left
       = raw @project.idea_and_solution_text
 
-  = render_images(@project.idea_and_solution_images, 2)
+  /= render_images(@project.idea_and_solution_images, 2)
+  = render "scheme#{@project.idea_and_solution_images_scheme}", assets: @project.idea_and_solution_images
 
   - if @project.idea_and_solution_quote_text
     blockquote
@@ -44,7 +46,9 @@
     .columns.large-6
       = raw @project.result_text
 
-  = render_images(@project.result_images, 3)
+  /= render_images(@project.result_images, 3)
+  /= render "scheme3", assets: @project.result_images
+  = render "scheme#{@project.result_images_scheme}", assets: @project.result_images
 
   - small_banner_url = @project.result_banner_mobile.exists?(:small) ? @project.result_banner_mobile.url(:small) : (@project.result_banner.exists?(:small) ? @project.result_banner.url(:small) : nil)
   - if small_banner_url
@@ -56,92 +60,10 @@
     .background = inline_svg "svg/bg-text/2h-bg-lable-talk.svg"
     .title = inline_svg "svg/headers/2h-inner-pages-case-testimonials-01.svg"
 
-  - if @project.project_feedbacks.any?
-    .collage-wrapper.slide-up.blue-background
-      .row
-        .columns
-          .clearfix
-            .floated.clearfix
-              .square.social-media
-                .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v1.jpg')})"
-                .inner-border
-                .text
-                  h2.h2.animate якась соцмережа
-                  .heart.animate = inline_svg "svg/2h-little-heart-01.svg"
-                  p.regular.animate «Якщо в шлюбі абсолютна гармонія - це найбільше щастя на світі»
-                .social-icon.animate = inline_svg "svg/2h-little-insta-01.svg"
-              .square.social-media
-                .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v2.jpg')})"
-                .text
-                  h2.h2.animate якась соцмережа
-                  .heart.animate = inline_svg "svg/2h-little-heart-01.svg"
-                  p.regular.animate «Якщо в шлюбі абсолютна гармонія - це найбільше щастя на світі»
-                .social-icon.animate = inline_svg "svg/2h-little-insta-01.svg"
-              .square.social-media
-                .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v3.jpg')})"
-                .text
-                  h2.h2.animate якась соцмережа
-                  .heart.animate = inline_svg "svg/2h-little-heart-01.svg"
-                  p.regular.animate «Якщо в шлюбі абсолютна гармонія - це найбільше щастя на світі»
-                .social-icon.animate = inline_svg "svg/2h-little-insta-01.svg"
-              .square
-                .img-bg
-                .text
-                  h2.h2 Василій
-                  p.smaller перший дружба
-                  .heart = inline_svg "svg/2h-little-heart-01.svg"
-                  p.regular «Якщо в шлюбі абсолютна гармонія - це найбільше щастя на світі»
-                .social-icon = inline_svg "svg/2h-little-chat-01.svg"
+  = render "projects/scheme#{@project.project_feedbacks_scheme}", assets: @project.project_feedbacks
 
-            .floated
-              .square.fullwidth.social-media
-                .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v1.jpg')})"
-                .text
-                  h2.h2.animate @2hearts
-                  .heart.animate = inline_svg "svg/2h-little-heart-01.svg"
-                  p.regular.animate Кільця на даху весільного автомобіля символізують початковий рахунок в новій грі &mdash; 0:0 #footballwedding
-                .social-icon.animate = inline_svg "svg/2h-little-insta-01.svg"
 
-            .floated.hide
-              .square.fullwidth.social-media
-                .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v1.jpg')})"
-                .text
-                  h2.h2.animate @2hearts
-                  .heart.animate = inline_svg "svg/2h-little-heart-01.svg"
-                  p.regular.animate Кільця на даху весільного автомобіля символізують початковий рахунок в новій грі &mdash; 0:0 #footballwedding
-                .social-icon.animate = inline_svg "svg/2h-little-insta-01.svg"
 
-            .floated.clearfix.hide
-              .square.social-media
-                .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v1.jpg')})"
-                .inner-border
-                .text
-                  h2.h2.animate якась соцмережа
-                  .heart.animate = inline_svg "svg/2h-little-heart-01.svg"
-                  p.regular.animate «Якщо в шлюбі абсолютна гармонія - це найбільше щастя на світі»
-                .social-icon.animate = inline_svg "svg/2h-little-insta-01.svg"
-              .square.social-media
-                .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v2.jpg')})"
-                .text
-                  h2.h2.animate якась соцмережа
-                  .heart.animate = inline_svg "svg/2h-little-heart-01.svg"
-                  p.regular.animate «Якщо в шлюбі абсолютна гармонія - це найбільше щастя на світі»
-                .social-icon.animate = inline_svg "svg/2h-little-insta-01.svg"
-              .square.social-media
-                .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v3.jpg')})"
-                .text
-                  h2.h2.animate якась соцмережа
-                  .heart.animate = inline_svg "svg/2h-little-heart-01.svg"
-                  p.regular.animate «Якщо в шлюбі абсолютна гармонія - це найбільше щастя на світі»
-                .social-icon.animate = inline_svg "svg/2h-little-insta-01.svg"
-              .square
-                .img-bg
-                .text
-                  h2.h2 Василій
-                  p.smaller перший дружба
-                  .heart = inline_svg "svg/2h-little-heart-01.svg"
-                  p.regular «Якщо в шлюбі абсолютна гармонія - це найбільше щастя на світі»
-                .social-icon = inline_svg "svg/2h-little-chat-01.svg"
 
 .project-conclusion
 

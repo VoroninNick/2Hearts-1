@@ -24,9 +24,12 @@ class Project < ActiveRecord::Base
   image :result_banner_mobile, styles: { small: "640x1024#" }
 
 
-  has_images :task_images, styles: { large: "1380x700#", square: "450x450#", wide: "900x450#", medium_square: "680x680#", medium_tall: "680x1040#", small_wide: "680x360", small_square: "330x330#" }
-  has_images :idea_and_solution_images
-  has_images :result_images
+  image_options = {styles: { large: "1380x700#", square: "450x450#", wide: "900x450#", medium_square: "680x680#", medium_tall: "680x1040#", small_wide: "680x360", small_square: "330x330#" }}
+  has_images :task_images, **image_options
+  has_images :idea_and_solution_images, **image_options
+  has_images :result_images, **image_options
+
+  before_save :init_schemes
 
   def category
     project_category
@@ -85,5 +88,17 @@ class Project < ActiveRecord::Base
         next line
       end
     }
+  end
+
+  def init_schemes
+    h = {task_images_scheme: 1, idea_and_solution_images_scheme: 2, result_images_scheme: 3, project_feedbacks_scheme: 4}
+    h.each do |k, v|
+      val = self.send(k)
+      if val.blank?
+        self.send("#{k}=", v)
+      end
+    end
+
+    true
   end
 end

@@ -14,6 +14,14 @@ def svg_icon_pretty_value
   end
 end
 
+def scheme_enum_field(name)
+  field name, :enum do
+    enum do
+      ["1", "2", "3", "4"]
+    end
+  end
+end
+
 
 module RailsAdminDynamicConfig
   class << self
@@ -300,10 +308,12 @@ module RailsAdminDynamicConfig
 
           group :task do
             field :task_images
+            scheme_enum_field(:task_images_scheme)
           end
 
           group :idea_and_solution do
             field :idea_and_solution_images
+            scheme_enum_field(:idea_and_solution_images_scheme)
             field :idea_and_solution_banner do
               svg_icon_pretty_value
             end
@@ -311,12 +321,17 @@ module RailsAdminDynamicConfig
 
           group :result do
             field :result_images
+            scheme_enum_field(:result_images_scheme)
             field :result_banner do
               svg_icon_pretty_value
             end
             field :result_banner_mobile do
               svg_icon_pretty_value
             end
+          end
+
+          group :feedbacks do
+            scheme_enum_field(:project_feedbacks_scheme)
           end
 
         end
