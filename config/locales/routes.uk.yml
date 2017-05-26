@@ -1,7 +1,7 @@
 uk:
   routes:
     #  blog
-
+    blog_index: "blog"
     blog:
     news:
     video:

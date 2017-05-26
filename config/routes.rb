@@ -32,7 +32,7 @@ Rails.application.routes.draw do
     get "projects/:id", to: "projects#show", as: :project
 
     get "blog_index", to: "blog#index", as: :blog
-    get "blog", to: "blog#show", as: :blog_article
+    get "blog/:id", to: "blog#show", as: :blog_article
   end
 
   match "*url", to: "application#render_not_found", via: [:get, :post, :path, :put, :update, :delete]

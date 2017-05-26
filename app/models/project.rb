@@ -4,6 +4,11 @@ class Project < ActiveRecord::Base
   globalize :name, :url_fragment, :address, :idea_and_organization, :coordination, :decor, :music, :task_text, :idea_and_solution_text, :idea_and_solution_quote_text, :idea_and_solution_quote_author, :result_text, :featured_member_name, :featured_member_short_description, :technical_support, :special_effects, :photo_and_video, :show_program, :candy_bar
 
   boolean_scope :published
+  scope :order_by_sorting_position, -> { order("sorting_position asc") }
+
+  default_scope do
+    order_by_sorting_position
+  end
 
   has_cache do
     pages :projects, Project.published

@@ -67,7 +67,7 @@ module RailsAdminDynamicConfig
             end
             #edit_model
             nestable do
-              only [Cms::Page, Vacancy, FaqQuestion, Service, ProjectCategory, HomeSlide, TeamMember]
+              only [Cms::Page, Vacancy, FaqQuestion, Service, Project, ProjectCategory, HomeSlide, TeamMember]
             end
 
             ## With an audit adapter, you can add:
@@ -219,7 +219,7 @@ module RailsAdminDynamicConfig
         # ===================================================
         # Application specific models
         # ===================================================
-        config.include_models Vacancy, FaqQuestion, Service, Project, ProjectCategory, ProjectFeedback, HomeSlide, TeamMember
+        config.include_models Vacancy, FaqQuestion, Service, Project, ProjectCategory, ProjectFeedback, HomeSlide, TeamMember, ArticleCategory, Article
         config.model Vacancy do
           nestable_list({position_field: :sorting_position})
           navigation_label_key :vacancies, 1
@@ -280,6 +280,7 @@ module RailsAdminDynamicConfig
 
         config.model Project do
           navigation_label_key :projects, 1
+          nestable_list({position_field: :sorting_position})
 
           group :basic do
             field :published
@@ -428,20 +429,35 @@ module RailsAdminDynamicConfig
           field :author_description
         end
 
-        config.model TeamMember do
+        config.model ArticleCategory do
           nestable_list({position_field: :sorting_position})
-          navigation_label_key :about_us, 3
+          navigation_label_key :blog, 2
 
-          field :published
-          field :featured
           field :translations, :globalize_tabs
-          field :image
         end
 
-        config.model_translation TeamMember do
+        config.model_translation ArticleCategory do
           field :locale, :hidden
           field :name
-          field :position
+          field :url_fragment
+        end
+
+        config.model Article do
+          navigation_label_key :blog, 1
+
+          field :published
+          field :article_category
+          field :translations, :globalize_tabs
+          field :avatar
+          field :release_date
+        end
+
+        config.model_translation Article do
+          field :locale, :hidden
+          field :name
+          field :url_fragment
+          field :short_description
+          field :content, :ck_editor
         end
       end
     end
