@@ -8,8 +8,14 @@
   - if full_square_class.blank?
     - full_square_class = "square social-media " + square_class
 
+  - if !defined?(style)
+    - style = :square
+
+
+  - attachment = asset.try(:image) || asset.try(:data)
+
   div class=full_square_class
-    .img-bg style="background-image: url(#{asset_path('photo/2h-cases-v1.jpg')})"
+    .img-bg style="background-image: url(#{attachment.url(style)})"
     .inner-border
     .text
       h2.h2.animate

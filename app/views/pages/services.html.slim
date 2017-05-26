@@ -6,7 +6,8 @@
 
     .header
       = inline_svg "svg/headers/2h-lable-services.svg"
-    p.subtitle Ми в цьому спеціалісти
+    p.subtitle
+      = t("services.banner.title")
 
 .services-container
   - @services.each_with_index do |service, service_index|
@@ -27,7 +28,8 @@
         .columns.large-8
           = raw service.content
 
-      .collage-wrapper.slide-up
+      = render "projects/scheme5", assets: service.images
+      /.collage-wrapper.slide-up
         .row
           .columns
             - assets = service.images.select{|img| img.exists? }

@@ -17,7 +17,7 @@ end
 def scheme_enum_field(name)
   field name, :enum do
     enum do
-      ["1", "2", "3", "4"]
+      ["1", "2", "3", "4", "5"]
     end
   end
 end
@@ -67,7 +67,7 @@ module RailsAdminDynamicConfig
             end
             #edit_model
             nestable do
-              only [Cms::Page, Vacancy, FaqQuestion, Service, ProjectCategory]
+              only [Cms::Page, Vacancy, FaqQuestion, Service, ProjectCategory, HomeSlide, TeamMember]
             end
 
             ## With an audit adapter, you can add:
@@ -219,7 +219,7 @@ module RailsAdminDynamicConfig
         # ===================================================
         # Application specific models
         # ===================================================
-        config.include_models Vacancy, FaqQuestion, Service, Project, ProjectCategory, ProjectFeedback
+        config.include_models Vacancy, FaqQuestion, Service, Project, ProjectCategory, ProjectFeedback, HomeSlide, TeamMember
         config.model Vacancy do
           nestable_list({position_field: :sorting_position})
           navigation_label_key :vacancies, 1
@@ -409,6 +409,39 @@ module RailsAdminDynamicConfig
           field :name
           field :short_description
           field :message
+        end
+
+        config.model HomeSlide do
+          nestable_list({position_field: :sorting_position})
+          navigation_label_key :home, 3
+
+          field :published
+          field :translations, :globalize_tabs
+          field :image
+        end
+
+        config.model_translation HomeSlide do
+          field :locale, :hidden
+          field :image_alt
+          field :message
+          field :author_name
+          field :author_description
+        end
+
+        config.model TeamMember do
+          nestable_list({position_field: :sorting_position})
+          navigation_label_key :about_us, 3
+
+          field :published
+          field :featured
+          field :translations, :globalize_tabs
+          field :image
+        end
+
+        config.model_translation TeamMember do
+          field :locale, :hidden
+          field :name
+          field :position
         end
       end
     end

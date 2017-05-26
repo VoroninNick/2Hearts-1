@@ -80,48 +80,17 @@
       .text
         = inline_svg "svg/join-us.svg"
         p.name стати частиною команди
-  .columns.medium-4
-    .team-member-block
-      .img
-        .img-bg style="background-image: url(#{asset_path('photo/team2.jpg')})"
-      .text
-        p.name максим діденко
-        p.position Креативний директор
-  .columns.medium-4
-    .team-member-block
-      .img
-        .img-bg style="background-image: url(#{asset_path('photo/team2.jpg')})"
-      .text
-        p.name максим діденко
-        p.position Креативний директор
-  .columns.medium-4
-    .team-member-block
-      .img
-        .img-bg style="background-image: url(#{asset_path('photo/team2.jpg')})"
-      .text
-        p.name максим діденко
-        p.position Креативний директор
-  .columns.medium-4
-    .team-member-block
-      .img
-        .img-bg style="background-image: url(#{asset_path('photo/team2.jpg')})"
-      .text
-        p.name максим діденко
-        p.position Креативний директор
-  .columns.medium-4
-    .team-member-block
-      .img
-        .img-bg style="background-image: url(#{asset_path('photo/team2.jpg')})"
-      .text
-        p.name максим діденко
-        p.position Креативний директор
-  .columns.medium-4
-    .team-member-block
-      .img
-        .img-bg style="background-image: url(#{asset_path('photo/team2.jpg')})"
-      .text
-        p.name максим діденко
-        p.position Креативний директор
+  - @team_members.each do |team_member|
+    .columns.medium-4
+      .team-member-block
+        .img
+          .img-bg style="background-image: url(#{team_member.image.url(:medium)})"
+        .text
+          p.name
+            = team_member.name
+          p.position
+            = team_member.position
+
 
 
 .section-name.slide-up

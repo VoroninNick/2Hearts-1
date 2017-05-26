@@ -1,0 +1,23 @@
+
+.section-name.slide-up
+  .background = inline_svg "svg/bg-text/2h-bg-lable-services.svg"
+  .icon = inline_svg "svg/2h-icons-letter-01.svg"
+  .title = inline_svg "svg/headers/2h-lable-services.svg"
+
+.services-wrapper.slide-up
+  .row
+    .columns.large-6
+      - @services.each do |service|
+        .service
+          - if service.icon.exists?
+            .icon
+              = embedded_svg_from_absolute_path service.icon.path
+          p.h2
+            = service.name
+          p
+            = service.short_description
+          a.link title="На сторінку всіх послуг" href=service.url
+            | детальніше
+            = inline_svg "svg/2h-arrow-01.svg"
+
+  .bg-img style="background-image: url(#{asset_path('photo/2h-bride-v1.jpg')})"

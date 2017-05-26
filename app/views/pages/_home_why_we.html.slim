@@ -1,0 +1,27 @@
+.section-name.slide-up.advantages-section-name
+  .background = inline_svg "svg/bg-text/2h-bg-lable-why-us.svg"
+  .icon = inline_svg "svg/2h-icons-cake-01.svg"
+  .title = inline_svg "svg/headers/2h-lable-why-us.svg"
+
+.advantages-wrapper
+  .img-bg style="background-image: url(#{asset_path('photo/2H-bg-elements-v1.jpg')})"
+
+  .row
+    .columns.large-5.medium-8.float-right
+      .testemonial-block.slide-up
+        p.author
+          = t("home.why-we.quote.author")
+        p.slogan
+          = raw t("home.why-we.quote.message")
+
+  .row.slide-up
+    - @features.each do |feature|
+      .columns.large-3.medium-6
+        .advantage-block
+          .circle
+            p.number
+              = feature[:number]
+            p.details
+              = feature[:text]
+          p.description
+            = feature[:label]

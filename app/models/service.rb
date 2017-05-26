@@ -18,7 +18,7 @@ class Service < ActiveRecord::Base
   image :small_title_image
   image :large_title_image
 
-  has_images
+  has_images :images, **IMAGE_OPTIONS
 
   def url(locale = I18n.locale)
     url_fragment = self.translations_by_locale[locale].try(:url_fragment)

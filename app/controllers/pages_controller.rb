@@ -5,11 +5,15 @@ class PagesController < ApplicationController
     set_page_metadata(:home)
     @services = Service.published
     @projects = Project.published
+    @home_slides = HomeSlide.published
+    @features = I18n.t("home.why-we.features")
+    @team_members = TeamMember.published.featured
+    @feedbacks = ProjectFeedback.most_recent
 
   end
 
   def about
-
+    @team_members = TeamMember.published
   end
 
   def services

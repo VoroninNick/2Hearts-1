@@ -1,0 +1,12 @@
+- if @home_slides.try(:any?)
+  .main-slider-wrapper
+    ul.slider
+      - @home_slides.each do |slide|
+        li
+          .photo style="background-image: url(#{slide.image.url(:xl)})"
+          .text
+            p.comment
+              = slide.message
+            p.larger
+              span #{slide.author_name},&nbsp;
+              | #{slide.author_description}
