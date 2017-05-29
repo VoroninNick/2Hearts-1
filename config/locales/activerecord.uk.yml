@@ -2,3 +2,10 @@ uk:
   activerecord:
     attributes:
       quote_text: "Текст цитати"
+    models:
+      project_feedback:
+        one: "Відгук про проект"
+        other: "Відгуки про проекти"
+      article_category:
+        one: "Категорія статтей"
+        other: "Категорії статтей"

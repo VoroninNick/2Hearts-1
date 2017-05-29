@@ -82,11 +82,11 @@ module RailsAdminDynamicConfig
             home: 200,
             about_us: 300,
             projects: 400,
-            partnership: 500,
-            brands: 600,
-            services: 700,
-            media: 800,
-            contacts: 900,
+            services: 500,
+            blog: 600,
+            faq: 700,
+            contacts: 800,
+            vacancies: 900,
             tags: 1000,
             users: 1100,
             settings: 1200,
@@ -427,6 +427,23 @@ module RailsAdminDynamicConfig
           field :message
           field :author_name
           field :author_description
+        end
+
+
+        config.model TeamMember do
+          nestable_list({position_field: :sorting_position})
+          navigation_label_key :about_us, 3
+
+          field :published
+          field :featured
+          field :translations, :globalize_tabs
+          field :image
+        end
+
+        config.model_translation TeamMember do
+          field :locale, :hidden
+          field :name
+          field :position
         end
 
         config.model ArticleCategory do
