@@ -45,7 +45,7 @@ class Project < ActiveRecord::Base
   end
 
   def category_name
-    category.item_category_name
+    category.try(:item_category_name)
   end
 
   def guests_count_string
