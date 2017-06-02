@@ -16,6 +16,7 @@ class ApplicationController < ActionController::Base
   include Cms::Helpers::Breadcrumbs
   include ApplicationHelper
   include Cms::Helpers::AnotherFormsHelper
+  include Cms::Helpers::TagsHelper
 
   #before_action :initialize_breadcrumbs, if: :breadcrumbs_enabled?
   #before_action :initialize_menu_resources
