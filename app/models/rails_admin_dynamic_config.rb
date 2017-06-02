@@ -138,6 +138,7 @@ module RailsAdminDynamicConfig
                 I18n.t("activerecord.models.pages.#{k}", raise: true) rescue k.humanize
               end
             end
+            field :translations, :globalize_tabs
             field :seo_tags
 
           end
@@ -145,7 +146,8 @@ module RailsAdminDynamicConfig
         end
 
         config.model_translation Cms::Page do
-
+          field :locale, :hidden
+          field :h1_text
         end
 
 
