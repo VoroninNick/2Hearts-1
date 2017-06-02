@@ -41,7 +41,7 @@ class Project < ActiveRecord::Base
   end
 
   def category_svg_icon_string
-    category.svg_icon_string
+    category.try(:svg_icon_string)
   end
 
   def category_name
