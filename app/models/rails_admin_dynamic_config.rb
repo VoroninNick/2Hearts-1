@@ -128,6 +128,12 @@ module RailsAdminDynamicConfig
                 I18n.t("activerecord.models.pages.#{k}", raise: true) rescue k.humanize
               end
             end
+
+            field :h1_text do
+              def value
+                @bindings[:object].h1_text
+              end
+            end
           end
 
           edit do

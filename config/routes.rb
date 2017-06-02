@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     root to: "pages#index"
 
     controller :pages do
-      get "about", action: "about"
+      get "about_us", action: "about_us"
       get "services", action: "services"
       get "faq", action: "faq"
       get "vacancies", action: "vacancies"

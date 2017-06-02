@@ -12,7 +12,7 @@ class PagesController < ApplicationController
 
   end
 
-  def about
+  def about_us
     @team_members = TeamMember.published
   end
 

@@ -6,8 +6,8 @@
 
     .header
       = inline_svg "svg/headers/2h-lable-services.svg"
-    p.subtitle
-      = t("services.banner.title")
+    h1.subtitle
+      = h1_text
 
 .services-container
   - @services.each_with_index do |service, service_index|

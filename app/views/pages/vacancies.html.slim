@@ -5,7 +5,8 @@
   .banner-text
 
     .header = inline_svg "svg/headers/2h-inner-pages-vacancies.svg"
-    p.subtitle Стати частиною команди
+    h1.subtitle
+      = h1_text
 
 .one-wrapper
   .row
@@ -33,4 +34,4 @@
   .img-bg style="background-image: url(#{asset_path('photo/2H-bg-elements-v2.jpg')})"
   .section-name
     .title = inline_svg "svg/headers/2h-inner-pages-vacancy-team.svg"
-    a.button href=about_path Про нас
+    a.button href=Pages.about_us.url Про нас
