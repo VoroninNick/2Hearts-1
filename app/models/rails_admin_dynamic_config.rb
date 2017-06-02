@@ -291,6 +291,7 @@ module RailsAdminDynamicConfig
                 :default
               end
             end
+            field :banner
             field :avatar do
               svg_icon_pretty_value
             end
@@ -342,6 +343,7 @@ module RailsAdminDynamicConfig
           group :basic do
             field :name
             field :url_fragment
+            field :youtube_video_id
           end
 
           group :summary do

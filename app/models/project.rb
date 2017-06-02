@@ -1,7 +1,7 @@
 class Project < ActiveRecord::Base
   attr_accessible *attribute_names
 
-  globalize :name, :url_fragment, :address, :idea_and_organization, :coordination, :decor, :music, :task_text, :idea_and_solution_text, :idea_and_solution_quote_text, :idea_and_solution_quote_author, :result_text, :featured_member_name, :featured_member_short_description, :technical_support, :special_effects, :photo_and_video, :show_program, :candy_bar
+  globalize :name, :url_fragment, :address, :idea_and_organization, :coordination, :decor, :music, :task_text, :idea_and_solution_text, :idea_and_solution_quote_text, :idea_and_solution_quote_author, :result_text, :featured_member_name, :featured_member_short_description, :technical_support, :special_effects, :photo_and_video, :show_program, :candy_bar, :youtube_video_id
 
   boolean_scope :published
   scope :order_by_sorting_position, -> { order("sorting_position asc") }
@@ -27,6 +27,7 @@ class Project < ActiveRecord::Base
   image :idea_and_solution_banner, styles: {xxl: "1920x1080#"}
   image :result_banner, styles: {xxl: "1920x1080#", small: "640x1024#"}
   image :result_banner_mobile, styles: { small: "640x1024#" }
+  image :banner, styles: { large: "2048x1200#", thumb: "200x120#" }
 
 
   has_images :task_images, **IMAGE_OPTIONS
