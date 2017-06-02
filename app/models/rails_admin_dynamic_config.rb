@@ -304,6 +304,7 @@ module RailsAdminDynamicConfig
               svg_icon_pretty_value
             end
             field :translations, :globalize_tabs
+            field :seo_tags
           end
 
           group :summary do
@@ -461,6 +462,7 @@ module RailsAdminDynamicConfig
           navigation_label_key :blog, 2
 
           field :translations, :globalize_tabs
+          field :seo_tags
         end
 
         config.model_translation ArticleCategory do
@@ -477,6 +479,7 @@ module RailsAdminDynamicConfig
           field :translations, :globalize_tabs
           field :avatar
           field :release_date
+          field :seo_tags
         end
 
         config.model_translation Article do
