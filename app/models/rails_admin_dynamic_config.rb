@@ -227,7 +227,7 @@ module RailsAdminDynamicConfig
         # ===================================================
         # Application specific models
         # ===================================================
-        config.include_models Vacancy, FaqQuestion, Service, Project, ProjectCategory, ProjectFeedback, HomeSlide, TeamMember, ArticleCategory, Article
+        config.include_models Vacancy, FaqQuestion, Service, Project, ProjectCategory, ProjectFeedback, HomeSlide, TeamMember, AboutIntro, AboutStep, AboutTeamIntro, Partner, ArticleCategory, Article
         config.model Vacancy do
           nestable_list({position_field: :sorting_position})
           navigation_label_key :vacancies, 1
@@ -490,6 +490,64 @@ module RailsAdminDynamicConfig
           field :short_description
           field :content, :ck_editor
         end
+
+        config.model AboutStep do
+          nestable_list({position_field: :sorting_position})
+          navigation_label_key :about_us, 3
+
+          field :published
+          field :translations, :globalize_tabs
+          field :icon
+        end
+
+        config.model_translation AboutStep do
+          field :locale, :hidden
+          field :title_part1
+          field :title_part2
+          field :subtitle
+          field :description
+        end
+
+        config.model AboutIntro do
+          navigation_label_key :about_us, 2
+
+          field :translations, :globalize_tabs
+          field :image
+        end
+
+        config.model_translation AboutIntro do
+          field :locale, :hidden
+          field :intro, :ck_editor
+        end
+
+        config.model AboutTeamIntro do
+          navigation_label_key :about_us, 4
+
+          field :translations, :globalize_tabs
+        end
+
+        config.model_translation AboutTeamIntro do
+          field :locale, :hidden
+          field :intro, :ck_editor
+        end
+
+        config.model Partner do
+          nestable_list({position_field: :sorting_position})
+          navigation_label_key :about_us, 5
+
+          field :published
+          field :translations, :globalize_tabs
+          field :icon
+        end
+
+        config.model_translation Partner do
+          field :locale, :hidden
+          field :name
+          field :site_url
+        end
+
+
+
       end
     end
   end

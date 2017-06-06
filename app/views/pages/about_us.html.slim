@@ -14,54 +14,37 @@
 
   .row.slide-up
     .columns.large-4.large-pull-1.xxlarge-4.xxlarge-pull-0.float-right
-      h2.h2 професіонали та ентузіасти
-      p Ми – закохані у свою роботу професіонали. Організовуючи ваше свято, ми переймаємося кожною дрібничкою і хвилюємося за настрій гостей. Кожен з нас відповідає за конкретний спільний результат – дивовижне свято для вас.
-      p.slogan Ми не продаємо повітря, всі послуги власні. Працюємо командою на конкретний результат!
-      p Івент-агенція «Два серця» об’єднує досвідчених професіоналів, котрі вміють створювати видовищні дійства. Після того, як ми досконало зробили свою роботу, гості завжди захоплено говорять: «Свято вдалося!»
+      = raw @about_intro.try(:intro)
+  - image_url = @about_intro.image.exists? ? @about_intro.image.url : asset_path('photo/2h-cuted-men-v1.png')
+  .main-img style="background-image: url(#{image_url})"
 
-  .main-img style="background-image: url(#{asset_path('photo/2h-cuted-men-v1.png')})"
+- if @about_steps.try(:any?)
+  .section-name.slide-up
+    .background = inline_svg "svg/bg-text/2h-inner-pages-about-7steps-bg.svg"
+    .title = inline_svg "svg/headers/2h-inner-pages-about-7steps.svg"
 
-.section-name.slide-up
-  .background = inline_svg "svg/bg-text/2h-inner-pages-about-7steps-bg.svg"
-  .title = inline_svg "svg/headers/2h-inner-pages-about-7steps.svg"
+  .steps-wrapper
+    ul.steps-slider
+      - @about_steps.each_with_index do |step, i|
+        li
+          .slide-frame
+            .second-border
+            .icon
+              = step.icon.exists? ? embedded_svg_from_absolute_path(step.icon.path) : embedded_svg_from_assets("svg/2h-icons-love-birds-01.svg")
+            .step-number
+              = t("about_us.step-number", step_number: i+1)
+            p.description
+              = step.description
+            .step-name-block
+              p.title
+                | #{step.title_part1}#{'&nbsp;' if step.title_part2.present?}
+                - if step.title_part2.present?
+                  span
+                    = step.title_part2
+              p.subtitle
+                = step.subtitle
 
-.steps-wrapper
-  ul.steps-slider
-    li
-      .slide-frame
-        .second-border
-        .icon = inline_svg "svg/2h-icons-love-birds-01.svg"
-        .step-number
-        p.description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta consectetur necessitatibus omnis commodi non est fuga dolore eius quo excepturi asperiores minima, rerum? Dolor amet minus possimus, sit quisquam ea!
-        .step-name-block
-          p.title
-            | Місце зустрічі&nbsp;
-            span зі щастям
-          p.subtitle місце для весілля і його оформлення...
 
-    li
-      .slide-frame
-        .second-border
-        .icon = inline_svg "svg/2h-icons-love-birds-01.svg"
-        .step-number
-        p.description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta consectetur necessitatibus omnis commodi non est fuga dolore eius quo excepturi asperiores minima, rerum? Dolor amet minus possimus, sit quisquam ea!
-        .step-name-block
-          p.title
-            | Місце зустрічі&nbsp;
-            span зі щастям
-          p.subtitle місце для весілля і його оформлення...
-
-    li
-      .slide-frame
-        .second-border
-        .icon = inline_svg "svg/2h-icons-love-birds-01.svg"
-        .step-number
-        p.description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta consectetur necessitatibus omnis commodi non est fuga dolore eius quo excepturi asperiores minima, rerum? Dolor amet minus possimus, sit quisquam ea!
-        .step-name-block
-          p.title
-            | Місце зустрічі&nbsp;
-            span зі щастям
-          p.subtitle місце для весілля і його оформлення...
 
 .team-img style="background-image: url(#{asset_path('photo/team1.jpg')})"
 
@@ -72,10 +55,7 @@
 
 .row.columns-left.team-wrapper
   .columns.medium-8
-    h2.h2 фанати своєї справи
-    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum quidem tenetur quos quaerat ullam magnam odio tempora, architecto, beatae ratione sed similique aut fuga, deleniti voluptas. Quibusdam fugit eius, beatae.
-    p A voluptatem ex rerum quibusdam odit dicta, provident, dignissimos illo.
-    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, voluptatem aspernatur nulla aut id laborum laudantium eius ducimus eos consectetur.
+    = raw @about_team_intro.try(:intro)
   .columns.medium-4
     a.team-member-block.join-us href=vacancies_path
       .text
@@ -103,25 +83,13 @@
 
 .partners-wrapper
   .row.columns-left
-    .columns.medium-3.small-6
-      .partner = inline_svg "svg/2h-logos-edem-01.svg"
-    .columns.medium-3.small-6
-      .partner = inline_svg "svg/2h-logos-warszawa-01.svg"
-    .columns.medium-3.small-6
-      .partner = inline_svg "svg/2h-logos-warszawa-01.svg"
-    .columns.medium-3.small-6
-      .partner = inline_svg "svg/2h-logos-edem-01.svg"
-    .columns.medium-3.small-6
-      .partner = inline_svg "svg/2h-logos-warszawa-01.svg"
-    .columns.medium-3.small-6
-      .partner = inline_svg "svg/2h-logos-edem-01.svg"
-    .columns.medium-3.small-6
-      .partner = inline_svg "svg/2h-logos-warszawa-01.svg"
-    .columns.medium-3.small-6
-      .partner = inline_svg "svg/2h-logos-warszawa-01.svg"
-    .columns.medium-3.small-6
-      .partner = inline_svg "svg/2h-logos-edem-01.svg"
-    .columns.medium-3.small-6
-      .partner = inline_svg "svg/2h-logos-warszawa-01.svg"
+    - @partners.each do |partner|
+      .columns.medium-3.small-6
+        .partner title=partner.name
+          - wrap_tag = partner.site_url.present? ? :a : :div
+          - wrap_attrs = partner.site_url.present? ? {href: partner.site_url, rel: "nofollow"} : {}
+          = content_tag(wrap_tag, wrap_attrs) do
+            = embedded_svg_from_absolute_path(partner.icon.path)
+
 
 = render "go_to_all_projects"

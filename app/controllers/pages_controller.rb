@@ -14,6 +14,10 @@ class PagesController < ApplicationController
 
   def about_us
     @team_members = TeamMember.published
+    @about_steps = AboutStep.published
+    @about_intro = AboutIntro.first
+    @about_team_intro = AboutTeamIntro.first
+    @partners = Partner.published
   end
 
   def services
