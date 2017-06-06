@@ -75,21 +75,21 @@
             = team_member.position
 
 
+- if @partners.try(:any?)
+  .section-name.slide-up
+    .background = inline_svg "svg/bg-text/2h-inner-pages-about-partners-bg.svg"
+    .icon = inline_svg "svg/2h-icons-cake-01.svg"
+    .title = inline_svg "svg/headers/2h-inner-pages-about-partners.svg"
 
-.section-name.slide-up
-  .background = inline_svg "svg/bg-text/2h-inner-pages-about-partners-bg.svg"
-  .icon = inline_svg "svg/2h-icons-cake-01.svg"
-  .title = inline_svg "svg/headers/2h-inner-pages-about-partners.svg"
-
-.partners-wrapper
-  .row.columns-left
-    - @partners.each do |partner|
-      .columns.medium-3.small-6
-        .partner title=partner.name
-          - wrap_tag = partner.site_url.present? ? :a : :div
-          - wrap_attrs = partner.site_url.present? ? {href: partner.site_url, rel: "nofollow"} : {}
-          = content_tag(wrap_tag, wrap_attrs) do
-            = embedded_svg_from_absolute_path(partner.icon.path)
+  .partners-wrapper
+    .row.columns-left
+      - @partners.each do |partner|
+        .columns.medium-3.small-6
+          .partner title=partner.name
+            - wrap_tag = partner.site_url.present? ? :a : :div
+            - wrap_attrs = partner.site_url.present? ? {href: partner.site_url, rel: "nofollow"} : {}
+            = content_tag(wrap_tag, wrap_attrs) do
+              = embedded_svg_from_absolute_path(partner.icon.path)
 
 
 = render "go_to_all_projects"
