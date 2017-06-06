@@ -8,7 +8,7 @@
         - if group.count >= 2
           .clearfix.collage-container
             .floated.clearfix
-              = render square_partial_name, asset: group[1], style: :square
+              = render square_partial_name, asset: group[1], style: :square, show_border: true
               = render square_partial_name, asset: group[2], style: :square
               = render square_partial_name, asset: group[3], style: :square
               = render square_partial_name, asset: group[4], style: :square

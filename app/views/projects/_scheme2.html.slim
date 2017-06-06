@@ -5,7 +5,7 @@
   - assets.in_groups_of(4, false) do |group|
     .row.collapse
       .columns.large-6
-        = render square_partial_name, asset: group[0], style: :medium_square
+        = render square_partial_name, asset: group[0], style: :medium_square, show_border: true
         = render square_partial_name, asset: group[1], style: :medium_tall, square_class: "height-1-5x"
       - if group.count >= 3
         .columns.large-6

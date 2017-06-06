@@ -14,9 +14,13 @@
 
   - attachment = asset.try(:image) || asset.try(:data)
 
+  - if !defined?(show_border)
+    - show_border = false
+
   div class=full_square_class
     .img-bg style="background-image: url(#{attachment.url(style)})"
-    .inner-border
+    - if show_border
+      .inner-border
     .text
       h2.h2.animate
         = asset.name

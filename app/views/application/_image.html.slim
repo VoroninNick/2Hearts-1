@@ -13,6 +13,10 @@
 
   - attachment = asset.try(:data) || asset.try(:image)
 
+  - if !defined?(show_border)
+    - show_border = false
+
   div class=full_square_class
     .img-bg style="background-image: url(#{attachment.url(style)})"
-    .inner-border
+    - if show_border
+      .inner-border
