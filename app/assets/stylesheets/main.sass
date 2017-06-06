@@ -187,6 +187,19 @@
       letter-spacing: 1px
 
 .team-wrapper
+  .img-hover-bg
+    position: absolute
+    height: 100%
+    width: 100%
+    background-position: center
+    background-size: cover
+    opacity: 0
+
+  .team-member-block
+    &:hover
+      .img-hover-bg
+        opacity: 1
+
 
   .img-bg
     overflow: hidden

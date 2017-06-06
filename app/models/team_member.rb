@@ -16,4 +16,5 @@ class TeamMember < ActiveRecord::Base
   end
 
   image :image, styles: {medium: "440x620#"}
+  image :hover_image, styles: {medium: "440x620#"}
 end

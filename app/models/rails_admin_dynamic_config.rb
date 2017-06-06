@@ -449,6 +449,7 @@ module RailsAdminDynamicConfig
           field :featured
           field :translations, :globalize_tabs
           field :image
+          field :hover_image, :paperclip
         end
 
         config.model_translation TeamMember do
