@@ -10,6 +10,8 @@ class Project < ActiveRecord::Base
     order_by_sorting_position
   end
 
+  has_seo_tags
+  has_sitemap_record
   has_cache do
     pages :projects, Project.published
   end

@@ -13,6 +13,8 @@ class Article < ActiveRecord::Base
   belongs_to :article_category
   attr_accessible :article_category
 
+  has_seo_tags
+  has_sitemap_record
   has_cache do
     pages :blog, Article.published
   end
