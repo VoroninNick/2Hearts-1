@@ -10,9 +10,9 @@
       - @services.each do |service|
         .service
           - if service.icon.exists?
-            .icon
+            a.icon title="На сторінку всіх послуг" href=service.url
               = embedded_svg_from_absolute_path service.icon.path
-          p.h2
+          a.h2 title="На сторінку всіх послуг" href=service.url
             = service.name
           p
             = service.short_description

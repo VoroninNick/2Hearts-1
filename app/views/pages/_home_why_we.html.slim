@@ -9,10 +9,13 @@
   .row
     .columns.large-5.medium-8.float-right
       .testemonial-block.slide-up
-        p.author
-          = t("home.why-we.quote.author")
-        p.slogan
-          = raw t("home.why-we.quote.message")
+        ul.why-we-slider
+          - t("home.why-we.quotes").each do |q|
+            li
+              p.author
+                = q[:author]
+              p.slogan
+                = raw q[:message]
 
   .row.slide-up
     - @features.each do |feature|
