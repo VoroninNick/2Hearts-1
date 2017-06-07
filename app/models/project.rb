@@ -72,7 +72,7 @@ class Project < ActiveRecord::Base
   end
 
   def self.get(url_fragment)
-    self.published.joins(:translations).where(project_translations: { url_fragment: url_fragment, locale: I18n.locale }).first
+    self.published.joins(:translations).where(:"#{self.translation_class.table_name}" => { url_fragment: url_fragment, locale: I18n.locale }).first
   end
 
   def formatted_release_date

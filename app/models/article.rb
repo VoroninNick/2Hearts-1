@@ -19,9 +19,39 @@ class Article < ActiveRecord::Base
     pages :blog, Article.published
   end
 
-  image :avatar
+  image :avatar, styles: { large: "945x580#", medium: "460x280#" }
 
   has_navigation
 
+  def url(locale = I18n.locale)
+    self.class.base_url + "/" + self.translations_by_locale[locale].try(:url_fragment)
+  end
 
+  def self.base_url(locale = I18n.locale)
+    Cms.url_helpers.send("blog_#{locale}_path")
+  end
+
+  def formatted_release_date(format = :short)
+    d = release_date
+    return nil if d.nil?
+    if format == :short
+      d.strftime("%d.%m.%Y")
+    elsif format == :long
+      month_name = I18n.t("genitive_month_names")[d.month - 1]
+      "#{d.day} #{month_name} #{d.year}"
+    end
+  end
+
+  def category_name
+    s = article_category.try(:name)
+    if s.blank?
+      s = I18n.t("components.tags.misc", raise: true) rescue "misc"
+    end
+
+    s
+  end
+
+  def self.get(url_fragment)
+    self.published.joins(:translations).where(:"#{self.translation_class.table_name}" => { url_fragment: url_fragment, locale: I18n.locale }).first
+  end
 end

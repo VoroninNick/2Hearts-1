@@ -294,7 +294,7 @@ module RailsAdminDynamicConfig
             field :published
             field :project_category
             field :instagram_hash_tag
-            field :release_date do
+            field :release_date, :date do
               date_format do
                 :default
               end
@@ -463,7 +463,7 @@ module RailsAdminDynamicConfig
           navigation_label_key :blog, 2
 
           field :translations, :globalize_tabs
-          field :seo_tags
+          #field :seo_tags
         end
 
         config.model_translation ArticleCategory do
@@ -479,7 +479,11 @@ module RailsAdminDynamicConfig
           field :article_category
           field :translations, :globalize_tabs
           field :avatar
-          field :release_date
+          field :release_date, :date do
+            date_format do
+              :default
+            end
+          end
           field :seo_tags
         end
 
