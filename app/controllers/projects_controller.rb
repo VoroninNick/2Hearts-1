@@ -14,6 +14,7 @@ class ProjectsController < ApplicationController
     if @project.nil?
       return render_not_found
     end
+    set_page_metadata(@project)
     @related_projects = Project.published.where.not(id: @project.id)
     @og_image = @project.avatar.url
   end
