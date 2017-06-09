@@ -1,0 +1,13 @@
+site_data:
+  emails:
+    - "info@wed.in.ua"
+  phones:
+    - "+38 (067) 672 68 30"
+  social_links:
+    facebook: "https://www.facebook.com/dva.sercya/"
+    twitter: ""
+    instagram: "https://www.instagram.com/twoheartslviv/"
+    vk: "https://vk.com/dva_sercya_lviv"
+  map_center_lat_lng: ""
+  map_marker_lat_lng: ""
+  marker_google_map_url: ""

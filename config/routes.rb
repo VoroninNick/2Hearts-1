@@ -28,12 +28,18 @@ Rails.application.routes.draw do
       get "contact_us", action: "contact_us"
     end
 
-    get "projects_index", to: "projects#index", as: :projects
-    get "projects/:id", to: "projects#show", as: :project
+    scope "projects", controller: "projects" do
+      root action: :index, as: :projects
+      get ":id", action: :show, as: :project
+    end
 
-    get "blog_index", to: "blog#index", as: :blog
-    get "blog/:id", to: "blog#show", as: :blog_article
+    scope "blog", controller: "blog" do
+      root action: :index, as: :blog
+      get ":id", action: :show, as: :blog_article
+    end
   end
+
+
 
   match "*url", to: "application#render_not_found", via: [:get, :post, :path, :put, :update, :delete]
 end

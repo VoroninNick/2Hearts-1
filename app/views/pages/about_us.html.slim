@@ -37,7 +37,7 @@
               = step.description
             .step-name-block
               p.title
-                | #{step.title_part1}#{'&nbsp;' if step.title_part2.present?}
+                | #{step.title_part1}#{raw '&nbsp;' if step.title_part2.present?}
                 - if step.title_part2.present?
                   span
                     = step.title_part2

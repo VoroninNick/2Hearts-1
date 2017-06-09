@@ -15,54 +15,43 @@
         li.filter.active
           | Всі
           sup 35
-        li.filter data-tag-id="1"
-          | Поради
-          sup 12
-        li.filter data-tag-id="2"
-          | Навчання
-          sup 10
-        li.filter data-tag-id="3"
-          | Думки
-          sup 5
-        li.filter data-tag-id="4"
-          | Різне
-          sup 8
+        - @categories.each do |category|
+          li.filter data-tag-id=category.id
+            = category.name
+            sup
+              = category.articles.published.count
+        - if @misc_articles_count > 0
+          li.filter data-tag-id=0
+            | Різне
+            sup
+              = @misc_articles_count
 
 .row
   .columns
     .blog-wrapper
-      a.blog-block.big data-tag-ids="1" href="blog_one_path"
-        .img
-          .img-bg style="background-image: url(#{asset_path('photo/hearts-slide-3.jpg')})"
-        .text
-          .category поради
-          p.title ще раз про вибір весільного вбрання нареченої
-          p.description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam asperiores repudiandae cupiditate, nulla rem perspiciatis, nam ratione dolorem similique accusamus, fugiat eveniet id laudantium dicta. Earum distinctio velit laboriosam voluptate.
-          p.date 12.04.2016
-          p.read-about Читати
-      a.blog-block data-tag-ids="2" href="blog_one_path"
-        .img
-          .img-bg style="background-image: url(#{asset_path('photo/2hearts11.jpg')})"
-        .text
-          .category поради
-          p.title ще раз про вибір весільного вбрання нареченої
-          p.date 12.04.2016
-          p.read-about Читати
-      a.blog-block data-tag-ids="3" href="blog_one_path"
-        .img
-          .img-bg style="background-image: url(#{asset_path('photo/2hearts77.jpg')})"
-        .text
-          .category поради
-          p.title ще раз про вибір весільного вбрання нареченої
-          p.date 12.04.2016
-          p.read-about Читати
-      a.blog-block.big data-tag-ids="4" href="blog_one_path"
-        .img
-          .img-bg style="background-image: url(#{asset_path('photo/2hearts22.jpg')})"
-        .text
-          .category поради
-          p.title ще раз про вибір весільного вбрання нареченої
-          p.date 12.04.2016
-          p.read-about Читати
+      - @articles.in_groups_of(3, false) do |group|
+        - group.each_with_index do |article, i|
+          - image_style = i == 0 ? :large : :medium
+          - if article.avatar.exists?(image_style)
+            - image_url = article.avatar.url(image_style)
+          - else
+            - image_url = asset_path('photo/hearts-slide-3.jpg')
+          a.blog-block class=("big" if i == 0) data-tag-ids=(article.article_category.try(:id) || 0) href=article.url
+            .img
+              .img-bg style="background-image: url(#{image_url})"
+            .text
+              - if article.category_name.present?
+                .category
+                  = article.category_name
+              p.title
+                = article.name
+              - if i == 0
+                p.description
+                  = article.short_description
+              - if article.formatted_release_date
+                p.date
+                  = article.formatted_release_date
+              p.read-about Читати
+
 
 = render "pager"
