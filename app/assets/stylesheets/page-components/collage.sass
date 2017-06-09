@@ -72,6 +72,11 @@
   .img-bg
     background-color: $brown800
 
+  .lg-object
+    +fullsize
+    img
+      display: none
+
   &.blue-background
     .img-bg
       background-color: $blueGrey800
@@ -80,7 +85,6 @@
     margin: 100px 0
     .square
       float: none
-      // width: 100%
       margin: 10px
       @media #{$large-up}
         width: calc(100% - 20px)

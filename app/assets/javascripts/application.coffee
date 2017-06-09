@@ -15,6 +15,8 @@
 #= require plugins/scroll-banner
 #= require plugins/owl.carousel.min
 #= require plugins/jquery.drawsvg
+#= require plugins/lightgallery.min
+#= require plugins/lg-thumbnail.min
 
 #     I N I T I A L I Z E
 
@@ -30,5 +32,6 @@
 #= require filters
 #= require banner-anim
 #= require mask
+#= require lightgallery
 
 #= require sharing

@@ -16,7 +16,10 @@
   - if !defined?(show_border)
     - show_border = false
 
-  div class=full_square_class
+  div class=full_square_class href=asset_path(attachment.url(style))
     .img-bg style="background-image: url(#{attachment.url(style)})"
     - if show_border
       .inner-border
+      
+    a.lg-object href=asset_path(attachment.url(style))
+      img src=asset_path(attachment.url(style))
