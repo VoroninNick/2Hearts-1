@@ -45,9 +45,10 @@
                   = article.category_name
               p.title
                 = article.name
-              - if i == 0
+              - if article.short_description.present?
                 p.description
                   = article.short_description
+
               - if article.formatted_release_date
                 p.date
                   = article.formatted_release_date
