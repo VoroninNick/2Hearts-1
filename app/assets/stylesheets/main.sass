@@ -420,6 +420,7 @@
 .blog-wrapper
   +clearfix
   margin: -10px
+  padding-bottom: 100px
 .blog-block
   position: relative
   float: left
@@ -439,8 +440,6 @@
     overflow: hidden
     .img-bg
       +transition(all 1s ceaser($easeOutCubic))
-    // background-position: center
-    // background-size: cover
   .text
     position: absolute
     width: 100%
@@ -476,6 +475,10 @@
     display: none
     color: $blueGrey600
     line-height: 1.2
+    @media #{$large-only}
+      display: block
+    @media #{$xlarge-only}
+      display: block
   .date
     @extend %istok
     font-size: 12px
