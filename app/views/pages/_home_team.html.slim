@@ -18,6 +18,8 @@
         .team-member-block
           .img
             .img-bg style="background-image: url(#{team_member.image.url(:medium)})"
+            - if team_member.hover_image.exists?(:medium)
+              .img-hover-bg style="background-image: url(#{team_member.hover_image.url(:medium)})"
           .text
             p.name
               = team_member.name
