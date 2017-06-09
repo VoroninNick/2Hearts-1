@@ -12,7 +12,8 @@
 .row
   .columns.medium-10.medium-centered.xlarge-8
     .one-wrapper.in-blog-one
-      img src=asset_path('photo/hearts-slide-1.jpg')
+      - if @article.avatar.exists?(:large)
+        img src=@article.avatar.url(:large)
       .row
         .medium-5.large-4.columns
           .date
