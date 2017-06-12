@@ -37,6 +37,11 @@ class Project < ActiveRecord::Base
   has_images :result_images, **IMAGE_OPTIONS
 
   before_save :init_schemes
+  before_save :init_guests_count
+
+  def init_guests_count
+    self.guests_count = 0 if self.guests_count.nil?
+  end
 
   def category
     project_category
