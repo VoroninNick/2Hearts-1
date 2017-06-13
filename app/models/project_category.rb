@@ -13,7 +13,7 @@ class ProjectCategory < ActiveRecord::Base
   end
 
   has_cache do
-    pages :projects, Project.published
+    pages :home, :projects, Project.published
   end
 
   def url(locale = I18n.locale)

@@ -16,7 +16,7 @@ class Article < ActiveRecord::Base
   has_seo_tags
   has_sitemap_record
   has_cache do
-    pages :blog, Article.published
+    pages :blog, Article.published, self
   end
 
   image :avatar, styles: { large: "945x580#", medium: "460x280#" }

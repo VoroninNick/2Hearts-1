@@ -13,7 +13,7 @@ class Project < ActiveRecord::Base
   has_seo_tags
   has_sitemap_record
   has_cache do
-    pages :projects, Project.published
+    pages :home, :projects, Project.published, self
   end
 
   has_navigation
