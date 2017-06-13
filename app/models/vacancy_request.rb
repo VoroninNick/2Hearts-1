@@ -3,6 +3,9 @@ class VacancyRequest < ActiveRecord::Base
 
   include Cms::Notifier
 
+  belongs_to :vacancy
+  attr_accessible :vacancy
+
   image :attachment
 
   validates_presence_of :name, :phone, :email

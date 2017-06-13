@@ -28,7 +28,7 @@
         .accordion-inner
           = raw vacancy.content
 
-          .send-resume Подати резюме
+          .send-resume data-vacancy-id=vacancy.id Подати резюме
 
 .inner-page-bottom.slide-up
   .img-bg style="background-image: url(#{asset_path('photo/2H-bg-elements-v2.jpg')})"

@@ -23,6 +23,7 @@ $document.ready ->
     popup_wrap.addClass('order')
   resume_button.on 'click', ->
     popup_wrap.addClass('resume')
+    popup_wrap.find(".vacancy-form").attr("data-vacancy-id", $(this).attr("data-vacancy-id"))
 
 
   close_popup.on 'click', ->
