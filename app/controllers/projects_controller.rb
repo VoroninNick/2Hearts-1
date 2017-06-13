@@ -1,4 +1,6 @@
 class ProjectsController < ApplicationController
+  caches_page :index, :show
+
   def index
     @projects = Project.published
     @categories = ProjectCategory.joins(projects: {}).where(projects: {published: 't'})
