@@ -17,6 +17,7 @@
 #= require plugins/jquery.drawsvg
 #= require plugins/lightgallery.min
 #= require plugins/lg-thumbnail.min
+#= require jquery-form/dist/jquery.form.min
 
 #     I N I T I A L I Z E
 
@@ -35,3 +36,5 @@
 #= require lightgallery
 
 #= require sharing
+
+#= require form

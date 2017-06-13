@@ -1,0 +1,14 @@
+uk:
+  forms:
+    placeholders:
+      common:
+        name: "Оксана"
+        phone: "+38 (___) __ ____"
+        email: "mail@gmail.com"
+        comment: "Напишіть, якщо у Вас виникли додаткові питання або побажання"
+    labels:
+      common:
+        name: "Як вас звати"
+        phone: "Ваш номер телефону"
+        email: "Електронна скринька"
+        comment: "Додаткові побажання"

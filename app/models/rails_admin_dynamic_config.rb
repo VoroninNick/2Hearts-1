@@ -206,7 +206,6 @@ module RailsAdminDynamicConfig
           navigation_label_key(:tags, 1)
           field :translations, :globalize_tabs
           field :blog_articles
-
         end
 
         config.model_translation Cms::Tag do
@@ -223,6 +222,10 @@ module RailsAdminDynamicConfig
           visible false
         end
 
+        # ===================================================
+        # Requests
+        # ===================================================
+        config.configure_forms(ContactRequest, FaqQuestionRequest, OrderRequest, VacancyRequest)
 
         # ===================================================
         # Application specific models

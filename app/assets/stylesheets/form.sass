@@ -84,6 +84,11 @@ form
         opacity: 1
         pointer-events: initial
 
+    &.required
+      label
+        &:after
+          content: "*"
+
   label.error
     display: block
     padding: 5px 20px

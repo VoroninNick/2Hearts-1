@@ -8,7 +8,10 @@ Rails.application.routes.draw do
 
   localized do
     controller "forms" do
-      #post "call_request"
+      post "contact_request"
+      post "faq_question_request"
+      post "order_request"
+      post "vacancy_request"
     end
 
     mount RailsAdmin::Engine => '/admin', as: 'rails_admin'

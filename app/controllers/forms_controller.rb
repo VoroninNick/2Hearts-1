@@ -1,22 +1,18 @@
 class FormsController < ApplicationController
-  def consultation_request
-    basic_request(ConsultationRequest)
+  def vacancy_request
+    basic_request(VacancyRequest)
   end
 
-  def partnership_request
-    basic_request(PartnershipRequest)
+  def contact_request
+    basic_request(ContactRequest)
   end
 
-  def call_request
-    basic_request(CallRequest)
+  def faq_question_request
+    basic_request(FaqQuestionRequest)
   end
 
-  def meter_request
-    basic_request(MeterRequest)
-  end
-
-  def contacts_request
-    basic_request(ContactsRequest)
+  def order_request
+    basic_request(OrderRequest)
   end
 
   def basic_request(request_class)

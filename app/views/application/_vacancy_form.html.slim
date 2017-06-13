@@ -1,0 +1,9 @@
+- resource_name = VacancyRequest.new
+form.ajax-form.contact-form  action=vacancy_request_path method="post"
+  h2 подати резюме
+  = input(resource_name, :name, required: true, reset_label_html: {class: ""})
+  = input(resource_name, :email, required: true, reset_label_html: {class: ""})
+  = input(resource_name, :phone, type: :tel, reset_label_html: {class: ""})
+  = input(resource_name, :attachment, type: :file)
+  = input(resource_name, :comment, type: :text, required: true, reset_label_html: {class: ""})
+  button.button Надіслати

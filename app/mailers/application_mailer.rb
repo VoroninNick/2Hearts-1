@@ -8,28 +8,20 @@ class ApplicationMailer < ActionMailer::Base
     to
   end
 
-  def new_call_request(call_request)
-    new_request(call_request)
-  end
-
-  def new_consultation_request(consultation_request)
-    new_request(consultation_request)
-  end
-
-  def new_partnership_request(partnership_request)
-    new_request(partnership_request)
-  end
-
-  def new_meter_request(meter_request)
-    new_request(meter_request)
-  end
-
   def new_vacancy_request(vacancy_request)
     new_request(vacancy_request)
   end
 
-  def new_contacts_request(contacts_request)
-    new_request(contacts_request)
+  def new_contact_request(contact_request)
+    new_request(contact_request)
+  end
+
+  def new_faq_question_request(faq_question_request)
+    new_request(faq_question_request)
+  end
+
+  def new_order_request(order_request)
+    new_request(order_request)
   end
 
   def new_request(obj)
@@ -37,7 +29,7 @@ class ApplicationMailer < ActionMailer::Base
     set_admin_root
     @request = obj
     resource_name = @request.class.name.underscore
-    @email_title = I18n.t("mailer.#{resource_name}.title")
+    @email_title = I18n.t("mailer.#{resource_name}.title", raise: true) rescue resource_name.humanize
     mail to: receivers(resource_name), subject: @email_title, template_name: "basic_request"
   end
 
