@@ -17,14 +17,11 @@
     .columns.large-3.medium-4
       p.small ми в соц. мережах
       ul.socials
-        li
-          a.social-icon title="Наша сторінка в соцмережі" = inline_svg "svg/2h-social-face-01.svg"
-        li
-          a.social-icon title="Наша сторінка в соцмережі" = inline_svg "svg/2h-social-twitter-01.svg"
-        li
-          a.social-icon title="Наша сторінка в соцмережі" = inline_svg "svg/2h-social-insta-01.svg"
-        li
-          a.social-icon title="Наша сторінка в соцмережі" = inline_svg "svg/2h-social-vk-01.svg"
+        - social_links.each do |k, social_link|
+          li
+            a.social-icon rel="nofollow" target="_blank" href=social_link[:url] title="Наша сторінка в соцмережі"
+              = embedded_svg_from_assets(social_link[:icon])
+
 
 .footer
   .columns
