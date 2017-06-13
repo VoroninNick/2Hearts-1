@@ -24,17 +24,15 @@
       .contact-block
         span ми в соціальних мережах
         ul.socials
-          li
-            a facebook
-          li
-            a twitter
-          li
-            a instagram
-          li
-            a vkontakte
+          - social_links.each do |k, social_link|
+            li
+              a rel="nofollow" target="_blank" href=social_link[:url] title="Наша сторінка в соцмережі"
+                = social_link[:title]
+
         .hashtag
-          span #
-          | twohearts
+          a href="https://www.instagram.com/explore/tags/twohearts/" rel="nofollow" target="_blank" title="Наш тег на інстаграмі"
+            span #
+            | twohearts
       .subscribe-button Підписатись на розсилку
     .columns.large-6
       form.contact-form
