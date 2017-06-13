@@ -24,7 +24,7 @@ class Project < ActiveRecord::Base
   has_many :project_feedbacks
   attr_accessible :project_feedbacks, :project_feedback_ids
 
-  image :avatar, styles: { medium: "320x480#" }
+  image :avatar, styles: { medium: "320x480#", large: "470x650#" }
   image :featured_member_avatar, styles: {thumb: "100x100#"}
   image :idea_and_solution_banner, styles: {xxl: "1920x1080#"}
   image :result_banner, styles: {xxl: "1920x1080#", small: "640x1024#"}
