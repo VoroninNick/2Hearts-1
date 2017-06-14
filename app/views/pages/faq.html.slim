@@ -7,7 +7,7 @@
     .header = inline_svg "svg/headers/2h-inner-pages-fuck.svg"
     h1.subtitle
       = h1_text
-    a.button href=contact_us_path Задати питання
+    .button.question-button Задати питання
 
 .indent
   .row
@@ -20,6 +20,6 @@
           = raw faq_question.content
 
 
-      .button Задати питання
+      .button.question-button Задати питання
 
 = render "go_to_all_projects"

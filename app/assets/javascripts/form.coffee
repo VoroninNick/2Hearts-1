@@ -1,3 +1,7 @@
+show_message_success = ()->
+  $('.popup-wrapper').removeClass('share subscribe order resume question')
+  $('.popup-wrapper').addClass('success')
+
 $document.on "submit", ".ajax-form", (e)->
   e.preventDefault()
   url = $(this).attr("action")
@@ -8,5 +12,5 @@ $document.on "submit", ".ajax-form", (e)->
     error: ()->
       alert("error")
     success: ()->
-      alert("success")
+      return show_message_success()
   )

@@ -34,6 +34,7 @@
 #= require banner-anim
 #= require mask
 #= require lightgallery
+#= require input-file-add
 
 #= require sharing
 
