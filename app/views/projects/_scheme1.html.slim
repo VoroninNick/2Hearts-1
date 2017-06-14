@@ -1,24 +1,26 @@
 - square_partial_name = "image"
 - square_partial_name = "feedback" if assets.model == ProjectFeedback
 
+- border_for = rand(1..6)
+
 
 
 .collage-wrapper.slide-up.inside-project-one
   - assets.in_groups_of(6, false) do |group|
     .row.collapse
       .columns
-        = render square_partial_name, asset: group[0], style: :large, full_square_class: "optional-full-width-photo", show_border: true
+        = render square_partial_name, asset: group[0], style: :large, full_square_class: "optional-full-width-photo", show_border: border_for == 1
       - if group.count >= 2
         .columns.large-4
-          = render square_partial_name, asset: group[1], style: :square
+          = render square_partial_name, asset: group[1], style: :square, show_border: border_for == 2
           - if group.count >= 3
-            = render square_partial_name, asset: group[2], style: :square
+            = render square_partial_name, asset: group[2], style: :square, show_border: border_for == 3
       - if group.count >= 4
         .columns.large-4.hide
-          = render square_partial_name, asset: group[3], style: :medium_tall, square_class: "height-2x"
+          = render square_partial_name, asset: group[3], style: :medium_tall, square_class: "height-2x", show_border: border_for == 4
 
       - if group.count >= 5
         .columns.large-4
-          = render square_partial_name, asset: group[4], style: :square
+          = render square_partial_name, asset: group[4], style: :square, show_border: border_for == 5
           - if group.count >= 6
-            = render square_partial_name, asset: group[5], style: :square
+            = render square_partial_name, asset: group[5], style: :square, show_border: border_for == 6

@@ -1,13 +1,15 @@
 - square_partial_name = "image"
 - square_partial_name = "feedback" if assets.model == ProjectFeedback
 
+- border_for = rand(1..4)
+
 .collage-wrapper.slide-up.inside-project-one
   - assets.in_groups_of(4, false) do |group|
     .row.collapse
       .columns.large-6
-        = render square_partial_name, asset: group[0], style: :medium_square, show_border: true
-        = render square_partial_name, asset: group[1], style: :medium_tall, square_class: "height-1-5x"
+        = render square_partial_name, asset: group[0], style: :medium_square, show_border: border_for == 1
+        = render square_partial_name, asset: group[1], style: :medium_tall, square_class: "height-1-5x", show_border: border_for == 2
       - if group.count >= 3
         .columns.large-6
-          = render square_partial_name, asset: group[2], style: :medium_tall, square_class: "height-1-5x"
-          = render square_partial_name, asset: group[3], style: :medium_square, square_class: "hide"
+          = render square_partial_name, asset: group[2], style: :medium_tall, square_class: "height-1-5x", show_border: border_for == 3
+          = render square_partial_name, asset: group[3], style: :medium_square, square_class: "hide", show_border: border_for == 4

@@ -1,17 +1,19 @@
 - square_partial_name = "image"
 - square_partial_name = "feedback" if assets.model == ProjectFeedback
 
+- border_for = rand(1..5)
+
 .collage-wrapper.slide-up.inside-project-one
   - assets.in_groups_of(5, false) do |group|
     .row.collapse
       .columns
-        = render square_partial_name, asset: group[0], style: :large, full_square_class: "optional-full-width-photo", show_border: true
+        = render square_partial_name, asset: group[0], style: :large, full_square_class: "optional-full-width-photo", show_border: border_for == 1
       - if group.count >= 2
         .columns.large-6
-          = render square_partial_name, asset: group[1], style: :wide, square_class: "fullwidth height-half"
-          = render square_partial_name, asset: group[2], style: :small_square, square_class: "half hide"
-          = render square_partial_name, asset: group[3], style: :small_square, square_class: "half hide"
+          = render square_partial_name, asset: group[1], style: :wide, square_class: "fullwidth height-half", show_border: border_for == 2
+          = render square_partial_name, asset: group[2], style: :small_square, square_class: "half hide", show_border: border_for == 3
+          = render square_partial_name, asset: group[3], style: :small_square, square_class: "half hide", show_border: border_for == 4
 
       - if group.count >= 5
         .columns.large-6
-          = render square_partial_name, asset: group[4], style: :medium_square, square_class: "fullwidth added-height"
+          = render square_partial_name, asset: group[4], style: :medium_square, square_class: "fullwidth added-height", show_border: border_for == 5

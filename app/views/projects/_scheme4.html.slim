@@ -1,25 +1,28 @@
 - square_partial_name = "image"
 - square_partial_name = "feedback" if assets.model == ProjectFeedback
+
+- border_for = rand(1..10)
+
 .collage-wrapper.slide-up.blue-background
   - assets.in_groups_of(10, false) do |group|
     .row
       .columns
         .clearfix
           .floated.clearfix
-            = render square_partial_name, asset: group[0], show_border: true
-            = render square_partial_name, asset: group[1]
-            = render square_partial_name, asset: group[2]
-            = render square_partial_name, asset: group[3]
+            = render square_partial_name, asset: group[0], show_border: border_for == 1
+            = render square_partial_name, asset: group[1], show_border: border_for == 2
+            = render square_partial_name, asset: group[2], show_border: border_for == 3
+            = render square_partial_name, asset: group[3], show_border: border_for == 4
 
           - if group.count >= 4
             .floated
-              = render square_partial_name, asset: group[4], square_class: "fullwidth"
+              = render square_partial_name, asset: group[4], square_class: "fullwidth", show_border: border_for == 5
           - if group.count >= 5
             .floated.hide
-              = render square_partial_name, asset: group[5], square_class: "fullwidth"
+              = render square_partial_name, asset: group[5], square_class: "fullwidth", show_border: border_for == 6
           - if group.count >= 6
             .floated.clearfix.hide
-              = render square_partial_name, asset: group[6]
-              = render square_partial_name, asset: group[7]
-              = render square_partial_name, asset: group[8]
-              = render square_partial_name, asset: group[9]
+              = render square_partial_name, asset: group[6], show_border: border_for == 7
+              = render square_partial_name, asset: group[7], show_border: border_for == 8
+              = render square_partial_name, asset: group[8], show_border: border_for == 9
+              = render square_partial_name, asset: group[9], show_border: border_for == 10

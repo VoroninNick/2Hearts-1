@@ -7,4 +7,4 @@
   - assets.in_groups_of(1, false) do |group|
     .row.collapse
       .columns
-        = render square_partial_name, asset: group[0], style: :large, full_square_class: "optional-full-width-photo", show_border: true
+        = render square_partial_name, asset: group[0], style: :large, full_square_class: "optional-full-width-photo", show_border: border_for == 1
