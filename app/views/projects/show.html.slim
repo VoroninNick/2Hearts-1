@@ -21,7 +21,7 @@
       = raw @project.task_text
 
   /= render_images(@project.task_images, 1)
-  = render "scheme#{@project.task_images_scheme}", assets: @project.task_images.order("id asc")
+  = render "scheme#{@project.task_images_scheme}", assets: @project.task_images
 
   .row.step-block
     .columns.large-6.float-right
@@ -30,7 +30,7 @@
       = raw @project.idea_and_solution_text
 
   /= render_images(@project.idea_and_solution_images, 2)
-  = render "scheme#{@project.idea_and_solution_images_scheme}", assets: @project.idea_and_solution_images.order("id asc")
+  = render "scheme#{@project.idea_and_solution_images_scheme}", assets: @project.idea_and_solution_images
 
   - if @project.idea_and_solution_quote_text.present?
     blockquote
@@ -50,7 +50,7 @@
 
   /= render_images(@project.result_images, 3)
   /= render "scheme3", assets: @project.result_images
-  = render "scheme#{@project.result_images_scheme}", assets: @project.result_images.order("id asc")
+  = render "scheme#{@project.result_images_scheme}", assets: @project.result_images
 
   - small_banner_url = @project.result_banner_mobile.exists?(:small) ? @project.result_banner_mobile.url(:small) : (@project.result_banner.exists?(:small) ? @project.result_banner.url(:small) : nil)
   - if small_banner_url
