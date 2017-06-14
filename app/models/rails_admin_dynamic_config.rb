@@ -356,6 +356,7 @@ module RailsAdminDynamicConfig
             field :name
             field :url_fragment
             field :youtube_video_id
+            field :vimeo_video_id
           end
 
           group :summary do

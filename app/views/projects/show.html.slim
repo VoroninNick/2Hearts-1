@@ -2,7 +2,9 @@
   - banner_image_url = @project.banner.exists?(:large) ? @project.banner.url(:large) : asset_path('photo/hearts-slide-2.jpg')
   .img-bg style="background-image: url(#{banner_image_url})"
 
-  .play-bth = inline_svg "svg/2h-play-button-012.svg"
+  - if video_url.present?
+    .play-bth.project-video-button
+      = inline_svg "svg/2h-play-button-012.svg"
 
   .banner-text
     p.subtitle.animate
