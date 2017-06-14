@@ -30,7 +30,7 @@
   /= render_images(@project.idea_and_solution_images, 2)
   = render "scheme#{@project.idea_and_solution_images_scheme}", assets: @project.idea_and_solution_images.order("id asc")
 
-  - if @project.idea_and_solution_quote_text
+  - if @project.idea_and_solution_quote_text.present?
     blockquote
       | «#{@project.idea_and_solution_quote_text}»
       - if @project.idea_and_solution_quote_author.present?
