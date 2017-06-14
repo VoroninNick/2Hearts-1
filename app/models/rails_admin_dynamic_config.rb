@@ -22,6 +22,12 @@ def scheme_enum_field(name)
   end
 end
 
+def watermark_position_field(name)
+  field "#{name}_watermark_position", :enum do
+    help "!!! Please upload image AFTER changing watermark position. Default position: South east"
+  end
+end
+
 
 module RailsAdminDynamicConfig
   class << self
@@ -183,6 +189,7 @@ module RailsAdminDynamicConfig
         config.model Attachable::Asset do
           navigation_label_key(:assets, 1)
           field :data
+          watermark_position_field(:data)
           field :translations, :globalize_tabs
         end
 
@@ -303,9 +310,11 @@ module RailsAdminDynamicConfig
               end
             end
             field :banner
+            watermark_position_field(:banner)
             field :avatar do
               svg_icon_pretty_value
             end
+            watermark_position_field(:avatar)
             field :translations, :globalize_tabs
             field :seo_tags
           end
@@ -331,6 +340,7 @@ module RailsAdminDynamicConfig
             field :idea_and_solution_banner do
               svg_icon_pretty_value
             end
+            watermark_position_field(:idea_and_solution_banner)
           end
 
           group :result do
@@ -339,6 +349,7 @@ module RailsAdminDynamicConfig
             field :result_banner do
               svg_icon_pretty_value
             end
+            watermark_position_field(:result_banner)
             field :result_banner_mobile do
               svg_icon_pretty_value
             end

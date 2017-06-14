@@ -65,6 +65,7 @@ gem 'ckeditor'
 
 gem 'paperclip'
 gem 'paperclip-tinify'
+gem 'paperclip-watermark', github: 'pkorenev/paperclip-watermark', branch: 'pasha'
 
 gem 'acts-as-taggable-on'
 #gem 'rails_admin_tag_list'

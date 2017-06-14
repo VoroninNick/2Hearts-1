@@ -24,12 +24,18 @@ class Project < ActiveRecord::Base
   has_many :project_feedbacks
   attr_accessible :project_feedbacks, :project_feedback_ids
 
-  image :avatar, styles: { medium: "320x480#", large: "470x650#" }
+  extend Enumerize
+  [:avatar, :idea_and_solution_banner, :result_banner, :banner].each do |k|
+    enumerize :"#{k}_watermark_position", in: WATERMARK_POSITIONS, default: "SouthEast"
+  end
+
+
+  image :avatar, styles: { medium: "320x480#", large: "470x650#", original: WATERMARK_ORIGINAL_STYLE }
   image :featured_member_avatar, styles: {thumb: "100x100#"}
-  image :idea_and_solution_banner, styles: {xxl: "1920x1080#"}
-  image :result_banner, styles: {xxl: "1920x1080#", small: "640x1024#"}
-  image :result_banner_mobile, styles: { small: "640x1024#" }
-  image :banner, styles: { large: "2048x1200#", thumb: "200x120#" }
+  image :idea_and_solution_banner, styles: {xxl: "1920x1080#", original: WATERMARK_ORIGINAL_STYLE}
+  image :result_banner, styles: {xxl: "1920x1080#", small: "640x1024#", original: WATERMARK_ORIGINAL_STYLE}
+  image :result_banner_mobile, styles: { small: "640x1024#", original: WATERMARK_ORIGINAL_STYLE }
+  image :banner, styles: { large: "2048x1200#", thumb: "200x120#", original: WATERMARK_ORIGINAL_STYLE }
 
 
   has_images :task_images, **IMAGE_OPTIONS
@@ -143,4 +149,11 @@ class Project < ActiveRecord::Base
       return "youtube.com/video/#{vimeo_video_id}"
     end
   end
+
+  # [:avatar, :idea_and_solution_banner, :result_banner, :banner].each do |k|
+  #   define_method "#{k}_watermark_position" do
+  #     v = self["#{k}_watermark_position"]
+  #     v.present? ? v : "SouthEast"
+  #   end
+  # end
 end
