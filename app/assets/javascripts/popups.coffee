@@ -31,4 +31,4 @@ $document.ready ->
 
 
   close_popup.on 'click', ->
-    popup_wrap.removeClass('share subscribe order resume question')
+    popup_wrap.removeClass('share subscribe order resume question success')

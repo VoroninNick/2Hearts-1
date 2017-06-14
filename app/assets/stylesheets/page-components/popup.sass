@@ -17,6 +17,8 @@
     width: 20px
     height: 20px
     cursor: pointer
+    p
+      margin: 20px 0
     svg
       width: 100%
       height: 100%
@@ -25,7 +27,19 @@
       svg
         fill: #F8F7F3
 
-  .share-block, .subscribe-block, .order-form, .resume-form, .question-form
+  .success-popup
+    text-align: center
+    padding: 20px
+    .done
+      width: 80px
+      height: 80px
+      margin: 0 auto
+      svg
+        fill: $pink600
+        width: 100%
+        height: 100%
+
+  .share-block, .subscribe-block, .order-form, .resume-form, .question-form, .success-message-popup
     position: absolute
     max-width: 90%
     top: 50%
@@ -35,13 +49,13 @@
     opacity: 0
   .share-block, .order-form, .resume-form, .question-form
     width: 600px
-  .subscribe-block
+  .subscribe-block, .success-message-popup
     width: 400px
-  .order-form, .resume-form, .question-form
+  .order-form, .resume-form, .question-form, .success-message-popup
     h2
       color: $brown900
 
-  &.share, &.subscribe, &.order, &.resume, &.question
+  &.share, &.subscribe, &.order, &.resume, &.question, &.success
     pointer-events: initial
     opacity: 1
   &.share
@@ -62,6 +76,10 @@
       z-index: 1
   &.question
     .question-form
+      opacity: 1
+      z-index: 1
+  &.success
+    .success-message-popup
       opacity: 1
       z-index: 1
 
