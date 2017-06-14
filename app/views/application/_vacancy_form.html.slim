@@ -4,6 +4,16 @@ form.ajax-form.contact-form.vacancy-form  action=vacancy_request_path method="po
   = input(resource_name, :name, required: true, reset_label_html: {class: ""})
   = input(resource_name, :email, required: true, reset_label_html: {class: ""})
   = input(resource_name, :phone, type: :tel, reset_label_html: {class: ""})
-  = input(resource_name, :attachment, type: :file)
+  / = input(resource_name, :attachment, type: :file)
+  
+  label.attach-file-field for="vacancy_request__attachment"
+    = inline_svg "svg/add_file.svg"
+    | Прикріпити резюме
+    br
+    span doc, docx, txt, pdf, zip
+    input#vacancy_request__attachment type="file" name="vacancy_request[attachment]"
+  .added-file-field
+  .remove-file = inline_svg "svg/cross.svg"
+
   = input(resource_name, :comment, type: :text, required: true, reset_label_html: {class: ""})
   button.button Надіслати
