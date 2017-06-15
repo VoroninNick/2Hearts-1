@@ -30,12 +30,12 @@ class Project < ActiveRecord::Base
   end
 
 
-  image :avatar, styles: { medium: "320x480#", large: "470x650#", original: WATERMARK_ORIGINAL_STYLE }
+  image :avatar, styles: { medium: "320x480#", large: "470x650#" }
   image :featured_member_avatar, styles: {thumb: "100x100#"}
-  image :idea_and_solution_banner, styles: {xxl: "1920x1080#", original: WATERMARK_ORIGINAL_STYLE}
-  image :result_banner, styles: {xxl: "1920x1080#", small: "640x1024#", original: WATERMARK_ORIGINAL_STYLE}
-  image :result_banner_mobile, styles: { small: "640x1024#", original: WATERMARK_ORIGINAL_STYLE }
-  image :banner, styles: { large: "2048x1200#", thumb: "200x120#", original: WATERMARK_ORIGINAL_STYLE }
+  image :idea_and_solution_banner, styles: {xxl: "1920x1080#"}
+  image :result_banner, styles: {xxl: "1920x1080#", small: "640x1024#"}
+  image :result_banner_mobile, styles: { small: "640x1024#" }
+  image :banner, styles: { large: "2048x1200#", thumb: "200x120#" }
 
 
   has_images :task_images, **IMAGE_OPTIONS

@@ -25,6 +25,9 @@ end
 def watermark_position_field(name)
   field "#{name}_watermark_position", :enum do
     help "!!! Please upload image AFTER changing watermark position. Default position: South east"
+    enum do
+      [["Верхній лівий", "NorthWest"], ["Верхній", "North"], ["Верхній правий", "NorthEast"], ["Лівий", "West"], ["Центр", "Center"], ["Правий", "East"], ["Нижній лівий", "SouthWest"], ["Нижній", "South"], ["Нижній правий", "SouthEast"]]
+    end
   end
 end
 
