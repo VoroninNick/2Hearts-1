@@ -1,32 +1,7 @@
-def svg_icon_pretty_value
-  pretty_value do
-    if value.presence
-      v = bindings[:view]
-      url = resource_url
-      if image
-        thumb_url = resource_url(thumb_method)
-        image_html = v.image_tag(thumb_url, class: 'img-thumbnail', style: "max-width: 100px")
-        url != thumb_url ? v.link_to(image_html, url, target: '_blank') : image_html
-      else
-        v.link_to(nil, url, target: '_blank')
-      end
-    end
-  end
-end
-
 def scheme_enum_field(name)
   field name, :enum do
     enum do
       [["1 (6 images)", "1"], ["2 (4 images)", "2"], ["3 (5 images)", "3"], ["4 (10 images)", "4"], ["5 (6 images)", "5"], ["6 (1 image)", "6"], ["7 (7 images)", "7"], ["8 (3 images)", "8"]]
-    end
-  end
-end
-
-def watermark_position_field(name)
-  field "#{name}_watermark_position", :enum do
-    help "!!! Please upload image AFTER changing watermark position. Default position: South east"
-    enum do
-      [["Верхній лівий", "NorthWest"], ["Верхній", "North"], ["Верхній правий", "NorthEast"], ["Лівий", "West"], ["Центр", "Center"], ["Правий", "East"], ["Нижній лівий", "SouthWest"], ["Нижній", "South"], ["Нижній правий", "SouthEast"]]
     end
   end
 end
@@ -193,6 +168,7 @@ module RailsAdminDynamicConfig
           navigation_label_key(:assets, 1)
           field :data
           watermark_position_field(:data)
+          field :sorting_position
           field :translations, :globalize_tabs
         end
 
