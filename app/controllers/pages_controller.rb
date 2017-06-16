@@ -10,6 +10,7 @@ class PagesController < ApplicationController
     @features = I18n.t("home.why-we.features")
     @team_members = TeamMember.published.featured
     @feedbacks = ProjectFeedback.most_recent
+    @about_team_intro = AboutTeamIntro.first
 
   end
 

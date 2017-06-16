@@ -5,7 +5,7 @@ class AboutIntro < ActiveRecord::Base
 
 
   has_cache do
-    pages :about_us
+    pages :about_us, :home
   end
 
   image :image

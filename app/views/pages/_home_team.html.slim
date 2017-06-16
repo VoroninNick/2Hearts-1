@@ -9,7 +9,8 @@
 
   .row
     .columns.large-4.large-pull-1.xxlarge-4.xxlarge-pull-0.float-right
-      = raw t("home.team.intro")
+      /= raw t("home.team.intro")
+      = raw @about_team_intro.try(:intro)
       a.button href=Pages.about_us.url title="На сторінку про нас" Дізнатись більше
 
   - if @team_members.try(:any?)
