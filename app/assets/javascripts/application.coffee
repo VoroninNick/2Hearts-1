@@ -35,6 +35,7 @@
 #= require mask
 #= require lightgallery
 #= require input-file-add
+#= require videos
 
 #= require sharing
 
