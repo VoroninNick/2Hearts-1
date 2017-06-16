@@ -22,7 +22,11 @@ html
     /= render "share_popup"
     = render "popup"
     .main-wrapper
-      = yield
+      - if devise_controller?
+        .devise-content
+          = yield
+      - else
+        = yield
     - if @render_footer != false
       = render "footer"
     = javascript_include_tag "application", 'data-turbolinks-track' => true
