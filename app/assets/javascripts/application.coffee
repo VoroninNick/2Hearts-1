@@ -18,6 +18,7 @@
 #= require plugins/lightgallery.min
 #= require plugins/lg-thumbnail.min
 #= require jquery-form/dist/jquery.form.min
+#= require plugins/YouTubePopUp.jquery
 
 #     I N I T I A L I Z E
 
@@ -35,7 +36,7 @@
 #= require mask
 #= require lightgallery
 #= require input-file-add
-#= require videos
+#= require youtube_video_popup
 
 #= require sharing
 

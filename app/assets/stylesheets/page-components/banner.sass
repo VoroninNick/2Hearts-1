@@ -16,6 +16,20 @@
   #bg-video
     +fullsize
 
+  .video-background
+    +fullsize
+    z-index: -1
+    +grayscale
+    +scale(1.35)
+    &:after
+      content: ''
+      display: block
+      +fullsize
+      background: rgba(white, .75)
+  .video-foreground, .video-background iframe
+    +fullsize
+    pointer-events: none
+
   .title
     @extend %istok
     text-transform: uppercase
