@@ -228,7 +228,7 @@
       width: 50%
       float: left
 
-  .h2
+  h2, h3, .h2
     color: $pink600
     +bold
     margin-bottom: 20px
@@ -242,7 +242,7 @@
     font-size: 14px
     color: $brown400
 
-  .slogan
+  blockquote, .slogan
     @extend %cormorant
     position: relative
     font-size: 24px
@@ -284,12 +284,13 @@
         left: 10%
         margin-bottom: 0
         background-size: contain
+        background-position: center bottom
         max-width: 800px
     p
       color: $brown200
-    .h2
+    h2, h3, .h2
       color: white
-    .slogan
+    blockquote, .slogan
       color: $brown200
 
 .team-img
