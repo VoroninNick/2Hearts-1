@@ -310,6 +310,9 @@
     +bold
     line-height: 1.25
     margin-bottom: 10px
+    @media #{$small-only}
+      font-size: 30px
+      line-height: 1
   .larger
     color: $brown600
     font-style: italic
@@ -364,6 +367,8 @@
     color: white
     text-transform: uppercase
     line-height: 0.9
+    @media #{$small-only}
+      font-size: 28px
   .icon
     position: absolute
     right: 50px

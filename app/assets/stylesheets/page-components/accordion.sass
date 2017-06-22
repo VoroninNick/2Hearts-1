@@ -13,6 +13,9 @@
     +bold
     line-height: 1
     +transition(0.25s)
+    @media #{$small-only}
+      font-size: 16px
+      max-width: calc(100% - 30px)
   span
     font-size: 14px
     color: $grey400
@@ -27,6 +30,8 @@
     background: $brown400
     +translate(0,-50%)
     +transition(0.25s)
+    @media #{$small-only}
+      right: 0
   &:before
     +rotate(-90deg)
     top: calc(50% - 1px)
