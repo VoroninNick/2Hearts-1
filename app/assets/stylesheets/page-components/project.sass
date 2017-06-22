@@ -110,6 +110,8 @@
     left: 0
     bottom: 120px
     color: white
+    @media #{$small-only}
+      bottom: 40px
   .subtitle
     @extend %istok
     font-size: 14px
@@ -124,9 +126,12 @@
       height: 1px
       width: 80px
       background: white
+      @media #{$small-only}
+        width: 20px
   .title
     font-style: italic
-    font-size: 50px
+    font-size: 36px
+    line-height: 1.25
     @media #{$medium-up}
       font-size: 80px
     @media (min-width: 1920px)
@@ -147,6 +152,9 @@
     background: $brown900
     margin-top: -80px
     padding: 5px 50px 60px
+    @media #{$small-only}
+      margin-top: 0
+      padding: 0 20px 40px
     
     .button
       margin-top: 30px
@@ -178,7 +186,10 @@
       flex-direction: column
       justify-content: center
       @media #{$small-only}
-        
+        position: relative
+        width: 100%
+        padding: 20px
+        top: -20px
       .img
         width: 100px
         height: 100px
@@ -189,6 +200,8 @@
         background-position: center
         margin-top: -100px
         margin-bottom: 20px
+        @media #{$small-only}
+          margin-top: 0
       .name
         @extend %cormorant
         font-size: 24px
