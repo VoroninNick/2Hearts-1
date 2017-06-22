@@ -319,6 +319,7 @@
   .leave-email
     width: 300px
     margin: 20px auto
+    max-width: 100%
     input
       padding: 10px
       text-align: center
@@ -329,9 +330,13 @@
       top: 10px
       left: 0
       text-align: center
+    @media #{$small-only}
+      margin-top: -40px
 
 .nav-container
   padding: 100px 0
+  @media #{$small-only}
+    padding: 50px 0 80px
   .nav-block
     position: relative
     background-color: $brown800
