@@ -1,1 +1,1 @@
-jQuery("a.demo").YouTubePopUp();
+jQuery("a.video-popup").YouTubePopUp();
