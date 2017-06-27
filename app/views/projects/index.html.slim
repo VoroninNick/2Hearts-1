@@ -21,7 +21,6 @@
         - @categories.each do |category|
           li.filter data-tag-id=category.id
             .heart-icon.azure
-              /= inline_svg "svg/2h-little-heart-01.svg"
               = category.svg_icon_string
             = category.name
             sup
