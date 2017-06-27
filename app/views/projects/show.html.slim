@@ -3,7 +3,7 @@
   .img-bg style="background-image: url(#{banner_image_url})"
 
   - if @project.video_url.present?
-    a.play-bth.project-video-button.video-popup
+    a.play-bth.project-video-button.video-popup href=@project.video_url
       = inline_svg "svg/2h-play-button-012.svg"
 
   .banner-text
