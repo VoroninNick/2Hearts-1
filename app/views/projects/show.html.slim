@@ -16,20 +16,26 @@
   = render "project_details"
   .row.step-block
     .columns.large-6
-      .step-title = inline_svg "svg/headers/2h-one_case-bg-text-01-01.svg"
+      .step-container
+        p.step-title
+          | Крок перший
+          span завдання
+        p.bg-number 01
     .columns.large-6
       = raw @project.task_text
 
-  /= render_images(@project.task_images, 1)
   = render "scheme#{@project.task_images_scheme}", assets: @project.task_images
 
   .row.step-block
     .columns.large-6.float-right
-      .step-title = inline_svg "svg/headers/2h-one_case-bg-text-02-01.svg"
+      .step-container
+        p.step-title
+          | Крок другий
+          span iдея та рiшення
+        p.bg-number 02
     .columns.large-6.float-left
       = raw @project.idea_and_solution_text
 
-  /= render_images(@project.idea_and_solution_images, 2)
   = render "scheme#{@project.idea_and_solution_images_scheme}", assets: @project.idea_and_solution_images
 
   - if @project.idea_and_solution_quote_text.present?
@@ -44,12 +50,14 @@
 
   .row.step-block  
     .columns.large-6
-      .step-title = inline_svg "svg/headers/2h-one_case-bg-text-03-01.svg"
+      .step-container
+        p.step-title
+          | Крок третiй
+          span результат
+        p.bg-number 03
     .columns.large-6
       = raw @project.result_text
 
-  /= render_images(@project.result_images, 3)
-  /= render "scheme3", assets: @project.result_images
   = render "scheme#{@project.result_images_scheme}", assets: @project.result_images
 
   - small_banner_url = @project.result_banner_mobile.exists?(:small) ? @project.result_banner_mobile.url(:small) : (@project.result_banner.exists?(:small) ? @project.result_banner.url(:small) : nil)
@@ -63,8 +71,6 @@
     .title = inline_svg "svg/headers/2h-inner-pages-case-testimonials-01.svg"
 
   = render "projects/scheme#{@project.project_feedbacks_scheme}", assets: @project.project_feedbacks
-
-
 
 
 .project-conclusion
@@ -87,7 +93,9 @@
 
 - if @related_projects.any?
   .section-name.slide-up
-    .background = inline_svg "svg/bg-text/2h-bg-lable-one_case-01.svg"
-    .title = inline_svg "svg/headers/2h-inner-pages-one_case-see_also.svg"
+    p.background-text Iншi весiлля
+    p.title
+      | Дивiться
+      span також
 
   = render "portfolio_carousel", projects: @related_projects

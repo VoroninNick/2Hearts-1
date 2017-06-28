@@ -239,15 +239,45 @@
         color: $brown200
 
   .step-block
+    position: relative
     padding: 100px 0 0
     @media #{$small-only}
       padding: 50px 0 0
   .float-right
     .step-title
       margin-left: auto
+  .step-container
+    position: relative
+    overflow-x: hidden
   .step-title
-    width: 400px
-    max-width: 90%
+    position: relative
+    @extend %goodvibes
+    font-size: 72px
+    color: $pink600
+    line-height: 1
+    span
+      display: block
+      color: $brown800
+      position: relative
+      left: 100px
+      top: -20px
+    @media #{$small-only}
+      font-size: 48px
+    @media screen and (min-width: 1920px)
+      margin-top: 20px
+      span
+        top: -30px
+  .bg-number
+    @extend %goodvibes
+    position: absolute
+    font-size: 400px
+    color: #F8F7F3
+    top: 0
+    left: 0
+    line-height: 1
+    z-index: -1
+    @media #{$small-only}
+      display: none
 
   h1,h2,h3,h4,h5,h6
     color: $brown800

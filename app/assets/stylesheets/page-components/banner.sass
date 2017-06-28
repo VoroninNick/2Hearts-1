@@ -36,21 +36,23 @@
     color: $brown700
     letter-spacing: 2px
   .header
+    position: relative
+    @extend %goodvibes
+    font-size: 72px
+    color: $pink600
+    line-height: 1
+    span
+      display: block
+      color: $brown800
+      position: relative
+      left: 100px
+      top: -20px
     @media #{$small-only}
-      height: 70px
-    @media #{$medium-only}
-      height: 80px
-    @media #{$large-only}
-      height: 90px
-    @media #{$xlarge-only}
-      height: 100px
-    @media #{$xxlarge-up}
-      height: 120px
-    @media (min-width: 1920px)
-      height: 140px
-    svg
-      height: 100%
-      max-width: 100%
+      font-size: 60px
+    @media screen and (min-width: 1920px)
+      margin-top: 20px
+      span
+        top: -30px
   .subtitle
     font-size: 24px
     font-style: italic
@@ -62,7 +64,11 @@
       line-height: 1.25
     @media (min-width: 1920px)
       font-size: 36px
-
+.main-banner .header
+  @media (min-width: 1920px)
+    font-size: 140px
+.banner .header.align
+  left: -50px
 //     banner   on   main   page
 
 .main-banner

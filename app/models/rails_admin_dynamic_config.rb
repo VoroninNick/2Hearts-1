@@ -256,12 +256,6 @@ module RailsAdminDynamicConfig
           field :icon do
             svg_icon_pretty_value
           end
-          #field :small_title_image do
-          #  svg_icon_pretty_value
-          #end
-          #field :large_title_image do
-          #  svg_icon_pretty_value
-          #end
           field :translations, :globalize_tabs
           field :images
         end

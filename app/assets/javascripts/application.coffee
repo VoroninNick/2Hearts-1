@@ -37,6 +37,7 @@
 #= require lightgallery
 #= require input-file-add
 #= require youtube_video_popup
+#= require bg-text
 
 #= require sharing
 

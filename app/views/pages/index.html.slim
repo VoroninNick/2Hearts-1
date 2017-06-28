@@ -1,9 +1,11 @@
 = render "main_banner"
 
 .section-name.slide-up
-  .background = inline_svg "svg/bg-text/2h-bg-lable-works.svg"
+  p.background-text Роботи
   .icon = inline_svg "svg/2h-icons-rings-01.svg"
-  .title = inline_svg "svg/headers/2h-lable-works.svg"
+  p.title
+    | Нашi
+    span роботи
 
 = render "portfolio_carousel", projects: @projects
 
