@@ -23,5 +23,6 @@
       
     a.lg-object href=attachment.url(:popup)
       img src=attachment.url(style)
-
-    .pinterest-btn data-media=attachment.url(:popup) data-description="photo title" Save
+    - host = ENV["#{Rails.env}.host_with_port"]
+    - host = ENV["#{Rails.env}.host"] if host.blank?
+    .pinterest-btn data-media=(host + attachment.url(:popup)) data-description="photo title" Save
