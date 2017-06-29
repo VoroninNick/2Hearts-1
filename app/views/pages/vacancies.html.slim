@@ -4,7 +4,8 @@
 
   .banner-text
 
-    p.header Вакансiя
+    p.header
+      = t('vacancies.banner.title')
     h1.subtitle
       = h1_text
 
@@ -34,6 +35,6 @@
   .img-bg style="background-image: url(#{asset_path('photo/2H-bg-elements-v2.jpg')})"
   .section-name
     p.title
-      | Цiкавить майбутнiй
-      span колектив
-    a.button href=Pages.about_us.url Про нас
+      = raw t('vacancies.join_us.title')
+    a.button href=Pages.about_us.url
+      = t('vacancies.join_us.btn')

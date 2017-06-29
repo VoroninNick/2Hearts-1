@@ -1,9 +1,9 @@
 .section-name.slide-up
-  p.background-text Відгуки
-  .icon = inline_svg "svg/2h-icons-bubble-01.svg"
+  p.background-text
+    = t('home.feedbacks.bg-text')
+  .icon = inline_svg "svg/2h-icons-rings-01.svg"
   p.title
-    | Про нас
-    span говорять
+    = raw t('home.feedbacks.title')
 
 = render "projects/scheme4", assets: @feedbacks
 

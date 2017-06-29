@@ -4,10 +4,12 @@
 
   .banner-text.with-button
 
-    p.header Контакти
+    p.header
+      = t('contact_us.banner.title')
     h1.subtitle
       = h1_text
-    .button.order-button Замовити весілля
+    .button.order-button
+      = t('contact_us.order_btn')
 
 .indent
   .row
@@ -64,10 +66,10 @@
     .columns
       .section-name.in-contacts.slide-up
         .background
-        p.background-text Вакансії
+        p.background-text
+          = t('contact_us.join_us.bg-text')
         p.title
-          | Станьте частиною
-          span колективу
+          = raw t('contact_us.join_us.title')
   .row
     .columns.large-6.floated-right-block
       .main-text

@@ -2,6 +2,6 @@
   .img-bg style="background-image: url(#{asset_path('photo/2H-bg-elements-v1.jpg')})"
   .section-name
     p.title
-      | Хочете побачити
-      span бiльше?
-    a.button href=projects_path Наші роботи
+      = raw t('projects.related.title')
+    a.button href=projects_path
+      = raw t('projects.related.btn')

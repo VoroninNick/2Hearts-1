@@ -1,9 +1,9 @@
 .section-name.slide-up.advantages-section-name
-  p.background-text Переваги
-  .icon = inline_svg "svg/2h-icons-cake-01.svg"
+  p.background-text
+    = t('home.why-we.bg-text')
+  .icon = inline_svg "svg/2h-icons-letter-01.svg"
   p.title
-    | Чому
-    span ми
+    = raw t('home.why-we.title')
 
 .advantages-wrapper
   .img-bg style="background-image: url(#{asset_path('photo/2H-bg-elements-v1.jpg')})"

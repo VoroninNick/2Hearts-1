@@ -1,10 +1,10 @@
 
 .section-name.slide-up
-  p.background-text Команда
-  .icon = inline_svg "svg/2h-icons-bird-01.svg"
+  p.background-text
+    = t('home.team.bg-text')
+  .icon = inline_svg "svg/2h-icons-rings-01.svg"
   p.title
-    | Наша
-    span команда
+    = raw t('home.team.title')
 
 .team-wrapper.clearfix.slide-up
   .main-img style="background-image: url(#{asset_path('photo/2h-main-about-banner-v1.jpg')})"

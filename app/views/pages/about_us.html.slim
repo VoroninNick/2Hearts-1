@@ -5,7 +5,7 @@
   .banner-text
 
     p.header
-      | Про нас
+      = raw t('about_us.banner.title')
     h1.subtitle
       = h1_text
 
@@ -21,10 +21,10 @@
 
 - if @about_steps.try(:any?)
   .section-name.slide-up
-    p.background-text Наш підхід
+    p.background-text
+      = t('home.projects.bg-text')
     p.title
-      | 7 кроків до
-      span найкращого весілля
+      = raw t('home.projects.title')
 
   .steps-wrapper
     ul.steps-slider
@@ -48,15 +48,14 @@
                 = step.subtitle
 
 
-
 .team-img style="background-image: url(#{asset_path('photo/2h-about-banner-v2.jpg')})"
 
 .section-name.slide-up
-  p.background-text Команда
-  .icon = inline_svg "svg/2h-icons-bird-01.svg"
+  p.background-text
+    = t('about_us.team.bg-text')
+  .icon = inline_svg "svg/2h-icons-rings-01.svg"
   p.title
-    | Наша
-    span команда
+    = raw t('about_us.team.title')
 
 .row.columns-left.team-wrapper
   .columns.medium-8
@@ -82,11 +81,12 @@
 
 - if @partners.try(:any?)
   .section-name.slide-up
-    .background = inline_svg "svg/bg-text/2h-inner-pages-about-partners-bg.svg"
+    p.background-text
+      = t('about_us.partners.bg-text')
     .icon = inline_svg "svg/2h-icons-cake-01.svg"
     p.title
-      | Наші
-      span партнери
+      = raw t('about_us.partners.title')
+
 
   .partners-wrapper
     .row.columns-left

@@ -5,11 +5,11 @@
   .banner-text.with-button
 
     p.header.align
-      | Нашi
-      span роботи
+      = raw t('projects.banner.title')
     h1.subtitle
       = h1_text
-    .button.order-button Замовити весілля
+    .button.order-button
+      = raw t('projects.banner.btn')
 
 .filters-container
   .row

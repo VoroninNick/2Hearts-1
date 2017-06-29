@@ -1,20 +1,38 @@
 uk:
-  projects:
-    summary:
-      attributes:
-        idea_and_organization: "Ідея та організація"
-        coordination: "Координація"
-        decor: "Декор та флористика"
-        music: "Музика"
-        technical_support: "Технічна підтримка"
-        formatted_technical_support: "Технічна підтримка"
+    projects:
+        banner:
+            title: "Нашi<span>роботи</span>"
+            btn: "Замовити весiлля"
+        summary:
+          attributes:
+            idea_and_organization: "Ідея та організація"
+            coordination: "Координація"
+            decor: "Декор та флористика"
+            music: "Музика"
+            technical_support: "Технічна підтримка"
+            formatted_technical_support: "Технічна підтримка"
 
-        release_date: "Дата весілля"
-        formatted_release_date: "Дата весілля"
-        address: "Місце проведення"
-        guests_count_string: "Кількість гостей"
+            release_date: "Дата весілля"
+            formatted_release_date: "Дата весілля"
+            address: "Місце проведення"
+            guests_count_string: "Кількість гостей"
 
-        candy_bar: "Кенді-бар"
-        special_effects: "Спецефекти"
-        photo_and_video: "Фото- та відеозйомка"
-        show_program: "Шоу-програма"
+            candy_bar: "Кенді-бар"
+            special_effects: "Спецефекти"
+            photo_and_video: "Фото- та відеозйомка"
+            show_program: "Шоу-програма"
+        related:
+            title: "Хочете побачити<span>бiльше</span>"
+            btn: "Наші роботи"
+        steps:
+            first: "Крок перший<span>завдання</span>"
+            second: "Крок другий<span>iдея та рiшення</span>"
+            third: "Крок третiй<span>результат</span>"
+        testemonials:
+            bg-text: "Вiдгуки"
+            title: "Вiдгуки<span>про весiлля</span>"
+        interaction:
+            like_it: "Сподобалось<span>весiлля?</span>"
+            share_btn: "Подiлитись з друзями"
+            want_it: "Хочете собi<span>таке?</span>"
+            order_btn: "Замовити весiлля"

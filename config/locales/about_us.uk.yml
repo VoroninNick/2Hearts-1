@@ -1,3 +1,14 @@
 uk:
   about_us:
+    banner:
+      title: "Про нас"
+    team:
+      bg-text: "Команда"
+      title: "Наша<span>команда</span>"
+    steps:
+      bg-text: "Наш підхід"
+      title: "7 кроків до<span>найкращого весілля</span>"
+    partners:
+      bg-text: "Партнери"
+      title: "Наші<span>партнери</span>"
     step-number: "Крок №%{step_number}"
