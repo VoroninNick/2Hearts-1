@@ -4,10 +4,12 @@
 
   .banner-text.with-button
 
-    .header = inline_svg "svg/headers/2h-lable-works.svg"
+    p.header.align
+      = raw t('projects.banner.title')
     h1.subtitle
       = h1_text
-    .button.order-button Замовити весілля
+    .button.order-button
+      = raw t('projects.banner.btn')
 
 .filters-container
   .row

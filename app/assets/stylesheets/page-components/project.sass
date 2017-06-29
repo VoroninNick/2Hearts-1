@@ -239,15 +239,44 @@
         color: $brown200
 
   .step-block
+    position: relative
     padding: 100px 0 0
     @media #{$small-only}
       padding: 50px 0 0
   .float-right
     .step-title
       margin-left: auto
+  .step-container
+    position: relative
   .step-title
-    width: 400px
-    max-width: 90%
+    position: relative
+    @extend %goodvibes
+    font-size: 72px
+    color: $pink600
+    line-height: 1
+    span
+      display: block
+      color: $brown800
+      position: relative
+      margin-left: 100px
+      top: -20px
+    @media #{$small-only}
+      font-size: 48px
+    @media screen and (min-width: 1920px)
+      margin-top: 20px
+      span
+        top: -30px
+  .bg-number
+    @extend %goodvibes
+    position: absolute
+    font-size: 400px
+    color: #F8F7F3
+    top: 0
+    left: 0
+    line-height: 1
+    z-index: -1
+    @media #{$small-only}
+      display: none
 
   h1,h2,h3,h4,h5,h6
     color: $brown800
@@ -296,9 +325,24 @@
     width: 70px
     margin: 0 auto
   .title
-    width: 300px
-    max-width: 90%
-    margin: 0 auto
+    position: relative
+    @extend %goodvibes
+    font-size: 60px
+    color: $brown800
+    line-height: 1
+    top: 20px
+    span
+      display: block
+      color: $pink600
+      position: relative
+      margin-left: 80px
+      top: -20px
+    @media #{$small-only}
+      font-size: 36px
+    @media screen and (min-width: 1920px)
+      margin-top: 20px
+      span
+        top: -30px
   .likes
     margin-top: 20px
     svg

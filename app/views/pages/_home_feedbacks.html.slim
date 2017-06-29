@@ -1,7 +1,9 @@
 .section-name.slide-up
-  .background = inline_svg "svg/bg-text/2h-bg-lable-talk.svg"
-  .icon = inline_svg "svg/2h-icons-bubble-01.svg"
-  .title = inline_svg "svg/headers/2h-lable-talk.svg"
+  p.background-text
+    = t('home.feedbacks.bg-text')
+  .icon = inline_svg "svg/2h-icons-rings-01.svg"
+  p.title
+    = raw t('home.feedbacks.title')
 
 = render "projects/scheme4", assets: @feedbacks
 

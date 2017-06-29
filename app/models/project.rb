@@ -150,10 +150,4 @@ class Project < ActiveRecord::Base
     end
   end
 
-  # [:avatar, :idea_and_solution_banner, :result_banner, :banner].each do |k|
-  #   define_method "#{k}_watermark_position" do
-  #     v = self["#{k}_watermark_position"]
-  #     v.present? ? v : "SouthEast"
-  #   end
-  # end
 end

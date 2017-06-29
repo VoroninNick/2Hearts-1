@@ -19,6 +19,7 @@
 #= require plugins/lg-thumbnail.min
 #= require jquery-form/dist/jquery.form.min
 #= require plugins/YouTubePopUp.jquery
+#= require plugins/pinterest_custom_btn
 
 #     I N I T I A L I Z E
 
@@ -37,6 +38,7 @@
 #= require lightgallery
 #= require input-file-add
 #= require youtube_video_popup
+#= require bg-text
 
 #= require sharing
 

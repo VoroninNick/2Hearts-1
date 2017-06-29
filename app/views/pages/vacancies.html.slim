@@ -4,7 +4,8 @@
 
   .banner-text
 
-    .header = inline_svg "svg/headers/2h-inner-pages-vacancies.svg"
+    p.header
+      = t('vacancies.banner.title')
     h1.subtitle
       = h1_text
 
@@ -33,5 +34,7 @@
 .inner-page-bottom.slide-up
   .img-bg style="background-image: url(#{asset_path('photo/2H-bg-elements-v2.jpg')})"
   .section-name
-    .title = inline_svg "svg/headers/2h-inner-pages-vacancy-team.svg"
-    a.button href=Pages.about_us.url Про нас
+    p.title
+      = raw t('vacancies.join_us.title')
+    a.button href=Pages.about_us.url
+      = t('vacancies.join_us.btn')
