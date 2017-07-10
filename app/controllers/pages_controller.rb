@@ -65,6 +65,9 @@ class PagesController < ApplicationController
   end
 
   def set_page_instance
-     set_page_metadata(action_name)
+    set_page_metadata(action_name)
+    Cms.config.provided_locales.each do |locale|
+      locale_links[locale.to_sym] = send("#{action_name}_#{I18n.locale}_path")
+    end
   end
 end
