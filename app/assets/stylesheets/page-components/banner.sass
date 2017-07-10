@@ -1,35 +1,74 @@
 .main-banner, .banner
+  position: relative
+  overflow: hidden
+  .bg-video-container
+    position: absolute
+    width: 100%
+    height: 100%
+    z-index: -1
+    +grayscale
+    +scale(1.35)
+    &:after
+      content: ''
+      display: block
+      +fullsize
+      background: rgba(white, .75)
+  #bg-video
+    +fullsize
+
+  .video-background
+    +fullsize
+    z-index: -1
+    +grayscale
+    +scale(1.35)
+    &:after
+      content: ''
+      display: block
+      +fullsize
+      background: rgba(white, .75)
+  .video-foreground, .video-background iframe
+    +fullsize
+    pointer-events: none
+
   .title
     @extend %istok
     text-transform: uppercase
     color: $brown700
     letter-spacing: 2px
   .header
+    position: relative
+    @extend %goodvibes
+    font-size: 72px
+    color: $pink600
+    line-height: 1
+    span
+      display: block
+      color: $brown800
+      position: relative
+      left: 100px
+      top: -20px
     @media #{$small-only}
-      height: 70px
-    @media #{$medium-only}
-      height: 80px
-    @media #{$large-only}
-      height: 90px
-    @media #{$xlarge-only}
-      height: 100px
-    @media #{$xxlarge-up}
-      height: 120px
-    @media (min-width: 1920px)
-      height: 140px
-    svg
-      height: 100%
-      max-width: 100%
+      font-size: 60px
+    @media screen and (min-width: 1920px)
+      margin-top: 20px
+      span
+        top: -30px
   .subtitle
     font-size: 24px
     font-style: italic
     letter-spacing: 2px
     color: $brown800
+    margin: 0
     @media #{$small-only}
       font-size: 20px
+      line-height: 1.25
     @media (min-width: 1920px)
       font-size: 36px
-
+.main-banner .header
+  @media (min-width: 1920px)
+    font-size: 140px
+.banner .header.align
+  left: -50px
 //     banner   on   main   page
 
 .main-banner
@@ -107,6 +146,7 @@
     height: 70px
     margin: 10px 0
     opacity: 0
+    cursor: pointer
     +transition(opacity 1s)
     +x-align
     @media screen and (min-width: 1920px)

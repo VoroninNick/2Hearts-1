@@ -228,7 +228,7 @@
       width: 50%
       float: left
 
-  .h2
+  h2, h3, .h2
     color: $pink600
     +bold
     margin-bottom: 20px
@@ -242,7 +242,7 @@
     font-size: 14px
     color: $brown400
 
-  .slogan
+  blockquote, .slogan
     @extend %cormorant
     position: relative
     font-size: 24px
@@ -254,6 +254,13 @@
     line-height: 30px
     border-top: 1px solid $brown700
     border-bottom: 1px solid $brown700
+    p
+      @extend %cormorant
+      position: relative
+      font-size: 24px
+      color: $pink600
+      +bold
+      font-style: italic
     &:before, &:after
       +s-bold
       font-style: italic
@@ -284,18 +291,19 @@
         left: 10%
         margin-bottom: 0
         background-size: contain
+        background-position: center bottom
         max-width: 800px
     p
       color: $brown200
-    .h2
+    h2, h3, .h2
       color: white
-    .slogan
+    blockquote, .slogan
       color: $brown200
 
 .team-img
   position: relative
-  padding-bottom: 40%
-  background-position: center
+  padding-bottom: 50%
+  background-position: top center
   background-size: cover
   @media #{$small-only}
     padding-bottom: 60%
@@ -309,12 +317,16 @@
     +bold
     line-height: 1.25
     margin-bottom: 10px
+    @media #{$small-only}
+      font-size: 30px
+      line-height: 1
   .larger
     color: $brown600
     font-style: italic
   .leave-email
     width: 300px
     margin: 20px auto
+    max-width: 100%
     input
       padding: 10px
       text-align: center
@@ -325,9 +337,13 @@
       top: 10px
       left: 0
       text-align: center
+    @media #{$small-only}
+      margin-top: -40px
 
 .nav-container
   padding: 100px 0
+  @media #{$small-only}
+    padding: 50px 0 80px
   .nav-block
     position: relative
     background-color: $brown800
@@ -363,6 +379,8 @@
     color: white
     text-transform: uppercase
     line-height: 0.9
+    @media #{$small-only}
+      font-size: 28px
   .icon
     position: absolute
     right: 50px
@@ -406,7 +424,9 @@
     counter-increment: service
     &:before
       content: attr(data-number)
-
+  .background-text
+    font-size: 150px !important
+    padding-top: 0
   .service-description
     h1, h2, h3, h4, h5, h6
       color: $pink600

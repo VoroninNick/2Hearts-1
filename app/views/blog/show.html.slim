@@ -4,7 +4,8 @@
 
     p.one-title
       = @article.name
-    .button.share-button Поділитися
+    .button.share-button
+      = t('blog.share_btn')
     .likes
       = inline_svg "svg/2h-little-heart-01.svg"
       span 25
@@ -29,11 +30,14 @@
         .likes
           = inline_svg "svg/2h-little-heart-01.svg"
           span 25
-        .button.share-button Поділитися
+        .button.share-button
+          = t('blog.share_btn')
 
 .section-name.slide-up
-  .background = inline_svg "svg/bg-text/2h-bg-lable-one_blog-01.svg"
-  .title = inline_svg "svg/headers/2h-inner-pages-one_case-read_also.svg"
+  p.background-text
+    = t('blog.related.bg-text')
+  .title
+    = raw t('blog.related.title')
 
 .owl-carousel.blog-carousel.appeared
   - @related_articles.each do |article|

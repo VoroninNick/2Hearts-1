@@ -1,7 +1,9 @@
 .main-banner
 
-  .img-bg.lightened style="background-image: url(#{asset_path('photo/hearts-slide-2.jpg')})"
-  
+  .video-background
+    .video-foreground
+      iframe#bg-video src="https://www.youtube.com/embed/tbZNMrQ5ipc?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=tbZNMrQ5ipc" frameborder="0" allowfullscreen="1"
+
   .hashtag
     span #
     | twohearts
@@ -18,15 +20,16 @@
 
   .top-part
     .line.top
-    p.title.animate весільна агенція
-    .header.animate = inline_svg "svg/headers/2h-lable-main.svg"
+    p.title.animate
+      = t('home.banner.title')
+    p.header.animate
+      = t('home.banner.header')
     h1.subtitle.animate
       = h1_text
 
   .bottom-part
     .line.middle
-    .play-bth = inline_svg "svg/2h-play-button-011.svg"
+    a.play-bth.video-popup href="https://www.youtube.com/embed/tbZNMrQ5ipc?rel=0"
+      = inline_svg "svg/2h-play-button-011.svg"
     .line.bottom
     .scroll-down title="Прогорнути вниз" = inline_svg "svg/mice.svg"
-
-

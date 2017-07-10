@@ -19,7 +19,6 @@ html
     - if @render_header != false
       = render "header"
     = render "menu"
-    /= render "share_popup"
     = render "popup"
     .main-wrapper
       - if devise_controller?
@@ -29,4 +28,6 @@ html
         = yield
     - if @render_footer != false
       = render "footer"
+    script async="" src="//assets.pinterest.com/js/pinit.js" defer=""
+    script async="" src="https://www.youtube.com/iframe_api"
     = javascript_include_tag "application", 'data-turbolinks-track' => true

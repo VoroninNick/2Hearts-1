@@ -1,8 +1,10 @@
 
 .section-name.slide-up
-  .background = inline_svg "svg/bg-text/2h-bg-lable-services.svg"
+  p.background-text
+    = t('home.services.bg-text')
   .icon = inline_svg "svg/2h-icons-letter-01.svg"
-  .title = inline_svg "svg/headers/2h-lable-services.svg"
+  p.title
+    = raw t('home.services.title')
 
 .services-wrapper.slide-up
   .row

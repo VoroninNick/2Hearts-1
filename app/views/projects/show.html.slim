@@ -3,7 +3,7 @@
   .img-bg style="background-image: url(#{banner_image_url})"
 
   - if @project.video_url.present?
-    .play-bth.project-video-button
+    a.play-bth.project-video-button.video-popup href=@project.video_url
       = inline_svg "svg/2h-play-button-012.svg"
 
   .banner-text
@@ -16,20 +16,24 @@
   = render "project_details"
   .row.step-block
     .columns.large-6
-      .step-title = inline_svg "svg/headers/2h-one_case-bg-text-01-01.svg"
+      .step-container
+        p.step-title
+          = raw t('projects.steps.first')
+        p.bg-number 01
     .columns.large-6
       = raw @project.task_text
 
-  /= render_images(@project.task_images, 1)
   = render "scheme#{@project.task_images_scheme}", assets: @project.task_images
 
   .row.step-block
     .columns.large-6.float-right
-      .step-title = inline_svg "svg/headers/2h-one_case-bg-text-02-01.svg"
+      .step-container
+        p.step-title
+          = raw t('projects.steps.second')
+        p.bg-number 02
     .columns.large-6.float-left
       = raw @project.idea_and_solution_text
 
-  /= render_images(@project.idea_and_solution_images, 2)
   = render "scheme#{@project.idea_and_solution_images_scheme}", assets: @project.idea_and_solution_images
 
   - if @project.idea_and_solution_quote_text.present?
@@ -44,12 +48,13 @@
 
   .row.step-block  
     .columns.large-6
-      .step-title = inline_svg "svg/headers/2h-one_case-bg-text-03-01.svg"
+      .step-container
+        p.step-title
+          = raw t('projects.steps.third')
+        p.bg-number 03
     .columns.large-6
       = raw @project.result_text
 
-  /= render_images(@project.result_images, 3)
-  /= render "scheme3", assets: @project.result_images
   = render "scheme#{@project.result_images_scheme}", assets: @project.result_images
 
   - small_banner_url = @project.result_banner_mobile.exists?(:small) ? @project.result_banner_mobile.url(:small) : (@project.result_banner.exists?(:small) ? @project.result_banner.url(:small) : nil)
@@ -59,12 +64,12 @@
     .project-case-fullwidth-img.desktop style="background-image: url(#{@project.result_banner.url(:xxl)})"
 
   .section-name.slide-up
-    .background = inline_svg "svg/bg-text/2h-bg-lable-talk.svg"
-    .title = inline_svg "svg/headers/2h-inner-pages-case-testimonials-01.svg"
+    p.background-text
+      = t('projects.testemonials.bg-text')
+    p.title
+      = raw t('projects.testemonials.title')
 
   = render "projects/scheme#{@project.project_feedbacks_scheme}", assets: @project.project_feedbacks
-
-
 
 
 .project-conclusion
@@ -73,8 +78,10 @@
     .columns.medium-6
       .main-text.with-line
         .icon = inline_svg "svg/2h-icons-love-cloud.svg"
-        .title = inline_svg "svg/headers/2h-one_case-do_you_like-v1-01.svg"
-        .button.share-button Поділились з друзями
+        p.title
+          = raw t('projects.interaction.like_it')
+        .button.share-button
+          = t('projects.interaction.share_btn')
         .likes
           = inline_svg "svg/2h-little-heart-01.svg"
           span 25
@@ -82,12 +89,16 @@
     .columns.medium-6
       .main-text
         .icon = inline_svg "svg/2h-icons-love-letter.svg"
-        .title = inline_svg "svg/headers/2h-one_case-want_the_same-v1-01.svg"
-        .button.order-button Замовити весілля
+        .title
+          = raw t('projects.interaction.want_it')
+        .button.order-button
+          = t('projects.interaction.order_btn')
 
 - if @related_projects.any?
   .section-name.slide-up
-    .background = inline_svg "svg/bg-text/2h-bg-lable-one_case-01.svg"
-    .title = inline_svg "svg/headers/2h-inner-pages-one_case-see_also.svg"
+    p.background-text Iншi весiлля
+    p.title
+      | Дивiться
+      span також
 
   = render "portfolio_carousel", projects: @related_projects

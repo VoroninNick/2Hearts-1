@@ -2,8 +2,8 @@
 
   position: fixed
   width: 100%
-  height: auto
-  min-height: 100vh
+  height: 100vh
+  overflow: auto
   background: rgba($brown900, .97)
   z-index: 9999
   opacity: 0
@@ -17,6 +17,7 @@
     width: 20px
     height: 20px
     cursor: pointer
+    z-index: 11
     p
       margin: 20px 0
     svg
@@ -26,6 +27,9 @@
     &:hover
       svg
         fill: #F8F7F3
+    @media #{$small-only}
+      top: 20px
+      right: 20px
 
   .success-popup
     text-align: center
@@ -42,11 +46,20 @@
   .share-block, .subscribe-block, .order-form, .resume-form, .question-form, .success-message-popup
     position: absolute
     max-width: 90%
-    top: 50%
     left: 50%
-    +translate(-50%,-50%)
+    +translate(-50%,0%)
+    margin-top: 30px
+    margin-bottom: 30px
     text-align: center
     opacity: 0
+    @media #{$small-only}
+      margin-top: 60px
+      margin-bottom: 60px
+    @media #{$xlarge-up}
+      top: 50%
+      +translate(-50%,-50%)
+    form
+      margin-top: 0
   .share-block, .order-form, .resume-form, .question-form
     width: 600px
   .subscribe-block, .success-message-popup

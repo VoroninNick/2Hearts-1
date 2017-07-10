@@ -4,10 +4,12 @@
 
   .banner-text.with-button
 
-    .header = inline_svg "svg/headers/2h-inner-pages-contacts.svg"
+    p.header
+      = t('contact_us.banner.title')
     h1.subtitle
       = h1_text
-    .button.order-button Замовити весілля
+    .button.order-button
+      = t('contact_us.order_btn')
 
 .indent
   .row
@@ -63,8 +65,11 @@
   .row
     .columns
       .section-name.in-contacts.slide-up
-        .background = inline_svg "svg/bg-text/2h-bg-lable-contacts-vacancy.svg"
-        .title = inline_svg "svg/headers/2h-lable-contacts-vacancy.svg"
+        .background
+        p.background-text
+          = t('contact_us.join_us.bg-text')
+        p.title
+          = raw t('contact_us.join_us.title')
   .row
     .columns.large-6.floated-right-block
       .main-text

@@ -31,6 +31,7 @@
       padding: 20px
     .comment
       @extend %cormorant
+      font-size: 16px
       color: $brown700
       +bold
       font-style: italic
@@ -136,13 +137,13 @@
     left: 50%
     +translate(-50%,0)
     //&:before
-      content: 'Крок №' counter(steps)
-      font-size: 12px
-      @extend %istok
-      text-transform: uppercase
-      +bold
-      color: $brown700
-      letter-spacing: 2px
+    // content: 'Крок №' counter(steps)
+    font-size: 12px
+    @extend %istok
+    text-transform: uppercase
+    +bold
+    color: $brown700
+    letter-spacing: 2px
     @media #{$small-only}
       top: 60px
   .description
@@ -150,6 +151,7 @@
     font-size: 14px
     color: $brown400
     max-height: calc(1.5*5*14px)
+    overflow: hidden
   .plus
     position: relative
     width: 60px
@@ -172,6 +174,8 @@
         text-transform: uppercase
         color: $pink600
         +bold
+        @media #{$small-only}
+          display: block
     .subtitle
       color: $pink600
       font-size: 18px

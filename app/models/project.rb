@@ -146,16 +146,10 @@ class Project < ActiveRecord::Base
     if youtube_video_id.blank? && vimeo_video_id.blank?
       return nil
     elsif youtube_video_id.present?
-      return "youtube.com/video/#{youtube_video_id}"
+      return "https://www.youtube.com/embed/#{youtube_video_id}?rel=0"
     elsif vimeo_video_id.present?
-      return "youtube.com/video/#{vimeo_video_id}"
+      return "https://vimeo.com/#{vimeo_video_id}"
     end
   end
 
-  # [:avatar, :idea_and_solution_banner, :result_banner, :banner].each do |k|
-  #   define_method "#{k}_watermark_position" do
-  #     v = self["#{k}_watermark_position"]
-  #     v.present? ? v : "SouthEast"
-  #   end
-  # end
 end

@@ -1,0 +1,1 @@
+jQuery("a.video-popup").YouTubePopUp();
