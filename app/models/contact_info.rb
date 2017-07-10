@@ -5,6 +5,10 @@ class ContactInfo < ActiveRecord::Base
 
   has_images :contact_images, **IMAGE_OPTIONS
 
+  has_cache do
+    pages :contacts
+  end
+
   before_save :init_schemes
 
   def init_schemes
