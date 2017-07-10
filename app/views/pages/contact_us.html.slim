@@ -14,15 +14,30 @@
 .indent
   .row
     .columns.large-5
-      .contact-block
-        span номер телефону
-        p +38 (067) 672-68-30
-      .contact-block
-        span електронна скринька
-        p info@wed.in.ua
+      - if @contact_info.phones.present?
+        .contact-block
+          span номер телефону
+          - @contact_info.phones.each do |k, v|
+            - phone_number = v
+            - if phone_number.blank?
+              - phone_number = k
+            p
+              a href=phone_url(phone_number)
+                = phone_number
+      - if @contact_info.emails.present?
+        .contact-block
+          span електронна скринька
+          - @contact_info.emails.each do |k, v|
+            - email = v
+            - if email.blank?
+              - email = k
+            p
+              a href=email_url(email)
+                = email
       .contact-block
         span наша адреса
-        p вул. Січових Стрільців, 8, м. Львів
+        p
+          = @contact_info.address
       .contact-block
         span ми в соціальних мережах
         ul.socials
@@ -39,27 +54,7 @@
     .columns.large-6
       = render "contact_form"
 
-.collage-wrapper.slide-up
-  .row
-    .columns
-      .optional-full-width-photo.slide-up style="background-image: url(#{asset_path('photo/meeting-modern-room-conference-159805.jpg')})"
-
-      .clearfix.collage-container
-        .floated.clearfix
-          .square
-            .img-bg style="background-image: url(#{asset_path('photo/pexels-photo.jpg')})"
-            .inner-border
-          .square
-            .img-bg style="background-image: url(#{asset_path('photo/pexels-photo-243140.jpg')})"
-          .square
-            .img-bg style="background-image: url(#{asset_path('photo/pexels-photo-380768.jpg')})"
-          .square
-            .img-bg style="background-image: url(#{asset_path('photo/pexels-photo-380769.jpg')})"
-
-        .floated
-          .square.fullwidth
-            .img-bg style="background-image: url(#{asset_path('photo/pexels-photo-284846.jpg')})"
-            .inner-border
+= render "projects/scheme#{@contact_info.contact_images_scheme}", assets: @contact_info.contact_images
 
 .one-wrapper
   .row
@@ -73,9 +68,7 @@
   .row
     .columns.large-6.floated-right-block
       .main-text
-        h2 Вакансії
-        p Колектив весільної агенсії “Два Серця”  запрошує до співпраці копірайтерів, рерайтерів, нюзмейкерів та контент-менеджерів, які зацікавлені роботою у сфері організації весілля.
-        p Завжди раді вітати талановитих та креативних людей у колективі! Якщо Ви розкрили у собі приховані таланти, або прагнете поділитися своїми думками, спогадами чи ідеями стосовно весільних клопотів, тоді з нетерпінням чекаємо ваших заявок.
+        = raw @contact_info.vacancies_text
         .vacancie-link-container
           - @featured_vacancies.each do |vacancy|
             a.vacancie-link href=vacancy.url

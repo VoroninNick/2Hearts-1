@@ -32,6 +32,7 @@ class PagesController < ApplicationController
   end
 
   def contact_us
+    @contact_info = ContactInfo.first_or_initialize
     @featured_vacancies = Vacancy.featured
     @extra_vacancies_count = Vacancy.published.count - 4
     @extra_vacancies_count_text = nil
@@ -67,7 +68,7 @@ class PagesController < ApplicationController
   def set_page_instance
     set_page_metadata(action_name)
     Cms.config.provided_locales.each do |locale|
-      locale_links[locale.to_sym] = send("#{action_name}_#{I18n.locale}_path")
+      @_locale_links[locale.to_sym] = send("#{action_name}_#{I18n.locale}_path")
     end
   end
 end

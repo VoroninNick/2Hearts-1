@@ -216,7 +216,7 @@ module RailsAdminDynamicConfig
         # ===================================================
         # Application specific models
         # ===================================================
-        config.include_models Vacancy, FaqQuestion, Service, Project, ProjectCategory, ProjectFeedback, HomeSlide, TeamMember, AboutIntro, AboutStep, AboutTeamIntro, Partner, ArticleCategory, Article
+        config.include_models Vacancy, FaqQuestion, Service, Project, ProjectCategory, ProjectFeedback, HomeSlide, TeamMember, AboutIntro, AboutStep, AboutTeamIntro, Partner, ArticleCategory, Article, ContactInfo
         config.model Vacancy do
           nestable_list({position_field: :sorting_position})
           navigation_label_key :vacancies, 1
@@ -538,7 +538,21 @@ module RailsAdminDynamicConfig
           field :site_url
         end
 
+        config.model ContactInfo do
+          navigation_label_key :contacts, 5
 
+          field :translations, :globalize_tabs
+          field :contact_images
+          scheme_enum_field(:contact_images_scheme)
+        end
+
+        config.model_translation ContactInfo do
+          field :locale, :hidden
+          field :phones
+          field :emails
+          field :address
+          field :vacancies_text, :ck_editor
+        end
 
       end
     end
