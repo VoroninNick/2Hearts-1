@@ -18,6 +18,8 @@ class Project < ActiveRecord::Base
 
   has_navigation
 
+  include Cms::LocalizedRoutes::UrlHelper::ResourceUrl
+
   belongs_to :project_category
   attr_accessible :project_category
 
