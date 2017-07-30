@@ -71,7 +71,7 @@ class Article < ActiveRecord::Base
   end
 
   def self.reset_likes_count
-    self.each do |r|
+    self.all.each do |r|
       r.likes_count = 0
       r.save
     end
