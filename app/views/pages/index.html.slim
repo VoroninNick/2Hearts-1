@@ -24,12 +24,13 @@
   p.title підпишіться на новини
   p.larger Щоб бути вкурсі найсвіжіших подій в житті весільної агенції «Два серця»
 
-  form
+  form.email-subscription-form action="/#{I18n.locale}/subscribe_on_email_ubscriptions"
     .input-field.leave-email
-      input
+      input name="email"
       label.placeholder електронна скринька
       span.line
-      span.send-email-button = inline_svg "svg/2h-send-01.svg"
+      button.send-email-button type="submit"
+        = inline_svg "svg/2h-send-01.svg"
 
 .row.collapse.nav-container.slide-up
   .columns.medium-6

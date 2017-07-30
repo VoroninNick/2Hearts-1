@@ -94,6 +94,10 @@
   cursor: pointer
   display: none
   z-index: 1
+  border: 2px transparent solid
+  +transition(0.3s border-color)
+  &:hover
+    border-color: white
 .square
   &:hover
     .pinterest-btn

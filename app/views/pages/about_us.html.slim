@@ -16,7 +16,7 @@
   .row.slide-up
     .columns.large-4.large-pull-1.xxlarge-4.xxlarge-pull-0.float-right
       = raw @about_intro.try(:intro)
-  - image_url = @about_intro.image.exists? ? @about_intro.image.url : asset_path('photo/2h-cuted-men-v2.png')
+  - image_url = @about_intro && @about_intro.image.exists? ? @about_intro.image.url : asset_path('photo/2h-cuted-men-v2.png')
   .main-img style="background-image: url(#{image_url})"
 
 - if @about_steps.try(:any?)

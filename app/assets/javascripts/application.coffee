@@ -43,3 +43,4 @@
 #= require pinterest_btn
 
 #= require form
+#= require email_subscription_form

@@ -118,3 +118,5 @@ gem 'rails_admin_globalize_field'
 gem 'russian'
 
 gem "devise-i18n"
+
+gem 'gibbon'
