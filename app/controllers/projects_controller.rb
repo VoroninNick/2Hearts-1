@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   caches_page :index, :show
+  before_action :set_project, only: [:show]
 
   def index
     @projects = Project.published
@@ -12,12 +13,15 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @project = Project.get(params[:id])
-    if @project.nil?
-      return render_not_found
-    end
     set_page_metadata(@project)
     @related_projects = Project.published.where.not(id: @project.id)
     @og_image = @project.avatar.url
+  end
+
+  def set_project
+    @project = Project.get(params[:id])
+    if @project.nil?
+      render_not_found
+    end
   end
 end

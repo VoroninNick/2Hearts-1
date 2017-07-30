@@ -1,59 +1,57 @@
-.banner.grey-bg
+.resource-page data-url=@article.url data-resource-type="article" data-id=@article.id
+  .banner.grey-bg
 
-  .blog-one-text
+    .blog-one-text
 
-    p.one-title
-      = @article.name
-    .button.share-button
-      = t('blog.share_btn')
-    .likes
-      = inline_svg "svg/2h-little-heart-01.svg"
-      span 25
+      p.one-title
+        = @article.name
+      .button.share-button
+        = t('blog.share_btn')
+      .likes-wrap
 
-.row
-  .columns.medium-10.medium-centered.xlarge-8
-    .one-wrapper.in-blog-one
-      - if @article.avatar.exists?(:large)
-        img src=@article.avatar.url(:large)
-      .row
-        .medium-5.large-4.columns
-          .date
-            = @article.formatted_release_date(:long)
-          .tag
-            = @article.category_name
-        .medium-7.large-8.columns
-          p.thesis
-            = @article.short_description
-      .main-text.with-lines
-        = raw @article.content
-      .one-share-block 
-        .likes
-          = inline_svg "svg/2h-little-heart-01.svg"
-          span 25
-        .button.share-button
-          = t('blog.share_btn')
 
-.section-name.slide-up
-  p.background-text
-    = t('blog.related.bg-text')
-  .title
-    = raw t('blog.related.title')
+  .row
+    .columns.medium-10.medium-centered.xlarge-8
+      .one-wrapper.in-blog-one
+        - if @article.avatar.exists?(:large)
+          img src=@article.avatar.url(:large)
+        .row
+          .medium-5.large-4.columns
+            .date
+              = @article.formatted_release_date(:long)
+            .tag
+              = @article.category_name
+          .medium-7.large-8.columns
+            p.thesis
+              = @article.short_description
+        .main-text.with-lines
+          = raw @article.content
+        .one-share-block
+          .likes-wrap
+          .button.share-button
+            = t('blog.share_btn')
 
-.owl-carousel.blog-carousel.appeared
-  - @related_articles.each do |article|
-    - if article.avatar.exists?(:medium)
-      - image_url = article.avatar.url(:medium)
-    - else
-      - image_url = asset_path('photo/hearts-slide-3.jpg')
-    a.blog-block href=article.url
-      .img style="background-image: url(#{image_url})"
-      .text
-        .category
-          = article.category_name
-        p.title
-          = article.name
-        p.description
-          = article.short_description
-        p.date
-          = article.formatted_release_date
-        p.read-about Читати
+  .section-name.slide-up
+    p.background-text
+      = t('blog.related.bg-text')
+    .title
+      = raw t('blog.related.title')
+
+  .owl-carousel.blog-carousel.appeared
+    - @related_articles.each do |article|
+      - if article.avatar.exists?(:medium)
+        - image_url = article.avatar.url(:medium)
+      - else
+        - image_url = asset_path('photo/hearts-slide-3.jpg')
+      a.blog-block href=article.url
+        .img style="background-image: url(#{image_url})"
+        .text
+          .category
+            = article.category_name
+          p.title
+            = article.name
+          p.description
+            = article.short_description
+          p.date
+            = article.formatted_release_date
+          p.read-about Читати

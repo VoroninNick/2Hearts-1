@@ -56,4 +56,40 @@ class ApplicationController < ActionController::Base
 
     @_locale_links = locale_links
   end
+
+  def resource_likes_count(resource)
+    render json: {likes_count: resource.likes_count}
+  end
+
+  def like_resource(resource)
+    like_category = resource.class.name.underscore
+    liked = session[:likes] && session[:likes][like_category] && session[:likes][like_category].include?(resource.id)
+    if liked
+      return render json: {status: "already_liked"}, status: 400
+    end
+
+    session[:likes] ||= {}
+    session[:likes][like_category] ||= []
+    session[:likes][like_category] << resource.id
+
+    resource.like!
+    render json: {}
+  end
+
+  before_action :set_like_resource, only: [:like, :likes_count]
+
+  def like
+    like_resource(@like_resource)
+  end
+
+  def likes_count
+    resource_likes_count(@like_resource)
+  end
+
+  def set_like_resource
+    @like_resource = Object.const_get(params[:resource_type].classify).find(params[:id]) rescue nil
+    if @like_resource.nil?
+      render_not_found
+    end
+  end
 end

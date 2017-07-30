@@ -3,6 +3,7 @@
 #= require jquery_ujs
 
 #= require global
+#= require images.js.erb
 
 #     P L U G I N S
 
@@ -19,6 +20,7 @@
 #= require plugins/lg-thumbnail.min
 #= require jquery-form/dist/jquery.form.min
 #= require plugins/YouTubePopUp.jquery
+#= require js-cookie/src/js.cookie
 
 #     I N I T I A L I Z E
 
@@ -44,3 +46,4 @@
 
 #= require form
 #= require email_subscription_form
+#= require likes

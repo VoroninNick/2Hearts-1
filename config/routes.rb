@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   root as: "root_without_locale", to: "application#root_without_locale"
   get "admin(/*admin_path)", to: redirect{|params| "/#{ I18n.default_locale}/admin/#{params[:admin_path]}"}
 
+  get "likes-count/:resource_type/:id", to: "application#likes_count", as: :likes_count
+  post "like/:resource_type/:id", to: "application#like", as: :like
+
   localized do
     controller "forms" do
       post "contact_request"

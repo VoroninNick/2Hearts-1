@@ -1,5 +1,6 @@
 class BlogController < ApplicationController
   caches_page :index, :show
+  before_action :set_article, only: [:show]
 
   def index
     set_page_metadata(:blog)
@@ -10,10 +11,6 @@ class BlogController < ApplicationController
   end
 
   def show
-    @article = Article.get(params[:id])
-    if @article.nil?
-      return render_not_found
-    end
     set_page_metadata(@article)
     @related_articles = Article.published.where.not(id: @article.id)
 
@@ -22,5 +19,12 @@ class BlogController < ApplicationController
 
   def articles
     @articles ||= Article.published
+  end
+
+  def set_article
+    @article = Article.get(params[:id])
+    if @article.nil?
+      return render_not_found
+    end
   end
 end

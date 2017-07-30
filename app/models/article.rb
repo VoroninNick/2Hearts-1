@@ -54,4 +54,19 @@ class Article < ActiveRecord::Base
   def self.get(url_fragment)
     self.published.joins(:translations).where(:"#{self.translation_class.table_name}" => { url_fragment: url_fragment, locale: I18n.locale }).first
   end
+
+  def like
+    c = self.likes_count
+    c += 1
+    self.likes_count = c
+  end
+
+  def like!
+    self.like
+    self.save
+  end
+
+  def likes_count
+    self["likes_count"] || 0
+  end
 end

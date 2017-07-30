@@ -152,4 +152,19 @@ class Project < ActiveRecord::Base
     end
   end
 
+  def like
+    c = self.likes_count
+    c += 1
+    self.likes_count = c
+  end
+
+  def like!
+    self.like
+    self.save
+  end
+
+  def likes_count
+    self["likes_count"] || 0
+  end
+
 end

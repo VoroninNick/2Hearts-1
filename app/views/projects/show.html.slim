@@ -1,104 +1,106 @@
-.project-one-banner
-  - banner_image_url = @project.banner.exists?(:large) ? @project.banner.url(:large) : asset_path('photo/hearts-slide-2.jpg')
-  .img-bg style="background-image: url(#{banner_image_url})"
+.resource-page data-url=@project.url data-resource-type="project" data-id=@project.id
+  .project-one-banner
+    - banner_image_url = @project.banner.exists?(:large) ? @project.banner.url(:large) : asset_path('photo/hearts-slide-2.jpg')
+    .img-bg style="background-image: url(#{banner_image_url})"
 
-  - if @project.video_url.present?
-    a.play-bth.project-video-button.video-popup href=@project.video_url
-      = inline_svg "svg/2h-play-button-012.svg"
+    - if @project.video_url.present?
+      a.play-bth.project-video-button.video-popup href=@project.video_url
+        = inline_svg "svg/2h-play-button-012.svg"
 
-  .banner-text
-    p.subtitle.animate
-      = @project.category_name
-    p.title.animate
-      = @project.name
+    .banner-text
+      p.subtitle.animate
+        = @project.category_name
+      p.title.animate
+        = @project.name
 
-.project-one-wrapper#animated-thumbnails
-  = render "project_details"
-  .row.step-block
-    .columns.large-6
-      .step-container
-        p.step-title
-          = raw t('projects.steps.first')
-        p.bg-number 01
-    .columns.large-6
-      = raw @project.task_text
+  .project-one-wrapper#animated-thumbnails
+    = render "project_details"
+    .row.step-block
+      .columns.large-6
+        .step-container
+          p.step-title
+            = raw t('projects.steps.first')
+          p.bg-number 01
+      .columns.large-6
+        = raw @project.task_text
 
-  = render "scheme#{@project.task_images_scheme}", assets: @project.task_images
+    = render "scheme#{@project.task_images_scheme}", assets: @project.task_images
 
-  .row.step-block
-    .columns.large-6.float-right
-      .step-container
-        p.step-title
-          = raw t('projects.steps.second')
-        p.bg-number 02
-    .columns.large-6.float-left
-      = raw @project.idea_and_solution_text
+    .row.step-block
+      .columns.large-6.float-right
+        .step-container
+          p.step-title
+            = raw t('projects.steps.second')
+          p.bg-number 02
+      .columns.large-6.float-left
+        = raw @project.idea_and_solution_text
 
-  = render "scheme#{@project.idea_and_solution_images_scheme}", assets: @project.idea_and_solution_images
+    = render "scheme#{@project.idea_and_solution_images_scheme}", assets: @project.idea_and_solution_images
 
-  - if @project.idea_and_solution_quote_text.present?
-    blockquote
-      | «#{@project.idea_and_solution_quote_text}»
-      - if @project.idea_and_solution_quote_author.present?
-        span
-          = @project.idea_and_solution_quote_author
+    - if @project.idea_and_solution_quote_text.present?
+      blockquote
+        | «#{@project.idea_and_solution_quote_text}»
+        - if @project.idea_and_solution_quote_author.present?
+          span
+            = @project.idea_and_solution_quote_author
 
-  - if @project.idea_and_solution_banner.exists?(:xxl)
-    .project-case-fullwidth-img style="background-image: url(#{@project.idea_and_solution_banner.url(:xxl)})"
+    - if @project.idea_and_solution_banner.exists?(:xxl)
+      .project-case-fullwidth-img style="background-image: url(#{@project.idea_and_solution_banner.url(:xxl)})"
 
-  .row.step-block  
-    .columns.large-6
-      .step-container
-        p.step-title
-          = raw t('projects.steps.third')
-        p.bg-number 03
-    .columns.large-6
-      = raw @project.result_text
+    .row.step-block
+      .columns.large-6
+        .step-container
+          p.step-title
+            = raw t('projects.steps.third')
+          p.bg-number 03
+      .columns.large-6
+        = raw @project.result_text
 
-  = render "scheme#{@project.result_images_scheme}", assets: @project.result_images
+    = render "scheme#{@project.result_images_scheme}", assets: @project.result_images
 
-  - small_banner_url = @project.result_banner_mobile.exists?(:small) ? @project.result_banner_mobile.url(:small) : (@project.result_banner.exists?(:small) ? @project.result_banner.url(:small) : nil)
-  - if small_banner_url
-    .project-case-fullwidth-img.mobile style="background-image: url(#{small_banner_url})"
-  - if @project.result_banner.exists?(:xxl)
-    .project-case-fullwidth-img.desktop style="background-image: url(#{@project.result_banner.url(:xxl)})"
+    - small_banner_url = @project.result_banner_mobile.exists?(:small) ? @project.result_banner_mobile.url(:small) : (@project.result_banner.exists?(:small) ? @project.result_banner.url(:small) : nil)
+    - if small_banner_url
+      .project-case-fullwidth-img.mobile style="background-image: url(#{small_banner_url})"
+    - if @project.result_banner.exists?(:xxl)
+      .project-case-fullwidth-img.desktop style="background-image: url(#{@project.result_banner.url(:xxl)})"
 
-  .section-name.slide-up
-    p.background-text
-      = t('projects.testemonials.bg-text')
-    p.title
-      = raw t('projects.testemonials.title')
+    .section-name.slide-up
+      p.background-text
+        = t('projects.testemonials.bg-text')
+      p.title
+        = raw t('projects.testemonials.title')
 
-  = render "projects/scheme#{@project.project_feedbacks_scheme}", assets: @project.project_feedbacks
+    = render "projects/scheme#{@project.project_feedbacks_scheme}", assets: @project.project_feedbacks
 
 
-.project-conclusion
+  .project-conclusion
 
-  .row
-    .columns.medium-6
-      .main-text.with-line
-        .icon = inline_svg "svg/2h-icons-love-cloud.svg"
-        p.title
-          = raw t('projects.interaction.like_it')
-        .button.share-button
-          = t('projects.interaction.share_btn')
-        .likes
-          = inline_svg "svg/2h-little-heart-01.svg"
-          span 25
-      
-    .columns.medium-6
-      .main-text
-        .icon = inline_svg "svg/2h-icons-love-letter.svg"
-        .title
-          = raw t('projects.interaction.want_it')
-        .button.order-button
-          = t('projects.interaction.order_btn')
+    .row
+      .columns.medium-6
+        .main-text.with-line
+          .icon = inline_svg "svg/2h-icons-love-cloud.svg"
+          p.title
+            = raw t('projects.interaction.like_it')
+          .button.share-button
+            = t('projects.interaction.share_btn')
+          .likes-wrap
+            .likes
+              /= inline_svg "svg/2h-little-heart-01.svg"
+              /span 25
 
-- if @related_projects.any?
-  .section-name.slide-up
-    p.background-text Iншi весiлля
-    p.title
-      | Дивiться
-      span також
+      .columns.medium-6
+        .main-text
+          .icon = inline_svg "svg/2h-icons-love-letter.svg"
+          .title
+            = raw t('projects.interaction.want_it')
+          .button.order-button
+            = t('projects.interaction.order_btn')
 
-  = render "portfolio_carousel", projects: @related_projects
+  - if @related_projects.any?
+    .section-name.slide-up
+      p.background-text Iншi весiлля
+      p.title
+        | Дивiться
+        span також
+
+    = render "portfolio_carousel", projects: @related_projects

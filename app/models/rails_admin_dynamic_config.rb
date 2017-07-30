@@ -330,6 +330,12 @@ module RailsAdminDynamicConfig
           end
 
           group :feedbacks do
+            field :likes_count do
+              read_only true
+              def value
+                @bindings[:object].likes_count
+              end
+            end
             scheme_enum_field(:project_feedbacks_scheme)
           end
 
