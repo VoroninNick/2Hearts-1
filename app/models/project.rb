@@ -167,4 +167,11 @@ class Project < ActiveRecord::Base
     self["likes_count"] || 0
   end
 
+  def self.reset_likes_count
+    self.each do |r|
+      r.likes_count = 0
+      r.save
+    end
+  end
+
 end

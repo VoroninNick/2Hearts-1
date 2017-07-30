@@ -69,4 +69,11 @@ class Article < ActiveRecord::Base
   def likes_count
     self["likes_count"] || 0
   end
+
+  def self.reset_likes_count
+    self.each do |r|
+      r.likes_count = 0
+      r.save
+    end
+  end
 end
