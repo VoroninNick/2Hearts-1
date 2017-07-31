@@ -26,26 +26,7 @@
         .columns.large-8
           = raw service.content
 
-      = render "projects/scheme5", assets: service.images
+      = render "projects/scheme#{@project.task_images_scheme}", assets: service.images
 
-                - if inner_group_index == 0
-                  .optional-full-width-photo.slide-up style="background-image: url(#{inner_group[0].url})"
-
-                - if inner_group_index == 1
-                  - group1 = inner_group[0..3]
-                  - group2 = [inner_group[4]]
-
-
-                  .clearfix.collage-container
-                    - [group1, group2].each_with_index do |g, i|
-                      - if i == 0
-                        .floated.clearfix
-                          - g.each_with_index do |asset, image_index|
-                            = render "image", asset: asset
-
-
-                      - if i == 1
-                        .floated
-                          = render "image", asset: g[0], wrap_class: "fullwidth"
 
 = render "go_to_all_projects"

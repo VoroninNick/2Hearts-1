@@ -261,6 +261,7 @@ module RailsAdminDynamicConfig
           end
           field :translations, :globalize_tabs
           field :images
+          scheme_enum_field(:images_scheme)
         end
 
         config.model_translation Service do

@@ -36,4 +36,14 @@ class Service < ActiveRecord::Base
     number = index_of(self.class.published) + 1
     "svg/services/#{number}-large_title.svg"
   end
+
+  before_save :init_scheme
+  def init_scheme
+    self.images_scheme = 1 if self.images_scheme.blank?
+  end
+
+  def images_scheme
+    s = self['task_images_scheme']
+    s.present? ? s : 1
+  end
 end
