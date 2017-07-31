@@ -26,7 +26,7 @@
         .columns.large-8
           = raw service.content
 
-      = render "projects/scheme#{@project.task_images_scheme}", assets: service.images
+      = render "projects/scheme#{service.images_scheme}", assets: service.images
 
 
 = render "go_to_all_projects"
