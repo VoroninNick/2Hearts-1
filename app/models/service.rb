@@ -43,7 +43,7 @@ class Service < ActiveRecord::Base
   end
 
   def images_scheme
-    s = self['task_images_scheme']
+    s = self['images_scheme']
     s.present? ? s : 1
   end
 end
