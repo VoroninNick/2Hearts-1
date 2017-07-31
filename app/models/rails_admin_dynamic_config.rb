@@ -176,6 +176,8 @@ module RailsAdminDynamicConfig
         config.model_translation Attachable::Asset do
           field :locale, :hidden
           field :data_alt
+          field :youtube_video_id
+          field :vimeo_video_id
         end
 
 
