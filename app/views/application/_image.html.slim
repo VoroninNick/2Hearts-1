@@ -16,7 +16,13 @@
   - if !defined?(show_border)
     - show_border = false
 
+  - video_url = ApplicationHelper.video_url(asset)
+  - if video_url.present?
+    - full_square_class += " has-video"
+
   div class=full_square_class href=attachment.url(style)
+    - if video_url.present?
+      iframe.video-iframe data-src=video_url
     .img-bg style="background-image: url(#{attachment.url(style)})"
     - if show_border
       .inner-border

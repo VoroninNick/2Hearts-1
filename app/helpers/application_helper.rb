@@ -124,4 +124,14 @@ module ApplicationHelper
     end.select{|s| !s.nil? }.join("").html_safe
 
   end
+
+  def self.video_url(resource)
+    if (!resource.respond_to?(:youtube_video_id) || resource.youtube_video_id.blank?) && (!resource.respond_to?(:vimeo_video_id) resource.vimeo_video_id.blank?)
+      return nil
+    elsif resource.respond_to?(:youtube_video_id) && resource.youtube_video_id.present?
+      return "https://www.youtube.com/embed/#{resource.youtube_video_id}?rel=0"
+    elsif resource.respond_to?(:vimeo_video_id) &&  resource.vimeo_video_id.present?
+      return "https://vimeo.com/#{resource.vimeo_video_id}"
+    end
+  end
 end

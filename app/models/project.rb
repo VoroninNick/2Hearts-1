@@ -143,13 +143,7 @@ class Project < ActiveRecord::Base
   end
 
   def video_url
-    if youtube_video_id.blank? && vimeo_video_id.blank?
-      return nil
-    elsif youtube_video_id.present?
-      return "https://www.youtube.com/embed/#{youtube_video_id}?rel=0"
-    elsif vimeo_video_id.present?
-      return "https://vimeo.com/#{vimeo_video_id}"
-    end
+    ApplicationHelper.video_url(self)
   end
 
   def like
