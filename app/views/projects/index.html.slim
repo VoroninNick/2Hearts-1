@@ -22,7 +22,7 @@
               = @all_count
         - @categories.each do |category|
           li.filter data-tag-id=category.id
-            .heart-icon.azure
+            .heart-icon
               = category.svg_icon_string
             = category.name
             sup
@@ -46,7 +46,7 @@
               = project.category_name
             p.title
               = project.name
-            .heart-icon.azure
+            .heart-icon
               = project.category_svg_icon_string
 
 
