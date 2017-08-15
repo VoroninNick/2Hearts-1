@@ -240,3 +240,17 @@
   span
     position: relative
     top: -5px
+
+.scrollBtn
+  position: fixed
+  width: 51px
+  height: 51px
+  bottom: 30px
+  right: 30px
+  display: none
+  background-image: asset_url('svg/scrollBtn.svg')
+  background-repeat: no-repeat
+  +rotate(-90deg)
+  z-index: 2
+  cursor: pointer
+  animation: bounce 2s infinite

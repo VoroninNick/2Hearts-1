@@ -40,6 +40,7 @@
 #= require input-file-add
 #= require youtube_video_popup
 #= require bg-text
+#= require scrollBtn
 
 #= require sharing
 #= require pinterest_btn
