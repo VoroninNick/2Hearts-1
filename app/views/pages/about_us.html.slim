@@ -13,7 +13,7 @@
 
   .img-bg = inline_svg "svg/2h-heart-bg.svg"
 
-  .row.slide-up
+  .row
     .columns.large-4.large-pull-1.xxlarge-4.xxlarge-pull-0.float-right
       = raw @about_intro.try(:intro)
   - image_url = @about_intro && @about_intro.image.exists? ? @about_intro.image.url : asset_path('photo/2h-cuted-men-v2.png')
