@@ -17,7 +17,8 @@
     $.fn.YouTubePopUp = function(options) {
 
         var YouTubePopUpOptions = $.extend({
-                autoplay: 1
+                autoplay: 1,
+                rel: 0
         }, options );
 
         $(this).on('click', function (e) {
@@ -44,7 +45,7 @@
             var cleanVideoID = getYouTubeVideoID.replace(/(&)+(.*)/, "");
 
             if( youtubeLink.match(/(youtu.be)/) || youtubeLink.match(/(youtube.com)/) ){
-                var videoEmbedLink = "https://www.youtube.com/embed/"+cleanVideoID+"?autoplay="+YouTubePopUpOptions.autoplay+"";
+                var videoEmbedLink = "https://www.youtube.com/embed/"+cleanVideoID+"?autoplay="+YouTubePopUpOptions.autoplay+"&rel="+YouTubePopUpOptions.rel+"";
             }
 
             if( youtubeLink.match(/(vimeo.com\/)+[0-9]/) || youtubeLink.match(/(vimeo.com\/)+[a-zA-Z]/) ){
