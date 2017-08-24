@@ -13,19 +13,21 @@
   .row
     .columns
       ul.filter-container
-        li.filter.active
-          | Всі
-          sup 35
+        - if @show_all
+          li.filter.active
+            | Всі
+            sup
+              = @all_count
         - @categories.each do |category|
           li.filter data-tag-id=category.id
             = category.name
             sup
               = category.articles.published.count
-        - if @misc_articles_count > 0
+        - if @show_other_category
           li.filter data-tag-id=0
-            | Різне
+            | Інші
             sup
-              = @misc_articles_count
+              = @other_articles_count
 
 .row
   .columns

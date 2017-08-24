@@ -30,8 +30,8 @@ Rails.application.routes.draw do
       get "services", action: "services"
       get "faq", action: "faq"
       get "vacancies", action: "vacancies"
-      get "private_policy", action: "private_policy"
-      get "contact_us", action: "contact_us"
+      get "privacy_policy", action: "privacy_policy"
+      get "contacts", action: "contacts"
     end
 
     scope "projects", controller: "projects" do
