@@ -23,6 +23,13 @@ class ContactInfo < ActiveRecord::Base
     true
   end
 
+  def contact_images_scheme
+    v = self['contact_images_scheme']
+    v = 1 if v.blank?
+
+    v
+  end
+
   include Cms::TextFields
   def phones
     properties_field(:phones, I18n.locale, true)
