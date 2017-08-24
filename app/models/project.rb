@@ -28,7 +28,7 @@ class Project < ActiveRecord::Base
 
   extend Enumerize
   [:avatar, :idea_and_solution_banner, :result_banner, :banner].each do |k|
-    enumerize :"#{k}_watermark_position", in: WATERMARK_POSITIONS, default: "SouthEast"
+    enumerize_watermark_position(k)
   end
 
 
