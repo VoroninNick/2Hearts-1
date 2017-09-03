@@ -13,8 +13,10 @@
   .row
     .columns.medium-10.medium-centered.xlarge-8
       .one-wrapper.in-blog-one
+        = render "breadcrumbs"
         - if @article.avatar.exists?(:large)
           img src=@article.avatar.url(:large)
+
         .row
           .medium-5.large-4.columns
             .date
