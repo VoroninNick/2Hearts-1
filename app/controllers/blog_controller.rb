@@ -19,7 +19,7 @@ class BlogController < ApplicationController
 
     @og_image = @article.avatar.url
 
-    add_breadcrumb(Pages.blog)
+    add_breadcrumb(:blog, blog_path)
     add_breadcrumb(@article)
   end
 
