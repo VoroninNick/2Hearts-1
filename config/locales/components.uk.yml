@@ -13,3 +13,5 @@ uk:
           twitter: "twitter"
     tags:
       misc: "Різне"
+    breadcrumbs:
+      blog: "Блог"

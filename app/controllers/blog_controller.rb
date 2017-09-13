@@ -7,7 +7,10 @@ class BlogController < ApplicationController
     articles
     @categories = ArticleCategory.joins(:articles).where(articles: {published: 't'}).uniq
 
-    @misc_articles_count = Article.published.where("article_category_id is null").count
+    @other_articles_count = Article.published.where("article_category_id is null").count
+    @show_other_category = @other_articles_count > 0
+    @all_count = @articles.count
+    @show_all = (@show_other_category && @categories.count > 0) || (@categories.count > 1)
   end
 
   def show
@@ -15,7 +18,8 @@ class BlogController < ApplicationController
     @related_articles = Article.published.where.not(id: @article.id)
 
     @og_image = @article.avatar.url
-    @render_breadcrumbs = true
+    add_breadcrumb(:blog, blog_path)
+    add_breadcrumb(@article)
   end
 
   def articles

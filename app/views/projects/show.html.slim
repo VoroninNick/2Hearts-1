@@ -10,7 +10,7 @@
     .banner-text
       p.subtitle.animate
         = @project.category_name
-      p.title.animate
+      h1.p.title.animate
         = @project.name
 
   .project-one-wrapper.animated-thumbnails
@@ -18,7 +18,7 @@
     .row.step-block
       .columns.large-6
         .step-container
-          p.step-title
+          h2.step-title
             = raw t('projects.steps.first')
           p.bg-number 01
       .columns.large-6
@@ -29,7 +29,7 @@
     .row.step-block
       .columns.large-6.float-right
         .step-container
-          p.step-title
+          h2.step-title
             = raw t('projects.steps.second')
           p.bg-number 02
       .columns.large-6.float-left
@@ -50,7 +50,7 @@
     .row.step-block
       .columns.large-6
         .step-container
-          p.step-title
+          h2.step-title
             = raw t('projects.steps.third')
           p.bg-number 03
       .columns.large-6
@@ -67,7 +67,7 @@
     .section-name.slide-up
       p.background-text
         = t('projects.testemonials.bg-text')
-      p.title
+      h2.title
         = raw t('projects.testemonials.title')
 
     = render "projects/scheme#{@project.project_feedbacks_scheme}", assets: @project.project_feedbacks

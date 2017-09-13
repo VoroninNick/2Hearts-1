@@ -3,7 +3,7 @@
   p.background-text
     = t('home.team.bg-text')
   .icon = inline_svg "svg/2h-icons-rings-01.svg"
-  p.title
+  h2.title
     = raw t('home.team.title')
 
 .team-wrapper.clearfix.slide-up
@@ -11,8 +11,6 @@
 
   .row
     .columns.large-4.large-pull-1.xxlarge-4.xxlarge-pull-0.float-right
-      /= raw t("home.team.intro")
-      /= raw @about_team_intro.try(:intro)
       = raw @about_intro.try(:intro)
       a.button href=Pages.about_us.url title="На сторінку про нас" Дізнатись більше
 

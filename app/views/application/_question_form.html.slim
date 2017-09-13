@@ -1,6 +1,6 @@
 - resource_name = FaqQuestionRequest.new
 form.ajax-form.contact-form action=faq_question_request_path method="post"
-  h2 задати питання
+  .h2 задати питання
   = input(resource_name, :name, required: true, reset_label_html: { class: "" })
   = input(resource_name, :email, required: true, reset_label_html: { class: "" })
   = input(resource_name, :phone, type: :tel, reset_label_html: { class: "" })

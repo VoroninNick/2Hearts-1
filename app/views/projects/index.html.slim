@@ -17,20 +17,20 @@
       ul.filter-container
         - if @show_all
           li.filter.active
-            | Всі
+            h2 Всі
             sup
               = @all_count
         - @categories.each do |category|
           li.filter data-tag-id=category.id
             .heart-icon
               = category.svg_icon_string
-            = category.name
+            h2 = category.name
             sup
               = category.projects_count
         - if @show_other_category
           li.filter data-tag-id="other"
             .heart-icon.another = inline_svg "svg/2h-little-heart-02.svg"
-            | Інші
+            h2 Інші
             sup
               = @other_projects_count
 

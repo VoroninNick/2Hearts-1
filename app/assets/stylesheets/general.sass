@@ -47,12 +47,16 @@ body
 %goodvibes
   font-family: 'Goodvibespro'
 
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6
+  font-weight: 600
+
 @each $header, $font-size in (h1: 28px, h2: 24px, h3: 22px, h4: 20px, h5: 18px, h6: 16px)
   #{$header}, .#{$header}
     font-size: $font-size
 
-p
+p, .p
   font-size: 16px
+  font-weight: inherit
 
 a
   display: inline-block

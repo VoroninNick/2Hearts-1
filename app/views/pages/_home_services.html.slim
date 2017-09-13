@@ -3,7 +3,7 @@
   p.background-text
     = t('home.services.bg-text')
   .icon = inline_svg "svg/2h-icons-letter-01.svg"
-  p.title
+  h2.title
     = raw t('home.services.title')
 
 .services-wrapper.slide-up
@@ -14,7 +14,7 @@
           - if service.icon.exists?
             a.icon title="На сторінку всіх послуг" href=service.url
               = embedded_svg_from_absolute_path service.icon.path
-          a.h2 title="На сторінку всіх послуг" href=service.url
+          a.h3 title="На сторінку всіх послуг" href=service.url
             = service.name
           p
             = service.short_description

@@ -17,11 +17,11 @@
         p.background-text
           = service.name
         .service-number data-number="0#{service_index + 1}"
-        p.title
+        h2.title
           = service.name
       .row.service-description.slide-up
         .columns.large-4
-          h2
+          .h2.quote
             |«#{service.quote_text}»
         .columns.large-8
           = raw service.content

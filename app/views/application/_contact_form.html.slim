@@ -1,6 +1,6 @@
 - resource_name = ContactRequest.new
 form.ajax-form.contact-form action=contact_request_path method="post"
-  h2 напишіть нам
+  .h2 напишіть нам
   = input(resource_name, :name, required: true, reset_label_html: { class: "" })
   = input(resource_name, :email, required: true, reset_label_html: { class: "" })
   = input(resource_name, :phone, type: :tel, reset_label_html: { class: "" })

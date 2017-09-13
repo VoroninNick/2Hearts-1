@@ -3,7 +3,7 @@
 
     .blog-one-text
 
-      p.one-title
+      h1.p.one-title
         = @article.name
       .button.share-button
         = t('blog.share_btn')
@@ -15,6 +15,7 @@
       .one-wrapper.in-blog-one
         - if @article.avatar.exists?(:large)
           img src=@article.avatar.url(:large)
+
         .row
           .medium-5.large-4.columns
             .date

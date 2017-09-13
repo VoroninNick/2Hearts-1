@@ -1,6 +1,6 @@
 - resource_name = OrderRequest.new
 form.ajax-form.contact-form action=order_request_path method="post"
-  h2 замовити весілля
+  .h2 замовити весілля
   = input(resource_name, :name, required: true, reset_label_html: {class: ""})
   = input(resource_name, :email, required: true, reset_label_html: {class: ""})
   = input(resource_name, :phone, type: :tel, reset_label_html: {class: ""})

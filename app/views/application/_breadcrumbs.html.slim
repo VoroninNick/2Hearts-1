@@ -1,0 +1,12 @@
+- if @_breadcrumbs.try(:any?)
+  ul.breadcrumbs
+    - @_breadcrumbs.each_with_index do |b, i|
+      - last = i == @_breadcrumbs.count - 1
+      - active = b[:active]
+      - url = b[:url]
+      - url = nil if url.blank?
+      - breadcrumb_tag = active || last || !url ? :span : :a
+      - breadcrumb_tag_attrs = {class: "breadcrumb-tag"}
+      - breadcrumb_tag_attrs[:href] = url if !active && !last && url
+      li.breadcrumb class=("active" if active)
+        = content_tag breadcrumb_tag, b[:name], breadcrumb_tag_attrs

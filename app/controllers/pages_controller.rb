@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   before_action :set_page_instance, except: [:index]
-  caches_page :index, :about_us, :services, :faq, :contact_us, :vacancies, :private_policy
+  caches_page :index, :about_us, :services, :faq, :contacts, :vacancies, :privacy_policy
 
   def index
     set_page_metadata(:home)
@@ -31,7 +31,7 @@ class PagesController < ApplicationController
     @faq_questions = FaqQuestion.published
   end
 
-  def contact_us
+  def contacts
     @contact_info = ContactInfo.first_or_initialize
     @featured_vacancies = Vacancy.featured
     @extra_vacancies_count = Vacancy.published.count - 4
@@ -56,7 +56,7 @@ class PagesController < ApplicationController
     @vacancies = Vacancy.published
   end
 
-  def private_policy
+  def privacy_policy
   
   end
 

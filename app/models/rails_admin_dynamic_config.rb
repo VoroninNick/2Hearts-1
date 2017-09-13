@@ -342,6 +342,10 @@ module RailsAdminDynamicConfig
             scheme_enum_field(:project_feedbacks_scheme)
           end
 
+          group :seo do
+            field :seo_tags
+          end
+
         end
 
         config.model_translation Project do

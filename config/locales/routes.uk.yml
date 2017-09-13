@@ -10,10 +10,10 @@ uk:
     projects_index: "projects"
 
     # services
-    services:
+    services: "orhanizatcija-vesillya"
 
     # about_us
-    about_us: "pro-nas"
+    about_us: "vesilna-agentciya"
 
     # contacts
-    contacts:
+    contacts: "kontakty"
