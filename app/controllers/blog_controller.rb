@@ -15,6 +15,7 @@ class BlogController < ApplicationController
     @related_articles = Article.published.where.not(id: @article.id)
 
     @og_image = @article.avatar.url
+    @render_breadcrumbs = true
   end
 
   def articles

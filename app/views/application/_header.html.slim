@@ -1,5 +1,11 @@
 .header-container
   a.logo title="Повернутись на головну сторінку" href=root_path = inline_svg "svg/2h-logo-011.svg"
+  - if @render_breadcrumbs == true
+    ul.breadcrumbs
+      li
+        a href=blog_path Блог
+      li
+        p Лінк на статтю
   .right-part
     a.dib.small title="Переглянути наші роботи" href=projects_path наші роботи
     a.dib.small title="Де нас знайти" href=contact_us_path контакти

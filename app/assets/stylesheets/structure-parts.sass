@@ -254,3 +254,22 @@
   z-index: 2
   cursor: pointer
   animation: bounce 2s infinite
+
+.breadcrumbs
+  display: none
+  align-self: center
+  li
+    display: inline-block
+    a, p, span
+      @extend %istok
+      font-size: 12px
+      text-transform: uppercase
+      letter-spacing: 2px
+      color: $brown800
+    &:first-child
+      &:after
+        content: '/'
+        padding: 0 10px
+  @media #{$xlarge-up}
+    display: inline-block
+    vertical-align: middle
