@@ -1,0 +1,19 @@
+uk:
+  html_titles:
+    header:
+      back_to_main: "Повернутись на головну"
+      view_projects: "Переглянути наші роботи"
+      contacts: "Де нас знайти"
+      hamburger: "Відкрити/закрити меню"
+    general:
+      social_link: "Ми в соцмережах"
+      play_btn: "Дивитись відео"
+      scroll_down: "Прогорнути вниз"
+    projects:
+      view_project: "Переглянути проект"
+    services:
+      view_service: "Ознайомитись з послугами"
+    team:
+      about_us_link: "На сторінку про нас"
+    web_of_dev: "Перейти на сайт розробника"
+    scroll_up: "Прогорнути вверх"

@@ -2,3 +2,5 @@ uk:
   services:
     banner:
       title: "Нашi<span>послуги</span>"
+    service_one:
+      details: "Детальніше"

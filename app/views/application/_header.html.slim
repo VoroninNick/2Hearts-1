@@ -1,9 +1,9 @@
 .header-container
-  a.logo title=I18n.t("html-titles.header.back_to_main") href=root_path = inline_svg "svg/2h-logo-011.svg"
+  a.logo title=I18n.t("html_titles.header.back_to_main") href=root_path = inline_svg "svg/2h-logo-011.svg"
   = render "breadcrumbs"
   .right-part
-    a.dib.small title="Переглянути наші роботи" href=projects_path наші роботи
-    a.dib.small title="Де нас знайти" href=contacts_path контакти
-    .dib.hamburger.hamburger--collapse title="Відкрити/закрити меню"
+    a.dib.small title=I18n.t("html_titles.header.view_projects") href=projects_path наші роботи
+    a.dib.small title=I18n.t("html_titles.header.contacts") href=contacts_path контакти
+    .dib.hamburger.hamburger--collapse title=I18n.t("html_titles.header.hamburger")
       span.hamburger-box
         span.hamburger-inner

@@ -15,3 +15,8 @@ uk:
       misc: "Різне"
     breadcrumbs:
       blog: "Блог"
+    learn_more: "Дізнатись більше"
+    footer:
+      block_title_1: "наша адреса"
+      block_title_2: "наші контакти"
+      block_title_3: "ми в соц. мережах"
