@@ -4,8 +4,4 @@ class Pages::Faq < Cms::Page
   def self.default_priority
     0.6
   end
-
-  def self.default_change_freq
-    :yearly
-  end
 end
