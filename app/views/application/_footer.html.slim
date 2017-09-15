@@ -1,25 +1,25 @@
 .company-footer
   .row
     .columns.large-3
-      a.company-icon-full title="Повернутись на головну сторінку" href=root_path = inline_svg "svg/2h-logo-full-footer-new.svg"
+      a.company-icon-full title=I18n.t("html_titles.header.back_to_main") href=root_path = inline_svg "svg/2h-logo-full-footer-new.svg"
     .columns.large-3.medium-4
       .contact-info
-        p.small наша адреса
+        p.small = t("components.footer.block_title_1")
         a.larger href="http://www.google.com/maps/place/49.8407455,24.0221879" target="_blank"
           | вул. Венеціанова, 2
           br
           | м. Львів
     .columns.large-3.medium-4
       .contact-info
-        p.small наші контакти
+        p.small = t("components.footer.block_title_2")
         a.larger title="Дзвінок нам" href="tel:+380676726830" +38 (067) 672 68 30
         a.larger title="Відправити лист" href="mailto:info@wed.in.ua" info@wed.in.ua
     .columns.large-3.medium-4
-      p.small ми в соц. мережах
+      p.small = t("components.footer.block_title_3")
       ul.socials
         - social_links.each do |k, social_link|
           li
-            a.social-icon rel="nofollow" target="_blank" href=social_link[:url] title="Наша сторінка в соцмережі"
+            a.social-icon rel="nofollow" target="_blank" href=social_link[:url] title=I18n.t("html_titles.general.social_link")
               = embedded_svg_from_assets(social_link[:icon])
 
 
@@ -27,6 +27,6 @@
   .columns
     p.company.float-left &copy; 2008 &mdash; #{Date.today.year} wedding & event "Два Серця"
     p.studio.float-right
-      a href="http://voroninstudio.eu/uk" = inline_svg "svg/studio-logo.svg"
+      a title=I18n.t("html_titles.web_of_dev") href="http://voroninstudio.eu/uk" = inline_svg "svg/studio-logo.svg"
       | Розроблено в дизайн студії&nbsp;
-      a href="http://voroninstudio.eu/uk" title="Перейти на сайт розробника" Миколи Вороніна
+      a title=I18n.t("html_titles.web_of_dev") href="http://voroninstudio.eu/uk" Миколи Вороніна

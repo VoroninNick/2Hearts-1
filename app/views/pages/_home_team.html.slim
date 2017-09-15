@@ -12,7 +12,8 @@
   .row
     .columns.large-4.large-pull-1.xxlarge-4.xxlarge-pull-0.float-right
       = raw @about_intro.try(:intro)
-      a.button href=Pages.about_us.url title="На сторінку про нас" Дізнатись більше
+      a.button href=Pages.about_us.url title=I18n.t("html_titles.team.about_us_link")
+        = t("components.learn_more")
 
   - if @team_members.try(:any?)
     .owl-carousel.owl-carousel-team.appeared

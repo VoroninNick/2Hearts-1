@@ -26,7 +26,7 @@ html
           = yield
       - else
         = yield
-        .scrollBtn
+        .scrollBtn title=I18n.t("html_titles.scroll_up")
     - if @render_footer != false
       = render "footer"
     script async="" src="//assets.pinterest.com/js/pinit.js" defer=""
