@@ -25,7 +25,9 @@
 
 .footer
   .columns
-    p.company.float-left &copy; 2008 &mdash; #{Date.today.year} wedding & event "Два Серця"
+    p.company.float-left
+      | &copy; 2008 &mdash; #{Date.today.year} 
+      a href=root_path весільна агенція "Два Серця"
     p.studio.float-right
       a title=I18n.t("html_titles.web_of_dev") href="http://voroninstudio.eu/uk" = inline_svg "svg/studio-logo.svg"
       | Розроблено в дизайн студії&nbsp;
