@@ -4,11 +4,11 @@ uk:
       title: "Про нас"
     team:
       bg-text: "Команда"
-      title: "Наша<span>команда</span>"
+      title: "Наша <span>команда</span>"
     steps:
       bg-text: "Наш підхід"
-      title: "7 крокiв до<span>найкращого весiлля</span>"
+      title: "7 крокiв до <span>найкращого весiлля</span>"
     partners:
       bg-text: "Партнери"
-      title: "Наші<span>партнери</span>"
+      title: "Наші <span>партнери</span>"
     step-number: "Крок №%{step_number}"

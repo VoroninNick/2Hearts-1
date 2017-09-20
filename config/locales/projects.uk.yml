@@ -22,7 +22,7 @@ uk:
             photo_and_video: "Фото- та відеозйомка"
             show_program: "Шоу-програма"
         related:
-            title: "Хочете побачити<span>бiльше</span>"
+            title: "Хочете побачити <span>бiльше</span>"
             btn: "Наші роботи"
         steps:
             first: "Крок перший<span>завдання</span>"
