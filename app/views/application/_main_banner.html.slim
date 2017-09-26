@@ -5,8 +5,9 @@
       iframe#bg-video src="https://www.youtube.com/embed/tbZNMrQ5ipc?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=tbZNMrQ5ipc" frameborder="0" allowfullscreen="1"
 
   .hashtag
-    span #
-    = main_hash_tag
+    a href=hash_tag_url(main_hash_tag) target="_blank" rel="nofollow"
+      span #
+      = main_hash_tag
 
   ul.socials
     li
