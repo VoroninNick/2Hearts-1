@@ -134,4 +134,12 @@ module ApplicationHelper
       return "https://vimeo.com/#{resource.vimeo_video_id}"
     end
   end
+
+  def main_hash_tag
+    "twoheartslviv"
+  end
+
+  def hash_tag_url(t)
+    "https://www.instagram.com/explore/tags/#{t}"
+  end
 end

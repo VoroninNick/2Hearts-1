@@ -1,7 +1,7 @@
 class Project < ActiveRecord::Base
   attr_accessible *attribute_names
 
-  globalize :name, :url_fragment, :address, :idea_and_organization, :coordination, :decor, :music, :task_text, :idea_and_solution_text, :idea_and_solution_quote_text, :idea_and_solution_quote_author, :result_text, :featured_member_name, :featured_member_short_description, :technical_support, :special_effects, :photo_and_video, :show_program, :candy_bar, :youtube_video_id, :vimeo_video_id
+  globalize :name, :url_fragment, :address, :idea_and_organization, :catering, :narrator, :coordination, :decor, :music, :task_text, :idea_and_solution_text, :idea_and_solution_quote_text, :idea_and_solution_quote_author, :result_text, :featured_member_name, :featured_member_short_description, :technical_support, :special_effects, :photo_and_video, :show_program, :candy_bar, :youtube_video_id, :vimeo_video_id
 
   boolean_scope :published
   scope :order_by_sorting_position, -> { order("sorting_position asc") }

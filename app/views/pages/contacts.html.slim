@@ -47,9 +47,9 @@
                 = k
 
         .hashtag
-          a href="https://www.instagram.com/explore/tags/twohearts/" rel="nofollow" target="_blank" title="Наш тег на інстаграмі"
+          a href=hash_tag_url(main_hash_tag) rel="nofollow" target="_blank" title="Наш тег на інстаграмі"
             span #
-            | twohearts
+            = main_hash_tag
       .subscribe-button Підписатись на розсилку
     .columns.large-6
       = render "contact_form"

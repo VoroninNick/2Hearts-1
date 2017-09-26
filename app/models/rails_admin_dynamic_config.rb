@@ -359,6 +359,8 @@ module RailsAdminDynamicConfig
 
           group :summary do
             field :idea_and_organization
+            field :catering
+            field :narrator
             field :coordination
             field :decor
             field :music
