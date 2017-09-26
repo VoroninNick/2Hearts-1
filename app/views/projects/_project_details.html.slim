@@ -11,12 +11,9 @@
           = @project.featured_member_short_description
 
       .row.columns-left
-
-        .columns.medium-4
-
-
-
+        .columns
           h2.small над весіллям працювали
+        .columns.medium-4
           = render_summary_attributes(@project, [:idea_and_organization, :catering, :coordination, :decor, :music, :formatted_technical_support, :special_effects])
 
 
