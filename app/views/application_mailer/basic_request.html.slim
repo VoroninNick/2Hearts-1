@@ -1,8 +1,8 @@
 - request_url_in_admin_panel = "#{@admin_root}/#{@request.class.name.underscore.gsub(/\//, "~")}/#{@request.id}/edit"
 = render "application_mailer/header"
 
-/- keys = [:role, :name, :email, :phone, :address, :attachment, :comment]
-/- keys.each do |k|
+- keys = [:role, :name, :email, :phone, :address, :attachment, :comment]
+- keys.each do |k|
   - next if !@request.respond_to?(k)
   - v = @request.send(k)
   - next if v.blank? || (v.is_a?(Paperclip::Attachment) && !v.exists?)

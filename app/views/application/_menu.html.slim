@@ -41,7 +41,7 @@
       ul.socials
         - social_links.each do |k, social_link|
           li
-            a.social-icon target="_blank" href=social_link[:url]
+            a.social-icon rel="nofollow" target="_blank" href=social_link[:url]
               = embedded_svg_from_assets(social_link[:icon])
 
 

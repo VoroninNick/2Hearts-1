@@ -9,6 +9,11 @@ uk:
       social_link: "Ми в соцмережах"
       play_btn: "Дивитись відео"
       scroll_down: "Прогорнути вниз"
+      social_link_names:
+        vk: "vkontakte"
+        twitter: "twitter"
+        facebook: "facebook"
+
     projects:
       view_project: "Переглянути проект"
     services:

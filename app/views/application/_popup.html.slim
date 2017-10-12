@@ -10,11 +10,13 @@
   .subscribe-block
     .h2 підписатись на розсилку
     p.smaller Ви можете підписатись на електронну розсилку, вказавши свою адресу електронної пошти, що б бути в курсі всіх новинок від нас
-    form
+    form.email-subscription-form action="/#{I18n.locale}/subscribe_on_email_ubscriptions"
       .input-field
         label for="email" Електронна скринька
-        input#email placeholder="mail@gmail.com"
-        .input-icon = inline_svg "svg/2h-send-01.svg"
+        input#email type="email" name="email" placeholder="mail@gmail.com"
+
+        button.input-icon type="submit"
+          = inline_svg "svg/2h-send-01.svg"
 
   .order-form
     = render "order_form"

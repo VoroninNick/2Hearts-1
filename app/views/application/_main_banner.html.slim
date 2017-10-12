@@ -10,14 +10,11 @@
       = main_hash_tag
 
   ul.socials
-    li
-      a title=I18n.t("html_titles.general.social_link") facebook
-    li
-      a title=I18n.t("html_titles.general.social_link") twitter
-    li
-      a title=I18n.t("html_titles.general.social_link") instagram
-    li
-      a title=I18n.t("html_titles.general.social_link") vkontakte
+    - social_links.each do |k, social_link|
+      li
+        a rel="nofollow" target="_blank" title=I18n.t("html_titles.general.social_link") href=social_link[:url]
+          = (I18n.t("html_titles.general.social_link_names.#{k}", raise: true) rescue k.to_s)
+
 
   .top-part
     .line.top

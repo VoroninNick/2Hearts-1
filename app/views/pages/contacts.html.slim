@@ -43,7 +43,7 @@
         ul.socials
           - social_links.each do |k, social_link|
             li
-              a rel="nofollow" target="_blank" href=social_link[:url] title="Наша сторінка в соцмережі"
+              a rel="nofollow" target="_blank" href=social_link[:url] title=I18n.t("html_titles.general.social_link")
                 = k
 
         .hashtag

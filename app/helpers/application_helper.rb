@@ -131,7 +131,7 @@ module ApplicationHelper
     elsif resource.respond_to?(:youtube_video_id) && resource.youtube_video_id.present?
       return "https://www.youtube.com/embed/#{resource.youtube_video_id}?rel=0"
     elsif resource.respond_to?(:vimeo_video_id) &&  resource.vimeo_video_id.present?
-      return "https://vimeo.com/#{resource.vimeo_video_id}"
+      return "https://player.vimeo.com/video/#{resource.vimeo_video_id}"
     end
   end
 
