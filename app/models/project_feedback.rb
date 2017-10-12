@@ -7,7 +7,7 @@ class ProjectFeedback < ActiveRecord::Base
   scope :most_recent, ->{ published.order("created_at desc").limit(10) }
 
   has_cache do
-    pages self.project
+    pages :home, self.project
   end
 
 
