@@ -16,7 +16,7 @@
   .row
     .columns.large-4.large-pull-1.xxlarge-4.xxlarge-pull-0.float-right
       = raw @about_intro.try(:intro)
-  - image_url = @about_intro && @about_intro.image.exists? ? @about_intro.image.url : asset_path('photo/2h-cuted-men-v2.png')
+  - image_url = @about_intro && @about_intro.image.exists? ? @about_intro.image.url : asset_path('photo/Cuted-Solya-v1.png')
   .main-img style="background-image: url(#{image_url})"
 
 - if @about_steps.try(:any?)
@@ -48,7 +48,7 @@
                 = step.subtitle
 
 
-.team-img style="background-image: url(#{asset_path('photo/2h-about-banner-v2.jpg')})"
+.team-img style="background-image: url(#{asset_path('photo/2h-about-banner.jpg')})"
 
 .section-name.slide-up
   p.background-text
