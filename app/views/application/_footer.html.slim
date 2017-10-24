@@ -6,9 +6,9 @@
       .contact-info
         p.small = t("components.footer.block_title_1")
         a.larger href="http://www.google.com/maps/place/49.8407455,24.0221879" target="_blank"
-          | вул. Венеціанова, 2
+          = I18n.t("contact_us.address.line1")
           br
-          | м. Львів
+          = I18n.t("contact_us.address.line2")
     .columns.large-3.medium-4
       .contact-info
         p.small = t("components.footer.block_title_2")

@@ -7,6 +7,7 @@
 
 #     P L U G I N S
 
+#= require plugins/ga_init
 #= require plugins/jquery-easing
 #= require plugins/jquery.appear
 #= require plugins/clickout

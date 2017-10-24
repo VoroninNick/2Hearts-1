@@ -14,8 +14,9 @@ html
     link rel="icon" type="image/png" href=asset_path("favicon/favicon-180x180.png") sizes="180x180"
     link rel="icon" type="image/png" href=asset_path("favicon/favicon-196x196.png") sizes="196x196"
     link rel="icon" type="image/png" href=asset_path("icons/favicon-228x228.png") sizes="228x228"
-    
+
   body
+
     - if @render_header != false
       = render "header"
     = render "menu"
@@ -29,6 +30,7 @@ html
         .scrollBtn title=I18n.t("html_titles.scroll_up")
     - if @render_footer != false
       = render "footer"
+    script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-103176935-1"
     script async="" src="//assets.pinterest.com/js/pinit.js" defer=""
     script async="" src="https://www.youtube.com/iframe_api"
     = javascript_include_tag "application", 'data-turbolinks-track' => true
