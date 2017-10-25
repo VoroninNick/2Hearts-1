@@ -20,7 +20,6 @@
 #= require plugins/lightgallery.min
 #= require plugins/lg-thumbnail.min
 #= require jquery-form/dist/jquery.form.min
-#= require plugins/YouTubePopUp.jquery
 #= require plugins/jquery-modal-video
 #= require js-cookie/src/js.cookie
 
@@ -39,7 +38,6 @@
 #= require mask
 #= require lightgallery
 #= require input-file-add
-#= require youtube_video_popup
 #= require modal_video_popup
 #= require bg-text
 #= require scrollBtn
