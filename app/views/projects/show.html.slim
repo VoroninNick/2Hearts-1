@@ -7,6 +7,10 @@
       a.play-bth.project-video-button.video-popup href=@project.video_url
         = inline_svg "svg/2h-play-button-012.svg"
 
+    /- if @project.video_url.present?
+    /  a.play-bth.project-video-button.js-modal-btn data-video-id="222381407"
+    /    = inline_svg "svg/2h-play-button-012.svg"
+
     .banner-text
       p.subtitle.animate
         = @project.category_name
@@ -44,8 +48,17 @@
           span
             = @project.idea_and_solution_quote_author
 
+
+
     - if @project.idea_and_solution_banner.exists?(:xxl)
       .project-case-fullwidth-img style="background-image: url(#{@project.idea_and_solution_banner.url(:xxl)})"
+
+        - attachment = @project.idea_and_solution_banner
+        - pinit_description = nil
+
+        .pinterest-btn data-media=(host + @project.idea_and_solution_banner.url(:xxl)) data-description=pinit_description Save
+
+
 
     .row.step-block
       .columns.large-6

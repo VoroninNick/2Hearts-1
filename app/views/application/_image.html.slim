@@ -35,8 +35,6 @@
         - image_attrs[:alt] = asset.data_alt
         - image_attrs[:title] = asset.data_alt
       = content_tag(:img, "", image_attrs)
-    - host = ENV["#{Rails.env}.host_with_port"]
-    - host = ENV["#{Rails.env}.host"] if host.blank?
     - pinit_description = asset.data_alt.present? ? asset.data_alt : @page_instance.try(:title)
     - pinit_description = nil if pinit_description.blank?
     .pinterest-btn data-media=(host + attachment.url(:popup)) data-description=pinit_description Save

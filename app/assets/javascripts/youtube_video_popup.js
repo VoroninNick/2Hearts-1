@@ -1,1 +1,1 @@
-jQuery("a.video-popup").YouTubePopUp();
+$("a.video-popup").YouTubePopUp({ autoplay: 0 });

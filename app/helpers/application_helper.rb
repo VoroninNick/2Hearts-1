@@ -142,4 +142,10 @@ module ApplicationHelper
   def hash_tag_url(t)
     "https://www.instagram.com/explore/tags/#{t}"
   end
+
+  def host
+    host = ENV["#{Rails.env}.host_with_port"]
+    host = ENV["#{Rails.env}.host"] if host.blank?
+    host
+  end
 end

@@ -94,7 +94,7 @@
         .columns.medium-3.small-6
           .partner title=partner.name
             - wrap_tag = partner.site_url.present? ? :a : :div
-            - wrap_attrs = partner.site_url.present? ? {href: partner.site_url, rel: "nofollow"} : {}
+            - wrap_attrs = partner.site_url.present? ? {href: partner.site_url, rel: "nofollow", target: "_blank"} : {}
             = content_tag(wrap_tag, wrap_attrs) do
               = embedded_svg_from_absolute_path(partner.icon.path)
 

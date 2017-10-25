@@ -5,6 +5,7 @@ uk:
             btn: "Замовити весiлля"
         summary:
           attributes:
+            narrator: "Ведучий"
             idea_and_organization: "Ідея та організація"
             coordination: "Координація"
             decor: "Декор та флористика"
