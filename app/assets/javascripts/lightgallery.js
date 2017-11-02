@@ -1,5 +1,6 @@
 $document.on("ready", function() {
-  $('.animated-thumbnails').lightGallery({
-    selector: 'a.lg-object'
-  });
+    $lg = $('.animated-thumbnails')
+    $lg.lightGallery({
+        selector: 'a.lg-object'
+    });
 });
