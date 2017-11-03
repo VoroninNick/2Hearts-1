@@ -18,7 +18,8 @@
 #= require plugins/owl.carousel.min
 #= require plugins/jquery.drawsvg
 #= require plugins/lightgallery.min
-#= require plugins/lg-share.min
+# require plugins/lg-share.min
+#= require plugins/lg-share
 #= require plugins/lg-thumbnail.min
 #= require jquery-form/dist/jquery.form.min
 #= require plugins/jquery-modal-video
