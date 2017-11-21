@@ -1,0 +1,46 @@
+.event-organization
+
+  .img-bg style="background-image: url(#{asset_path('photo/event-one/cases_bg.png')})"
+
+  .section-name.slide-up
+    h2.title
+      = raw t('events.organization.title')
+    p.event-subtitle
+      = raw t('events.organization.subtitle')
+
+  .row
+    .columns.medium-4
+      .icon = inline_svg "svg/event-one/list_icon-05.svg"
+    .columns.medium-8
+      .main-text
+        p.title Generaciya idey
+        p.description Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.
+
+.project-conclusion
+
+  .row
+    .columns.medium-6
+      .main-text.with-line
+        .icon = inline_svg "svg/2h-icons-love-cloud.svg"
+        p.title
+          = raw t('events.interaction.like_it')
+        .button.share-button
+          = t('events.interaction.share_btn')
+        .likes-wrap
+          .likes
+
+    .columns.medium-6
+      .main-text
+        .icon = inline_svg "svg/2h-icons-love-letter.svg"
+        .title
+          = raw t('events.interaction.want_it')
+        .button.order-button
+          = t('events.interaction.order_btn')
+
+/- if @related_projects.any?
+.section-name.slide-up
+  p.background-text Iншi iвенти
+  p.title
+    | Дивiться
+    span також
+/  = render "portfolio_carousel", projects: @related_projects

@@ -1,0 +1,123 @@
+.events-banner
+  .banner-text
+    &:before
+      background: white
+  .button
+    border: 1px solid white
+    color: white
+    &:before
+      background: white
+  .header, .subtitle
+    color: white
+  .img-bg
+    &:after
+      content: ""
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5))
+
+.section-name
+  .event-subtitle
+    position: relative
+    font-size: 18px
+    color: $brown600
+    font-weight: 600
+    font-style: italic
+    line-height: 1.25
+
+.intro-block
+  position: relative
+  text-align: center
+  svg
+    width: 60px
+    height: 60px
+    margin-bottom: 10px
+  .title
+    font-size: 18px
+    color: $pink600
+    text-transform: uppercase
+    font-weight: 600
+    letter-spacing: 1px
+    margin-bottom: 10px
+  .subtitle
+    color: $brown600
+    width: 90%
+    margin: 0 auto 30px
+
+.event-cases-wrap
+  margin-top: 100px
+
+.process-wrap
+  position: relative
+  .person-bg
+    position: relative
+    background-position: bottom
+    -webkit-background-size: contain
+    background-size: contain
+    background-repeat: no-repeat
+    padding-top: 100%
+    z-index: 1
+    margin-top: -20px
+    @media #{$large-up}
+      position: absolute
+      width: 44%
+      height: 100%
+      bottom: 0
+      right: 10%
+      margin-top: 0
+
+.event-order-container
+  padding: 0 0 100px
+  .nav-block
+    position: relative
+    padding: 0
+    &:before
+      content: ''
+      display: block
+      padding-top: 60%
+      @media #{$xlarge-up}
+        padding-top: 40%
+  .text
+    position: absolute
+    top: 50px
+    left: 50px
+
+.event-organization
+  .img-bg
+    z-index: -1
+  .icon
+    position: relative
+    width: 200px
+    height: 200px
+    border: 1px solid $brown200
+    border-radius: 50%
+    margin-bottom: 30px
+    &:before
+      content: ''
+      display: block
+      position: absolute
+      top: 3px
+      left: 3px
+      right: 3px
+      bottom: 3px
+      border: 1px solid $brown100
+      border-radius: 50%
+      pointer-events: none
+    svg
+      width: 80px
+      height: 80px
+      +centered-inside
+    @media #{$large-up}
+      margin: 0 auto
+  .main-text
+    .title
+      font-size: 18px
+      color: $brown800
+      font-weight: 600
+      margin-bottom: 20px
+    .description
+      color: $brown600
+      margin-bottom: 20px

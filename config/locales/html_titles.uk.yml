@@ -3,6 +3,7 @@ uk:
     header:
       back_to_main: "Повернутись на головну"
       view_projects: "Переглянути наші роботи"
+      view_events: "Переглянути івенти"
       contacts: "Де нас знайти"
       hamburger: "Відкрити/закрити меню"
     general:

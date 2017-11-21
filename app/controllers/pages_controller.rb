@@ -27,6 +27,14 @@ class PagesController < ApplicationController
     @services = Service.published
   end
 
+  def events
+
+  end
+
+  def event_one
+
+  end
+
   def faq
     @faq_questions = FaqQuestion.published
   end

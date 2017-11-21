@@ -1,0 +1,133 @@
+.banner.events-banner
+
+  .img-bg style="background-image: url(#{asset_path('photo/event-one/events_bg.jpg')})"
+
+  .banner-text.with-button
+
+    p.header.align
+      = raw t('events.banner.title')
+    h1.subtitle
+      /= h1_text
+      p.subtitle ...і ми в цьому спеціалісти
+    .button.order-button
+      = raw t('events.banner.btn')
+
+.section-name.slide-up
+  h2.title
+    = raw t('events.title-block-1.title')
+  p.event-subtitle
+    = raw t('events.title-block-1.subtitle')
+
+.row
+  .columns.medium-4
+    .intro-block
+      = inline_svg "svg/event-one/list_icon_brown-05.svg"
+      p.title = t('events.intro-block-1.title')
+      p.subtitle = t('events.intro-block-1.subtitle')
+  .columns.medium-4
+    .intro-block
+      = inline_svg "svg/event-one/player_icon-04.svg"
+      p.title = t('events.intro-block-2.title')
+      p.subtitle = t('events.intro-block-2.subtitle')
+  .columns.medium-4
+    .intro-block
+      = inline_svg "svg/event-one/cake_icon-03.svg"
+      p.title = t('events.intro-block-3.title')
+      p.subtitle = t('events.intro-block-3.subtitle')
+
+.section-name.slide-up.event-cases-wrap
+  .img-bg style="background-image: url(#{asset_path('photo/event-one/list_events_bg.jpg')})"
+  h2.title
+    = raw t('events.title-block-2.title')
+  p.event-subtitle
+    = raw t('events.title-block-2.subtitle')
+
+/.filters-container
+/  .row
+/    .columns
+/      ul.filter-container
+/        - if @show_all
+/          li.filter.active
+/            h2 Всі
+/            sup
+/              = @all_count
+/        - @categories.each do |category|
+/          li.filter data-tag-id=category.id
+/            .heart-icon
+/              = category.svg_icon_string
+/            h2 = category.name
+/            sup
+/              = category.projects_count
+/        - if @show_other_category
+/          li.filter data-tag-id="other"
+/            .heart-icon.another = inline_svg "svg/2h-little-heart-02.svg"
+/            h2 Інші
+/            sup
+/              = @other_projects_count
+
+/.portfolio-wrapper
+/  .row.columns-left
+/    - @projects.each do |project|
+/      .columns.medium-4.xlarge-3
+/        a.project-block data-tag-ids=(project.project_category_id || :other) href=project.url
+/          .img
+/            .img-bg style="background-image: url(#{project.avatar.url(:medium)})"
+/          .text
+/            p.subtitle
+/              = project.category_name
+/            p.title
+/              = project.name
+/            .heart-icon
+/              = project.category_svg_icon_string
+
+.process-wrap
+
+  .img-bg style="background-image: url(#{asset_path('photo/event-one/event-person-bg.png')})"
+
+  .section-name.slide-up
+    h2.title
+      = raw t('events.title-block-3.title')
+    p.event-subtitle
+      = raw t('events.title-block-3.subtitle')
+
+  .services-wrapper.slide-up
+    .row
+      .columns.large-6
+        .service
+          .icon
+            = inline_svg "svg/event-one/list_icon_brown.svg"
+          .h3 ЗАВДАННЯ
+          p Ми дуже докладні на самому початку. З’ясовуємо усе до найменших дрібниць, аби відчути/збагнути/усвідомити вашу мрію, ваші бажання, бачення майбутнього свята.
+          p Разом ми узгодимо конкретні завдання та терміни – послідовні кроки до красивої мети.
+          p Впорядкованість та чіткість дадуть вам змогу бути спокійним і впевненим у  чудовому кінцевому результаті.
+        .service
+          .icon
+            = inline_svg "svg/event-one/lamp_icon.svg"
+          .h3 ІДЕЯ ТА РІШЕННЯ
+          p У нашій команді регулярно і систематично з’являються оригінальні інсайти. То ж спеціально для вас ми згенеруємо декілька унікальних ідей.
+          p Приготуйтеся. Вам буде складно вибирати. Адже кожна наша пропозиція – це геніальний шедевр креативного мислення.
+          p З новою ідеєю розпочнеться дивовижне. Ви почнете жити у піднесеному настрої очікування свята.
+        .service
+          .icon
+            = inline_svg "svg/event-one/target_icon-09.svg"
+          .h3 РЕАЛІЗАЦІЯ
+          p Якщо ви любите дивитися, як працюють інші, то вам дуже пощастило. Бо ми матимемо багато щоденної роботи. Ми зробимо все, щоб ваше свято пройшло ідеально.
+          p А вам залишається тільки спостерігати за процесом і дивуватися, як у нас все відбувається якісно, вправно та оперативно. Хоча нічого дивного в цьому немає. Ваша довіра надихає нас перевершити самих себе.
+
+  .person-bg style="background-image: url(#{asset_path('photo/event-one/process-person.png')})"
+
+.row.collapse.nav-container.event-order-container.slide-up
+  .columns.medium-6
+    .nav-block.order-button
+      .text
+        p.small відзначте весілля правильно
+        p.title
+          | замовити
+          br
+          | наші
+          br
+          | послуги
+      .icon = inline_svg "svg/2h-arrow-01.svg"
+  .columns.medium-6
+    .nav-block
+      .img-bg style="background-image: url(#{asset_path('photo/event-one/orded_bg.jpg')})"

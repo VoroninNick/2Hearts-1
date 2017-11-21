@@ -28,6 +28,8 @@ Rails.application.routes.draw do
     controller :pages do
       get "about_us", action: "about_us"
       get "services", action: "services"
+      get "events", action: "events"
+      get "event_one", action: "event_one"
       get "faq", action: "faq"
       get "vacancies", action: "vacancies"
       get "privacy_policy", action: "privacy_policy"
