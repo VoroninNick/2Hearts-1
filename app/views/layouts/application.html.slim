@@ -4,7 +4,6 @@ html
     meta charset="utf-8"
     = seo_tags
     meta name="viewport" content="width=device-width, initial-scale=1.0"
-    = stylesheet_link_tag    "application", media: 'all', 'data-turbolinks-track' => true
     = csrf_meta_tags
 
     link rel="icon" type="image/png" href=asset_path("favicon/favicon-16x16.png") sizes="16x16"
@@ -34,6 +33,7 @@ html
         .scrollBtn title=I18n.t("html_titles.scroll_up")
     - if @render_footer != false
       = render "footer"
+    = stylesheet_link_tag    "application", media: 'all', 'data-turbolinks-track' => true
     script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-103176935-1"
     script type="text/javascript" src="//api.venyoo.ru/wnew.js?wc=venyoo/default/science&widget_id=4812314439843840"
     script async="" src="//assets.pinterest.com/js/pinit.js" defer=""

@@ -27,6 +27,7 @@
 
 #     I N I T I A L I Z E
 
+#= require basic
 #= require appear-initialize
 #= require bxslider
 #= require owl-carousel
