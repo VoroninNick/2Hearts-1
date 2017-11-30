@@ -22,7 +22,7 @@ class Project < ActiveRecord::Base
   end
 
   has_cache do
-    pages :home, :projects, Project.published, self
+    pages :home, :events, :weddings, Project.published, self
   end
 
   has_navigation
