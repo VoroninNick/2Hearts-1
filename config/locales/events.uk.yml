@@ -1,7 +1,8 @@
 uk:
   events:
     banner:
-      title: "Проводимо Iвенти"
+      title: "Організовуємо Iвенти"
+      subtitle: "...і ми в цьому спеціалісти"
       btn: "Замовити івент"
 
     title-block-1:
