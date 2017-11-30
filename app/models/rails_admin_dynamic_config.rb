@@ -273,124 +273,124 @@ module RailsAdminDynamicConfig
           field :content, :ck_editor
         end
 
-        config.model Project do
-          navigation_label_key :projects, 1
-          nestable_list({position_field: :sorting_position})
-
-          group :basic do
-            field :published
-            field :project_category
-            field :instagram_hash_tag
-            field :release_date, :date do
-              date_format do
-                :default
-              end
-            end
-            field :banner
-            watermark_position_field(:banner)
-            field :avatar do
-              svg_icon_pretty_value
-            end
-            watermark_position_field(:avatar)
-            field :translations, :globalize_tabs
-            field :seo_tags
-          end
-
-          group :summary do
-            field :guests_count
-          end
-
-          group :featured_member do
-            field :featured_member_avatar do
-              svg_icon_pretty_value
-            end
-          end
-
-          group :task do
-            field :task_images
-            scheme_enum_field(:task_images_scheme)
-          end
-
-          group :idea_and_solution do
-            field :idea_and_solution_images
-            scheme_enum_field(:idea_and_solution_images_scheme)
-            field :idea_and_solution_banner do
-              svg_icon_pretty_value
-            end
-            watermark_position_field(:idea_and_solution_banner)
-          end
-
-          group :result do
-            field :result_images
-            scheme_enum_field(:result_images_scheme)
-            field :result_banner do
-              svg_icon_pretty_value
-            end
-            watermark_position_field(:result_banner)
-            field :result_banner_mobile do
-              svg_icon_pretty_value
-            end
-          end
-
-          group :feedbacks do
-            field :likes_count do
-              read_only true
-              def value
-                @bindings[:object].likes_count
-              end
-            end
-            scheme_enum_field(:project_feedbacks_scheme)
-          end
-
-          group :seo do
-            field :seo_tags
-          end
-
-        end
-
         [Project, Event, Wedding].each do |m|
-          config.model_translation m do
-            field :locale, :hidden
+          config.model m do
+            navigation_label_key :projects, 1
+            nestable_list({position_field: :sorting_position})
+
             group :basic do
-              field :name
-              field :url_fragment
-              field :youtube_video_id
-              field :vimeo_video_id
+              field :published
+              field :project_category
+              field :instagram_hash_tag
+              field :release_date, :date do
+                date_format do
+                  :default
+                end
+              end
+              field :banner
+              watermark_position_field(:banner)
+              field :avatar do
+                svg_icon_pretty_value
+              end
+              watermark_position_field(:avatar)
+              field :translations, :globalize_tabs
+              field :seo_tags
             end
 
             group :summary do
-              field :idea_and_organization
-              field :catering
-              field :narrator
-              field :coordination
-              field :decor
-              field :music
-              field :address
-              field :technical_support
-              field :special_effects
-              field :photo_and_video
-              field :show_program
-              field :candy_bar
+              field :guests_count
             end
 
             group :featured_member do
-              field :featured_member_name
-              field :featured_member_short_description
+              field :featured_member_avatar do
+                svg_icon_pretty_value
+              end
             end
 
             group :task do
-              field :task_text, :ck_editor
+              field :task_images
+              scheme_enum_field(:task_images_scheme)
             end
 
             group :idea_and_solution do
-              field :idea_and_solution_text, :ck_editor
-              field :idea_and_solution_quote_text
-              field :idea_and_solution_quote_author
+              field :idea_and_solution_images
+              scheme_enum_field(:idea_and_solution_images_scheme)
+              field :idea_and_solution_banner do
+                svg_icon_pretty_value
+              end
+              watermark_position_field(:idea_and_solution_banner)
             end
 
             group :result do
-              field :result_text, :ck_editor
+              field :result_images
+              scheme_enum_field(:result_images_scheme)
+              field :result_banner do
+                svg_icon_pretty_value
+              end
+              watermark_position_field(:result_banner)
+              field :result_banner_mobile do
+                svg_icon_pretty_value
+              end
             end
+
+            group :feedbacks do
+              field :likes_count do
+                read_only true
+                def value
+                  @bindings[:object].likes_count
+                end
+              end
+              scheme_enum_field(:project_feedbacks_scheme)
+            end
+
+            group :seo do
+              field :seo_tags
+            end
+
+          end
+        end
+
+        config.model_translation Project do
+          field :locale, :hidden
+          group :basic do
+            field :name
+            field :url_fragment
+            field :youtube_video_id
+            field :vimeo_video_id
+          end
+
+          group :summary do
+            field :idea_and_organization
+            field :catering
+            field :narrator
+            field :coordination
+            field :decor
+            field :music
+            field :address
+            field :technical_support
+            field :special_effects
+            field :photo_and_video
+            field :show_program
+            field :candy_bar
+          end
+
+          group :featured_member do
+            field :featured_member_name
+            field :featured_member_short_description
+          end
+
+          group :task do
+            field :task_text, :ck_editor
+          end
+
+          group :idea_and_solution do
+            field :idea_and_solution_text, :ck_editor
+            field :idea_and_solution_quote_text
+            field :idea_and_solution_quote_author
+          end
+
+          group :result do
+            field :result_text, :ck_editor
           end
         end
 
