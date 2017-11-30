@@ -11,43 +11,9 @@
     .button.order-button
       = raw t('projects.banner.btn')
 
-.filters-container
-  .row
-    .columns
-      ul.filter-container
-        - if @show_all
-          li.filter.active
-            h2 Всі
-            sup
-              = @all_count
-        - @categories.each do |category|
-          li.filter data-tag-id=category.id
-            .heart-icon
-              = category.svg_icon_string
-            h2 = category.name
-            sup
-              = category.projects_count
-        - if @show_other_category
-          li.filter data-tag-id="other"
-            .heart-icon.another = inline_svg "svg/2h-little-heart-02.svg"
-            h2 Інші
-            sup
-              = @other_projects_count
+= render "projects_filters"
 
-.portfolio-wrapper
-  .row.columns-left
-    - @projects.each do |project|
-      .columns.medium-4.xlarge-3
-        a.project-block data-tag-ids=(project.project_category_id || :other) href=project.url
-          .img
-            .img-bg style="background-image: url(#{project.avatar.url(:medium)})"
-          .text
-            p.subtitle
-              = project.category_name
-            p.title
-              = project.name
-            .heart-icon
-              = project.category_svg_icon_string
+= render "projects", projects: @projects
 
 
 = render "pager"

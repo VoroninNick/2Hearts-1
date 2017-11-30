@@ -42,6 +42,10 @@
   p.event-subtitle
     = raw t('events.title-block-2.subtitle')
 
+= render "projects_filters"
+
+= render "projects", projects: @projects
+
 /.filters-container
 /  .row
 /    .columns

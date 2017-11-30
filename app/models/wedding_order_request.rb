@@ -1,0 +1,3 @@
+class WeddingOrderRequest < OrderRequest
+
+end

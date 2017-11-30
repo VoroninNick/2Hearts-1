@@ -1,0 +1,22 @@
+.resource-page.event-organization data-url=@project.url data-resource-type="project" data-id=@project.id
+  = render "project_banner", project: @project
+
+  .project-one-wrapper.animated-thumbnails
+    = render "project_details"
+    .section-name.slide-up
+      h2.title
+        = raw t('events.organization.title')
+      p.event-subtitle
+        = raw t('events.organization.subtitle')
+
+  .row
+    .columns.medium-4
+      .icon = inline_svg "svg/event-one/list_icon-05.svg"
+    .columns.medium-8
+      .main-text
+        = raw @project.task_text
+  = render "scheme#{@project.task_images_scheme}", assets: @project.task_images
+
+  = render "project_conclusion"
+
+  = render "related_projects"

@@ -1,0 +1,8 @@
+- if @related_projects.any?
+  .section-name.slide-up
+    p.background-text
+      = t("#{resource_i18n_root}.related-projects.title")
+    p.title
+      = raw t("#{resource_i18n_root}.related-projects.see-also")
+
+  = render "portfolio_carousel", projects: @related_projects

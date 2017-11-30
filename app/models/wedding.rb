@@ -1,0 +1,3 @@
+class Wedding < Project
+
+end

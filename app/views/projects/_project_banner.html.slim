@@ -1,0 +1,13 @@
+.project-one-banner
+  - banner_image_url = project.banner.exists?(:large) ? project.banner.url(:large) : asset_path('photo/hearts-slide-2.jpg')
+  .img-bg style="background-image: url(#{banner_image_url})"
+
+  - if project.video_url.present?
+    a.play-bth.project_video_button data-video-id=project.video_url[/\d+/]
+      = inline_svg "svg/2h-play-button-012.svg"
+
+  .banner-text
+    p.subtitle.animate
+      = project.category_name
+    h1.p.title.animate
+      = project.name

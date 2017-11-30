@@ -214,7 +214,7 @@ module RailsAdminDynamicConfig
         # ===================================================
         # Requests
         # ===================================================
-        config.configure_forms(ContactRequest, FaqQuestionRequest, OrderRequest, VacancyRequest)
+        config.configure_forms(ContactRequest, FaqQuestionRequest, OrderRequest, EventOrderRequest, WeddingOrderRequest, VacancyRequest)
 
         # ===================================================
         # Application specific models
@@ -348,47 +348,49 @@ module RailsAdminDynamicConfig
 
         end
 
-        config.model_translation Project do
-          field :locale, :hidden
-          group :basic do
-            field :name
-            field :url_fragment
-            field :youtube_video_id
-            field :vimeo_video_id
-          end
+        [Project, Event, Wedding].each do |m|
+          config.model_translation m do
+            field :locale, :hidden
+            group :basic do
+              field :name
+              field :url_fragment
+              field :youtube_video_id
+              field :vimeo_video_id
+            end
 
-          group :summary do
-            field :idea_and_organization
-            field :catering
-            field :narrator
-            field :coordination
-            field :decor
-            field :music
-            field :address
-            field :technical_support
-            field :special_effects
-            field :photo_and_video
-            field :show_program
-            field :candy_bar
-          end
+            group :summary do
+              field :idea_and_organization
+              field :catering
+              field :narrator
+              field :coordination
+              field :decor
+              field :music
+              field :address
+              field :technical_support
+              field :special_effects
+              field :photo_and_video
+              field :show_program
+              field :candy_bar
+            end
 
-          group :featured_member do
-            field :featured_member_name
-            field :featured_member_short_description
-          end
+            group :featured_member do
+              field :featured_member_name
+              field :featured_member_short_description
+            end
 
-          group :task do
-            field :task_text, :ck_editor
-          end
+            group :task do
+              field :task_text, :ck_editor
+            end
 
-          group :idea_and_solution do
-            field :idea_and_solution_text, :ck_editor
-            field :idea_and_solution_quote_text
-            field :idea_and_solution_quote_author
-          end
+            group :idea_and_solution do
+              field :idea_and_solution_text, :ck_editor
+              field :idea_and_solution_quote_text
+              field :idea_and_solution_quote_author
+            end
 
-          group :result do
-            field :result_text, :ck_editor
+            group :result do
+              field :result_text, :ck_editor
+            end
           end
         end
 

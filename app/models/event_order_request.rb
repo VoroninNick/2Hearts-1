@@ -1,0 +1,3 @@
+class EventOrderRequest < OrderRequest
+
+end

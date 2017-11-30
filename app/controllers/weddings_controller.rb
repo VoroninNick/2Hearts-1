@@ -1,0 +1,3 @@
+class WeddingsController < ProjectsController
+
+end

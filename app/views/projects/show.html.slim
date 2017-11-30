@@ -1,17 +1,5 @@
 .resource-page data-url=@project.url data-resource-type="project" data-id=@project.id
-  .project-one-banner
-    - banner_image_url = @project.banner.exists?(:large) ? @project.banner.url(:large) : asset_path('photo/hearts-slide-2.jpg')
-    .img-bg style="background-image: url(#{banner_image_url})"
-
-    - if @project.video_url.present?
-      a.play-bth.project_video_button data-video-id=@project.video_url[/\d+/]
-        = inline_svg "svg/2h-play-button-012.svg"
-
-    .banner-text
-      p.subtitle.animate
-        = @project.category_name
-      h1.p.title.animate
-        = @project.name
+  = render "project_banner", project: @project
 
   .project-one-wrapper.animated-thumbnails
     = render "project_details"
@@ -82,34 +70,6 @@
     = render "projects/scheme#{@project.project_feedbacks_scheme}", assets: @project.project_feedbacks
 
 
-  .project-conclusion
+  = render "project_conclusion"
 
-    .row
-      .columns.medium-6
-        .main-text.with-line
-          .icon = inline_svg "svg/2h-icons-love-cloud.svg"
-          p.title
-            = raw t('projects.interaction.like_it')
-          .button.share-button
-            = t('projects.interaction.share_btn')
-          .likes-wrap
-            .likes
-              /= inline_svg "svg/2h-little-heart-01.svg"
-              /span 25
-
-      .columns.medium-6
-        .main-text
-          .icon = inline_svg "svg/2h-icons-love-letter.svg"
-          .title
-            = raw t('projects.interaction.want_it')
-          .button.order-button
-            = t('projects.interaction.order_btn')
-
-  - if @related_projects.any?
-    .section-name.slide-up
-      p.background-text Iншi весiлля
-      p.title
-        | Дивiться
-        span також
-
-    = render "portfolio_carousel", projects: @related_projects
+  = render "related_projects"

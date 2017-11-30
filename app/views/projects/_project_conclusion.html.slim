@@ -1,0 +1,19 @@
+.project-conclusion
+  .row
+    .columns.medium-6
+      .main-text.with-line
+        .icon = inline_svg "svg/2h-icons-love-cloud.svg"
+        p.title
+          = raw t("#{resource_i18n_root}.interaction.like_it")
+        .button.share-button
+          = t("#{resource_i18n_root}.interaction.share_btn")
+        .likes-wrap
+          .likes
+
+    .columns.medium-6
+      .main-text
+        .icon = inline_svg "svg/2h-icons-love-letter.svg"
+        .title
+          = raw t("#{resource_i18n_root}.interaction.want_it")
+        .button.order-button
+          = t("#{resource_i18n_root}.interaction.order_btn")

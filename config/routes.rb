@@ -28,17 +28,20 @@ Rails.application.routes.draw do
     controller :pages do
       get "about_us", action: "about_us"
       get "services", action: "services"
-      get "events", action: "events"
-      get "event_one", action: "event_one"
       get "faq", action: "faq"
       get "vacancies", action: "vacancies"
       get "privacy_policy", action: "privacy_policy"
       get "contacts", action: "contacts"
     end
 
-    scope "projects", controller: "projects" do
-      root action: :index, as: :projects
-      get ":id", action: :show, as: :project
+    scope "weddings", controller: "weddings" do
+      root action: :index, as: :weddings
+      get ":id", action: :show, as: :wedding
+    end
+
+    scope "events", controller: "events" do
+      root action: :index, as: :events
+      get ":id", action: :show, as: :event
     end
 
     scope "blog", controller: "blog" do
