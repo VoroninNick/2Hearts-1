@@ -1,5 +1,4 @@
 page_loaded_handler = ()->
-  #$('body').addClass('loaded');
   setTimeout ()->
     $('#loader-wrapper').fadeOut(
       complete: ()->
