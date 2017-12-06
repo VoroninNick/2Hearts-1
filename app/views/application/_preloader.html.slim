@@ -1,16 +1,12 @@
 #loader-wrapper
-  .vertical-centered-box
-    .content
-      .img-bg
 
-  .imgWrapper
-    .svg-img-bg-preloder
-      .img-bg
+  .logo-container
+    .logo = inline_svg "svg/2h-logo-011.svg"
+    .text = inline_svg "svg/preload_title.svg"
 
-    .line-one
-    .line-two
-    .line-three
-    .line-four
 
-    .logo-box
-      = inline_svg "svg/2h-logo-011.svg"
+    #preloader
+      .txt
+        p.txt-perc 0
+        .progress
+          span

@@ -1,4 +1,4 @@
-#= require jquery
+# require jquery
 #= require jquery-ui
 #= require jquery_ujs
 
@@ -23,6 +23,10 @@
 #= require jquery-form/dist/jquery.form.min
 #= require plugins/jquery-modal-video
 #= require js-cookie/src/js.cookie
+
+# require plugins/TweenMax.min
+# require plugins/images.load.min
+# require plugins/pageloader
 
 #     I N I T I A L I Z E
 
