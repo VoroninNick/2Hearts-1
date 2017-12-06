@@ -6,6 +6,15 @@ def scheme_enum_field(name)
   end
 end
 
+def show_if_wedding
+  visible do
+    if r = @bindings[:object].try(:resource)
+      next r.is_a?(Wedding)
+    end
+    @bindings[:controller].instance_variable_get(:@model_name) == "Wedding"
+  end
+end
+
 
 module RailsAdminDynamicConfig
   class << self
@@ -313,6 +322,8 @@ module RailsAdminDynamicConfig
             end
 
             group :idea_and_solution do
+              show_if_wedding
+
               field :idea_and_solution_images
               scheme_enum_field(:idea_and_solution_images_scheme)
               field :idea_and_solution_banner do
@@ -322,6 +333,8 @@ module RailsAdminDynamicConfig
             end
 
             group :result do
+              show_if_wedding
+
               field :result_images
               scheme_enum_field(:result_images_scheme)
               field :result_banner do
@@ -384,13 +397,21 @@ module RailsAdminDynamicConfig
           end
 
           group :idea_and_solution do
-            field :idea_and_solution_text, :ck_editor
-            field :idea_and_solution_quote_text
-            field :idea_and_solution_quote_author
+            field :idea_and_solution_text, :ck_editor do
+              show_if_wedding
+            end
+            field :idea_and_solution_quote_text do
+              show_if_wedding
+            end
+            field :idea_and_solution_quote_author do
+              show_if_wedding
+            end
           end
 
           group :result do
-            field :result_text, :ck_editor
+            field :result_text, :ck_editor do
+              show_if_wedding
+            end
           end
         end
 

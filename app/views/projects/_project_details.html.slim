@@ -12,7 +12,8 @@
 
       .row.columns-left
         .columns
-          h2.small над весіллям працювали
+          h2.small
+            = t("#{resource_i18n_root}.summary.title")
         .columns.medium-4
           = render_summary_attributes(@project, [:idea_and_organization, :coordination, :decor, :narrator, :music, :photo_and_video, :formatted_technical_support, :special_effects])
 
