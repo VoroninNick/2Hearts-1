@@ -31,7 +31,7 @@
 
             // The DOM is ready!
 
-            if ($('.bcg').length) {
+            if ($('.bcg').length){
                 // number of loaded images for preloader progress
                 var loadedCount = 0; //current number of images loaded
                 var imagesToLoad = $('.bcg').length; //number of slides with .bcg container
@@ -90,10 +90,10 @@
                         $('#loader-wrapper').fadeOut();
                     }, 500);
                 }
+
             } else {
                 $('#loader-wrapper').fadeOut();
             }
-
 
 
 
