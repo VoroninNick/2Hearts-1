@@ -19,8 +19,8 @@ html
     = inline_css("preloader")
 
   body
-    - if @preloader
-      = render "preloader"
+
+    = render "preloader"
     - if @render_header != false
       = render "header"
     = render "menu"

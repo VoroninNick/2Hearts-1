@@ -31,75 +31,69 @@
 
             // The DOM is ready!
 
-            // if (sessionStorage.getItem('dontLoad') != null) {
-            //     $('#loader-wrapper').fadeOut();
-            // }
+            if ($('.bcg').length) {
+                // number of loaded images for preloader progress
+                var loadedCount = 0; //current number of images loaded
+                var imagesToLoad = $('.bcg').length; //number of slides with .bcg container
+                var loadingProgress = 0; //timeline progress - starts at 0
 
-            // number of loaded images for preloader progress
-            var loadedCount = 0; //current number of images loaded
-            var imagesToLoad = $('.bcg').length; //number of slides with .bcg container
-            var loadingProgress = 0; //timeline progress - starts at 0
+                $('.bcg').imagesLoaded({
+                    background: true
+                }).progress(function (instance, image) {
+                    loadProgress();
+                });
 
-            $('.bcg').imagesLoaded({
-                background: true
-            }).progress( function( instance, image ) {
-                loadProgress();
-            });
+                function loadProgress(imgLoad, image) {
+                    //one more image has been loaded
+                    loadedCount++;
 
-            function loadProgress(imgLoad, image)
-            {
-                //one more image has been loaded
-                loadedCount++;
+                    loadingProgress = (loadedCount / imagesToLoad);
 
-                loadingProgress = (loadedCount/imagesToLoad);
-
-                // GSAP tween of our progress bar timeline
-                TweenLite.to(progressTl, 0.7, {progress:loadingProgress, ease:Linear.easeNone});
-            }
+                    // GSAP tween of our progress bar timeline
+                    TweenLite.to(progressTl, 0.7, {progress: loadingProgress, ease: Linear.easeNone});
+                }
 
 
+                //progress timeline
+                var progressTl = new TimelineMax({
+                    paused: true,
+                    onUpdate: progressUpdate,
+                    onComplete: loadComplete
+                });
 
-            //progress timeline
-            var progressTl = new TimelineMax({
-                paused: true,
-                onUpdate: progressUpdate,
-                onComplete: loadComplete
-            });
+                progressTl
+                //tween the progress bar width
+                    .to($('.progress span'), 1, {width: 100, ease: Linear.easeNone});
 
-            progressTl
-            //tween the progress bar width
-                .to($('.progress span'), 1, {width:100, ease:Linear.easeNone});
+                //as the progress bar width updates and grows we put the percentage loaded in the screen
+                function progressUpdate() {
+                    //the percentage loaded based on the tween's progress
+                    loadingProgress = Math.round(progressTl.progress() * 100);
 
-            //as the progress bar width updates and grows we put the percentage loaded in the screen
-            function progressUpdate()
-            {
-                //the percentage loaded based on the tween's progress
-                loadingProgress = Math.round(progressTl.progress() * 100);
+                    //we put the percentage in the screen
+                    $(".txt-perc").text(loadingProgress + '%');
 
-                //we put the percentage in the screen
-                $(".txt-perc").text(loadingProgress + '%');
-
-            }
+                }
 
 
+                // hide preloader
+                function loadComplete() {
 
-            // hide preloader
-            function loadComplete() {
-
-                // preloader out
-                if (sessionStorage.getItem('dontLoad') == null){
+                    // preloader out
                     var preloaderOutTl = new TimelineMax();
                     preloaderOutTl
-                        .to($('.logo'), 0.3, {y: -70, autoAlpha: 0, ease:Back.easeIn})
-                        .to($('.text'), 0.3, {y: -50, autoAlpha: 0, ease:Back.easeIn})
-                        .to($('.progress'), 0.3, {autoAlpha: 0, ease:Back.easeIn})
-                        .to($('.txt-perc'), 0.3, {autoAlpha: 0, ease:Back.easeIn}, 0.1)
-                    setTimeout(function(){
+                        .to($('.logo'), 0.3, {y: -70, autoAlpha: 0, ease: Back.easeIn})
+                        .to($('.text'), 0.3, {y: -50, autoAlpha: 0, ease: Back.easeIn})
+                        .to($('.progress'), 0.3, {autoAlpha: 0, ease: Back.easeIn})
+                        .to($('.txt-perc'), 0.3, {autoAlpha: 0, ease: Back.easeIn}, 0.1)
+                    setTimeout(function () {
                         $('#loader-wrapper').fadeOut();
                     }, 500);
-                    // sessionStorage.setItem('dontLoad', 'true');
                 }
+            } else {
+                $('#loader-wrapper').fadeOut();
             }
+
 
 
 
