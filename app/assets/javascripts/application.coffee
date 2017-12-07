@@ -24,10 +24,6 @@
 #= require plugins/jquery-modal-video
 #= require js-cookie/src/js.cookie
 
-# require plugins/TweenMax.min
-# require plugins/images.load.min
-# require plugins/pageloader
-
 #     I N I T I A L I Z E
 
 #= require basic

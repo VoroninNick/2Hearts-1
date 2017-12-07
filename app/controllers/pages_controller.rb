@@ -3,6 +3,7 @@ class PagesController < ApplicationController
   caches_page :index, :about_us, :services, :faq, :contacts, :vacancies, :privacy_policy
 
   def index
+    @preloader = true
     set_page_metadata(:home)
     @services = Service.published
     @projects = Project.published

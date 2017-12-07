@@ -16,6 +16,7 @@ class ProjectsController < ApplicationController
     set_page_metadata(@project)
     @related_projects = resource_class.published.where.not(id: @project.id)
     @og_image = @project.avatar.url
+    @pinterest_btn = true
   end
 
   def set_project

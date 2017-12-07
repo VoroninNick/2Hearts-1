@@ -5,6 +5,7 @@
         a.project-block title=I18n.t("html_titles.projects.view_project") href=project.url
           .img
             .img-bg style="background-image: url(#{project.avatar.url(:medium)})"
+              img.bcg src=project.avatar.url(:medium)
           .text
             p.subtitle
               = project.category_name
