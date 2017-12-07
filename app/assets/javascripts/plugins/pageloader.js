@@ -82,8 +82,8 @@
                     // preloader out
                     var preloaderOutTl = new TimelineMax();
                     preloaderOutTl
-                        .to($('.logo'), 0.3, {y: -70, autoAlpha: 0, ease: Back.easeIn})
-                        .to($('.text'), 0.3, {y: -50, autoAlpha: 0, ease: Back.easeIn})
+                        .to($('.preload_logo'), 0.3, {y: -70, autoAlpha: 0, ease: Back.easeIn})
+                        .to($('.preload_text'), 0.3, {y: -50, autoAlpha: 0, ease: Back.easeIn})
                         .to($('.progress'), 0.3, {autoAlpha: 0, ease: Back.easeIn})
                         .to($('.txt-perc'), 0.3, {autoAlpha: 0, ease: Back.easeIn}, 0.1)
                     setTimeout(function () {
