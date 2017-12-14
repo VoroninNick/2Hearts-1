@@ -22,7 +22,7 @@
 
   div class=full_square_class href=attachment.url(style)
     - if video_url.present?
-      a.play-bth.project_video_button href=video_url
+      .play-bth.project_video_button data-video-id=video_url[/\d+/]
         = inline_svg "svg/2h-play-button-011.svg"
     .img-bg style="background-image: url(#{attachment.url(style)})"
     - if show_border

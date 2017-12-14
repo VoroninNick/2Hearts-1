@@ -1,7 +1,7 @@
 .resource-page.event-organization data-url=@project.url data-resource-type="project" data-id=@project.id
   = render "project_banner", project: @project
 
-  .project-one-wrapper.animated-thumbnails
+  .project-one-wrapper
     = render "project_details"
     .section-name.slide-up
       h2.title
@@ -15,7 +15,8 @@
     .columns.medium-8
       .main-text
         = raw @project.task_text
-  = render "scheme#{@project.task_images_scheme}", assets: @project.task_images
+  .animated-thumbnails
+    = render "scheme#{@project.task_images_scheme}", assets: @project.task_images
 
   = render "project_conclusion"
 
