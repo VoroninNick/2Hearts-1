@@ -35,7 +35,7 @@
   .img-bg
     +transition(transform 1s)
   .text
-    height: 120px
+    height: 130px
     padding-top: 20px
   .subtitle
     font-size: 10px
@@ -45,13 +45,17 @@
     letter-spacing: 2px
   .title
     font-size: 18px
+    height: 44px
+    line-height: 1.25
+    overflow: hidden
     @extend %cormorant
     color: $pink600
     +bold
     text-transform: uppercase
     letter-spacing: 2px
     @media (min-width: 1920px)
-      font-size: 24px
+      font-size: 21px
+      height: 52px
   .heart-icon
     margin: 20px auto 0
     &:before, &:after
